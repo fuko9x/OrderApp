@@ -1,0 +1,9 @@
+E:\50. OrderApp\OrderApp\OrderApp\bin\Release\OrderApp.exe.config
+E:\50. OrderApp\OrderApp\OrderApp\bin\Release\OrderApp.exe
+E:\50. OrderApp\OrderApp\OrderApp\bin\Release\OrderApp.pdb
+E:\50. OrderApp\OrderApp\OrderApp\obj\Release\OrderApp.FormView.Demo.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Release\OrderApp.Properties.Resources.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Release\OrderApp.csproj.GenerateResource.Cache
+E:\50. OrderApp\OrderApp\OrderApp\obj\Release\OrderApp.exe
+E:\50. OrderApp\OrderApp\OrderApp\obj\Release\OrderApp.pdb
+E:\50. OrderApp\OrderApp\OrderApp\obj\Release\OrderApp.csprojResolveAssemblyReference.cache

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace OrderApp.FormView
 {
@@ -15,6 +17,12 @@ namespace OrderApp.FormView
         public Demo()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.label2.Text = System.Configuration.ConfigurationSettings.AppSettings["xxx"];
+
         }
     }
 }
