@@ -7,3 +7,13 @@ E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.Properties.Resources.resour
 E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.csproj.GenerateResource.Cache
 E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.exe
 E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.pdb
+D:\OrderApp\bin\Debug\OrderApp.exe.config
+D:\OrderApp\obj\Debug\OrderApp.exe
+D:\OrderApp\obj\Debug\OrderApp.pdb
+D:\OrderApp\bin\Debug\OrderApp.exe
+D:\OrderApp\bin\Debug\OrderApp.pdb
+D:\OrderApp\obj\Debug\OrderApp.csprojResolveAssemblyReference.cache
+D:\OrderApp\obj\Debug\OrderApp.FormView.Demo.resources
+D:\OrderApp\obj\Debug\OrderApp.Properties.Resources.resources
+D:\OrderApp\obj\Debug\OrderApp.csproj.GenerateResource.Cache
+D:\OrderApp\obj\Debug\OrderApp.FormView.SearchCustomer.resources

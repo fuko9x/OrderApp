@@ -19,6 +19,7 @@ namespace OrderApp.FormView
         public Demo()
         {
             InitializeComponent();
+      //     this.mainPnl.Size = new System.Drawing.Size(this.Width - 30, this.Height - 31);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,8 +29,20 @@ namespace OrderApp.FormView
             {
                 SqlDataReader reader = Connection.createSqlCommand("Select * From TEST").ExecuteReader();
                 reader.Read();
-                this.label2.Text = reader.GetString(reader.GetOrdinal("column1"));
+                //this.label2.Text = reader.GetString(reader.GetOrdinal("column1"));
             }
+
+        }
+
+        
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
 
         }
     }
