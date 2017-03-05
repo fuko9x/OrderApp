@@ -34,7 +34,13 @@ namespace OrderApp.FormView
 
         }
 
-        
+        private void form_Resize(object sender, EventArgs e)
+        {
+            this.mainPnl.Size = new System.Drawing.Size(this.Width - 58, this.Height - 162);
+            this.infoPnl.Size= new System.Drawing.Size(this.mainPnl.Width - 58, this.mainPnl.Height - 162);
+            this.notePnl.Size = new System.Drawing.Size(this.mainPnl.Width - 58, this.mainPnl.Height - 162);
+         //   this.btnPnl.Size = new System.Drawing.Size(this.Width - 30, this.Height - 50);
+        }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
