@@ -33,32 +33,32 @@ namespace OrderApp.FormView
             this.label1 = new System.Windows.Forms.Label();
             this.mainPnl = new System.Windows.Forms.TableLayoutPanel();
             this.infoPnl = new System.Windows.Forms.TableLayoutPanel();
-            this.notePnl = new System.Windows.Forms.TableLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.notePnl = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.saveBtn = new System.Windows.Forms.Button();
@@ -139,20 +139,44 @@ namespace OrderApp.FormView
             this.infoPnl.Size = new System.Drawing.Size(736, 251);
             this.infoPnl.TabIndex = 0;
             // 
-            // notePnl
+            // label10
             // 
-            this.notePnl.ColumnCount = 1;
-            this.notePnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.notePnl.Controls.Add(this.label8, 0, 0);
-            this.notePnl.Controls.Add(this.textBox7, 0, 1);
-            this.notePnl.Location = new System.Drawing.Point(3, 293);
-            this.notePnl.Name = "notePnl";
-            this.notePnl.RowCount = 3;
-            this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.39823F));
-            this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.60177F));
-            this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
-            this.notePnl.Size = new System.Drawing.Size(736, 133);
-            this.notePnl.TabIndex = 1;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label10.Location = new System.Drawing.Point(392, 82);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 19);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "% NV Sales";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(348, 167);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(38, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(3, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 19);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Địa chỉ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.Location = new System.Drawing.Point(392, 41);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 19);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Sales";
             // 
             // textBox1
             // 
@@ -163,63 +187,56 @@ namespace OrderApp.FormView
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 43);
+            this.textBox2.Location = new System.Drawing.Point(128, 44);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(167, 26);
             this.textBox2.TabIndex = 1;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(128, 83);
+            this.textBox3.Location = new System.Drawing.Point(128, 85);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(167, 26);
             this.textBox3.TabIndex = 2;
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(128, 163);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(167, 26);
-            this.textBox4.TabIndex = 3;
-            // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(128, 123);
+            this.textBox5.Location = new System.Drawing.Point(128, 126);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(167, 26);
             this.textBox5.TabIndex = 4;
             // 
-            // textBox6
+            // textBox4
             // 
-            this.textBox6.Location = new System.Drawing.Point(128, 203);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(167, 26);
-            this.textBox6.TabIndex = 5;
+            this.textBox4.Location = new System.Drawing.Point(128, 167);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(167, 26);
+            this.textBox4.TabIndex = 3;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(517, 43);
+            this.textBox8.Location = new System.Drawing.Point(517, 44);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(167, 26);
             this.textBox8.TabIndex = 7;
             // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(517, 123);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(167, 26);
-            this.textBox9.TabIndex = 8;
-            // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(517, 83);
+            this.textBox10.Location = new System.Drawing.Point(517, 85);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(167, 26);
             this.textBox10.TabIndex = 9;
             // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(517, 126);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(167, 26);
+            this.textBox9.TabIndex = 8;
+            // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(517, 163);
+            this.textBox11.Location = new System.Drawing.Point(517, 167);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(167, 26);
             this.textBox11.TabIndex = 10;
@@ -238,7 +255,7 @@ namespace OrderApp.FormView
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(3, 80);
+            this.label3.Location = new System.Drawing.Point(3, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 19);
             this.label3.TabIndex = 13;
@@ -248,7 +265,7 @@ namespace OrderApp.FormView
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(3, 120);
+            this.label4.Location = new System.Drawing.Point(3, 123);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 19);
             this.label4.TabIndex = 14;
@@ -258,31 +275,90 @@ namespace OrderApp.FormView
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(3, 160);
+            this.label5.Location = new System.Drawing.Point(3, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 19);
             this.label5.TabIndex = 15;
             this.label5.Text = "Người liên hệ";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(3, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 19);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Địa chỉ";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(3, 200);
+            this.label7.Location = new System.Drawing.Point(3, 205);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 19);
             this.label7.TabIndex = 17;
             this.label7.Text = "SDT";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label11.Location = new System.Drawing.Point(392, 123);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(79, 19);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "% Giảm giá";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label12.Location = new System.Drawing.Point(392, 164);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(80, 19);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Vận chuyển";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(128, 208);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(167, 26);
+            this.textBox6.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label13.Location = new System.Drawing.Point(392, 205);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(95, 19);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Ngày hợp tác ";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(517, 208);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(167, 26);
+            this.dateTimePicker1.TabIndex = 23;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(348, 208);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(38, 23);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "+";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // notePnl
+            // 
+            this.notePnl.ColumnCount = 1;
+            this.notePnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.notePnl.Controls.Add(this.label8, 0, 0);
+            this.notePnl.Controls.Add(this.textBox7, 0, 1);
+            this.notePnl.Location = new System.Drawing.Point(3, 293);
+            this.notePnl.Name = "notePnl";
+            this.notePnl.RowCount = 3;
+            this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.39823F));
+            this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.60177F));
+            this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
+            this.notePnl.Size = new System.Drawing.Size(736, 133);
+            this.notePnl.TabIndex = 1;
             // 
             // label8
             // 
@@ -293,82 +369,6 @@ namespace OrderApp.FormView
             this.label8.Size = new System.Drawing.Size(55, 19);
             this.label8.TabIndex = 18;
             this.label8.Text = "Ghi chú";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.Location = new System.Drawing.Point(392, 40);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 19);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Sales";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(392, 80);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 19);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "% NV Sales";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.Location = new System.Drawing.Point(392, 120);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(79, 19);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "% Giảm giá";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.Location = new System.Drawing.Point(392, 160);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 19);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Vận chuyển";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label13.Location = new System.Drawing.Point(392, 200);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 19);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Ngày hợp tác ";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(517, 203);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(167, 26);
-            this.dateTimePicker1.TabIndex = 23;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(348, 163);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(348, 203);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(38, 23);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // textBox7
             // 
@@ -407,7 +407,7 @@ namespace OrderApp.FormView
             // 
             // saveBtn
             // 
-            this.saveBtn.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.saveBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.saveBtn.Location = new System.Drawing.Point(222, 3);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(67, 23);
@@ -417,7 +417,7 @@ namespace OrderApp.FormView
             // 
             // backBtn
             // 
-            this.backBtn.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.backBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.backBtn.Location = new System.Drawing.Point(441, 3);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(67, 23);

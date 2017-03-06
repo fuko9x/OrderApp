@@ -10,34 +10,19 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class SearchCustomer : Form
+    public partial class EditCustomer : Form
     {
-        public SearchCustomer()
+        public EditCustomer()
         {
             InitializeComponent();
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
         {
 
         }
