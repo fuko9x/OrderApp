@@ -61,11 +61,23 @@
       <DependentUpon>Demo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\DemoObj.cs" />
+    <Compile Include="FormView\DetailCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\DetailCustomer.Designer.cs">
+      <DependentUpon>DetailCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormView\EditCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormView\EditCustomer.Designer.cs">
       <DependentUpon>EditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormView\Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\SearchCustomer.cs">
       <SubType>Form</SubType>
@@ -79,8 +91,14 @@
     <EmbeddedResource Include="FormView\Demo.resx">
       <DependentUpon>Demo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormView\DetailCustomer.resx">
+      <DependentUpon>DetailCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormView\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\SearchCustomer.resx">
       <DependentUpon>SearchCustomer.cs</DependentUpon>

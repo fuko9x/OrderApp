@@ -45,6 +45,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.backBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -104,9 +105,10 @@
             this.tableLayoutPanel2.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.label6, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.editBtn, 4, 1);
             this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBox3, 3, 2);
+            this.tableLayoutPanel2.Controls.Add(this.editBtn, 4, 1);
+            this.tableLayoutPanel2.Controls.Add(this.backBtn, 4, 2);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 207);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
@@ -248,6 +250,16 @@
             this.textBox6.Size = new System.Drawing.Size(175, 20);
             this.textBox6.TabIndex = 12;
             // 
+            // backBtn
+            // 
+            this.backBtn.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.backBtn.Location = new System.Drawing.Point(605, 141);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(64, 27);
+            this.backBtn.TabIndex = 6;
+            this.backBtn.Text = "Trở về";
+            this.backBtn.UseVisualStyleBackColor = true;
+            // 
             // EditCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,5 +297,6 @@
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button backBtn;
     }
 }

@@ -18,3 +18,5 @@ D:\OrderApp\obj\Debug\OrderApp.Properties.Resources.resources
 D:\OrderApp\obj\Debug\OrderApp.csproj.GenerateResource.Cache
 D:\OrderApp\obj\Debug\OrderApp.FormView.SearchCustomer.resources
 D:\OrderApp\obj\Debug\OrderApp.FormView.EditCustomer.resources
+D:\OrderApp\obj\Debug\OrderApp.FormView.DetailCustomer.resources
+D:\OrderApp\obj\Debug\OrderApp.FormView.Product.resources
