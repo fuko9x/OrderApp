@@ -61,6 +61,12 @@
       <DependentUpon>Demo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\DemoObj.cs" />
+    <Compile Include="FormView\DetailProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\DetailProduct.Designer.cs">
+      <DependentUpon>DetailProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormView\DetailCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,12 @@
     </Compile>
     <Compile Include="FormView\EditOrder.Designer.cs">
       <DependentUpon>EditOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormView\EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\EditProduct.Designer.cs">
+      <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\Order.cs">
       <SubType>Form</SubType>
@@ -127,11 +139,17 @@
     <EmbeddedResource Include="FormView\DetailOrder.resx">
       <DependentUpon>DetailOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormView\DetailProduct.resx">
+      <DependentUpon>DetailProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormView\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\EditOrder.resx">
       <DependentUpon>EditOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\EditProduct.resx">
+      <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
