@@ -67,11 +67,29 @@
     <Compile Include="FormView\DetailCustomer.Designer.cs">
       <DependentUpon>DetailCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\DetailOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\DetailOrder.Designer.cs">
+      <DependentUpon>DetailOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormView\EditCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormView\EditCustomer.Designer.cs">
       <DependentUpon>EditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormView\EditOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\EditOrder.Designer.cs">
+      <DependentUpon>EditOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormView\Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\Product.cs">
       <SubType>Form</SubType>
@@ -85,6 +103,18 @@
     <Compile Include="FormView\SearchCustomer.Designer.cs">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\SearchOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\SearchOrder.Designer.cs">
+      <DependentUpon>SearchOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormView\SearchProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\SearchProduct.Designer.cs">
+      <DependentUpon>SearchProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\DemoLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,14 +124,29 @@
     <EmbeddedResource Include="FormView\DetailCustomer.resx">
       <DependentUpon>DetailCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormView\DetailOrder.resx">
+      <DependentUpon>DetailOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormView\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\EditOrder.resx">
+      <DependentUpon>EditOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\SearchCustomer.resx">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\SearchOrder.resx">
+      <DependentUpon>SearchOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\SearchProduct.resx">
+      <DependentUpon>SearchProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
