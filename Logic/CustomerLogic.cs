@@ -19,7 +19,7 @@ namespace OrderApp.Logic
             khDto.createTime = System.DateTime.Now;
             KhachHangDao khDao = new KhachHangDao();
             if (khDao.isExits(khDto.idKhachHang)) {
-                msg = AppUtils.getAppConfig("MSG_ERR_001").Replace("{0}", khDto.idKhachHang);
+                msg = AppUtils.getAppConfig("MSGERR001").Replace("{0}", khDto.idKhachHang);
                 return new LogicResult(Contanst.MSG_ERROR, msg, null);
             }
 
@@ -28,7 +28,7 @@ namespace OrderApp.Logic
             {
                 new LienHeDao().insertList(createListLienHeDto(obj));
             }
-            msg = AppUtils.getAppConfig("MSG_INFO_001").Replace("{0}", khDto.idKhachHang);
+            msg = AppUtils.getAppConfig("MSGINFO001").Replace("{0}", khDto.idKhachHang);
             return new LogicResult(Contanst.MSG_INFO, msg, null);
         }
 
