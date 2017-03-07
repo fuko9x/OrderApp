@@ -14,18 +14,19 @@ namespace OrderApp.Dao
     {
         public Boolean isExits(String id)
         {
-            Boolean rtn = false;
-            String strQuery = "SELECT COUNT(ID) FROM KHACH_HANG WHERE ID_KHACH_HANG = @Id";
-            SqlDataAdapter adapter = Connection.createSqlDataAdaptre(strQuery);
-            SqlParameter iDParm = adapter.SelectCommand.Parameters.Add(
-                                          "@Id", SqlDbType.NChar, 30);
-            iDParm.Value = id;
-            DataSet dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            DataTable dtTable = dataSet.Tables[0];
-            if (Convert.ToInt32(dtTable.Rows[0][0]) == 0) {
-                rtn = true;
+            Boolean rtn = true;
+            String strQuery = "SELECT COUNT(ID) FROM KHACH_HANG WHERE ID_KHACH_HANG = @id";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            if (reader.GetInt32(0) == 0)
+            {
+                rtn = false;
             }
+            reader.Close();
             return rtn;
         }
 

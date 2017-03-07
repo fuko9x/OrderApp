@@ -30,12 +30,13 @@ namespace OrderApp.Common
 
         public static SqlCommand createSqlCommand(String strQuery)
         {
-            return new SqlCommand(strQuery, con);
+
+            return new SqlCommand(strQuery, getConnection());
         }
 
         public static SqlDataAdapter createSqlDataAdaptre(String strQuery)
         {
-            return new SqlDataAdapter(strQuery, con);
+            return new SqlDataAdapter(strQuery, getConnection());
         }
     }
 }

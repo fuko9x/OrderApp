@@ -16,12 +16,14 @@ namespace OrderApp.Logic
         {
             String msg = "";
             KhachHangDto khDto = createKhachHangDto(obj);
+            khDto.createTime = System.DateTime.Now;
             KhachHangDao khDao = new KhachHangDao();
             if (khDao.isExits(khDto.idKhachHang)) {
                 msg = AppUtils.getAppConfig("MSG_ERR_001").Replace("{0}", khDto.idKhachHang);
                 return new LogicResult(Contanst.MSG_ERROR, msg, null);
             }
 
+            khDao.insert(khDto);
             if (obj.listContracts != null && obj.listContracts.Count > 0)
             {
                 new LienHeDao().insertList(createListLienHeDto(obj));
