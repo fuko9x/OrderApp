@@ -17,7 +17,7 @@ namespace OrderApp.Logic
         {
             KhachHangDao khDao = new KhachHangDao();
             if (khDao.isExits(obj.idKH)) {
-                return new LogicResult(MSG_ERROR, )
+                return new LogicResult(MSG_ERROR, "")
             }
             return result;
         }
