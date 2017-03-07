@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderApp.FormView
 {
-    class LienHeObj
+    public class LienHeObj
     {
         public String name;
         public String phone;

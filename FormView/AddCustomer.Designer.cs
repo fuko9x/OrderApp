@@ -40,7 +40,6 @@ namespace OrderApp.FormView
             this.diachi = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
             this.accFtp = new System.Windows.Forms.TextBox();
-            this.naneContact = new System.Windows.Forms.TextBox();
             this.salesName = new System.Windows.Forms.TextBox();
             this.salesPercent = new System.Windows.Forms.TextBox();
             this.giamGia = new System.Windows.Forms.TextBox();
@@ -55,8 +54,7 @@ namespace OrderApp.FormView
             this.label13 = new System.Windows.Forms.Label();
             this.ngayHopTac = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAddLienHe = new System.Windows.Forms.Button();
             this.tenKH = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.idKhachHang = new System.Windows.Forms.TextBox();
@@ -66,6 +64,7 @@ namespace OrderApp.FormView
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.saveBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
+            this.cbbContact = new System.Windows.Forms.ComboBox();
             this.mainPnl.SuspendLayout();
             this.infoPnl.SuspendLayout();
             this.notePnl.SuspendLayout();
@@ -116,7 +115,6 @@ namespace OrderApp.FormView
             this.infoPnl.Controls.Add(this.diachi, 1, 1);
             this.infoPnl.Controls.Add(this.email, 1, 2);
             this.infoPnl.Controls.Add(this.accFtp, 1, 3);
-            this.infoPnl.Controls.Add(this.naneContact, 1, 4);
             this.infoPnl.Controls.Add(this.salesName, 4, 1);
             this.infoPnl.Controls.Add(this.salesPercent, 4, 2);
             this.infoPnl.Controls.Add(this.giamGia, 4, 3);
@@ -131,11 +129,11 @@ namespace OrderApp.FormView
             this.infoPnl.Controls.Add(this.label13, 3, 5);
             this.infoPnl.Controls.Add(this.ngayHopTac, 4, 5);
             this.infoPnl.Controls.Add(this.label4, 0, 3);
-            this.infoPnl.Controls.Add(this.button1, 2, 4);
-            this.infoPnl.Controls.Add(this.button3, 2, 5);
+            this.infoPnl.Controls.Add(this.btnAddLienHe, 2, 4);
             this.infoPnl.Controls.Add(this.tenKH, 4, 0);
             this.infoPnl.Controls.Add(this.label14, 3, 0);
             this.infoPnl.Controls.Add(this.idKhachHang, 1, 0);
+            this.infoPnl.Controls.Add(this.cbbContact, 1, 4);
             this.infoPnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoPnl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.infoPnl.Location = new System.Drawing.Point(3, 3);
@@ -210,14 +208,6 @@ namespace OrderApp.FormView
             this.accFtp.Name = "accFtp";
             this.accFtp.Size = new System.Drawing.Size(235, 26);
             this.accFtp.TabIndex = 4;
-            // 
-            // naneContact
-            // 
-            this.naneContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.naneContact.Location = new System.Drawing.Point(139, 171);
-            this.naneContact.Name = "naneContact";
-            this.naneContact.Size = new System.Drawing.Size(235, 26);
-            this.naneContact.TabIndex = 5;
             // 
             // salesName
             // 
@@ -364,27 +354,17 @@ namespace OrderApp.FormView
             this.label4.Text = "Tài khoản FTP";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
+            // btnAddLienHe
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(380, 171);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 27);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(380, 212);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(35, 28);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAddLienHe.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnAddLienHe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddLienHe.Location = new System.Drawing.Point(380, 171);
+            this.btnAddLienHe.Name = "btnAddLienHe";
+            this.btnAddLienHe.Size = new System.Drawing.Size(35, 27);
+            this.btnAddLienHe.TabIndex = 17;
+            this.btnAddLienHe.Text = "+";
+            this.btnAddLienHe.UseVisualStyleBackColor = false;
+            this.btnAddLienHe.Click += new System.EventHandler(this.btnAddLienHe_Click);
             // 
             // tenKH
             // 
@@ -506,6 +486,16 @@ namespace OrderApp.FormView
             this.backBtn.Text = "Trở về";
             this.backBtn.UseVisualStyleBackColor = true;
             // 
+            // cbbContact
+            // 
+            this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbContact.FormattingEnabled = true;
+            this.cbbContact.Location = new System.Drawing.Point(139, 171);
+            this.cbbContact.Name = "cbbContact";
+            this.cbbContact.Size = new System.Drawing.Size(235, 27);
+            this.cbbContact.TabIndex = 26;
+            this.cbbContact.SelectedIndexChanged += new System.EventHandler(this.cbbContact_SelectedIndexChanged);
+            // 
             // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,6 +509,7 @@ namespace OrderApp.FormView
             this.MinimumSize = new System.Drawing.Size(745, 400);
             this.Name = "AddCustomer";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KhachHang";
             this.mainPnl.ResumeLayout(false);
             this.infoPnl.ResumeLayout(false);
@@ -536,14 +527,13 @@ namespace OrderApp.FormView
         private TableLayoutPanel mainPnl;
         private TableLayoutPanel infoPnl;
         private Label label10;
-        private Button button1;
+        private Button btnAddLienHe;
         private Label label6;
         private Label label9;
         private TextBox tenKH;
         private TextBox diachi;
         private TextBox email;
         private TextBox accFtp;
-        private TextBox naneContact;
         private TextBox salesName;
         private TextBox salesPercent;
         private TextBox giamGia;
@@ -558,7 +548,6 @@ namespace OrderApp.FormView
         private TextBox phoneContact;
         private Label label13;
         private DateTimePicker ngayHopTac;
-        private Button button3;
         private TableLayoutPanel notePnl;
         private Label label8;
         private TextBox notes;
@@ -567,5 +556,6 @@ namespace OrderApp.FormView
         private Button backBtn;
         private Label label14;
         private TextBox idKhachHang;
+        private ComboBox cbbContact;
     }
 }

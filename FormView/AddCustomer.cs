@@ -17,6 +17,9 @@ namespace OrderApp.FormView
 {
     public partial class AddCustomer : Form
     {
+
+        private List<LienHeObj> listLienHe = new List<LienHeObj>();
+
         public AddCustomer()
         {
             InitializeComponent();
@@ -60,6 +63,40 @@ namespace OrderApp.FormView
             // TODO:
             //destObj.listContracts = 
             return destObj;
+        }
+
+        private void btnAddLienHe_Click(object sender, EventArgs e)
+        {
+            FrmLienHe frmLienHe = new FrmLienHe();
+            frmLienHe.listLienHe = this.listLienHe;
+            frmLienHe.ShowDialog();
+
+            this.listLienHe = frmLienHe.listLienHe;
+            loadContact();
+        }
+
+        private void loadContact()
+        {
+            this.cbbContact.Items.Clear();
+            if (listLienHe.Count > 0)
+            {
+                foreach (LienHeObj lienHe in listLienHe)
+                {
+                    this.cbbContact.Items.Add(lienHe.name);
+                }
+                this.cbbContact.SelectedIndex = 0;
+                this.phoneContact.Text = listLienHe[0].phone;
+            }
+            
+        }
+
+        private void cbbContact_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int intSelected = cbbContact.SelectedIndex;
+            if (intSelected < listLienHe.Count)
+            {
+                phoneContact.Text = listLienHe[intSelected].phone;
+            }
         }
     }
 }
