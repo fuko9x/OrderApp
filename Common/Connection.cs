@@ -24,13 +24,18 @@ namespace OrderApp.Common
             strUrl += "Trusted_Connection=" + AppUtils.getAppConfig("TrustedConnection") + ";";
             strUrl += "connection timeout=" + AppUtils.getAppConfig("Timeout");
             con = new SqlConnection("server=LVBINH-PC;database=ORDERDB;UID=sa;password=123"); 
-        con.Open();
+            con.Open();
             return con; 
         }
 
         public static SqlCommand createSqlCommand(String strQuery)
         {
             return new SqlCommand(strQuery, con);
+        }
+
+        public static SqlDataAdapter createSqlDataAdaptre(String strQuery)
+        {
+            return new SqlDataAdapter(strQuery, con);
         }
     }
 }

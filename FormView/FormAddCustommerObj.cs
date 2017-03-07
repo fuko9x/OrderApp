@@ -8,6 +8,7 @@ namespace OrderApp.FormView
 {
     class FormAddCustommerObj
     {
+        public String idKH;
         public String tenKH;
         public String address;
         public String email;

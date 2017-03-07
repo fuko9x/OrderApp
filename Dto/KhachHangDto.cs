@@ -9,6 +9,7 @@ namespace OrderApp.Dto
     class KhachHangDto
     {
         public String Id;
+        public String IdKhachHang;
         public String tenKhachHang;
         public String email;
         public String accFtp;
