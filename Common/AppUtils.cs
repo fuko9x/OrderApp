@@ -10,7 +10,7 @@ namespace OrderApp.Common
     {
         public static String getAppConfig(String key)
         {
-            return System.Configuration.ConfigurationSettings.AppSettings[key];
+            return System.Configuration.ConfigurationManager.AppSettings[key];
         }
     }
 }
