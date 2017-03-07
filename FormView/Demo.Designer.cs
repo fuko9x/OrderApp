@@ -495,7 +495,6 @@ namespace OrderApp.FormView
             this.Name = "Demo";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "KhachHang";
-            this.SizeChanged += new System.EventHandler(this.form_Resize);
             this.mainPnl.ResumeLayout(false);
             this.infoPnl.ResumeLayout(false);
             this.infoPnl.PerformLayout();
