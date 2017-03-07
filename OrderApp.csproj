@@ -61,10 +61,11 @@
     <Compile Include="Common\LogicResult.cs" />
     <Compile Include="Common\StringUtils.cs" />
     <Compile Include="Dao\KhachHangDao.cs" />
+    <Compile Include="Dao\LienHeDao.cs" />
     <Compile Include="Dto\DemoDto.cs" />
     <Compile Include="Dto\KhachHangDto.cs" />
     <Compile Include="Dto\LienHeDto.cs" />
-    <Compile Include="FormView\FormAddCustommerObj.cs" />
+    <Compile Include="FormView\FormAddCustomerObj.cs" />
     <Compile Include="FormView\Demo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,7 +140,7 @@
     <Compile Include="FormView\SearchProduct.Designer.cs">
       <DependentUpon>SearchProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logic\CustommerLogic.cs" />
+    <Compile Include="Logic\CustomerLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormView\Demo.resx">

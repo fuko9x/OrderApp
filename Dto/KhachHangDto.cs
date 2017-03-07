@@ -8,9 +8,10 @@ namespace OrderApp.Dto
 {
     class KhachHangDto
     {
-        public String Id;
-        public String IdKhachHang;
+        public String id;
+        public String idKhachHang;
         public String tenKhachHang;
+        public String diaChi;
         public String email;
         public String accFtp;
         public float giamGia;
@@ -18,8 +19,8 @@ namespace OrderApp.Dto
         public float salesPercent;
         public String notes;
         public DateTime startDate;
-        public String ppVanChuyen;
-        public Boolean trangthaixuatkho;
+        public String vanChuyen;
+        public Boolean trangThaiXuatKho;
         public String createBy;
         public DateTime createTime;
         public String updateBy;

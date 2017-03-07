@@ -8,7 +8,7 @@ namespace OrderApp.Common
 {
     static class AppUtils
     {
-        public static String getAppConfig(string key)
+        public static String getAppConfig(String key)
         {
             return System.Configuration.ConfigurationSettings.AppSettings[key];
         }

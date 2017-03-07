@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using OrderApp.Common;
 using System.Data.SqlClient;
+using OrderApp.Logic;
 
 namespace OrderApp.FormView
 {
@@ -23,17 +24,26 @@ namespace OrderApp.FormView
 
         private void save_Click(object sender, EventArgs e)
         {
-            FormAddCustommerObj formObj = tranfersInput();
+            FormAddCustomerObj formObj = tranfersInput();
+            try
+            {
+                CustomerLogic logic = new CustomerLogic();
+                LogicResult result = logic.addCustommerLogic(formObj);
+            } catch
+            {
+
+            }
+             
         }
 
-        private FormAddCustommerObj tranfersInput()
+        private FormAddCustomerObj tranfersInput()
         {
-            FormAddCustommerObj destObj = new FormAddCustommerObj();
-            destObj.tenKH = StringUtils.Trim(this.tenKH.Text);
-            destObj.address = StringUtils.Trim(this.diachi.Text);
+            FormAddCustomerObj destObj = new FormAddCustomerObj();
+            destObj.tenKhachHang = StringUtils.Trim(this.tenKH.Text);
+            destObj.diaChi = StringUtils.Trim(this.diachi.Text);
             destObj.email = StringUtils.Trim(this.email.Text);
             destObj.accFtp = StringUtils.Trim(this.accFtp.Text);
-            destObj.salesName = StringUtils.Trim(this.salesName.Text);
+            destObj.sales = StringUtils.Trim(this.salesName.Text);
             if (this.salesPercent.Text != null)
             {
                 destObj.salesPercent = float.Parse(this.salesPercent.Text);
@@ -43,7 +53,7 @@ namespace OrderApp.FormView
                 destObj.giamGia = float.Parse(this.giamGia.Text);
             }
             destObj.vanChuyen = StringUtils.Trim(this.vanChuyen.Text);
-            destObj.startDate = DateTime.ParseExact(this.ngayHopTac.Text, "dd-MM-YYYY", null);
+            destObj.startDate = this.ngayHopTac.Value;
             destObj.notes = StringUtils.Trim(this.notes.Text);
             // TODO:
             //destObj.listContracts = 

@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace OrderApp.FormView
 {
-    class FormAddCustommerObj
+    class FormAddCustomerObj
     {
-        public String idKH;
-        public String tenKH;
-        public String address;
+        public String idKhachHang;
+        public String tenKhachHang;
+        public String diaChi;
         public String email;
         public String accFtp;
-        List<LienHeObj> listContracts;
-        public String salesName;
+        public List<LienHeObj> listContracts;
+        public String sales;
         public float salesPercent;
         public float giamGia;
         public String vanChuyen;
         public DateTime startDate;
         public String notes;
+        public Boolean trangThaiXuatKho;
+        public String user;
     }
 }
