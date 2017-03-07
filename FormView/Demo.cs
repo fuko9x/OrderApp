@@ -36,7 +36,8 @@ namespace OrderApp.FormView
         private FormAddCustommerObj tranfersInput()
         {
             FormAddCustommerObj destObj = new FormAddCustommerObj();
-            destObj.tenKH = StringUtils.trim(this.tenKH.Text);
+            destObj.tenKH = StringUtils.Trim(this.tenKH.Text);
+            return destObj;
         }
     }
 }

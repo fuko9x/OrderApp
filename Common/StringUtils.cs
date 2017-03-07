@@ -8,7 +8,7 @@ namespace OrderApp.Common
 {
     static class StringUtils
     {
-        static String trim(String str)
+        public static String Trim(String str)
         {
             if (str == null)
             {

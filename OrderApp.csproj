@@ -56,10 +56,12 @@
   <ItemGroup>
     <Compile Include="Common\AppUtils.cs" />
     <Compile Include="Common\Connection.cs" />
+    <Compile Include="Common\StringUtils.cs" />
     <Compile Include="Dao\DemoDao.cs" />
     <Compile Include="Dto\DemoDto.cs" />
     <Compile Include="Dto\KhachHangDto.cs" />
     <Compile Include="Dto\LienHeDto.cs" />
+    <Compile Include="FormView\FormAddCustommerObj.cs" />
     <Compile Include="FormView\Demo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +105,7 @@
     <Compile Include="FormView\EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\LienHeObj.cs" />
     <Compile Include="FormView\Order.cs">
       <SubType>Form</SubType>
     </Compile>
