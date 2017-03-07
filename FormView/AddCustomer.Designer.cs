@@ -37,7 +37,6 @@ namespace OrderApp.FormView
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.tenKH = new System.Windows.Forms.TextBox();
             this.diachi = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
             this.accFtp = new System.Windows.Forms.TextBox();
@@ -58,14 +57,15 @@ namespace OrderApp.FormView
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.tenKH = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.idKhachHang = new System.Windows.Forms.TextBox();
             this.notePnl = new System.Windows.Forms.TableLayoutPanel();
             this.notes = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.saveBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.idKhachHang = new System.Windows.Forms.TextBox();
             this.mainPnl.SuspendLayout();
             this.infoPnl.SuspendLayout();
             this.notePnl.SuspendLayout();
@@ -187,21 +187,13 @@ namespace OrderApp.FormView
             this.label9.Text = "Sales";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tenKH
-            // 
-            this.tenKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tenKH.Location = new System.Drawing.Point(564, 7);
-            this.tenKH.Name = "tenKH";
-            this.tenKH.Size = new System.Drawing.Size(238, 26);
-            this.tenKH.TabIndex = 0;
-            // 
             // diachi
             // 
             this.diachi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.diachi.Location = new System.Drawing.Point(139, 48);
             this.diachi.Name = "diachi";
             this.diachi.Size = new System.Drawing.Size(235, 26);
-            this.diachi.TabIndex = 1;
+            this.diachi.TabIndex = 2;
             // 
             // email
             // 
@@ -209,7 +201,7 @@ namespace OrderApp.FormView
             this.email.Location = new System.Drawing.Point(139, 89);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(235, 26);
-            this.email.TabIndex = 2;
+            this.email.TabIndex = 3;
             // 
             // accFtp
             // 
@@ -225,7 +217,7 @@ namespace OrderApp.FormView
             this.naneContact.Location = new System.Drawing.Point(139, 171);
             this.naneContact.Name = "naneContact";
             this.naneContact.Size = new System.Drawing.Size(235, 26);
-            this.naneContact.TabIndex = 3;
+            this.naneContact.TabIndex = 5;
             // 
             // salesName
             // 
@@ -241,7 +233,7 @@ namespace OrderApp.FormView
             this.salesPercent.Location = new System.Drawing.Point(564, 89);
             this.salesPercent.Name = "salesPercent";
             this.salesPercent.Size = new System.Drawing.Size(238, 26);
-            this.salesPercent.TabIndex = 9;
+            this.salesPercent.TabIndex = 8;
             // 
             // giamGia
             // 
@@ -249,7 +241,7 @@ namespace OrderApp.FormView
             this.giamGia.Location = new System.Drawing.Point(564, 130);
             this.giamGia.Name = "giamGia";
             this.giamGia.Size = new System.Drawing.Size(238, 26);
-            this.giamGia.TabIndex = 8;
+            this.giamGia.TabIndex = 9;
             // 
             // vanChuyen
             // 
@@ -269,7 +261,7 @@ namespace OrderApp.FormView
             this.label2.Size = new System.Drawing.Size(130, 41);
             this.label2.TabIndex = 12;
             this.label2.Text = "ID khách hàng";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -337,7 +329,7 @@ namespace OrderApp.FormView
             this.phoneContact.Location = new System.Drawing.Point(139, 213);
             this.phoneContact.Name = "phoneContact";
             this.phoneContact.Size = new System.Drawing.Size(235, 26);
-            this.phoneContact.TabIndex = 5;
+            this.phoneContact.TabIndex = 6;
             // 
             // label13
             // 
@@ -358,7 +350,7 @@ namespace OrderApp.FormView
             this.ngayHopTac.Location = new System.Drawing.Point(564, 213);
             this.ngayHopTac.Name = "ngayHopTac";
             this.ngayHopTac.Size = new System.Drawing.Size(238, 26);
-            this.ngayHopTac.TabIndex = 23;
+            this.ngayHopTac.TabIndex = 11;
             // 
             // label4
             // 
@@ -394,6 +386,33 @@ namespace OrderApp.FormView
             this.button3.Text = "+";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // tenKH
+            // 
+            this.tenKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tenKH.Location = new System.Drawing.Point(564, 7);
+            this.tenKH.Name = "tenKH";
+            this.tenKH.Size = new System.Drawing.Size(238, 26);
+            this.tenKH.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Location = new System.Drawing.Point(428, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(130, 41);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Tên Khách Hàng";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // idKhachHang
+            // 
+            this.idKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.idKhachHang.Location = new System.Drawing.Point(139, 7);
+            this.idKhachHang.Name = "idKhachHang";
+            this.idKhachHang.Size = new System.Drawing.Size(235, 26);
+            this.idKhachHang.TabIndex = 0;
+            // 
             // notePnl
             // 
             this.notePnl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -421,7 +440,7 @@ namespace OrderApp.FormView
             this.notes.Multiline = true;
             this.notes.Name = "notes";
             this.notes.Size = new System.Drawing.Size(799, 84);
-            this.notes.TabIndex = 19;
+            this.notes.TabIndex = 12;
             // 
             // label8
             // 
@@ -468,7 +487,7 @@ namespace OrderApp.FormView
             this.saveBtn.Location = new System.Drawing.Point(246, 3);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 31);
-            this.saveBtn.TabIndex = 0;
+            this.saveBtn.TabIndex = 13;
             this.saveBtn.Text = "Lưu";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
@@ -483,30 +502,11 @@ namespace OrderApp.FormView
             this.backBtn.Location = new System.Drawing.Point(489, 3);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(75, 31);
-            this.backBtn.TabIndex = 0;
+            this.backBtn.TabIndex = 14;
             this.backBtn.Text = "Trở về";
             this.backBtn.UseVisualStyleBackColor = true;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Location = new System.Drawing.Point(428, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(130, 41);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Tên Khách Hàng";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // idKhachHang
-            // 
-            this.idKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.idKhachHang.Location = new System.Drawing.Point(139, 7);
-            this.idKhachHang.Name = "idKhachHang";
-            this.idKhachHang.Size = new System.Drawing.Size(235, 26);
-            this.idKhachHang.TabIndex = 26;
-            // 
-            // Demo
+            // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -517,7 +517,7 @@ namespace OrderApp.FormView
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(745, 400);
-            this.Name = "Demo";
+            this.Name = "AddCustomer";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "KhachHang";
             this.mainPnl.ResumeLayout(false);
