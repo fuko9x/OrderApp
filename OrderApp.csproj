@@ -66,11 +66,11 @@
     <Compile Include="Dto\KhachHangDto.cs" />
     <Compile Include="Dto\LienHeDto.cs" />
     <Compile Include="FormView\FormAddCustomerObj.cs" />
-    <Compile Include="FormView\Demo.cs">
+    <Compile Include="FormView\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormView\Demo.Designer.cs">
-      <DependentUpon>Demo.cs</DependentUpon>
+    <Compile Include="FormView\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\DemoObj.cs" />
     <Compile Include="FormView\DetailProduct.cs">
@@ -143,8 +143,8 @@
     <Compile Include="Logic\CustomerLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormView\Demo.resx">
-      <DependentUpon>Demo.cs</DependentUpon>
+    <EmbeddedResource Include="FormView\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\DetailCustomer.resx">
       <DependentUpon>DetailCustomer.cs</DependentUpon>

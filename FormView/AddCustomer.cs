@@ -15,9 +15,9 @@ using OrderApp.Logic;
 
 namespace OrderApp.FormView
 {
-    public partial class Demo : Form
+    public partial class AddCustomer : Form
     {
-        public Demo()
+        public AddCustomer()
         {
             InitializeComponent();
         }

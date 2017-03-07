@@ -2,7 +2,7 @@
 
 namespace OrderApp.FormView
 {
-    partial class Demo
+    partial class AddCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace OrderApp.FormView
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Demo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCustomer));
             this.label1 = new System.Windows.Forms.Label();
             this.mainPnl = new System.Windows.Forms.TableLayoutPanel();
             this.infoPnl = new System.Windows.Forms.TableLayoutPanel();
