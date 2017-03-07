@@ -19,19 +19,11 @@ namespace OrderApp.FormView
         public Demo()
         {
             InitializeComponent();
-      //     this.mainPnl.Size = new System.Drawing.Size(this.Width - 30, this.Height - 31);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void save_Click(object sender, EventArgs e)
         {
-            SqlConnection con = Connection.getConnection();
-            if (con != null)
-            {
-                SqlDataReader reader = Connection.createSqlCommand("Select * From TEST").ExecuteReader();
-                reader.Read();
-                //this.label2.Text = reader.GetString(reader.GetOrdinal("column1"));
-            }
-
+           
         }
 
         private void form_Resize(object sender, EventArgs e)
@@ -39,17 +31,12 @@ namespace OrderApp.FormView
             this.mainPnl.Size = new System.Drawing.Size(this.Width - 58, this.Height - 162);
             this.infoPnl.Size= new System.Drawing.Size(this.mainPnl.Width - 58, this.mainPnl.Height - 162);
             this.notePnl.Size = new System.Drawing.Size(this.mainPnl.Width - 58, this.mainPnl.Height - 162);
-         //   this.btnPnl.Size = new System.Drawing.Size(this.Width - 30, this.Height - 50);
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private FormAddCustommerObj tranfersInput()
         {
-
-        }
-
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
+            FormAddCustommerObj destObj = new FormAddCustommerObj();
+            destObj.tenKH = StringUtils.trim(this.tenKH.Text);
         }
     }
 }

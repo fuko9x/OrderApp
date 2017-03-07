@@ -20,3 +20,14 @@ D:\OrderApp\obj\Debug\OrderApp.FormView.SearchCustomer.resources
 D:\OrderApp\obj\Debug\OrderApp.FormView.EditCustomer.resources
 D:\OrderApp\obj\Debug\OrderApp.FormView.DetailCustomer.resources
 D:\OrderApp\obj\Debug\OrderApp.FormView.Product.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.FormView.DetailCustomer.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.FormView.DetailOrder.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.FormView.Detail_Product.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.FormView.EditCustomer.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.FormView.EditOrder.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.FormView.EditProduct.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.FormView.Order.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.FormView.Product.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.FormView.SearchCustomer.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.FormView.SearchOrder.resources
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.FormView.SearchProduct.resources
