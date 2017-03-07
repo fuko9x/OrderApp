@@ -12,7 +12,7 @@ namespace OrderApp.FormView
         public String address;
         public String email;
         public String accFtp;
-        List<LienHeObj> listContractsl;
+        List<LienHeObj> listContracts;
         public String salesName;
         public float salesPercent;
         public float giamGia;

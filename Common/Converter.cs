@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderApp.Logic
+namespace OrderApp.Common
 {
-    class DemoLogic
+    class Converter
     {
+
     }
 }

@@ -23,20 +23,30 @@ namespace OrderApp.FormView
 
         private void save_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void form_Resize(object sender, EventArgs e)
-        {
-            this.mainPnl.Size = new System.Drawing.Size(this.Width - 58, this.Height - 162);
-            this.infoPnl.Size= new System.Drawing.Size(this.mainPnl.Width - 58, this.mainPnl.Height - 162);
-            this.notePnl.Size = new System.Drawing.Size(this.mainPnl.Width - 58, this.mainPnl.Height - 162);
+            FormAddCustommerObj formObj = tranfersInput();
         }
 
         private FormAddCustommerObj tranfersInput()
         {
             FormAddCustommerObj destObj = new FormAddCustommerObj();
             destObj.tenKH = StringUtils.Trim(this.tenKH.Text);
+            destObj.address = StringUtils.Trim(this.diachi.Text);
+            destObj.email = StringUtils.Trim(this.email.Text);
+            destObj.accFtp = StringUtils.Trim(this.accFtp.Text);
+            destObj.salesName = StringUtils.Trim(this.salesName.Text);
+            if (this.salesPercent.Text != null)
+            {
+                destObj.salesPercent = float.Parse(this.salesPercent.Text);
+            }
+            if (this.salesPercent.Text != null)
+            {
+                destObj.giamGia = float.Parse(this.giamGia.Text);
+            }
+            destObj.vanChuyen = StringUtils.Trim(this.vanChuyen.Text);
+            destObj.startDate = DateTime.ParseExact(this.ngayHopTac.Text, "dd-MM-YYYY", null);
+            destObj.notes = StringUtils.Trim(this.notes.Text);
+            // TODO:
+            //destObj.listContracts = 
             return destObj;
         }
     }
