@@ -142,6 +142,7 @@ namespace OrderApp.Dao
                 cmd.Parameters.AddWithValue("@createBy" + i, dto.createBy);
                 cmd.Parameters.AddWithValue("@createTime" + i, dto.createTime);
             }
+            cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
         }
 
