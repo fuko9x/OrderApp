@@ -45,6 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+bin/
 bin/Debug/OrderApp.exe
 bin/Debug/OrderApp.exe.config
 bin/Debug/OrderApp.pdb
