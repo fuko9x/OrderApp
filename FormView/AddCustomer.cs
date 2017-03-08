@@ -12,10 +12,12 @@ using System.Configuration;
 using OrderApp.Common;
 using System.Data.SqlClient;
 using OrderApp.Logic;
+using MaterialSkin.Controls;
+
 
 namespace OrderApp.FormView
 {
-    public partial class AddCustomer : Form
+    public partial class AddCustomer : MaterialForm
     {
 
         private List<LienHeObj> listLienHe = new List<LienHeObj>();
