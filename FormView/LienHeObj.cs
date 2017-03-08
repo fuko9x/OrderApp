@@ -10,5 +10,11 @@ namespace OrderApp.FormView
     {
         public String name;
         public String phone;
+
+        public LienHeObj(String name, String phone)
+        {
+            this.name = name;
+            this.phone = phone;
+        }
     }
 }

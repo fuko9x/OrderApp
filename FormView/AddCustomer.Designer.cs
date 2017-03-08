@@ -62,8 +62,8 @@ namespace OrderApp.FormView
             this.notes = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.saveBtn = new System.Windows.Forms.Button();
-            this.backBtn = new System.Windows.Forms.Button();
+            this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.saveBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mainPnl.SuspendLayout();
             this.infoPnl.SuspendLayout();
             this.notePnl.SuspendLayout();
@@ -86,7 +86,7 @@ namespace OrderApp.FormView
             this.mainPnl.RowCount = 2;
             this.mainPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.31579F));
             this.mainPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.68421F));
-            this.mainPnl.Size = new System.Drawing.Size(806, 334);
+            this.mainPnl.Size = new System.Drawing.Size(703, 334);
             this.mainPnl.TabIndex = 16;
             // 
             // infoPnl
@@ -135,7 +135,7 @@ namespace OrderApp.FormView
             this.infoPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66889F));
             this.infoPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66889F));
             this.infoPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.infoPnl.Size = new System.Drawing.Size(800, 215);
+            this.infoPnl.Size = new System.Drawing.Size(697, 215);
             this.infoPnl.TabIndex = 0;
             // 
             // label10
@@ -143,9 +143,9 @@ namespace OrderApp.FormView
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(427, 70);
+            this.label10.Location = new System.Drawing.Point(371, 70);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 35);
+            this.label10.Size = new System.Drawing.Size(112, 35);
             this.label10.TabIndex = 20;
             this.label10.Text = "% NV Sales";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -157,7 +157,7 @@ namespace OrderApp.FormView
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(3, 35);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 35);
+            this.label6.Size = new System.Drawing.Size(112, 35);
             this.label6.TabIndex = 16;
             this.label6.Text = "Địa chỉ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,68 +167,67 @@ namespace OrderApp.FormView
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.Location = new System.Drawing.Point(427, 35);
+            this.label9.Location = new System.Drawing.Point(371, 35);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 35);
+            this.label9.Size = new System.Drawing.Size(112, 35);
             this.label9.TabIndex = 19;
             this.label9.Text = "Sales";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // diachi
             // 
             this.diachi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.diachi.Location = new System.Drawing.Point(139, 39);
+            this.diachi.Location = new System.Drawing.Point(121, 39);
             this.diachi.Name = "diachi";
-            this.diachi.Size = new System.Drawing.Size(234, 26);
+            this.diachi.Size = new System.Drawing.Size(203, 26);
             this.diachi.TabIndex = 2;
             // 
             // email
             // 
             this.email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.email.Location = new System.Drawing.Point(139, 74);
+            this.email.Location = new System.Drawing.Point(121, 74);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(234, 26);
+            this.email.Size = new System.Drawing.Size(203, 26);
             this.email.TabIndex = 3;
             // 
             // accFtp
             // 
             this.accFtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.accFtp.Location = new System.Drawing.Point(139, 109);
+            this.accFtp.Location = new System.Drawing.Point(121, 109);
             this.accFtp.Name = "accFtp";
-            this.accFtp.Size = new System.Drawing.Size(234, 26);
+            this.accFtp.Size = new System.Drawing.Size(203, 26);
             this.accFtp.TabIndex = 4;
             // 
             // salesName
             // 
             this.salesName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.salesName.Location = new System.Drawing.Point(563, 39);
+            this.salesName.Location = new System.Drawing.Point(489, 39);
             this.salesName.Name = "salesName";
-            this.salesName.Size = new System.Drawing.Size(234, 26);
+            this.salesName.Size = new System.Drawing.Size(205, 26);
             this.salesName.TabIndex = 7;
             // 
             // salesPercent
             // 
             this.salesPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.salesPercent.Location = new System.Drawing.Point(563, 74);
+            this.salesPercent.Location = new System.Drawing.Point(489, 74);
             this.salesPercent.Name = "salesPercent";
-            this.salesPercent.Size = new System.Drawing.Size(234, 26);
+            this.salesPercent.Size = new System.Drawing.Size(205, 26);
             this.salesPercent.TabIndex = 8;
             // 
             // giamGia
             // 
             this.giamGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.giamGia.Location = new System.Drawing.Point(563, 109);
+            this.giamGia.Location = new System.Drawing.Point(489, 109);
             this.giamGia.Name = "giamGia";
-            this.giamGia.Size = new System.Drawing.Size(234, 26);
+            this.giamGia.Size = new System.Drawing.Size(205, 26);
             this.giamGia.TabIndex = 9;
             // 
             // vanChuyen
             // 
             this.vanChuyen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.vanChuyen.Location = new System.Drawing.Point(563, 144);
+            this.vanChuyen.Location = new System.Drawing.Point(489, 144);
             this.vanChuyen.Name = "vanChuyen";
-            this.vanChuyen.Size = new System.Drawing.Size(234, 26);
+            this.vanChuyen.Size = new System.Drawing.Size(205, 26);
             this.vanChuyen.TabIndex = 10;
             // 
             // label2
@@ -238,7 +237,7 @@ namespace OrderApp.FormView
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 35);
+            this.label2.Size = new System.Drawing.Size(112, 35);
             this.label2.TabIndex = 12;
             this.label2.Text = "ID khách hàng";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -250,7 +249,7 @@ namespace OrderApp.FormView
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(3, 70);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 35);
+            this.label3.Size = new System.Drawing.Size(112, 35);
             this.label3.TabIndex = 13;
             this.label3.Text = "Email";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -262,7 +261,7 @@ namespace OrderApp.FormView
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(3, 140);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 35);
+            this.label5.Size = new System.Drawing.Size(112, 35);
             this.label5.TabIndex = 15;
             this.label5.Text = "Người liên hệ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,7 +273,7 @@ namespace OrderApp.FormView
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(3, 175);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 40);
+            this.label7.Size = new System.Drawing.Size(112, 40);
             this.label7.TabIndex = 17;
             this.label7.Text = "SDT";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -284,9 +283,9 @@ namespace OrderApp.FormView
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.Location = new System.Drawing.Point(427, 105);
+            this.label11.Location = new System.Drawing.Point(371, 105);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(130, 35);
+            this.label11.Size = new System.Drawing.Size(112, 35);
             this.label11.TabIndex = 21;
             this.label11.Text = "% Giảm giá";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,9 +295,9 @@ namespace OrderApp.FormView
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.Location = new System.Drawing.Point(427, 140);
+            this.label12.Location = new System.Drawing.Point(371, 140);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(130, 35);
+            this.label12.Size = new System.Drawing.Size(112, 35);
             this.label12.TabIndex = 22;
             this.label12.Text = "Vận chuyển";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -306,9 +305,9 @@ namespace OrderApp.FormView
             // phoneContact
             // 
             this.phoneContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.phoneContact.Location = new System.Drawing.Point(139, 182);
+            this.phoneContact.Location = new System.Drawing.Point(121, 182);
             this.phoneContact.Name = "phoneContact";
-            this.phoneContact.Size = new System.Drawing.Size(234, 26);
+            this.phoneContact.Size = new System.Drawing.Size(203, 26);
             this.phoneContact.TabIndex = 6;
             // 
             // label13
@@ -316,9 +315,9 @@ namespace OrderApp.FormView
             this.label13.AutoSize = true;
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label13.Location = new System.Drawing.Point(427, 175);
+            this.label13.Location = new System.Drawing.Point(371, 175);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(130, 40);
+            this.label13.Size = new System.Drawing.Size(112, 40);
             this.label13.TabIndex = 22;
             this.label13.Text = "Ngày hợp tác ";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -327,9 +326,9 @@ namespace OrderApp.FormView
             // 
             this.ngayHopTac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ngayHopTac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngayHopTac.Location = new System.Drawing.Point(563, 182);
+            this.ngayHopTac.Location = new System.Drawing.Point(489, 182);
             this.ngayHopTac.Name = "ngayHopTac";
-            this.ngayHopTac.Size = new System.Drawing.Size(234, 26);
+            this.ngayHopTac.Size = new System.Drawing.Size(205, 26);
             this.ngayHopTac.TabIndex = 11;
             // 
             // label4
@@ -339,7 +338,7 @@ namespace OrderApp.FormView
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(3, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 35);
+            this.label4.Size = new System.Drawing.Size(112, 35);
             this.label4.TabIndex = 14;
             this.label4.Text = "Tài khoản FTP";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -348,7 +347,7 @@ namespace OrderApp.FormView
             // 
             this.btnAddLienHe.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAddLienHe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddLienHe.Location = new System.Drawing.Point(379, 144);
+            this.btnAddLienHe.Location = new System.Drawing.Point(330, 144);
             this.btnAddLienHe.Name = "btnAddLienHe";
             this.btnAddLienHe.Size = new System.Drawing.Size(35, 27);
             this.btnAddLienHe.TabIndex = 17;
@@ -359,18 +358,18 @@ namespace OrderApp.FormView
             // tenKH
             // 
             this.tenKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tenKH.Location = new System.Drawing.Point(563, 4);
+            this.tenKH.Location = new System.Drawing.Point(489, 4);
             this.tenKH.Name = "tenKH";
-            this.tenKH.Size = new System.Drawing.Size(234, 26);
+            this.tenKH.Size = new System.Drawing.Size(205, 26);
             this.tenKH.TabIndex = 1;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Location = new System.Drawing.Point(427, 0);
+            this.label14.Location = new System.Drawing.Point(371, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(130, 35);
+            this.label14.Size = new System.Drawing.Size(112, 35);
             this.label14.TabIndex = 25;
             this.label14.Text = "Tên Khách Hàng";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -378,18 +377,18 @@ namespace OrderApp.FormView
             // idKhachHang
             // 
             this.idKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.idKhachHang.Location = new System.Drawing.Point(139, 4);
+            this.idKhachHang.Location = new System.Drawing.Point(121, 4);
             this.idKhachHang.Name = "idKhachHang";
-            this.idKhachHang.Size = new System.Drawing.Size(234, 26);
+            this.idKhachHang.Size = new System.Drawing.Size(203, 26);
             this.idKhachHang.TabIndex = 0;
             // 
             // cbbContact
             // 
             this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbContact.FormattingEnabled = true;
-            this.cbbContact.Location = new System.Drawing.Point(139, 144);
+            this.cbbContact.Location = new System.Drawing.Point(121, 147);
             this.cbbContact.Name = "cbbContact";
-            this.cbbContact.Size = new System.Drawing.Size(234, 27);
+            this.cbbContact.Size = new System.Drawing.Size(203, 27);
             this.cbbContact.TabIndex = 26;
             this.cbbContact.SelectedIndexChanged += new System.EventHandler(this.cbbContact_SelectedIndexChanged);
             // 
@@ -408,18 +407,17 @@ namespace OrderApp.FormView
             this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.10092F));
             this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.89909F));
             this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
-            this.notePnl.Size = new System.Drawing.Size(800, 107);
+            this.notePnl.Size = new System.Drawing.Size(697, 107);
             this.notePnl.TabIndex = 1;
             // 
             // notes
             // 
-            this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.notes.Location = new System.Drawing.Point(3, 23);
             this.notes.Multiline = true;
             this.notes.Name = "notes";
-            this.notes.Size = new System.Drawing.Size(799, 71);
+            this.notes.Size = new System.Drawing.Size(691, 71);
             this.notes.TabIndex = 12;
             // 
             // label8
@@ -437,62 +435,61 @@ namespace OrderApp.FormView
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 10;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Controls.Add(this.saveBtn, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.backBtn, 6, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 419);
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel1.Controls.Add(this.btnClose, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.saveBtn, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 416);
             this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(690, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(805, 37);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(702, 40);
             this.tableLayoutPanel1.TabIndex = 17;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.AutoSize = true;
+            this.btnClose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClose.Depth = 0;
+            this.btnClose.Icon = null;
+            this.btnClose.Location = new System.Drawing.Point(545, 3);
+            this.btnClose.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Primary = true;
+            this.btnClose.Size = new System.Drawing.Size(154, 34);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.Text = "Đóng";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // saveBtn
             // 
-            this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.saveBtn.Location = new System.Drawing.Point(243, 3);
+            this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveBtn.AutoSize = true;
+            this.saveBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.saveBtn.Depth = 0;
+            this.saveBtn.Icon = null;
+            this.saveBtn.Location = new System.Drawing.Point(345, 3);
+            this.saveBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(74, 31);
-            this.saveBtn.TabIndex = 13;
-            this.saveBtn.Text = "Lưu";
+            this.saveBtn.Primary = true;
+            this.saveBtn.Size = new System.Drawing.Size(154, 34);
+            this.saveBtn.TabIndex = 15;
+            this.saveBtn.Text = "Thêm Mới";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
-            // backBtn
-            // 
-            this.backBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.backBtn.Location = new System.Drawing.Point(483, 3);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(74, 31);
-            this.backBtn.TabIndex = 14;
-            this.backBtn.Text = "Trở về";
-            this.backBtn.UseVisualStyleBackColor = true;
             // 
             // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(841, 468);
+            this.ClientSize = new System.Drawing.Size(745, 468);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.mainPnl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -507,6 +504,7 @@ namespace OrderApp.FormView
             this.notePnl.ResumeLayout(false);
             this.notePnl.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -540,10 +538,10 @@ namespace OrderApp.FormView
         private Label label8;
         private TextBox notes;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button saveBtn;
-        private Button backBtn;
         private Label label14;
         private TextBox idKhachHang;
         private ComboBox cbbContact;
+        private MaterialSkin.Controls.MaterialRaisedButton saveBtn;
+        private MaterialSkin.Controls.MaterialRaisedButton btnClose;
     }
 }

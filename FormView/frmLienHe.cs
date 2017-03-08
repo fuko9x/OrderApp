@@ -46,7 +46,7 @@ namespace OrderApp.FormView
 
             // Attach Subitems to the ListView
             listViewLienHe.Columns.Add("Người Liên Hệ", 200, HorizontalAlignment.Left);
-            listViewLienHe.Columns.Add("Điện Thoại", 250, HorizontalAlignment.Left);
+            listViewLienHe.Columns.Add("Điện Thoại", 200, HorizontalAlignment.Left);
         }
 
         private void loadData()
@@ -62,12 +62,16 @@ namespace OrderApp.FormView
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            LienHeObj lienHe = new LienHeObj();
-            lienHe.name = txtNguoiLienHe.Text;
-            lienHe.phone = txtDienThoai.Text;
-            listLienHe.Add(lienHe);
+            if (txtNguoiLienHe.Text.Trim() != "" && txtDienThoai.Text.Trim() != "")
+            {
+                LienHeObj lienHe = new LienHeObj(txtNguoiLienHe.Text, txtDienThoai.Text);
+                listLienHe.Add(lienHe);
 
-            loadData();
+                loadData();
+
+                txtNguoiLienHe.Text = "";
+                txtDienThoai.Text = "";
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
