@@ -173,7 +173,6 @@ namespace OrderApp.FormView
             this.label9.TabIndex = 19;
             this.label9.Text = "Sales";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // diachi
             // 
@@ -387,7 +386,7 @@ namespace OrderApp.FormView
             // 
             this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbContact.FormattingEnabled = true;
-            this.cbbContact.Location = new System.Drawing.Point(139, 144);
+            this.cbbContact.Location = new System.Drawing.Point(139, 147);
             this.cbbContact.Name = "cbbContact";
             this.cbbContact.Size = new System.Drawing.Size(234, 27);
             this.cbbContact.TabIndex = 26;
