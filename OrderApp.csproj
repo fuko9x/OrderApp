@@ -46,7 +46,9 @@
       <HintPath>LIBS\MaterialSkin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks">
+      <HintPath>LIBS\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -129,6 +131,7 @@
     <Compile Include="FormView\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\KhachHangSearchView.cs" />
     <Compile Include="FormView\LienHeObj.cs" />
     <Compile Include="FormView\Order.cs">
       <SubType>Form</SubType>
@@ -148,6 +151,7 @@
     <Compile Include="FormView\SearchCustomer.Designer.cs">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\FormSearchCustomerObj.cs" />
     <Compile Include="FormView\SearchOrder.cs">
       <SubType>Form</SubType>
     </Compile>
