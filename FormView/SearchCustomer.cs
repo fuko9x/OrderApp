@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using OrderApp.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,13 +21,24 @@ namespace OrderApp.FormView
 
         private void search_Click(object sender, EventArgs e)
         {
+            try
+            {
+                FormSearchCustomerObj frmObj = tranfersInput();
 
+            } catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+            
         }
 
         private FormSearchCustomerObj tranfersInput()
         {
             FormSearchCustomerObj obj = new FormSearchCustomerObj();
-           // obj.idKhachHang = this;
+            obj.idKhachHang = StringUtils.Trim(this.idKhachHang.Text);
+            obj.tenKhachHang = StringUtils.Trim(this.tenKhachHang.Text);
+            obj.sales = StringUtils.Trim(this.sales.Text);
+            //obj.trangThaiNo = this.trangthaiNo;
             return obj;
         }
     }

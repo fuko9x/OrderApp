@@ -11,7 +11,7 @@ namespace OrderApp.FormView
         public String idKhachHang;
         public String tenKhachHang;
         public String sales;
-        public Boolean trangThaiXuatKho;
+        public Boolean trangThaiNo;
         public List<KhachHangSearchView> listKhachHang;
     }
 }
