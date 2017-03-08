@@ -69,6 +69,13 @@ namespace OrderApp.FormView
 
         private void btnAddLienHe_Click(object sender, EventArgs e)
         {
+            if(this.listLienHe.Count <= 0)
+            {
+                if(cbbContact.Text.Trim() != "")
+                {
+                    this.listLienHe.Add(new LienHeObj(cbbContact.Text.Trim(), phoneContact.Text.Trim()));
+                }
+            }
             FrmLienHe frmLienHe = new FrmLienHe();
             frmLienHe.listLienHe = this.listLienHe;
             frmLienHe.ShowDialog();
@@ -101,9 +108,9 @@ namespace OrderApp.FormView
             }
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

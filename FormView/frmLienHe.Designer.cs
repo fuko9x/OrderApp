@@ -122,7 +122,7 @@
             this.groupBox2.Controls.Add(this.listViewLienHe);
             this.groupBox2.Location = new System.Drawing.Point(12, 224);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(417, 113);
+            this.groupBox2.Size = new System.Drawing.Size(417, 135);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách";
@@ -134,7 +134,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewLienHe.Location = new System.Drawing.Point(7, 20);
             this.listViewLienHe.Name = "listViewLienHe";
-            this.listViewLienHe.Size = new System.Drawing.Size(404, 87);
+            this.listViewLienHe.Size = new System.Drawing.Size(404, 109);
             this.listViewLienHe.TabIndex = 0;
             this.listViewLienHe.UseCompatibleStateImageBehavior = false;
             // 
@@ -142,10 +142,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 349);
+            this.ClientSize = new System.Drawing.Size(444, 371);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmLienHe";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thông Tin Liên Hệ";
             this.Load += new System.EventHandler(this.FrmLienHe_Load);
