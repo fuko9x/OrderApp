@@ -61,8 +61,9 @@ namespace OrderApp.FormView
             destObj.vanChuyen = StringUtils.Trim(this.vanChuyen.Text);
             destObj.startDate = this.ngayHopTac.Value;
             destObj.notes = StringUtils.Trim(this.notes.Text);
-            destObj.listContracts = this.listLienHe;
             destObj.user = "BINH";
+            // TODO:
+            //destObj.listContracts = 
             return destObj;
         }
 
@@ -98,6 +99,11 @@ namespace OrderApp.FormView
             {
                 phoneContact.Text = listLienHe[intSelected].phone;
             }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
