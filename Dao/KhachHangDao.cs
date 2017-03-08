@@ -107,7 +107,7 @@ namespace OrderApp.Dao
                 + ", CREATE_TIME"
                 + " )"
                 + " VALUES ";
-            for (int i=0; i < listKH.Count; i++)
+            for (int i = 0; i < listKH.Count; i++)
             {
                 sql += "("
                 + " @idKhachHang" + i
@@ -143,9 +143,75 @@ namespace OrderApp.Dao
                 cmd.Parameters.AddWithValue("@createBy" + i, dto.createBy);
                 cmd.Parameters.AddWithValue("@createTime" + i, dto.createTime);
             }
+        }
+            public void update(KhachHangDto dto)
+        {
+            SqlCommand cmd = new SqlCommand("Update  KHACH_HANG SET"
+                 + "("
+                 + " TEN_KHACH_HANG"
+                 + ", EMAIL"
+                 + ", ACC FTP"
+                 + ", TEN_KHACH_HANG"
+                  + ", CREATE_BY"
+                + ", CREATE_TIME"
+                + ")"
+                 + " = ("
+                 + " @tenKhachHang"
+                 + ", @diaChi"
+                 + ", @email"
+                + ", @accFtp"
+                 + ", @createBy"
+                + ", @createTime"
+                + ")");
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@tenKhachHang", dto.tenKhachHang);
+            cmd.Parameters.AddWithValue("@diaChi", dto.diaChi);
+            cmd.Parameters.AddWithValue("@email", dto.email);
+            cmd.Parameters.AddWithValue("@accFtp", dto.accFtp);
+            cmd.Parameters.AddWithValue("@createBy", dto.createBy);
+            cmd.Parameters.AddWithValue("@createTime", dto.createTime);
+            cmd.ExecuteNonQuery();
+        }
+        public void updateList(List<KhachHangDto> listKH)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            String sql = "Update KHACH_HANG SET"
+                     + "("
+                     + " TEN_KHACH_HANG"
+                     + ", EMAIL"
+                     + ", ACC FTP"
+                     + ", TEN_KHACH_HANG"
+                     + ", CREATE_BY"
+                     + ", CREATE_TIME"
+                     + ")"
+                     + " = ";
+            for (int i = 0; i < listKH.Count; i++)
+            {
+                sql += "("
+                + " @tenKhachHang" + i
+                + ", @diaChi" + i
+                + ", @email" + i
+                + ", @accFtp" + i
+                + ", @createBy" + i
+                + ", @createTime" + i
+                + " )"
+                ;
+                KhachHangDto dto = listKH[i];
+
+                cmd.Parameters.AddWithValue("@tenKhachHang" + i, dto.tenKhachHang);
+                cmd.Parameters.AddWithValue("@diaChi" + i, dto.diaChi);
+                cmd.Parameters.AddWithValue("@email" + i, dto.email);
+                cmd.Parameters.AddWithValue("@accFtp" + i, dto.accFtp);
+                cmd.Parameters.AddWithValue("@createBy" + i, dto.createBy);
+                cmd.Parameters.AddWithValue("@createTime" + i, dto.createTime);
+            }
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
         }
+
 
     }
 }

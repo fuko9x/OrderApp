@@ -58,13 +58,13 @@ namespace OrderApp.FormView
             this.tenKH = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.idKhachHang = new System.Windows.Forms.TextBox();
+            this.cbbContact = new System.Windows.Forms.ComboBox();
             this.notePnl = new System.Windows.Forms.TableLayoutPanel();
             this.notes = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.saveBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
-            this.cbbContact = new System.Windows.Forms.ComboBox();
             this.mainPnl.SuspendLayout();
             this.infoPnl.SuspendLayout();
             this.notePnl.SuspendLayout();
@@ -74,11 +74,11 @@ namespace OrderApp.FormView
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(12, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(450, 31);
+            this.label1.Size = new System.Drawing.Size(394, 26);
             this.label1.TabIndex = 15;
             this.label1.Text = "NHẬP THÔNG TIN KHÁCH HÀNG";
             // 
@@ -184,6 +184,7 @@ namespace OrderApp.FormView
             this.label9.TabIndex = 19;
             this.label9.Text = "Sales";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // diachi
             // 
@@ -393,6 +394,16 @@ namespace OrderApp.FormView
             this.idKhachHang.Size = new System.Drawing.Size(235, 26);
             this.idKhachHang.TabIndex = 0;
             // 
+            // cbbContact
+            // 
+            this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbContact.FormattingEnabled = true;
+            this.cbbContact.Location = new System.Drawing.Point(139, 174);
+            this.cbbContact.Name = "cbbContact";
+            this.cbbContact.Size = new System.Drawing.Size(235, 27);
+            this.cbbContact.TabIndex = 26;
+            this.cbbContact.SelectedIndexChanged += new System.EventHandler(this.cbbContact_SelectedIndexChanged);
+            // 
             // notePnl
             // 
             this.notePnl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -485,16 +496,6 @@ namespace OrderApp.FormView
             this.backBtn.TabIndex = 14;
             this.backBtn.Text = "Trở về";
             this.backBtn.UseVisualStyleBackColor = true;
-            // 
-            // cbbContact
-            // 
-            this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbContact.FormattingEnabled = true;
-            this.cbbContact.Location = new System.Drawing.Point(139, 171);
-            this.cbbContact.Name = "cbbContact";
-            this.cbbContact.Size = new System.Drawing.Size(235, 27);
-            this.cbbContact.TabIndex = 26;
-            this.cbbContact.SelectedIndexChanged += new System.EventHandler(this.cbbContact_SelectedIndexChanged);
             // 
             // AddCustomer
             // 

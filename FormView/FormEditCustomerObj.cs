@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OrderApp.FormView
+{
+    class FormEditCustomerObj
+    {   
+        public String tenKhachHang;
+        public String diaChi;
+        public String email;
+        public String accFtp;
+        public List<LienHeObj> listContracts; 
+        public String user;
+    }
+}

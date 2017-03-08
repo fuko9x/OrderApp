@@ -112,6 +112,7 @@
     <Compile Include="FormView\EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\FormEditCustomerObj.cs" />
     <Compile Include="FormView\FrmLienHe.cs">
       <SubType>Form</SubType>
     </Compile>

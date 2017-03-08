@@ -65,5 +65,12 @@ namespace OrderApp.Logic
             dto.updateBy = obj.user;
             return dto;
         }
+        //private KhachHangDto updateKhachHangDto(FormAddCustomerObj obj)
+        //{
+        //    KhachHangDto dto = new KhachHangDto();
+
+        //    return dto;
+        //}
+       
     }
 }

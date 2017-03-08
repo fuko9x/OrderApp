@@ -32,20 +32,20 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
+            this.diachi = new System.Windows.Forms.TextBox();
+            this.accFtp = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tenKhachHang = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.editBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
+            this.cbbContact = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -54,11 +54,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(44, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(399, 24);
+            this.label1.Size = new System.Drawing.Size(462, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "CHỈNH SỬA THÔNG TIN KHÁCH HÀNG";
             // 
@@ -95,20 +95,20 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox6, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox5, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.textBox4, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.textBox2, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.email, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.diachi, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.accFtp, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.label6, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tenKhachHang, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBox3, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.editBtn, 4, 1);
             this.tableLayoutPanel2.Controls.Add(this.backBtn, 4, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cbbContact, 3, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 207);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
@@ -119,45 +119,35 @@
             this.tableLayoutPanel2.TabIndex = 1;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
-            // textBox6
+            // email
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(123, 141);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(175, 20);
-            this.textBox6.TabIndex = 12;
+            this.email.Location = new System.Drawing.Point(123, 141);
+            this.email.Multiline = true;
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(175, 20);
+            this.email.TabIndex = 12;
             // 
-            // textBox5
+            // diachi
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.diachi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(424, 72);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(175, 20);
-            this.textBox5.TabIndex = 11;
+            this.diachi.Location = new System.Drawing.Point(123, 72);
+            this.diachi.Multiline = true;
+            this.diachi.Name = "diachi";
+            this.diachi.Size = new System.Drawing.Size(175, 20);
+            this.diachi.TabIndex = 10;
             // 
-            // textBox4
+            // accFtp
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.accFtp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(123, 72);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(175, 20);
-            this.textBox4.TabIndex = 10;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(424, 3);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 20);
-            this.textBox2.TabIndex = 8;
+            this.accFtp.Location = new System.Drawing.Point(424, 3);
+            this.accFtp.Multiline = true;
+            this.accFtp.Name = "accFtp";
+            this.accFtp.Size = new System.Drawing.Size(175, 20);
+            this.accFtp.TabIndex = 8;
             // 
             // label7
             // 
@@ -220,15 +210,15 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "SDT";
             // 
-            // textBox1
+            // tenKhachHang
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tenKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(123, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 7;
+            this.tenKhachHang.Location = new System.Drawing.Point(123, 3);
+            this.tenKhachHang.Multiline = true;
+            this.tenKhachHang.Name = "tenKhachHang";
+            this.tenKhachHang.Size = new System.Drawing.Size(175, 20);
+            this.tenKhachHang.TabIndex = 7;
             // 
             // textBox3
             // 
@@ -260,6 +250,16 @@
             this.backBtn.Text = "Trở về";
             this.backBtn.UseVisualStyleBackColor = true;
             // 
+            // cbbContact
+            // 
+            this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbContact.FormattingEnabled = true;
+            this.cbbContact.Location = new System.Drawing.Point(424, 72);
+            this.cbbContact.Name = "cbbContact";
+            this.cbbContact.Size = new System.Drawing.Size(175, 21);
+            this.cbbContact.TabIndex = 13;
+            // 
             // EditCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,13 +290,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox diachi;
+        private System.Windows.Forms.TextBox accFtp;
         private System.Windows.Forms.Button editBtn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tenKhachHang;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.ComboBox cbbContact;
     }
 }
