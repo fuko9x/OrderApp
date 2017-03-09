@@ -50,14 +50,10 @@ namespace OrderApp.FormView
             destObj.email = StringUtils.Trim(this.email.Text);
             destObj.accFtp = StringUtils.Trim(this.accFtp.Text);
             destObj.sales = StringUtils.Trim(this.salesName.Text);
-            if (this.salesPercent.Text != null && this.salesPercent.Text != "")
-            {
-                destObj.salesPercent = float.Parse(this.salesPercent.Text);
-            }
-            if (this.giamGia.Text != null && this.giamGia.Text != "")
-            {
-                destObj.giamGia = float.Parse(this.giamGia.Text);
-            }
+
+            destObj.salesPercent = (float)this.salesPercent.Value;
+            destObj.giamGia = (float)this.giamGia.Value;
+
             destObj.vanChuyen = StringUtils.Trim(this.vanChuyen.Text);
             destObj.startDate = this.ngayHopTac.Value;
             destObj.notes = StringUtils.Trim(this.notes.Text);

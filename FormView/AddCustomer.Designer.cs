@@ -33,15 +33,15 @@ namespace OrderApp.FormView
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCustomer));
             this.mainPnl = new System.Windows.Forms.TableLayoutPanel();
             this.infoPnl = new System.Windows.Forms.TableLayoutPanel();
+            this.giamGia = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.salesPercent = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.diachi = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
             this.accFtp = new System.Windows.Forms.TextBox();
             this.salesName = new System.Windows.Forms.TextBox();
-            this.salesPercent = new System.Windows.Forms.TextBox();
-            this.giamGia = new System.Windows.Forms.TextBox();
             this.vanChuyen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,13 +59,15 @@ namespace OrderApp.FormView
             this.idKhachHang = new System.Windows.Forms.TextBox();
             this.cbbContact = new System.Windows.Forms.ComboBox();
             this.notePnl = new System.Windows.Forms.TableLayoutPanel();
-            this.notes = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.notes = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
             this.saveBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mainPnl.SuspendLayout();
             this.infoPnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.giamGia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesPercent)).BeginInit();
             this.notePnl.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -98,15 +100,15 @@ namespace OrderApp.FormView
             this.infoPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.infoPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17F));
             this.infoPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.infoPnl.Controls.Add(this.giamGia, 4, 3);
             this.infoPnl.Controls.Add(this.label10, 3, 2);
             this.infoPnl.Controls.Add(this.label6, 0, 1);
+            this.infoPnl.Controls.Add(this.salesPercent, 4, 2);
             this.infoPnl.Controls.Add(this.label9, 3, 1);
             this.infoPnl.Controls.Add(this.diachi, 1, 1);
             this.infoPnl.Controls.Add(this.email, 1, 2);
             this.infoPnl.Controls.Add(this.accFtp, 1, 3);
             this.infoPnl.Controls.Add(this.salesName, 4, 1);
-            this.infoPnl.Controls.Add(this.salesPercent, 4, 2);
-            this.infoPnl.Controls.Add(this.giamGia, 4, 3);
             this.infoPnl.Controls.Add(this.vanChuyen, 4, 4);
             this.infoPnl.Controls.Add(this.label2, 0, 0);
             this.infoPnl.Controls.Add(this.label3, 0, 2);
@@ -138,6 +140,15 @@ namespace OrderApp.FormView
             this.infoPnl.Size = new System.Drawing.Size(697, 215);
             this.infoPnl.TabIndex = 0;
             // 
+            // giamGia
+            // 
+            this.giamGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.giamGia.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.giamGia.Location = new System.Drawing.Point(489, 109);
+            this.giamGia.Name = "giamGia";
+            this.giamGia.Size = new System.Drawing.Size(205, 26);
+            this.giamGia.TabIndex = 18;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -162,6 +173,15 @@ namespace OrderApp.FormView
             this.label6.Text = "Địa chỉ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // salesPercent
+            // 
+            this.salesPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.salesPercent.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.salesPercent.Location = new System.Drawing.Point(489, 74);
+            this.salesPercent.Name = "salesPercent";
+            this.salesPercent.Size = new System.Drawing.Size(205, 26);
+            this.salesPercent.TabIndex = 17;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -171,7 +191,7 @@ namespace OrderApp.FormView
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(112, 35);
             this.label9.TabIndex = 19;
-            this.label9.Text = "Sales";
+            this.label9.Text = "NV Sales";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // diachi
@@ -205,22 +225,6 @@ namespace OrderApp.FormView
             this.salesName.Name = "salesName";
             this.salesName.Size = new System.Drawing.Size(205, 26);
             this.salesName.TabIndex = 7;
-            // 
-            // salesPercent
-            // 
-            this.salesPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.salesPercent.Location = new System.Drawing.Point(489, 74);
-            this.salesPercent.Name = "salesPercent";
-            this.salesPercent.Size = new System.Drawing.Size(205, 26);
-            this.salesPercent.TabIndex = 8;
-            // 
-            // giamGia
-            // 
-            this.giamGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.giamGia.Location = new System.Drawing.Point(489, 109);
-            this.giamGia.Name = "giamGia";
-            this.giamGia.Size = new System.Drawing.Size(205, 26);
-            this.giamGia.TabIndex = 9;
             // 
             // vanChuyen
             // 
@@ -397,28 +401,17 @@ namespace OrderApp.FormView
             this.notePnl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.notePnl.ColumnCount = 1;
-            this.notePnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.notePnl.Controls.Add(this.notes, 0, 1);
+            this.notePnl.ColumnCount = 2;
+            this.notePnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.07317F));
+            this.notePnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.92683F));
             this.notePnl.Controls.Add(this.label8, 0, 0);
+            this.notePnl.Controls.Add(this.notes, 1, 0);
             this.notePnl.Location = new System.Drawing.Point(3, 224);
             this.notePnl.Name = "notePnl";
-            this.notePnl.RowCount = 3;
-            this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.10092F));
-            this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.89909F));
-            this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
+            this.notePnl.RowCount = 1;
+            this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.notePnl.Size = new System.Drawing.Size(697, 107);
             this.notePnl.TabIndex = 1;
-            // 
-            // notes
-            // 
-            this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.notes.Location = new System.Drawing.Point(3, 23);
-            this.notes.Multiline = true;
-            this.notes.Name = "notes";
-            this.notes.Size = new System.Drawing.Size(691, 71);
-            this.notes.TabIndex = 12;
             // 
             // label8
             // 
@@ -429,6 +422,16 @@ namespace OrderApp.FormView
             this.label8.Size = new System.Drawing.Size(55, 19);
             this.label8.TabIndex = 18;
             this.label8.Text = "Ghi chú";
+            // 
+            // notes
+            // 
+            this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.notes.Location = new System.Drawing.Point(122, 3);
+            this.notes.Multiline = true;
+            this.notes.Name = "notes";
+            this.notes.Size = new System.Drawing.Size(572, 104);
+            this.notes.TabIndex = 12;
             // 
             // tableLayoutPanel1
             // 
@@ -501,6 +504,8 @@ namespace OrderApp.FormView
             this.mainPnl.ResumeLayout(false);
             this.infoPnl.ResumeLayout(false);
             this.infoPnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.giamGia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesPercent)).EndInit();
             this.notePnl.ResumeLayout(false);
             this.notePnl.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -521,8 +526,6 @@ namespace OrderApp.FormView
         private TextBox email;
         private TextBox accFtp;
         private TextBox salesName;
-        private TextBox salesPercent;
-        private TextBox giamGia;
         private TextBox vanChuyen;
         private Label label2;
         private Label label3;
@@ -543,5 +546,7 @@ namespace OrderApp.FormView
         private ComboBox cbbContact;
         private MaterialSkin.Controls.MaterialRaisedButton saveBtn;
         private MaterialSkin.Controls.MaterialRaisedButton btnClose;
+        private NumericUpDown giamGia;
+        private NumericUpDown salesPercent;
     }
 }
