@@ -39,5 +39,24 @@ namespace OrderApp.Dao
             }
             cmd.ExecuteNonQuery();
         }
-    }
+
+        public List<LienHeDto> getListLienHe(String idKhachHang)
+        {
+            String strQuery = "SELECT TEN, SDT FROM LIEN_HE WHERE ID_KHACH_HANG = @idKhachHang";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@idKhachHang", idKhachHang);
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<LienHeDto> listLienHeDto = new List<LienHeDto>();
+            while (reader.Read())
+            {
+                LienHeDto dto = new LienHeDto();
+                dto.name = reader.GetString(0);
+                dto.phone = reader.GetString(1);
+                listLienHeDto.Add(dto);
+            }
+            return listLienHeDto;
+        }
+    }  
 }
