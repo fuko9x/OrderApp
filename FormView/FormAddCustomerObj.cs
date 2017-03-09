@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrderApp.FormView;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OrderApp.FormView
 {
-    class FormAddCustomerObj
+    public class FormAddCustomerObj
     {
         public String idKhachHang;
         public String tenKhachHang;
@@ -20,7 +21,7 @@ namespace OrderApp.FormView
         public String vanChuyen;
         public DateTime startDate;
         public String notes;
-        public Boolean trangThaiXuatKho;
+        public Boolean trangThaiNo;
         public String user;
     }
 }

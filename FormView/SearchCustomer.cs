@@ -1,5 +1,6 @@
 ﻿using MaterialSkin.Controls;
 using OrderApp.Common;
+using OrderApp.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,10 @@ namespace OrderApp.FormView
             try
             {
                 FormSearchCustomerObj frmObj = tranfersInput();
+                CustomerLogic logic = new CustomerLogic();
+                LogicResult result = logic.searchCustomerLogic(frmObj);
+                FormSearchCustomerObj outputObj = (FormSearchCustomerObj)result.obj;
+                this.listKhachHang.DataSource = outputObj.listKhachHangs;
 
             } catch(Exception ex)
             {

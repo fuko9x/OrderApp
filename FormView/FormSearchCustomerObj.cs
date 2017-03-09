@@ -1,5 +1,7 @@
-﻿using System;
+﻿using OrderApp.FormView;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ namespace OrderApp.FormView
         public String tenKhachHang;
         public String sales;
         public Boolean trangThaiNo;
-        public List<KhachHangSearchView> listKhachHang;
+        //public List<KhachHangSearchView> listKhachHang;
+        public DataTable listKhachHangs;
     }
 }

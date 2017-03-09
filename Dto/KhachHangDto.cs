@@ -20,11 +20,14 @@ namespace OrderApp.Dto
         public String notes;
         public DateTime startDate;
         public String vanChuyen;
-        public Boolean trangThaiXuatKho;
+        public Boolean trangThaiNo;
         public String createBy;
         public DateTime createTime;
         public String updateBy;
         public DateTime updateTime;
         public List<LienHeDto> listLienHe;
+
+        // mode search trangThaiNo
+        public Boolean isSearchTrangThai;
     }
 }

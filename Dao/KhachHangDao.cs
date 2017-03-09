@@ -78,7 +78,7 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@notes", dto.notes);
             cmd.Parameters.AddWithValue("@startDate", dto.startDate);
             cmd.Parameters.AddWithValue("@vanChuyen", dto.vanChuyen);
-            cmd.Parameters.AddWithValue("@trangthaixuatkho", dto.trangThaiXuatKho);
+            cmd.Parameters.AddWithValue("@trangthaixuatkho", dto.trangThaiNo);
             cmd.Parameters.AddWithValue("@createBy", dto.createBy);
             cmd.Parameters.AddWithValue("@createTime", dto.createTime);
             cmd.ExecuteNonQuery();
@@ -139,7 +139,7 @@ namespace OrderApp.Dao
                 cmd.Parameters.AddWithValue("@notes" + i, dto.notes);
                 cmd.Parameters.AddWithValue("@startDate" + i, dto.startDate);
                 cmd.Parameters.AddWithValue("@vanChuyen" + i, dto.vanChuyen);
-                cmd.Parameters.AddWithValue("@trangthaixuatkho" + i, dto.trangThaiXuatKho);
+                cmd.Parameters.AddWithValue("@trangthaixuatkho" + i, dto.trangThaiNo);
                 cmd.Parameters.AddWithValue("@createBy" + i, dto.createBy);
                 cmd.Parameters.AddWithValue("@createTime" + i, dto.createTime);
             }
@@ -212,6 +212,67 @@ namespace OrderApp.Dao
             cmd.ExecuteNonQuery();
         }
 
+        public DataTable getListKhachHang(KhachHangDto dto)
+        {
+            String strQuery = "SELECT "
+                 + " ID_KHACH_HANG"
+                + ", TEN_KHACH_HANG"
+                + ", DIA_CHI"
+                + ", GIAM_GIA"
+                + ", TEN_SALES"
+                + ", GHI_CHU"
+                + ", TRANG_THAI"
+                + " FROM KHACH_HANG WHERE";
+            if (StringUtils.isNotBlank(dto.idKhachHang))
+            {
+                strQuery += " ID_KHACH_HANG = @idKhachHang AND";
+            }
+            if (StringUtils.isNotBlank(dto.tenKhachHang))
+            {
+                strQuery += " TEN_KHACH_HANG like %@tenKhachHang% AND";
+            }
+            if (StringUtils.isNotBlank(dto.sales))
+            {
+                strQuery += " TEN_SALES like %@sales% AND";
+            }
+            if (dto.isSearchTrangThai)
+            {
+                strQuery += " TRANG_THAI = @trangThaiNo";
+            }
 
+            if(strQuery.EndsWith("AND"))
+            {
+                strQuery = strQuery.PadRight(3);
+            }
+            if (strQuery.EndsWith("WHERE"))
+            {
+                strQuery = strQuery.Substring(0, strQuery.Length - 5);
+            }
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            if (StringUtils.isNotBlank(dto.idKhachHang))
+            {
+                cmd.Parameters.AddWithValue("@idKhachHang", dto.idKhachHang);
+            }
+            if (StringUtils.isNotBlank(dto.tenKhachHang))
+            {
+                cmd.Parameters.AddWithValue("@tenKhachHang", dto.tenKhachHang);
+            }
+            if (StringUtils.isNotBlank(dto.sales))
+            {
+                cmd.Parameters.AddWithValue("@sales", dto.sales);
+            }
+            if (dto.isSearchTrangThai)
+            {
+                cmd.Parameters.AddWithValue("@trangThaiNo", dto.trangThaiNo);
+            }
+            
+            SqlDataReader reader = cmd.ExecuteReader();
+            DataTable dtTable = new DataTable();
+            dtTable.Load(reader);
+            reader.Close();
+            return dtTable;
+        }
     }
 }

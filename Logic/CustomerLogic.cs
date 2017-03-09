@@ -32,6 +32,15 @@ namespace OrderApp.Logic
             return new LogicResult(Contanst.MSG_INFO, msg, null);
         }
 
+        public LogicResult searchCustomerLogic(FormSearchCustomerObj obj)
+        {
+            KhachHangDto khDto = createKhachHangDto(obj);
+            KhachHangDao khDao = new KhachHangDao();
+            obj.listKhachHangs = khDao.getListKhachHang(khDto);
+            String msg = "";
+            return new LogicResult(Contanst.MSG_INFO, msg, obj);
+        }
+
         private List<LienHeDto> createListLienHeDto(FormAddCustomerObj obj)
         {
             List<LienHeDto> listDto = new List<LienHeDto>();
@@ -60,9 +69,18 @@ namespace OrderApp.Logic
             dto.notes = obj.notes;
             dto.startDate = obj.startDate;
             dto.vanChuyen = obj.vanChuyen;
-            dto.trangThaiXuatKho = obj.trangThaiXuatKho;
+            dto.trangThaiNo = obj.trangThaiNo;
             dto.createBy = obj.user;
             dto.updateBy = obj.user;
+            return dto;
+        }
+
+        private KhachHangDto createKhachHangDto(FormSearchCustomerObj obj)
+        {
+            KhachHangDto dto = new KhachHangDto();
+            dto.idKhachHang = obj.idKhachHang;
+            dto.tenKhachHang = obj.tenKhachHang;
+            dto.sales = obj.sales;
             return dto;
         }
         //private KhachHangDto updateKhachHangDto(FormAddCustomerObj obj)
@@ -71,6 +89,6 @@ namespace OrderApp.Logic
 
         //    return dto;
         //}
-       
+
     }
 }

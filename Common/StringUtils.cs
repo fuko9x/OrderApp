@@ -16,5 +16,23 @@ namespace OrderApp.Common
             }
             return str.Trim();
         }
+
+        public static Boolean isBlank(String str)
+        {
+            if (str == null || Trim(str) == "")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static Boolean isNotBlank(String str)
+        {
+            if (str == null || Trim(str) == "")
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

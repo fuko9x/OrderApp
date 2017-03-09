@@ -31,11 +31,13 @@
             this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tenKhachHang = new System.Windows.Forms.TextBox();
             this.sales = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.idKhachHang = new System.Windows.Forms.TextBox();
+            this.lbName = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,9 +45,7 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tenKhachHang = new System.Windows.Forms.TextBox();
-            this.lbName = new System.Windows.Forms.Label();
+            this.listKhachHang = new System.Windows.Forms.DataGridView();
             this.mainPanel.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -53,7 +53,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -115,23 +115,33 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(809, 100);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
+            // tenKhachHang
+            // 
+            this.tenKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tenKhachHang.Location = new System.Drawing.Point(148, 36);
+            this.tenKhachHang.Multiline = true;
+            this.tenKhachHang.Name = "tenKhachHang";
+            this.tenKhachHang.Size = new System.Drawing.Size(212, 20);
+            this.tenKhachHang.TabIndex = 8;
+            // 
             // sales
             // 
             this.sales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.sales.Location = new System.Drawing.Point(451, 3);
+            this.sales.Location = new System.Drawing.Point(511, 3);
             this.sales.Multiline = true;
             this.sales.Name = "sales";
-            this.sales.Size = new System.Drawing.Size(186, 20);
+            this.sales.Size = new System.Drawing.Size(212, 20);
             this.sales.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(323, 0);
+            this.label1.Location = new System.Drawing.Point(366, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 33);
+            this.label1.Size = new System.Drawing.Size(68, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tên Sales";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,7 +154,7 @@
             this.lbID.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbID.Location = new System.Drawing.Point(3, 0);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(112, 33);
+            this.lbID.Size = new System.Drawing.Size(139, 33);
             this.lbID.TabIndex = 0;
             this.lbID.Text = "ID Khách Hàng";
             this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -153,9 +163,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(323, 42);
+            this.label5.Location = new System.Drawing.Point(366, 33);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 33);
+            this.label5.Size = new System.Drawing.Size(97, 19);
             this.label5.TabIndex = 4;
             this.label5.Text = "Trạng Thái Nợ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,11 +174,23 @@
             // 
             this.idKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.idKhachHang.Location = new System.Drawing.Point(131, 3);
+            this.idKhachHang.Location = new System.Drawing.Point(148, 3);
             this.idKhachHang.Multiline = true;
             this.idKhachHang.Name = "idKhachHang";
-            this.idKhachHang.Size = new System.Drawing.Size(186, 20);
+            this.idKhachHang.Size = new System.Drawing.Size(212, 20);
             this.idKhachHang.TabIndex = 6;
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbName.Location = new System.Drawing.Point(3, 33);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(139, 33);
+            this.lbName.TabIndex = 1;
+            this.lbName.Text = "Tên Khách Hàng";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel4
             // 
@@ -205,7 +227,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.listKhachHang, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 157);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -266,38 +288,13 @@
             this.backBtn.Text = "Trở về";
             this.backBtn.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // listKhachHang
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(862, 146);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // tenKhachHang
-            // 
-            this.tenKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tenKhachHang.Location = new System.Drawing.Point(131, 45);
-            this.tenKhachHang.Multiline = true;
-            this.tenKhachHang.Name = "tenKhachHang";
-            this.tenKhachHang.Size = new System.Drawing.Size(186, 20);
-            this.tenKhachHang.TabIndex = 8;
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbName.Location = new System.Drawing.Point(3, 42);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(112, 33);
-            this.lbName.TabIndex = 1;
-            this.lbName.Text = "Tên Khách Hàng";
-            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.listKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listKhachHang.Location = new System.Drawing.Point(3, 3);
+            this.listKhachHang.Name = "listKhachHang";
+            this.listKhachHang.Size = new System.Drawing.Size(862, 146);
+            this.listKhachHang.TabIndex = 1;
             // 
             // SearchCustomer
             // 
@@ -315,7 +312,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listKhachHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,7 +332,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView listKhachHang;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.TextBox tenKhachHang;
         private System.Windows.Forms.Label lbName;

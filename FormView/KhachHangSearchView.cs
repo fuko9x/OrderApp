@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderApp.FormView
 {
-    class KhachHangSearchView
+    public class KhachHangSearchView
     {
         public String idKhachHang;
         public String tenKhachHang;
