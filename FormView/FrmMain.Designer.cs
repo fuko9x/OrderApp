@@ -33,6 +33,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.linkOrderList = new System.Windows.Forms.Label();
+            this.linkCreateOrder = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -49,7 +51,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.lblListSanPham = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.linkAdd = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -86,10 +88,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialTabSelector1.BaseTabControl = null;
             this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(0, 467);
+            this.materialTabSelector1.Location = new System.Drawing.Point(0, 505);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(855, 24);
+            this.materialTabSelector1.Size = new System.Drawing.Size(897, 24);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
@@ -101,7 +103,7 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(15, 142);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(822, 266);
+            this.groupBox1.Size = new System.Drawing.Size(864, 266);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -128,7 +130,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(785, 219);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(827, 219);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel4
@@ -137,13 +139,39 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Peru;
+            this.panel4.Controls.Add(this.linkOrderList);
+            this.panel4.Controls.Add(this.linkCreateOrder);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.pictureBox5);
             this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel4.Location = new System.Drawing.Point(271, 124);
+            this.panel4.Location = new System.Drawing.Point(285, 124);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(242, 92);
+            this.panel4.Size = new System.Drawing.Size(256, 92);
             this.panel4.TabIndex = 3;
+            // 
+            // linkOrderList
+            // 
+            this.linkOrderList.AutoSize = true;
+            this.linkOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.linkOrderList.ForeColor = System.Drawing.Color.Maroon;
+            this.linkOrderList.Location = new System.Drawing.Point(88, 39);
+            this.linkOrderList.Name = "linkOrderList";
+            this.linkOrderList.Size = new System.Drawing.Size(150, 15);
+            this.linkOrderList.TabIndex = 5;
+            this.linkOrderList.Text = "- Danh sách Đơn hàng";
+            this.linkOrderList.Click += new System.EventHandler(this.linkOrderList_Click);
+            // 
+            // linkCreateOrder
+            // 
+            this.linkCreateOrder.AutoSize = true;
+            this.linkCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.linkCreateOrder.ForeColor = System.Drawing.Color.Maroon;
+            this.linkCreateOrder.Location = new System.Drawing.Point(88, 15);
+            this.linkCreateOrder.Name = "linkCreateOrder";
+            this.linkCreateOrder.Size = new System.Drawing.Size(68, 15);
+            this.linkCreateOrder.TabIndex = 4;
+            this.linkCreateOrder.Text = "- Tạo mới";
+            this.linkCreateOrder.Click += new System.EventHandler(this.linkCreateOrder_Click);
             // 
             // label6
             // 
@@ -177,7 +205,7 @@
             this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel3.Location = new System.Drawing.Point(3, 124);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(242, 92);
+            this.panel3.Size = new System.Drawing.Size(256, 92);
             this.panel3.TabIndex = 2;
             // 
             // label5
@@ -213,9 +241,9 @@
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.panel2.Location = new System.Drawing.Point(271, 3);
+            this.panel2.Location = new System.Drawing.Point(285, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(242, 95);
+            this.panel2.Size = new System.Drawing.Size(256, 95);
             this.panel2.TabIndex = 1;
             // 
             // lblListKhachHang
@@ -223,7 +251,7 @@
             this.lblListKhachHang.AutoSize = true;
             this.lblListKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.lblListKhachHang.ForeColor = System.Drawing.Color.Maroon;
-            this.lblListKhachHang.Location = new System.Drawing.Point(101, 43);
+            this.lblListKhachHang.Location = new System.Drawing.Point(88, 43);
             this.lblListKhachHang.Name = "lblListKhachHang";
             this.lblListKhachHang.Size = new System.Drawing.Size(115, 15);
             this.lblListKhachHang.TabIndex = 4;
@@ -235,7 +263,7 @@
             this.lblThemMoi.AutoSize = true;
             this.lblThemMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.lblThemMoi.ForeColor = System.Drawing.Color.Maroon;
-            this.lblThemMoi.Location = new System.Drawing.Point(101, 22);
+            this.lblThemMoi.Location = new System.Drawing.Point(88, 21);
             this.lblThemMoi.Name = "lblThemMoi";
             this.lblThemMoi.Size = new System.Drawing.Size(80, 15);
             this.lblThemMoi.TabIndex = 3;
@@ -255,7 +283,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::OrderApp.Properties.Resources.User_icon;
+            this.pictureBox2.Image = global::OrderApp.Properties.Resources.contact_icon;
             this.pictureBox2.Location = new System.Drawing.Point(12, 13);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(56, 52);
@@ -274,7 +302,7 @@
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(242, 95);
+            this.panel1.Size = new System.Drawing.Size(256, 95);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -290,7 +318,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::OrderApp.Properties.Resources.report;
+            this.pictureBox1.Image = global::OrderApp.Properties.Resources.report_icon;
             this.pictureBox1.Location = new System.Drawing.Point(12, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(56, 52);
@@ -306,13 +334,13 @@
             this.panel5.BackColor = System.Drawing.Color.BurlyWood;
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.lblListSanPham);
-            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.linkAdd);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.pictureBox3);
             this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel5.Location = new System.Drawing.Point(539, 3);
+            this.panel5.Location = new System.Drawing.Point(567, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(243, 95);
+            this.panel5.Size = new System.Drawing.Size(257, 95);
             this.panel5.TabIndex = 4;
             // 
             // label13
@@ -320,7 +348,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.label13.ForeColor = System.Drawing.Color.Maroon;
-            this.label13.Location = new System.Drawing.Point(94, 62);
+            this.label13.Location = new System.Drawing.Point(86, 54);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(83, 15);
             this.label13.TabIndex = 7;
@@ -331,23 +359,24 @@
             this.lblListSanPham.AutoSize = true;
             this.lblListSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.lblListSanPham.ForeColor = System.Drawing.Color.Maroon;
-            this.lblListSanPham.Location = new System.Drawing.Point(94, 41);
+            this.lblListSanPham.Location = new System.Drawing.Point(85, 33);
             this.lblListSanPham.Name = "lblListSanPham";
-            this.lblListSanPham.Size = new System.Drawing.Size(115, 15);
+            this.lblListSanPham.Size = new System.Drawing.Size(154, 15);
             this.lblListSanPham.TabIndex = 6;
-            this.lblListSanPham.Text = "- Xem danh sách";
+            this.lblListSanPham.Text = "- Danh sách Sản Phẩm";
             this.lblListSanPham.Click += new System.EventHandler(this.lblListSanPham_Click);
             // 
-            // label12
+            // linkAdd
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label12.ForeColor = System.Drawing.Color.Maroon;
-            this.label12.Location = new System.Drawing.Point(94, 20);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 15);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "- Thêm Mới";
+            this.linkAdd.AutoSize = true;
+            this.linkAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.linkAdd.ForeColor = System.Drawing.Color.Maroon;
+            this.linkAdd.Location = new System.Drawing.Point(85, 12);
+            this.linkAdd.Name = "linkAdd";
+            this.linkAdd.Size = new System.Drawing.Size(80, 15);
+            this.linkAdd.TabIndex = 5;
+            this.linkAdd.Text = "- Thêm Mới";
+            this.linkAdd.Click += new System.EventHandler(this.linkAdd_Click);
             // 
             // label4
             // 
@@ -379,9 +408,9 @@
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.pictureBox6);
             this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel6.Location = new System.Drawing.Point(539, 124);
+            this.panel6.Location = new System.Drawing.Point(567, 124);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(243, 92);
+            this.panel6.Size = new System.Drawing.Size(257, 92);
             this.panel6.TabIndex = 5;
             // 
             // label7
@@ -397,7 +426,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::OrderApp.Properties.Resources.report;
+            this.pictureBox6.Image = global::OrderApp.Properties.Resources.report_icon;
             this.pictureBox6.Location = new System.Drawing.Point(14, 15);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(56, 52);
@@ -412,9 +441,9 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 467);
+            this.label1.Location = new System.Drawing.Point(0, 505);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(855, 23);
+            this.label1.Size = new System.Drawing.Size(897, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Công ty TNHH In Ấn Hình Ảnh Tuyệt Vời";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -429,7 +458,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.31579F));
             this.tableLayoutPanel2.Controls.Add(this.lblUserName, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.linkLabel1, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(603, 69);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(645, 69);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -498,7 +527,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 492);
+            this.ClientSize = new System.Drawing.Size(898, 530);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.label1);
@@ -568,8 +597,10 @@
         private System.Windows.Forms.Label lblListKhachHang;
         private System.Windows.Forms.Label lblThemMoi;
         private System.Windows.Forms.Label lblListSanPham;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label linkAdd;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label linkOrderList;
+        private System.Windows.Forms.Label linkCreateOrder;
     }
 }

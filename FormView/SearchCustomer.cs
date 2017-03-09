@@ -47,15 +47,21 @@ namespace OrderApp.FormView
             return obj;
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void saveBtn_Click(object sender, EventArgs e)
         {
             AddCustomer frmAdd = new AddCustomer();
             frmAdd.Show();
+            this.Close();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            EditCustomer frmEdit = new EditCustomer();
+            frmEdit.ShowDialog(this);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

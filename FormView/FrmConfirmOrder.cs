@@ -11,21 +11,21 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class EditCustomer : MaterialForm
+    public partial class FrmConfirmOrder : MaterialForm
     {
-        public EditCustomer()
+        public FrmConfirmOrder()
         {
             InitializeComponent();
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        private void saveOK_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

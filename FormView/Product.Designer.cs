@@ -112,11 +112,10 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(707, 295);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.68317F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.65347F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.66337F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(707, 101);
             this.tableLayoutPanel2.TabIndex = 2;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -124,7 +123,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(3, 98);
+            this.label6.Location = new System.Drawing.Point(3, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 19);
             this.label6.TabIndex = 4;
@@ -144,7 +143,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(356, 98);
+            this.label5.Location = new System.Drawing.Point(356, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 19);
             this.label5.TabIndex = 3;
@@ -173,7 +172,7 @@
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(144, 101);
+            this.textBox2.Location = new System.Drawing.Point(144, 35);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(206, 20);
             this.textBox2.TabIndex = 10;
@@ -187,7 +186,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "15 x 15",
             "15 x 20"});
-            this.comboBox1.Location = new System.Drawing.Point(144, 199);
+            this.comboBox1.Location = new System.Drawing.Point(144, 69);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(206, 21);
             this.comboBox1.TabIndex = 7;
@@ -196,7 +195,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(3, 196);
+            this.label7.Location = new System.Drawing.Point(3, 66);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 19);
             this.label7.TabIndex = 5;
@@ -210,7 +209,7 @@
             this.comboBox3.Items.AddRange(new object[] {
             "15 x 15",
             "15 x 20"});
-            this.comboBox3.Location = new System.Drawing.Point(497, 101);
+            this.comboBox3.Location = new System.Drawing.Point(497, 35);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(207, 21);
             this.comboBox3.TabIndex = 7;
@@ -229,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(898, 530);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Product";
             this.Text = "THÔNG TIN SẢN PHẨM";

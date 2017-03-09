@@ -24,14 +24,35 @@ namespace OrderApp.FormView
             frmCustomer.Show();
         }
 
-        private void lblListSanPham_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void lblListKhachHang_Click(object sender, EventArgs e)
         {
             SearchCustomer frmSearch = new SearchCustomer();
+            frmSearch.Show();
+        }
+
+        private void linkCreateOrder_Click(object sender, EventArgs e)
+        {
+            AddOrder frmOrder = new AddOrder();
+            frmOrder.ShowDialog(this);
+        }
+
+        private void linkOrderList_Click(object sender, EventArgs e)
+        {
+            SearchOrder frmSearch = new SearchOrder();
+            frmSearch.ShowDialog(this);
+        }
+
+        private void linkAdd_Click(object sender, EventArgs e)
+        {
+            AddProduct frmAddProduct = new AddProduct();
+            frmAddProduct.ShowDialog();
+        }
+
+        private void lblListSanPham_Click(object sender, EventArgs e)
+        {
+            SearchProduct frmSearch = new SearchProduct();
             frmSearch.Show();
         }
     }

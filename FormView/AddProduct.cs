@@ -11,11 +11,21 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class Order : MaterialForm
+    public partial class AddProduct : MaterialForm
     {
-        public Order()
+        public AddProduct()
         {
             InitializeComponent();
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

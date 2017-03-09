@@ -13,6 +13,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,7 +53,10 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <ApplicationIcon>App-Icon.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>OrderApp.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -50,6 +68,8 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +92,12 @@
     <Compile Include="Dto\DemoDto.cs" />
     <Compile Include="Dto\KhachHangDto.cs" />
     <Compile Include="Dto\LienHeDto.cs" />
+    <Compile Include="FormView\AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormView\FormAddCustomerObj.cs" />
     <Compile Include="FormView\AddCustomer.cs">
       <SubType>Form</SubType>
@@ -118,6 +144,12 @@
     </Compile>
     <Compile Include="FormView\FormEditCustomerObj.cs" />
     <Compile Include="FormView\FormSearchCustomerObj.cs" />
+    <Compile Include="FormView\FrmConfirmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\FrmConfirmOrder.Designer.cs">
+      <DependentUpon>FrmConfirmOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormView\FrmLienHe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,11 +170,11 @@
     </Compile>
     <Compile Include="FormView\KhachHangSearchView.cs" />
     <Compile Include="FormView\LienHeObj.cs" />
-    <Compile Include="FormView\Order.cs">
+    <Compile Include="FormView\AddOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormView\Order.Designer.cs">
-      <DependentUpon>Order.cs</DependentUpon>
+    <Compile Include="FormView\AddOrder.Designer.cs">
+      <DependentUpon>AddOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\Product.cs">
       <SubType>Form</SubType>
@@ -174,6 +206,9 @@
     <EmbeddedResource Include="FormView\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormView\AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormView\DetailCustomer.resx">
       <DependentUpon>DetailCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +227,9 @@
     <EmbeddedResource Include="FormView\EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormView\FrmConfirmOrder.resx">
+      <DependentUpon>FrmConfirmOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormView\FrmLienHe.resx">
       <DependentUpon>FrmLienHe.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,8 +239,8 @@
     <EmbeddedResource Include="FormView\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormView\Order.resx">
-      <DependentUpon>Order.cs</DependentUpon>
+    <EmbeddedResource Include="FormView\AddOrder.resx">
+      <DependentUpon>AddOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
@@ -218,18 +256,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -240,11 +278,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App-Icon.ico" />
+    <None Include="icon.ico" />
     <None Include="Resources\User-icon.png" />
     <None Include="Resources\report.jpg" />
     <None Include="Resources\graphic_report_icon.jpg" />
     <None Include="Resources\analysis-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

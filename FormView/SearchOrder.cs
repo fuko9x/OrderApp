@@ -17,5 +17,39 @@ namespace OrderApp.FormView
         {
             InitializeComponent();
         }
+
+        private void actionSearch()
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            EditOrder frmOrderEdit = new EditOrder();
+            frmOrderEdit.ShowDialog(this);
+
+            this.actionSearch();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            actionSearch();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            AddOrder frmAdd = new AddOrder();
+            frmAdd.ShowDialog(this);
+        }
     }
 }
