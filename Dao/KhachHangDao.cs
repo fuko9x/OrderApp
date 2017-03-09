@@ -242,7 +242,7 @@ namespace OrderApp.Dao
 
             if(strQuery.EndsWith("AND"))
             {
-                strQuery = strQuery.PadRight(3);
+                strQuery = strQuery.Substring(0, strQuery.Length - 3);
             }
             if (strQuery.EndsWith("WHERE"))
             {
