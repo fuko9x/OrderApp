@@ -67,11 +67,14 @@
     <Compile Include="Common\Converter.cs" />
     <Compile Include="Common\LogicResult.cs" />
     <Compile Include="Common\StringUtils.cs" />
+    <Compile Include="Dao\CommonDao.cs" />
     <Compile Include="Dao\KhachHangDao.cs" />
     <Compile Include="Dao\LienHeDao.cs" />
+    <Compile Include="Dao\OrderDao.cs" />
     <Compile Include="Dto\DemoDto.cs" />
     <Compile Include="Dto\KhachHangDto.cs" />
     <Compile Include="Dto\LienHeDto.cs" />
+    <Compile Include="Dto\OrderDto.cs" />
     <Compile Include="FormView\FormAddCustomerObj.cs" />
     <Compile Include="FormView\AddCustomer.cs">
       <SubType>Form</SubType>
@@ -116,6 +119,7 @@
     <Compile Include="FormView\EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\FormAddOrderObj.cs" />
     <Compile Include="FormView\FormEditCustomerObj.cs" />
     <Compile Include="FormView\FormSearchCustomerObj.cs" />
     <Compile Include="FormView\FrmLienHe.cs">
@@ -168,7 +172,9 @@
     <Compile Include="FormView\SearchProduct.Designer.cs">
       <DependentUpon>SearchProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\subFormProductObj.cs" />
     <Compile Include="Logic\CustomerLogic.cs" />
+    <Compile Include="Logic\OrderLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormView\AddCustomer.resx">

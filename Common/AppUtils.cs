@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrderApp.Dao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,11 @@ namespace OrderApp.Common
         public static String getAppConfig(String key)
         {
             return System.Configuration.ConfigurationManager.AppSettings[key];
+        }
+
+        public static DateTime getServerTime()
+        {
+            return new CommonDao().getServerTime();
         }
     }
 }

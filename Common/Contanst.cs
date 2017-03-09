@@ -11,5 +11,7 @@ namespace OrderApp.Common
         public static String MSG_ERROR = "ERR";
         public static String MSG_WARNING = "WARN";
         public static String MSG_INFO = "INFO";
+
+        public static String DATETIME_FORMAT_MMYYYY = "MMyyyy";
     }
 }

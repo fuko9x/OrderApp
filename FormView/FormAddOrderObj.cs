@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderApp.Dto
+namespace OrderApp.FormView
 {
-    class OrderDto
+    class FormAddOrderObj
     {
         public String id;
         public String idKhachHang;
@@ -18,7 +18,6 @@ namespace OrderApp.Dto
         public int phiVanChuyen;
         public String notes;
         public String phone;
-        public Boolean thanhToan;
-        public String user;
+        public List<subFormProductObj> listProduct;
     }
 }
