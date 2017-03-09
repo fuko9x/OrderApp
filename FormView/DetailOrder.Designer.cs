@@ -31,9 +31,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -43,9 +45,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -98,16 +97,6 @@
             this.label14.TabIndex = 3;
             this.label14.Text = "label14";
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label16.Location = new System.Drawing.Point(3, 98);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(100, 19);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Tài khoản FTP";
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -127,6 +116,36 @@
             this.label18.Size = new System.Drawing.Size(51, 19);
             this.label18.TabIndex = 0;
             this.label18.Text = "Số tiền";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label16.Location = new System.Drawing.Point(3, 98);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(100, 19);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Tài khoản FTP";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label10.Location = new System.Drawing.Point(3, 196);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 19);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Thời gian tạo ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label11.Location = new System.Drawing.Point(177, 196);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 19);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "label14";
             // 
             // tableLayoutPanel2
             // 
@@ -232,53 +251,20 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "ID Order";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(33, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "CHI TIẾT ĐƠN ĐẶT HÀNG";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(3, 196);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 19);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Thời gian tạo ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.Location = new System.Drawing.Point(177, 196);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 19);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "label14";
-            // 
             // DetailOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.label1);
             this.Name = "DetailOrder";
-            this.Text = "DetailOrder";
+            this.Text = "Chi Tiết Đơn Đặt Hàng";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -294,7 +280,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;

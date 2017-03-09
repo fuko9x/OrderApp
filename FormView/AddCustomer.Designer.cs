@@ -147,7 +147,7 @@ namespace OrderApp.FormView
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(112, 35);
             this.label10.TabIndex = 20;
-            this.label10.Text = "% NV Sales";
+            this.label10.Text = "NV Sales (%)";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
@@ -287,7 +287,7 @@ namespace OrderApp.FormView
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(112, 35);
             this.label11.TabIndex = 21;
-            this.label11.Text = "% Giảm giá";
+            this.label11.Text = "Giảm giá (%)";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label12
@@ -386,7 +386,7 @@ namespace OrderApp.FormView
             // 
             this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbContact.FormattingEnabled = true;
-            this.cbbContact.Location = new System.Drawing.Point(121, 147);
+            this.cbbContact.Location = new System.Drawing.Point(121, 144);
             this.cbbContact.Name = "cbbContact";
             this.cbbContact.Size = new System.Drawing.Size(203, 27);
             this.cbbContact.TabIndex = 26;

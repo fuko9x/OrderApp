@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class Order : Form
+    public partial class Order : MaterialForm
     {
         public Order()
         {

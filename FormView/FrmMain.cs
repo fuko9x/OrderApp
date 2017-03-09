@@ -17,5 +17,11 @@ namespace OrderApp.FormView
         {
             InitializeComponent();
         }
+
+        private void lblThemMoi_Click(object sender, EventArgs e)
+        {
+            AddCustomer frmCustomer = new AddCustomer();
+            frmCustomer.Show();
+        }
     }
 }

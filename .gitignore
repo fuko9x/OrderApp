@@ -53,3 +53,6 @@ obj/Debug/OrderApp.csproj.GenerateResource.Cache
 bin/Debug/OrderApp.exe
 bin/Debug/OrderApp.vshost.exe.config
 bin/Debug/OrderApp.exe
+bin/Release/OrderApp.pdb
+*.exe
+bin/Release/OrderApp.exe
