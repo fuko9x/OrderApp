@@ -39,17 +39,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblListKhachHang = new System.Windows.Forms.Label();
             this.lblThemMoi = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblListSanPham = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -208,7 +207,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.MistyRose;
-            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.lblListKhachHang);
             this.panel2.Controls.Add(this.lblThemMoi);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.pictureBox2);
@@ -219,16 +218,17 @@
             this.panel2.Size = new System.Drawing.Size(242, 95);
             this.panel2.TabIndex = 1;
             // 
-            // label10
+            // lblListKhachHang
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label10.ForeColor = System.Drawing.Color.Maroon;
-            this.label10.Location = new System.Drawing.Point(101, 43);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 15);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "- Xem danh sách";
+            this.lblListKhachHang.AutoSize = true;
+            this.lblListKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblListKhachHang.ForeColor = System.Drawing.Color.Maroon;
+            this.lblListKhachHang.Location = new System.Drawing.Point(101, 43);
+            this.lblListKhachHang.Name = "lblListKhachHang";
+            this.lblListKhachHang.Size = new System.Drawing.Size(115, 15);
+            this.lblListKhachHang.TabIndex = 4;
+            this.lblListKhachHang.Text = "- Xem danh sách";
+            this.lblListKhachHang.Click += new System.EventHandler(this.lblListKhachHang_Click);
             // 
             // lblThemMoi
             // 
@@ -269,7 +269,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.materialFlatButton1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -277,22 +276,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(242, 95);
             this.panel1.TabIndex = 0;
-            // 
-            // materialFlatButton1
-            // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(80, 11);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(72, 36);
-            this.materialFlatButton1.TabIndex = 2;
-            this.materialFlatButton1.Text = "Report";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -322,7 +305,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.BurlyWood;
             this.panel5.Controls.Add(this.label13);
-            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.lblListSanPham);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.pictureBox3);
@@ -343,16 +326,17 @@
             this.label13.TabIndex = 7;
             this.label13.Text = "- In Báo Giá";
             // 
-            // label9
+            // lblListSanPham
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label9.ForeColor = System.Drawing.Color.Maroon;
-            this.label9.Location = new System.Drawing.Point(94, 41);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 15);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "- Xem danh sách";
+            this.lblListSanPham.AutoSize = true;
+            this.lblListSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblListSanPham.ForeColor = System.Drawing.Color.Maroon;
+            this.lblListSanPham.Location = new System.Drawing.Point(94, 41);
+            this.lblListSanPham.Name = "lblListSanPham";
+            this.lblListSanPham.Size = new System.Drawing.Size(115, 15);
+            this.lblListSanPham.TabIndex = 6;
+            this.lblListSanPham.Text = "- Xem danh sách";
+            this.lblListSanPham.Click += new System.EventHandler(this.lblListSanPham_Click);
             // 
             // label12
             // 
@@ -581,12 +565,11 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblListKhachHang;
         private System.Windows.Forms.Label lblThemMoi;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblListSanPham;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
         private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

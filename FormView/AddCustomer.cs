@@ -29,15 +29,15 @@ namespace OrderApp.FormView
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            FormAddCustomerObj formObj = tranfersInput();
             try
             {
+                FormAddCustomerObj formObj = tranfersInput();
                 CustomerLogic logic = new CustomerLogic();
                 LogicResult result = logic.addCustommerLogic(formObj);
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: ", ex.Source);
+                MessageBox.Show("Exception: " + ex.Message);
             }
         }
 

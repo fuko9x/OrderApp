@@ -427,10 +427,10 @@ namespace OrderApp.FormView
             // 
             this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.notes.Location = new System.Drawing.Point(122, 3);
+            this.notes.Location = new System.Drawing.Point(121, 3);
             this.notes.Multiline = true;
             this.notes.Name = "notes";
-            this.notes.Size = new System.Drawing.Size(572, 104);
+            this.notes.Size = new System.Drawing.Size(573, 104);
             this.notes.TabIndex = 12;
             // 
             // tableLayoutPanel1

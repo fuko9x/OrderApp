@@ -46,5 +46,17 @@ namespace OrderApp.FormView
             //obj.trangThaiNo = this.trangthaiNo;
             return obj;
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            AddCustomer frmAdd = new AddCustomer();
+            frmAdd.Show();
+            this.Close();
+        }
     }
 }

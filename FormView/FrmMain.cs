@@ -23,5 +23,16 @@ namespace OrderApp.FormView
             AddCustomer frmCustomer = new AddCustomer();
             frmCustomer.Show();
         }
+
+        private void lblListSanPham_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lblListKhachHang_Click(object sender, EventArgs e)
+        {
+            SearchCustomer frmSearch = new SearchCustomer();
+            frmSearch.Show();
+        }
     }
 }
