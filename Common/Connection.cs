@@ -23,7 +23,7 @@ namespace OrderApp.Common
             strUrl += "database=" + AppUtils.getAppConfig("Database") + ";";
             strUrl += "Trusted_Connection=" + AppUtils.getAppConfig("TrustedConnection") + ";";
             strUrl += "connection timeout=" + AppUtils.getAppConfig("Timeout");
-            con = new SqlConnection("server=LVBINH-PC;database=ORDERDB;UID=sa;password=123"); 
+            con = new SqlConnection("server=localhost;database=ORDERDB;UID=sa;password=123"); 
             con.Open();
             return con; 
         }
