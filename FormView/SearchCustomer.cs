@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using OrderApp.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,36 +12,34 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class SearchCustomer : Form
+    public partial class SearchCustomer : MaterialForm
     {
         public SearchCustomer()
         {
             InitializeComponent();
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        private void search_Click(object sender, EventArgs e)
         {
+            try
+            {
+                FormSearchCustomerObj frmObj = tranfersInput();
 
+            } catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+            
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private FormSearchCustomerObj tranfersInput()
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            FormSearchCustomerObj obj = new FormSearchCustomerObj();
+            obj.idKhachHang = StringUtils.Trim(this.idKhachHang.Text);
+            obj.tenKhachHang = StringUtils.Trim(this.tenKhachHang.Text);
+            obj.sales = StringUtils.Trim(this.sales.Text);
+            //obj.trangThaiNo = this.trangthaiNo;
+            return obj;
         }
     }
 }
