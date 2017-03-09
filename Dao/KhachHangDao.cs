@@ -229,11 +229,11 @@ namespace OrderApp.Dao
             }
             if (StringUtils.isNotBlank(dto.tenKhachHang))
             {
-                strQuery += " TEN_KHACH_HANG like %@tenKhachHang% AND";
+                strQuery += " TEN_KHACH_HANG like '%' + @tenKhachHang + '%' AND";
             }
             if (StringUtils.isNotBlank(dto.sales))
             {
-                strQuery += " TEN_SALES like %@sales% AND";
+                strQuery += " TEN_SALES like '%' + @sales + '%' AND";
             }
             if (dto.isSearchTrangThai)
             {
