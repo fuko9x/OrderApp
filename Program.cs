@@ -17,7 +17,7 @@ namespace OrderApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SearchCustomer());
+            Application.Run(new FrmMain());
         }
     }
 }
