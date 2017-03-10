@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderApp.Dto
 {
-    class DichVuDto
+    public class DichVuDto
     {
         public String idOrder;
         public String tenSanPham;
