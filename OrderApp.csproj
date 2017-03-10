@@ -88,11 +88,15 @@
     <Compile Include="Common\LogicResult.cs" />
     <Compile Include="Common\StringUtils.cs" />
     <Compile Include="Dao\CommonDao.cs" />
+    <Compile Include="Dao\DichVuDao.cs" />
+    <Compile Include="Dao\DonDatHangSpDao.cs" />
     <Compile Include="Dao\KhachHangDao.cs" />
     <Compile Include="Dao\LienHeDao.cs" />
     <Compile Include="Dao\OrderDao.cs" />
     <Compile Include="Dao\SanPhamDao.cs" />
     <Compile Include="Dto\DemoDto.cs" />
+    <Compile Include="Dto\DichVuDto.cs" />
+    <Compile Include="Dto\DonDatHangSPDto.cs" />
     <Compile Include="Dto\KhachHangDto.cs" />
     <Compile Include="Dto\LienHeDto.cs" />
     <Compile Include="Dto\SanPhamDto.cs" />
@@ -212,7 +216,8 @@
     <Compile Include="FormView\SearchProduct.Designer.cs">
       <DependentUpon>SearchProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormView\subFormProductObj.cs" />
+    <Compile Include="FormView\SubFormOtherServiceObj.cs" />
+    <Compile Include="FormView\SubFormProductObj.cs" />
     <Compile Include="Logic\CustomerLogic.cs" />
     <Compile Include="Logic\OrderLogic.cs" />
     <Compile Include="Program.cs" />

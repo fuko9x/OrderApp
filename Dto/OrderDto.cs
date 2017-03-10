@@ -12,14 +12,16 @@ namespace OrderApp.Dto
         public String idKhachHang;
         public DateTime ngayDat;
         public DateTime ngayGiao;
-        public int tongTien;
-        public int vat;
-        public int tongCong;
-        public int phiVanChuyen;
+        public double tongTien;
+        public double vat;
+        public double tongCong;
+        public double phiVanChuyen;
         public String notes;
         public String phone;
         public Boolean thanhToan;
         public String user;
-
+        public DateTime createTime;
+        public List<DonDatHangSPDto> listSanPham;
+        public List<DichVuDto> listDichVu;
     }
 }

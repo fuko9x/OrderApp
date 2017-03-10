@@ -51,7 +51,7 @@ namespace OrderApp.Dao
                 + ", @notes"
                 + ", @sdt"
                 + ", @user"
-                + ", SYSDATETIME()"
+                + ", @createTime"
                 + ")";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
@@ -66,7 +66,8 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@phiVanChuyen", dto.phiVanChuyen);
             cmd.Parameters.AddWithValue("@notes", dto.notes);
             cmd.Parameters.AddWithValue("@sdt", dto.phone);
-            cmd.Parameters.AddWithValue("@createBy", dto.user);
+            cmd.Parameters.AddWithValue("@user", dto.user);
+            cmd.Parameters.AddWithValue("@createTime", dto.createTime);
             cmd.ExecuteNonQuery();
         }
     }

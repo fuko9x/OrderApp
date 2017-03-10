@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderApp.FormView
+namespace OrderApp.Dto
 {
-    class SubFormProductObj
+    class DonDatHangSPDto
     {
+        public String id;
         public String idOrder;
         public String tenSanPham;
         public int soluong;
@@ -16,9 +17,12 @@ namespace OrderApp.FormView
         public int soTrang;
         public String loaiBia;
         public String loaiGiay;
-        public int donGia;
-        public int thanhTien;
+        public double donGia;
+        public double thanhTien;
         public String cdcr;
-        public String user;
+        public String createBy;
+        public DateTime createTime;
+        public String updateBy;
+        public DateTime updateTime;
     }
 }
