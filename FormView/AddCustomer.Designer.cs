@@ -82,6 +82,7 @@ namespace OrderApp.FormView
             this.mainPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.mainPnl.Controls.Add(this.infoPnl, 0, 0);
             this.mainPnl.Controls.Add(this.notePnl, 0, 1);
+            this.mainPnl.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.mainPnl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.mainPnl.Location = new System.Drawing.Point(37, 100);
             this.mainPnl.MinimumSize = new System.Drawing.Size(690, 280);
@@ -138,7 +139,7 @@ namespace OrderApp.FormView
             this.infoPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66889F));
             this.infoPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66889F));
             this.infoPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.infoPnl.Size = new System.Drawing.Size(711, 244);
+            this.infoPnl.Size = new System.Drawing.Size(711, 243);
             this.infoPnl.TabIndex = 0;
             // 
             // giamGia
@@ -276,7 +277,7 @@ namespace OrderApp.FormView
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(3, 200);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 44);
+            this.label7.Size = new System.Drawing.Size(114, 43);
             this.label7.TabIndex = 17;
             this.label7.Text = "SDT";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -306,7 +307,7 @@ namespace OrderApp.FormView
             // phoneContact
             // 
             this.phoneContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.phoneContact.Location = new System.Drawing.Point(123, 209);
+            this.phoneContact.Location = new System.Drawing.Point(123, 208);
             this.phoneContact.Name = "phoneContact";
             this.phoneContact.Size = new System.Drawing.Size(202, 26);
             this.phoneContact.TabIndex = 6;
@@ -317,7 +318,7 @@ namespace OrderApp.FormView
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label13.Location = new System.Drawing.Point(374, 200);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(123, 44);
+            this.label13.Size = new System.Drawing.Size(123, 43);
             this.label13.TabIndex = 22;
             this.label13.Text = "Ngày hợp tác ";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -326,7 +327,7 @@ namespace OrderApp.FormView
             // 
             this.ngayHopTac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ngayHopTac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngayHopTac.Location = new System.Drawing.Point(503, 209);
+            this.ngayHopTac.Location = new System.Drawing.Point(503, 208);
             this.ngayHopTac.Name = "ngayHopTac";
             this.ngayHopTac.Size = new System.Drawing.Size(205, 26);
             this.ngayHopTac.TabIndex = 11;
@@ -385,7 +386,7 @@ namespace OrderApp.FormView
             // 
             this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbContact.FormattingEnabled = true;
-            this.cbbContact.Location = new System.Drawing.Point(123, 169);
+            this.cbbContact.Location = new System.Drawing.Point(123, 166);
             this.cbbContact.Name = "cbbContact";
             this.cbbContact.Size = new System.Drawing.Size(202, 27);
             this.cbbContact.TabIndex = 26;
@@ -401,11 +402,12 @@ namespace OrderApp.FormView
             this.notePnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.92683F));
             this.notePnl.Controls.Add(this.label8, 0, 0);
             this.notePnl.Controls.Add(this.notes, 1, 0);
-            this.notePnl.Location = new System.Drawing.Point(3, 253);
+            this.notePnl.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.notePnl.Location = new System.Drawing.Point(3, 252);
             this.notePnl.Name = "notePnl";
             this.notePnl.RowCount = 1;
             this.notePnl.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.notePnl.Size = new System.Drawing.Size(711, 143);
+            this.notePnl.Size = new System.Drawing.Size(711, 144);
             this.notePnl.TabIndex = 1;
             // 
             // label8
@@ -422,6 +424,7 @@ namespace OrderApp.FormView
             // 
             this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.notes.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.notes.Location = new System.Drawing.Point(124, 3);
             this.notes.Multiline = true;
             this.notes.Name = "notes";

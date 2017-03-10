@@ -46,7 +46,7 @@ namespace OrderApp.FormView
 
             Bitmap MemoryImage = new Bitmap(panelPrint.Width, panelPrint.Height);
             panelPrint.DrawToBitmap(MemoryImage, new Rectangle(0, 0, panelPrint.Width, panelPrint.Height));
-            g.DrawImage(MemoryImage, 0, 0);
+            g.DrawImage((Image)MemoryImage, 0, 0);
         }
 
         private void lblTenKhachHang_Click(object sender, EventArgs e)

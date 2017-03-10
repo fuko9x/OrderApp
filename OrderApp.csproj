@@ -91,9 +91,11 @@
     <Compile Include="Dao\KhachHangDao.cs" />
     <Compile Include="Dao\LienHeDao.cs" />
     <Compile Include="Dao\OrderDao.cs" />
+    <Compile Include="Dao\SanPhamDao.cs" />
     <Compile Include="Dto\DemoDto.cs" />
     <Compile Include="Dto\KhachHangDto.cs" />
     <Compile Include="Dto\LienHeDto.cs" />
+    <Compile Include="Dto\SanPhamDto.cs" />
     <Compile Include="FormView\AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -44,6 +44,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClear = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPrint = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnExport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,15 +54,13 @@
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnCreate = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPrint = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel5
@@ -72,8 +72,8 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.87666F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.83676F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.39299F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.23942F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.20677F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.42563F));
             this.tableLayoutPanel5.Controls.Add(this.textBox6, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.comboBox1, 3, 0);
@@ -127,7 +127,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(403, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(203, 24);
+            this.comboBox1.Size = new System.Drawing.Size(218, 24);
             this.comboBox1.TabIndex = 22;
             // 
             // label4
@@ -158,7 +158,7 @@
             this.textBox2.Location = new System.Drawing.Point(403, 30);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 24);
+            this.textBox2.Size = new System.Drawing.Size(218, 24);
             this.textBox2.TabIndex = 20;
             // 
             // label2
@@ -192,7 +192,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(403, 61);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(203, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(218, 23);
             this.dateTimePicker1.TabIndex = 13;
             // 
             // label3
@@ -225,7 +225,7 @@
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker4.Location = new System.Drawing.Point(403, 92);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(203, 23);
+            this.dateTimePicker4.Size = new System.Drawing.Size(218, 23);
             this.dateTimePicker4.TabIndex = 17;
             // 
             // panel1
@@ -271,6 +271,34 @@
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.btnPrint);
+            this.panel2.Controls.Add(this.btnExport);
+            this.panel2.Location = new System.Drawing.Point(403, 137);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(218, 40);
+            this.panel2.TabIndex = 27;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.AutoSize = true;
+            this.btnPrint.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnPrint.Depth = 0;
+            this.btnPrint.Icon = null;
+            this.btnPrint.Location = new System.Drawing.Point(147, 0);
+            this.btnPrint.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Primary = true;
+            this.btnPrint.Size = new System.Drawing.Size(60, 36);
+            this.btnPrint.TabIndex = 23;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnExport
             // 
@@ -412,34 +440,6 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.btnPrint);
-            this.panel2.Controls.Add(this.btnExport);
-            this.panel2.Location = new System.Drawing.Point(403, 137);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(203, 40);
-            this.panel2.TabIndex = 27;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.AutoSize = true;
-            this.btnPrint.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnPrint.Depth = 0;
-            this.btnPrint.Icon = null;
-            this.btnPrint.Location = new System.Drawing.Point(140, 0);
-            this.btnPrint.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Primary = true;
-            this.btnPrint.Size = new System.Drawing.Size(60, 36);
-            this.btnPrint.TabIndex = 23;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // SearchOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,13 +455,13 @@
             this.tableLayoutPanel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

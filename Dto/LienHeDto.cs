@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderApp.Dto
 {
-    class LienHeDto
+    public class LienHeDto
     {
         public String name;
         public String phone;

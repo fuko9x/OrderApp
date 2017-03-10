@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderApp.Dto
 {
-    class OrderDto
+    public class OrderDto
     {
         public String id;
         public String idKhachHang;
@@ -20,5 +20,6 @@ namespace OrderApp.Dto
         public String phone;
         public Boolean thanhToan;
         public String user;
+
     }
 }

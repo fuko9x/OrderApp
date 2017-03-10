@@ -1,5 +1,6 @@
 ﻿using MaterialSkin.Controls;
 using OrderApp.Common;
+using OrderApp.Dto;
 using OrderApp.Logic;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,15 @@ namespace OrderApp.FormView
 {
     public partial class SearchCustomer : MaterialForm
     {
+        private FormSearchCustomerObj outputObj;
+        public KhachHangDto khachHangSelected;
+
+
         public SearchCustomer()
         {
             InitializeComponent();
+
+            this.khachHangSelected = new KhachHangDto();
         }
 
         private void search_Click(object sender, EventArgs e)
@@ -27,7 +34,7 @@ namespace OrderApp.FormView
                 FormSearchCustomerObj frmObj = tranfersInput();
                 CustomerLogic logic = new CustomerLogic();
                 LogicResult result = logic.searchCustomerLogic(frmObj);
-                FormSearchCustomerObj outputObj = (FormSearchCustomerObj)result.obj;
+                outputObj = (FormSearchCustomerObj)result.obj;
                 this.listKhachHang.DataSource = outputObj.listKhachHangs;
 
             } catch(Exception ex)
@@ -62,7 +69,30 @@ namespace OrderApp.FormView
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void listKhachHang_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void listKhachHang_CellContentDoubleClick(object sender, EventArgs e)
+        {
+            if (listKhachHang.SelectedRows.Count > 0)
+            {
+                int rowSelected = listKhachHang.SelectedRows[0].Index;
+                String idKhachHang = outputObj.listKhachHangs.Rows[rowSelected]["ID_KHACH_HANG"].ToString();
+                String tenKhachHang = outputObj.listKhachHangs.Rows[rowSelected]["TEN_KHACH_HANG"].ToString();
+
+                this.khachHangSelected = new KhachHangDto();
+                this.khachHangSelected.idKhachHang = idKhachHang;
+                this.khachHangSelected.tenKhachHang = tenKhachHang;
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
     }
 }

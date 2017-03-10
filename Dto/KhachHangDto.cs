@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderApp.Dto
 {
-    class KhachHangDto
+    public class KhachHangDto
     {
         public String id;
         public String idKhachHang;
