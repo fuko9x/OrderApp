@@ -51,5 +51,11 @@ namespace OrderApp.FormView
             AddOrder frmAdd = new AddOrder();
             frmAdd.ShowDialog(this);
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintOrder frmPrint = new PrintOrder();
+            frmPrint.ShowDialog();
+        }
     }
 }

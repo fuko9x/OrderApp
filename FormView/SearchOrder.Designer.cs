@@ -52,12 +52,15 @@
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnCreate = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPrint = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel5
@@ -84,7 +87,7 @@
             this.tableLayoutPanel5.Controls.Add(this.dateTimePicker3, 1, 3);
             this.tableLayoutPanel5.Controls.Add(this.dateTimePicker4, 3, 3);
             this.tableLayoutPanel5.Controls.Add(this.panel1, 1, 5);
-            this.tableLayoutPanel5.Controls.Add(this.btnExport, 3, 5);
+            this.tableLayoutPanel5.Controls.Add(this.panel2, 3, 5);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(15, 15);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 6;
@@ -275,7 +278,7 @@
             this.btnExport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnExport.Depth = 0;
             this.btnExport.Icon = null;
-            this.btnExport.Location = new System.Drawing.Point(403, 137);
+            this.btnExport.Location = new System.Drawing.Point(0, 1);
             this.btnExport.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnExport.Name = "btnExport";
             this.btnExport.Primary = true;
@@ -409,6 +412,34 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.btnPrint);
+            this.panel2.Controls.Add(this.btnExport);
+            this.panel2.Location = new System.Drawing.Point(403, 137);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(203, 40);
+            this.panel2.TabIndex = 27;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.AutoSize = true;
+            this.btnPrint.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnPrint.Depth = 0;
+            this.btnPrint.Icon = null;
+            this.btnPrint.Location = new System.Drawing.Point(140, 0);
+            this.btnPrint.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Primary = true;
+            this.btnPrint.Size = new System.Drawing.Size(60, 36);
+            this.btnPrint.TabIndex = 23;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // SearchOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,6 +460,8 @@
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -458,5 +491,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnClear;
         private MaterialSkin.Controls.MaterialRaisedButton btnExport;
         private MaterialSkin.Controls.MaterialRaisedButton btnCreate;
+        private System.Windows.Forms.Panel panel2;
+        private MaterialSkin.Controls.MaterialRaisedButton btnPrint;
     }
 }

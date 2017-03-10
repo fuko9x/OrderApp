@@ -83,6 +83,16 @@ namespace OrderApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap footer_print {
+            get {
+                object obj = ResourceManager.GetObject("footer_print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap graphic_report_icon {
             get {
                 object obj = ResourceManager.GetObject("graphic_report_icon", resourceCulture);
@@ -97,6 +107,16 @@ namespace OrderApp.Properties {
             get {
                 object obj = ResourceManager.GetObject("icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_print {
+            get {
+                object obj = ResourceManager.GetObject("photo_print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
