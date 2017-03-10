@@ -84,6 +84,7 @@ namespace OrderApp.FormView
             this.mainPnl.Controls.Add(this.notePnl, 0, 1);
             this.mainPnl.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.mainPnl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
+            this.mainPnl.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.mainPnl.Location = new System.Drawing.Point(37, 100);
             this.mainPnl.MinimumSize = new System.Drawing.Size(690, 280);
             this.mainPnl.Name = "mainPnl";
@@ -386,7 +387,7 @@ namespace OrderApp.FormView
             // 
             this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbContact.FormattingEnabled = true;
-            this.cbbContact.Location = new System.Drawing.Point(123, 166);
+            this.cbbContact.Location = new System.Drawing.Point(123, 169);
             this.cbbContact.Name = "cbbContact";
             this.cbbContact.Size = new System.Drawing.Size(202, 27);
             this.cbbContact.TabIndex = 26;

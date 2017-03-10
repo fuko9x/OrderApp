@@ -34,17 +34,17 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewSanPham = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -66,7 +66,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.72251F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.27749F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(834, 382);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(849, 382);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // tableLayoutPanel2
@@ -92,23 +92,23 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(828, 118);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(843, 118);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // textBox4
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(152, 45);
+            this.textBox4.Location = new System.Drawing.Point(154, 45);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(209, 26);
+            this.textBox4.Size = new System.Drawing.Size(213, 26);
             this.textBox4.TabIndex = 8;
             // 
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(516, 6);
+            this.textBox2.Location = new System.Drawing.Point(524, 6);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 26);
+            this.textBox2.Size = new System.Drawing.Size(213, 26);
             this.textBox2.TabIndex = 6;
             // 
             // label2
@@ -118,7 +118,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(3, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 19);
+            this.label2.Size = new System.Drawing.Size(145, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên loại sản phẩm";
             // 
@@ -127,38 +127,19 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(367, 10);
+            this.label3.Location = new System.Drawing.Point(373, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 19);
+            this.label3.Size = new System.Drawing.Size(145, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Khổ";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(367, 49);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 19);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Số tờ";
             // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(152, 6);
+            this.textBox1.Location = new System.Drawing.Point(154, 6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 26);
+            this.textBox1.Size = new System.Drawing.Size(213, 26);
             this.textBox1.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(516, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(209, 26);
-            this.textBox3.TabIndex = 7;
             // 
             // label1
             // 
@@ -167,9 +148,44 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 19);
+            this.label1.Size = new System.Drawing.Size(145, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên sản phẩm";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(373, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(145, 19);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Số tờ";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.Location = new System.Drawing.Point(524, 45);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(213, 26);
+            this.textBox3.TabIndex = 7;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.AutoSize = true;
+            this.btnSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSearch.Depth = 0;
+            this.btnSearch.Icon = null;
+            this.btnSearch.Location = new System.Drawing.Point(154, 81);
+            this.btnSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Primary = true;
+            this.btnSearch.Size = new System.Drawing.Size(81, 34);
+            this.btnSearch.TabIndex = 18;
+            this.btnSearch.Text = "Tìm Kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -180,7 +196,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.08074F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(828, 248);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(843, 248);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // dataGridViewSanPham
@@ -201,7 +217,7 @@
             this.dataGridViewSanPham.Name = "dataGridViewSanPham";
             this.dataGridViewSanPham.ReadOnly = true;
             this.dataGridViewSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSanPham.Size = new System.Drawing.Size(822, 242);
+            this.dataGridViewSanPham.Size = new System.Drawing.Size(837, 242);
             this.dataGridViewSanPham.TabIndex = 0;
             this.dataGridViewSanPham.DoubleClick += new System.EventHandler(this.dataGridViewSanPham_DoubleClick);
             // 
@@ -226,7 +242,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(831, 47);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(857, 47);
             this.tableLayoutPanel5.TabIndex = 19;
             // 
             // btnAdd
@@ -236,7 +252,7 @@
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(404, 5);
+            this.btnAdd.Location = new System.Drawing.Point(430, 5);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;
@@ -252,7 +268,7 @@
             this.btnClose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnClose.Depth = 0;
             this.btnClose.Icon = null;
-            this.btnClose.Location = new System.Drawing.Point(698, 5);
+            this.btnClose.Location = new System.Drawing.Point(724, 5);
             this.btnClose.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClose.Name = "btnClose";
             this.btnClose.Primary = true;
@@ -269,7 +285,7 @@
             this.btnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnEdit.Depth = 0;
             this.btnEdit.Icon = null;
-            this.btnEdit.Location = new System.Drawing.Point(552, 5);
+            this.btnEdit.Location = new System.Drawing.Point(578, 5);
             this.btnEdit.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Primary = true;
@@ -278,26 +294,11 @@
             this.btnEdit.Text = "Chỉnh sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSearch.Depth = 0;
-            this.btnSearch.Icon = null;
-            this.btnSearch.Location = new System.Drawing.Point(152, 81);
-            this.btnSearch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Primary = true;
-            this.btnSearch.Size = new System.Drawing.Size(81, 34);
-            this.btnSearch.TabIndex = 18;
-            this.btnSearch.Text = "Tìm Kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // SearchProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 530);
+            this.ClientSize = new System.Drawing.Size(898, 530);
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SearchProduct";
