@@ -12,12 +12,14 @@ namespace OrderApp.FormView
         public String idKhachHang;
         public DateTime ngayDat;
         public DateTime ngayGiao;
-        public int tongTien;
-        public int vat;
-        public int tongCong;
-        public int phiVanChuyen;
+        public double tongTien;
+        public double vat;
+        public double tongCong;
+        public double phiVanChuyen;
         public String notes;
         public String phone;
-        public List<subFormProductObj> listProduct;
+        public DateTime systemTime;
+        public List<SubFormProductObj> listProduct;
+        public List<SubFormOtherServiceObj> listOtherService;
     }
 }
