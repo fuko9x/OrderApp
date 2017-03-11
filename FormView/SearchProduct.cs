@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using OrderApp.Common;
 using OrderApp.Dao;
 using OrderApp.Dto;
 using System;
@@ -21,9 +22,15 @@ namespace OrderApp.FormView
         public SearchProduct()
         {
             InitializeComponent();
+            formatControl();
 
             sanPhamSelected = new SanPhamDto();
             loadData();
+        }
+
+        private void formatControl()
+        {
+            this.dataGridViewSanPham = (DataGridView)FormatLayoutUtil.formatDataGridview(this.dataGridViewSanPham);
         }
 
         private void loadData()

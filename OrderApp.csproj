@@ -85,6 +85,7 @@
     <Compile Include="Common\Connection.cs" />
     <Compile Include="Common\Contanst.cs" />
     <Compile Include="Common\Converter.cs" />
+    <Compile Include="Common\FormatLayoutUtil.cs" />
     <Compile Include="Common\LogicResult.cs" />
     <Compile Include="Common\StringUtils.cs" />
     <Compile Include="Dao\CommonDao.cs" />

@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using OrderApp.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,12 @@ namespace OrderApp.FormView
         public SearchOrder()
         {
             InitializeComponent();
+            formatControl();
+        }
+
+        private void formatControl()
+        {
+            this.dataGridViewDonHang = (DataGridView)FormatLayoutUtil.formatDataGridview(this.dataGridViewDonHang);
         }
 
         private void actionSearch()
