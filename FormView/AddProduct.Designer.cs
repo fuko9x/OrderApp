@@ -45,7 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxLoaiSanPham = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -234,7 +234,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tenSanPham, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboBoxLoaiSanPham, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 5);
@@ -272,15 +272,15 @@
             this.label7.Text = "Chọn Sản Phẩm";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox1
+            // comboBoxLoaiSanPham
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(183, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(364, 27);
-            this.comboBox1.TabIndex = 21;
+            this.comboBoxLoaiSanPham.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxLoaiSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
+            this.comboBoxLoaiSanPham.FormattingEnabled = true;
+            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(183, 7);
+            this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
+            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(364, 27);
+            this.comboBoxLoaiSanPham.TabIndex = 21;
             // 
             // AddProduct
             // 
@@ -319,6 +319,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxLoaiSanPham;
     }
 }

@@ -46,7 +46,7 @@ namespace OrderApp.Dao
                 + ", DON_GIA"
                 + ", DESCRIPTION"
                 + ") VALUES ("
-                + "@idSanPham"
+                + " @idSanPhamCha"
                 + ", @tenSP"
                 + ", @loaiBia "
                 + ", @loaiGiay "
@@ -57,7 +57,7 @@ namespace OrderApp.Dao
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Connection.getConnection();
-            cmd.Parameters.AddWithValue("@idSanPham", dto.idSanPham);
+            cmd.Parameters.AddWithValue("@idSanPhamCha", dto.idSanPhamCha);
             cmd.Parameters.AddWithValue("@tenSP", dto.name);
             cmd.Parameters.AddWithValue("@loaiBia", dto.loaiBia);
             cmd.Parameters.AddWithValue("@loaiGiay", dto.loaiGiay);

@@ -17,7 +17,7 @@ namespace OrderApp.Logic
             SanPhamDao dao = new SanPhamDao();
             if (frmObj.idSanPham == 0)
             {
-                SanPhamDto sanPhamdto = new SanPhamDto(frmObj.tenSanPham, frmObj.description);
+                SanPhamDto sanPhamdto = new SanPhamDto(frmObj.tenSanPham, "");
                 frmObj.idSanPham = dao.insertSanPham(sanPhamdto);
             }
             dao.insertSanPhamChiTiet(createSanPhamChiTietDto(frmObj));
@@ -27,8 +27,8 @@ namespace OrderApp.Logic
         private SanPhamDto createSanPhamChiTietDto(FormAddProductObj frmObj)
         {
             SanPhamDto dto = new SanPhamDto();
-            dto.idSanPham = frmObj.idSanPham;
-            dto.name = frmObj.tenSanPhamChiTiet;
+            dto.idSanPhamCha = frmObj.idSanPhamCha;
+            dto.name = frmObj.tenSanPham;
             dto.loaiBia = frmObj.loaiBia;
             dto.loaiGiay = frmObj.loaiGiay;
             dto.size = frmObj.size;

@@ -8,13 +8,19 @@ namespace OrderApp.FormView
 {
     class FormAddProductObj
     {
+        public int idSanPhamCha;
+        public String tenSanPhamCha;
         public int idSanPham;
         public String tenSanPham;
-        public String tenSanPhamChiTiet;
         public String loaiBia;
         public String size;
         public String loaiGiay;
         public Double donGia;
         public String description;
+
+        public FormAddProductObj()
+        {
+            idSanPhamCha = 0;
+        }
     }
 }

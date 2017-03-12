@@ -1,5 +1,6 @@
 ﻿using MaterialSkin.Controls;
 using OrderApp.Common;
+using OrderApp.Dao;
 using OrderApp.Logic;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,23 @@ namespace OrderApp.FormView
         public AddProduct()
         {
             InitializeComponent();
+
+            loadData();
+        }
+
+        private void loadData()
+        {
+            try
+            {
+                //load combobox
+                this.comboBoxLoaiSanPham.DataSource = SanPhamDao.getList();
+                this.comboBoxLoaiSanPham.ValueMember = "ID";
+                this.comboBoxLoaiSanPham.DisplayMember = "TEN_SAN_PHAM";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception" + ex.Message);
+            }
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -35,6 +53,16 @@ namespace OrderApp.FormView
         private FormAddProductObj tranfersInput()
         {
             FormAddProductObj obj = new FormAddProductObj();
+            if (this.comboBoxLoaiSanPham.SelectedIndex < 0)
+            {
+                obj.idSanPhamCha = 0;
+                obj.tenSanPhamCha = this.comboBoxLoaiSanPham.Text;
+            }
+            else
+            {
+                obj.idSanPhamCha = (int)this.comboBoxLoaiSanPham.SelectedValue;
+                obj.tenSanPhamCha = this.comboBoxLoaiSanPham.SelectedText;
+            }
             obj.tenSanPham = this.tenSanPham.Text;
             obj.loaiBia = this.loaiBia.Text;
             obj.loaiGiay = this.loaiGiay.Text;
