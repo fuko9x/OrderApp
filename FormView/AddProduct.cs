@@ -1,4 +1,6 @@
 ﻿using MaterialSkin.Controls;
+using OrderApp.Common;
+using OrderApp.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +22,8 @@ namespace OrderApp.FormView
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            tranfersInput();
+            FormAddProductObj frmObj = tranfersInput();
+            LogicResult rs = new ProductLogic().addProduct(frmObj);
 
         }
 
