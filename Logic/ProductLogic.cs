@@ -1,4 +1,6 @@
 ﻿using OrderApp.Common;
+using OrderApp.Dao;
+using OrderApp.Dto;
 using OrderApp.FormView;
 using System;
 using System.Collections.Generic;
@@ -12,7 +14,28 @@ namespace OrderApp.Logic
     {
         public LogicResult addProduct(FormAddProductObj frmObj)
         {
-            return new LogicResult("", "", null);
+            SanPhamDao dao = new SanPhamDao();
+            if (frmObj.idSanPham == 0)
+            {
+                SanPhamDto sanPhamdto = new SanPhamDto(frmObj.tenSanPham, frmObj.description);
+                frmObj.idSanPham = dao.insertSanPham(sanPhamdto);
+            }
+            dao.insertSanPhamChiTiet(createSanPhamChiTietDto(frmObj));
+            return new LogicResult(Contanst.MSG_INFO, AppUtils.getAppConfig("MSGINFO003"), null);
+        }
+
+        private SanPhamDto createSanPhamChiTietDto(FormAddProductObj frmObj)
+        {
+            SanPhamDto dto = new SanPhamDto();
+            dto.idSanPham = frmObj.idSanPham;
+            dto.name = frmObj.tenSanPhamChiTiet;
+            dto.loaiBia = frmObj.loaiBia;
+            dto.loaiGiay = frmObj.loaiGiay;
+            dto.size = frmObj.size;
+            dto.donGia = frmObj.donGia;
+            dto.notes = frmObj.description;
+            return dto;
+
         }
     }
 }

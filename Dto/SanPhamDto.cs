@@ -8,18 +8,26 @@ namespace OrderApp.Dto
 {
     public class SanPhamDto
     {
-        public string id;
+        public int idSanPham;
         public String name;
         public String size;
-        public String donvi;
+        public String loaiBia;
+        public String loaiGiay;
         public double donGia;
-        
+        public String notes;
+
+        public SanPhamDto(String tenSP, String notes)
+        {
+            this.name = tenSP;
+            this.notes = notes;
+        }
         public SanPhamDto()
         {
-            this.id = "";
+            this.idSanPham = 0;
             this.name = "";
             this.size = "";
-            this.donvi = "";
+            this.loaiBia = "";
+            this.loaiGiay = "";
             this.donGia = 0;
         }
     }

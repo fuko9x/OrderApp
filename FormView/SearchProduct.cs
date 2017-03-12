@@ -61,7 +61,7 @@ namespace OrderApp.FormView
                     String dongia = dataGridViewSanPham.Rows[rowSelected].Cells["DON_GIA"].Value.ToString();
 
                     this.sanPhamSelected = new SanPhamDto();
-                    this.sanPhamSelected.id = id;
+                    //this.sanPhamSelected.id = id;
                     this.sanPhamSelected.name = name;
                     this.sanPhamSelected.size = size;
                     this.sanPhamSelected.donGia = double.Parse(dongia);

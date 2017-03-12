@@ -8,7 +8,9 @@ namespace OrderApp.FormView
 {
     class FormAddProductObj
     {
+        public int idSanPham;
         public String tenSanPham;
+        public String tenSanPhamChiTiet;
         public String loaiBia;
         public String size;
         public String loaiGiay;
