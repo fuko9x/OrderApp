@@ -20,12 +20,25 @@ namespace OrderApp.FormView
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            tranfersInput();
 
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private FormAddProductObj tranfersInput()
+        {
+            FormAddProductObj obj = new FormAddProductObj();
+            obj.tenSanPham = this.tenSanPham.Text;
+            obj.loaiBia = this.loaiBia.Text;
+            obj.loaiGiay = this.loaiGiay.Text;
+            obj.size = this.size.Text;
+            obj.description = this.description.Text;
+            obj.donGia = float.Parse(this.donGia.Text);
+            return obj;
         }
     }
 }

@@ -153,6 +153,7 @@
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\FormAddOrderObj.cs" />
+    <Compile Include="FormView\FormAddProductObj.cs" />
     <Compile Include="FormView\FormEditCustomerObj.cs" />
     <Compile Include="FormView\FormSearchCustomerObj.cs" />
     <Compile Include="FormView\FrmConfirmOrder.cs">
@@ -221,6 +222,7 @@
     <Compile Include="FormView\SubFormProductObj.cs" />
     <Compile Include="Logic\CustomerLogic.cs" />
     <Compile Include="Logic\OrderLogic.cs" />
+    <Compile Include="Logic\ProductLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormView\AddCustomer.resx">
