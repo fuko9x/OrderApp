@@ -24,13 +24,16 @@ namespace OrderApp.Dao
         public int insertSanPham(SanPhamDto dto)
         {
             String strQuery = "INSERT INTO SAN_PHAM (TEN_SAN_PHAM, NOTES) VALUES ("
-                + "@tenSP"
+                + " @tenSP"
                 + ", @notes )";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Connection.getConnection();
-            cmd.Parameters.AddWithValue("@tenSP", dto.name);
-            cmd.Parameters.AddWithValue("@notes", dto.notes);
+            cmd.Parameters.AddWithValue("@tenSP", dto.nameSanPhamCha);
+            cmd.Parameters.AddWithValue("@notes", dto.noteSanPhamCha);
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "SELECT @@IDENTITY";
             int idInserted = (int)cmd.ExecuteScalar();
             return idInserted;
         }

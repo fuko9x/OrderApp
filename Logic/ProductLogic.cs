@@ -15,9 +15,11 @@ namespace OrderApp.Logic
         public LogicResult addProduct(FormAddProductObj frmObj)
         {
             SanPhamDao dao = new SanPhamDao();
-            if (frmObj.idSanPham == 0)
+            if (frmObj.idSanPhamCha == 0)
             {
-                SanPhamDto sanPhamdto = new SanPhamDto(frmObj.tenSanPham, "");
+                SanPhamDto sanPhamdto = new SanPhamDto();
+                sanPhamdto.nameSanPhamCha = frmObj.tenSanPhamCha;
+
                 frmObj.idSanPham = dao.insertSanPham(sanPhamdto);
             }
             dao.insertSanPhamChiTiet(createSanPhamChiTietDto(frmObj));

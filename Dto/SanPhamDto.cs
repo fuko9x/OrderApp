@@ -9,6 +9,8 @@ namespace OrderApp.Dto
     public class SanPhamDto
     {
         public int idSanPhamCha;
+        public String nameSanPhamCha;
+        public String noteSanPhamCha;
         public int id;
         public String name;
         public String size;
@@ -17,14 +19,11 @@ namespace OrderApp.Dto
         public double donGia;
         public String notes;
 
-        public SanPhamDto(String tenSP, String notes)
-        {
-            this.name = tenSP;
-            this.notes = notes;
-        }
         public SanPhamDto()
         {
             this.idSanPhamCha = 0;
+            this.nameSanPhamCha = "";
+            this.noteSanPhamCha = "";
             this.id = 0;
             this.name = "";
             this.size = "";
