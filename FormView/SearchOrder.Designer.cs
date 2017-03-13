@@ -32,9 +32,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -69,42 +66,39 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel5.ColumnCount = 5;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.87666F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.83676F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.20677F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.42563F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.93797F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.78748F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.820091F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.11301F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.34145F));
             this.tableLayoutPanel5.Controls.Add(this.textBox6, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.comboBox1, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.textBox2, 3, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker2, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker1, 3, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label3, 0, 3);
-            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker3, 1, 3);
-            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker4, 3, 3);
-            this.tableLayoutPanel5.Controls.Add(this.panel1, 1, 5);
-            this.tableLayoutPanel5.Controls.Add(this.panel2, 3, 5);
+            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker2, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker1, 3, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker3, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker4, 3, 2);
+            this.tableLayoutPanel5.Controls.Add(this.panel1, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(this.panel2, 3, 4);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(15, 15);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 6;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.06796F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.48387F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.RowCount = 5;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(827, 180);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(827, 169);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
             // textBox6
             // 
             this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(151, 3);
+            this.textBox6.Location = new System.Drawing.Point(151, 9);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(207, 21);
@@ -114,7 +108,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(3, 4);
+            this.label6.Location = new System.Drawing.Point(3, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(142, 19);
             this.label6.TabIndex = 5;
@@ -125,47 +119,16 @@
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(403, 3);
+            this.comboBox1.Location = new System.Drawing.Point(403, 8);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(218, 24);
             this.comboBox1.TabIndex = 22;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(3, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 19);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Tổng Tiền : ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(151, 30);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 24);
-            this.textBox1.TabIndex = 19;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(403, 30);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(218, 24);
-            this.textBox2.TabIndex = 20;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(3, 63);
+            this.label2.Location = new System.Drawing.Point(3, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 19);
             this.label2.TabIndex = 12;
@@ -179,7 +142,7 @@
             this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(151, 61);
+            this.dateTimePicker2.Location = new System.Drawing.Point(151, 48);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(207, 23);
             this.dateTimePicker2.TabIndex = 14;
@@ -190,7 +153,7 @@
             this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(403, 61);
+            this.dateTimePicker1.Location = new System.Drawing.Point(403, 48);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(218, 23);
             this.dateTimePicker1.TabIndex = 13;
@@ -199,7 +162,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(3, 94);
+            this.label3.Location = new System.Drawing.Point(3, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 19);
             this.label3.TabIndex = 15;
@@ -212,7 +175,7 @@
             this.dateTimePicker3.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(151, 92);
+            this.dateTimePicker3.Location = new System.Drawing.Point(151, 85);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(207, 23);
             this.dateTimePicker3.TabIndex = 16;
@@ -223,7 +186,7 @@
             this.dateTimePicker4.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(403, 92);
+            this.dateTimePicker4.Location = new System.Drawing.Point(403, 85);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(218, 23);
             this.dateTimePicker4.TabIndex = 17;
@@ -235,9 +198,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Location = new System.Drawing.Point(151, 137);
+            this.panel1.Location = new System.Drawing.Point(151, 127);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 40);
+            this.panel1.Size = new System.Drawing.Size(207, 39);
             this.panel1.TabIndex = 25;
             // 
             // btnClear
@@ -279,9 +242,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.btnPrint);
             this.panel2.Controls.Add(this.btnExport);
-            this.panel2.Location = new System.Drawing.Point(403, 137);
+            this.panel2.Location = new System.Drawing.Point(403, 127);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(218, 40);
+            this.panel2.Size = new System.Drawing.Size(218, 39);
             this.panel2.TabIndex = 27;
             // 
             // btnPrint
@@ -330,7 +293,7 @@
             this.dataGridViewDonHang.MultiSelect = false;
             this.dataGridViewDonHang.Name = "dataGridViewDonHang";
             this.dataGridViewDonHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDonHang.Size = new System.Drawing.Size(833, 168);
+            this.dataGridViewDonHang.Size = new System.Drawing.Size(833, 179);
             this.dataGridViewDonHang.TabIndex = 1;
             // 
             // groupBox1
@@ -343,7 +306,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.groupBox1.Location = new System.Drawing.Point(23, 66);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(851, 201);
+            this.groupBox1.Size = new System.Drawing.Size(851, 190);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
@@ -356,9 +319,9 @@
             this.groupBox2.Controls.Add(this.dataGridViewDonHang);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.groupBox2.Location = new System.Drawing.Point(23, 273);
+            this.groupBox2.Location = new System.Drawing.Point(23, 262);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(851, 201);
+            this.groupBox2.Size = new System.Drawing.Size(851, 212);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đơn Đặt Hàng";
@@ -479,9 +442,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private MaterialSkin.Controls.MaterialRaisedButton btnSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

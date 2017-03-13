@@ -42,7 +42,14 @@ namespace OrderApp.FormView
         {
             FormAddProductObj frmObj = tranfersInput();
             LogicResult rs = new ProductLogic().addProduct(frmObj);
-
+            if (rs.severity == Contanst.MSG_ERROR)
+            {
+                MessageBox.Show(rs.msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("OK");
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

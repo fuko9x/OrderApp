@@ -21,9 +21,19 @@ namespace OrderApp.Dao
             return dt;
         }
 
+        public static DataTable getListChiTiet(int idSanPhamCha)
+        {
+            DataTable dt = new DataTable();
+            String strQuery = "SELECT * FROM SAN_PHAM_CHI_TIET WHERE ID_SAN_PHAM = " + idSanPhamCha;
+            SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
+            adapter.Fill(dt);
+            return dt;
+        }
+
         public int insertSanPham(SanPhamDto dto)
         {
-            String strQuery = "INSERT INTO SAN_PHAM (TEN_SAN_PHAM, NOTES) VALUES ("
+            String strQuery = "INSERT INTO SAN_PHAM (TEN_SAN_PHAM, NOTES) OUTPUT INSERTED.ID"
+                + " VALUES ("
                 + " @tenSP"
                 + ", @notes )";
             SqlCommand cmd = new SqlCommand(strQuery);
@@ -31,9 +41,6 @@ namespace OrderApp.Dao
             cmd.Connection = Connection.getConnection();
             cmd.Parameters.AddWithValue("@tenSP", dto.nameSanPhamCha);
             cmd.Parameters.AddWithValue("@notes", dto.noteSanPhamCha);
-            cmd.ExecuteNonQuery();
-
-            cmd.CommandText = "SELECT @@IDENTITY";
             int idInserted = (int)cmd.ExecuteScalar();
             return idInserted;
         }

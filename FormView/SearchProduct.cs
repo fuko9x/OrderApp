@@ -36,6 +36,17 @@ namespace OrderApp.FormView
         private void loadData()
         {
             this.dataGridViewSanPham.DataSource = SanPhamDao.getList();
+
+            //Load combobox
+            this.cbbLoaiSanPham.DataSource = SanPhamDao.getList();
+            this.cbbLoaiSanPham.ValueMember = "ID";
+            this.cbbLoaiSanPham.DisplayMember = "TEN_SAN_PHAM";
+
+        }
+
+        private void loadDataGridview(int idSanPhamCha)
+        {
+            this.dataGridViewSanPham.DataSource = SanPhamDao.getListChiTiet(idSanPhamCha);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -48,33 +59,12 @@ namespace OrderApp.FormView
             loadData();
         }
 
-        private void dataGridViewSanPham_DoubleClick(object sender, EventArgs e)
+        private void cbbLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (dataGridViewSanPham.SelectedRows.Count > 0)
-                {
-                    int rowSelected = dataGridViewSanPham.SelectedRows[0].Index;
-                    String id = dataGridViewSanPham.Rows[rowSelected].Cells["ID"].Value.ToString();
-                    String name = dataGridViewSanPham.Rows[rowSelected].Cells["TEN_SAN_PHAM"].Value.ToString();
-                    String size = dataGridViewSanPham.Rows[rowSelected].Cells["SIZE"].Value.ToString();
-                    String dongia = dataGridViewSanPham.Rows[rowSelected].Cells["DON_GIA"].Value.ToString();
-
-                    this.sanPhamSelected = new SanPhamDto();
-                    //this.sanPhamSelected.id = id;
-                    this.sanPhamSelected.name = name;
-                    this.sanPhamSelected.size = size;
-                    this.sanPhamSelected.donGia = double.Parse(dongia);
-
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
+            if (cbbLoaiSanPham.SelectedIndex >= 0) {
+                int idSanPhamCha = (int)cbbLoaiSanPham.SelectedValue;
+                loadDataGridview(idSanPhamCha);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
         }
     }
 }

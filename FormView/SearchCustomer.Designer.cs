@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tenKhachHang = new System.Windows.Forms.TextBox();
             this.sales = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.idKhachHang = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -43,19 +42,19 @@
             this.btnClear = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
             this.listKhachHang = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listKhachHang)).BeginInit();
@@ -76,7 +75,6 @@
             this.tableLayoutPanel5.Controls.Add(this.sales, 3, 0);
             this.tableLayoutPanel5.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.lbID, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label5, 2, 1);
             this.tableLayoutPanel5.Controls.Add(this.idKhachHang, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.lbName, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.checkBox1, 3, 1);
@@ -134,17 +132,6 @@
             this.lbID.Text = "ID Khách Hàng";
             this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(380, 41);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(145, 19);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Trạng Thái Nợ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // idKhachHang
             // 
             this.idKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -169,10 +156,13 @@
             // checkBox1
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.checkBox1.Location = new System.Drawing.Point(531, 39);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(220, 24);
             this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "Trạng thái nợ";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -235,14 +225,14 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listKhachHang.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listKhachHang.DefaultCellStyle = dataGridViewCellStyle3;
             this.listKhachHang.EnableHeadersVisualStyles = false;
             this.listKhachHang.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.listKhachHang.Location = new System.Drawing.Point(10, 21);
@@ -250,93 +240,20 @@
             this.listKhachHang.Name = "listKhachHang";
             this.listKhachHang.ReadOnly = true;
             this.listKhachHang.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listKhachHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listKhachHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.listKhachHang.RowHeadersVisible = false;
             this.listKhachHang.RowHeadersWidth = 80;
             this.listKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listKhachHang.Size = new System.Drawing.Size(840, 232);
             this.listKhachHang.TabIndex = 1;
             this.listKhachHang.DoubleClick += new System.EventHandler(this.listKhachHang_CellContentDoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID_KHACH_HANG";
-            this.ID.FillWeight = 69.28933F;
-            this.ID.HeaderText = "Mã KH";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 90;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "TEN_KHACH_HANG";
-            this.Column1.FillWeight = 284.264F;
-            this.Column1.HeaderText = "Tên Khách Hàng";
-            this.Column1.MinimumWidth = 50;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "DIA_CHI";
-            this.Column2.FillWeight = 69.28933F;
-            this.Column2.HeaderText = "Địa Chỉ";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 220;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "GIAM_GIA";
-            this.Column3.FalseValue = "0";
-            this.Column3.FillWeight = 69.28933F;
-            this.Column3.HeaderText = "Giảm Giá";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column3.TrueValue = "1";
-            this.Column3.Width = 92;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "TEN_SALES";
-            this.Column4.FillWeight = 69.28933F;
-            this.Column4.HeaderText = "Sales";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 200;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "TRANG_THAI";
-            this.Column5.FalseValue = "0";
-            this.Column5.FillWeight = 69.28933F;
-            this.Column5.HeaderText = "Trạng Thái";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column5.TrueValue = "1";
-            this.Column5.Width = 90;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "GHI_CHU";
-            this.Column6.FillWeight = 69.28933F;
-            this.Column6.HeaderText = "Ghi Chú";
-            this.Column6.MinimumWidth = 100;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 250;
             // 
             // tableLayoutPanel1
             // 
@@ -442,6 +359,76 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết quả tìm kiếm";
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID_KHACH_HANG";
+            this.ID.FillWeight = 69.28933F;
+            this.ID.HeaderText = "Mã KH";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 90;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "TEN_KHACH_HANG";
+            this.Column1.FillWeight = 284.264F;
+            this.Column1.HeaderText = "Tên Khách Hàng";
+            this.Column1.MinimumWidth = 50;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "DIA_CHI";
+            this.Column2.FillWeight = 69.28933F;
+            this.Column2.HeaderText = "Địa Chỉ";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 220;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "GIAM_GIA";
+            this.Column3.FillWeight = 69.28933F;
+            this.Column3.HeaderText = "Giảm Giá";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column3.Width = 92;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TEN_SALES";
+            this.Column4.FillWeight = 69.28933F;
+            this.Column4.HeaderText = "Sales";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 200;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "TRANG_THAI";
+            this.Column5.FalseValue = "0";
+            this.Column5.FillWeight = 69.28933F;
+            this.Column5.HeaderText = "Trạng Thái";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column5.TrueValue = "1";
+            this.Column5.Width = 90;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "GHI_CHU";
+            this.Column6.FillWeight = 69.28933F;
+            this.Column6.HeaderText = "Ghi Chú";
+            this.Column6.MinimumWidth = 100;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 250;
+            // 
             // SearchCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,7 +458,6 @@
         private System.Windows.Forms.TextBox sales;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbID;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox idKhachHang;
         private System.Windows.Forms.TextBox tenKhachHang;
         private System.Windows.Forms.Label lbName;
@@ -490,7 +476,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;

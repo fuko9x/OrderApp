@@ -20,7 +20,7 @@ namespace OrderApp.Logic
                 SanPhamDto sanPhamdto = new SanPhamDto();
                 sanPhamdto.nameSanPhamCha = frmObj.tenSanPhamCha;
 
-                frmObj.idSanPham = dao.insertSanPham(sanPhamdto);
+                frmObj.idSanPhamCha = dao.insertSanPham(sanPhamdto);
             }
             dao.insertSanPhamChiTiet(createSanPhamChiTietDto(frmObj));
             return new LogicResult(Contanst.MSG_INFO, AppUtils.getAppConfig("MSGINFO003"), null);
