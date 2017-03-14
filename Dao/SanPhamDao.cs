@@ -82,6 +82,34 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@addPageCost", dto.addPageCost);
             cmd.ExecuteNonQuery();
         }
+
+        public void updateSanPhamChiTiet(SanPhamDto dto)
+        {
+            String strQuery = "UPDATE SAN_PHAM_CHI_TIET SET"
+                + "TEN_SAN_PHAM = @tenSP"
+                + ", LOAI_BIA = @loaiBia"
+                + ", LOAI_GIAY = @loaiGiay"
+                + ", SIZE = @size"
+                + ", DON_GIA = @donGia"
+                + ", DESCRIPTION = @decription"
+                + ", NUM_PAGE_DEFAULT = @numPageDefault"
+                + ", ADDITIONAL_PAGES_COST = @addPageCost"
+                + "WHERE id = @id";
+
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@id", dto.id);
+            cmd.Parameters.AddWithValue("@tenSP", dto.name);
+            cmd.Parameters.AddWithValue("@loaiBia", dto.loaiBia);
+            cmd.Parameters.AddWithValue("@loaiGiay", dto.loaiGiay);
+            cmd.Parameters.AddWithValue("@size", dto.size);
+            cmd.Parameters.AddWithValue("@donGia", dto.donGia);
+            cmd.Parameters.AddWithValue("@decription", dto.notes);
+            cmd.Parameters.AddWithValue("@numPageDefault", dto.numPageDefault);
+            cmd.Parameters.AddWithValue("@addPageCost", dto.addPageCost);
+            cmd.ExecuteNonQuery();
+        }
     
     }
 }

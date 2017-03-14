@@ -14,6 +14,11 @@ namespace OrderApp.Common
             return System.Configuration.ConfigurationManager.AppSettings[key];
         }
 
+
+        /// <summary>
+        /// Get Current Time In Database
+        /// </summary>
+        /// <returns></returns>
         public static DateTime getServerTime()
         {
             return new CommonDao().getServerTime();
