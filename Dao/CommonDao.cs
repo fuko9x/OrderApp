@@ -21,6 +21,7 @@ namespace OrderApp.Dao
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
             now = reader.GetDateTime(0);
+            reader.Close();
             return now;
         }
     }

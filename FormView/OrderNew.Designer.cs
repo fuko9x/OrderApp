@@ -29,11 +29,30 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pageNum = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbbLoaiBia = new System.Windows.Forms.ComboBox();
+            this.cbbSize = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBoxLoaiSanPham = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.dataGridViewSanPham = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -43,35 +62,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.orderId = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxLoaiSanPham = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbbSize = new System.Windows.Forms.ComboBox();
-            this.cbbLoaiBia = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -92,6 +92,24 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1077, 519);
             this.panelMain.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(903, 545);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(88, 32);
+            this.button3.TabIndex = 35;
+            this.button3.Text = "CANCEL";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(793, 545);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 32);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "SAVE";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -130,7 +148,7 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.pageNum);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.cbbLoaiBia);
             this.groupBox2.Controls.Add(this.cbbSize);
@@ -147,6 +165,105 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chọn sản phẩm";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(850, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 28);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "ĐẶT HÀNG";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(850, 48);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(159, 23);
+            this.textBox3.TabIndex = 32;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(768, 50);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 17);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Thành tiền";
+            // 
+            // pageNum
+            // 
+            this.pageNum.Location = new System.Drawing.Point(655, 48);
+            this.pageNum.Name = "pageNum";
+            this.pageNum.Size = new System.Drawing.Size(102, 23);
+            this.pageNum.TabIndex = 30;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(608, 51);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 17);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Số tờ";
+            // 
+            // cbbLoaiBia
+            // 
+            this.cbbLoaiBia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbbLoaiBia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
+            this.cbbLoaiBia.FormattingEnabled = true;
+            this.cbbLoaiBia.Location = new System.Drawing.Point(396, 48);
+            this.cbbLoaiBia.Name = "cbbLoaiBia";
+            this.cbbLoaiBia.Size = new System.Drawing.Size(186, 24);
+            this.cbbLoaiBia.TabIndex = 28;
+            // 
+            // cbbSize
+            // 
+            this.cbbSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbbSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
+            this.cbbSize.FormattingEnabled = true;
+            this.cbbSize.Location = new System.Drawing.Point(121, 48);
+            this.cbbSize.Name = "cbbSize";
+            this.cbbSize.Size = new System.Drawing.Size(193, 24);
+            this.cbbSize.TabIndex = 27;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(332, 51);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 17);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Loại bìa";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(36, 51);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 17);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Kích Thước";
+            // 
+            // comboBoxLoaiSanPham
+            // 
+            this.comboBoxLoaiSanPham.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxLoaiSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
+            this.comboBoxLoaiSanPham.FormattingEnabled = true;
+            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(121, 17);
+            this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
+            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(461, 24);
+            this.comboBoxLoaiSanPham.TabIndex = 22;
+            this.comboBoxLoaiSanPham.SelectedIndexChanged += new System.EventHandler(this.comboBoxLoaiSanPham_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(42, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Sản Phẩm";
             // 
             // dataGridViewSanPham
             // 
@@ -170,6 +287,50 @@
             this.dataGridViewSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSanPham.Size = new System.Drawing.Size(1024, 251);
             this.dataGridViewSanPham.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column1.HeaderText = "Sản phẩm";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column1.Width = 97;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Sản Phẩm";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Kích thước";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Đơn Giá";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Số Lượng";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Thành Tiền";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -199,6 +360,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBox2
             // 
@@ -253,23 +415,24 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.orderId);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(834, 11);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 87);
             this.panel1.TabIndex = 1;
             // 
-            // label6
+            // orderId
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 18F);
-            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label6.Location = new System.Drawing.Point(64, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 27);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "#005";
+            this.orderId.AutoSize = true;
+            this.orderId.Font = new System.Drawing.Font("Times New Roman", 18F);
+            this.orderId.ForeColor = System.Drawing.Color.DarkBlue;
+            this.orderId.Location = new System.Drawing.Point(25, 48);
+            this.orderId.Name = "orderId";
+            this.orderId.Size = new System.Drawing.Size(60, 27);
+            this.orderId.TabIndex = 1;
+            this.orderId.Text = "#005";
+            this.orderId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -280,167 +443,6 @@
             this.label1.Size = new System.Drawing.Size(162, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Purchase Order";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column1.HeaderText = "Sản phẩm";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column1.Width = 97;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên Sản Phẩm";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Kích thước";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Đơn Giá";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Số Lượng";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Thành Tiền";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 17);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Sản Phẩm";
-            // 
-            // comboBoxLoaiSanPham
-            // 
-            this.comboBoxLoaiSanPham.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxLoaiSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.comboBoxLoaiSanPham.FormattingEnabled = true;
-            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(121, 17);
-            this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
-            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(461, 24);
-            this.comboBoxLoaiSanPham.TabIndex = 22;
-            this.comboBoxLoaiSanPham.SelectedIndexChanged += new System.EventHandler(this.comboBoxLoaiSanPham_SelectedIndexChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(36, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 17);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Kích Thước";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(332, 51);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 17);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "Loại bìa";
-            // 
-            // cbbSize
-            // 
-            this.cbbSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbbSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.cbbSize.FormattingEnabled = true;
-            this.cbbSize.Location = new System.Drawing.Point(121, 48);
-            this.cbbSize.Name = "cbbSize";
-            this.cbbSize.Size = new System.Drawing.Size(193, 24);
-            this.cbbSize.TabIndex = 27;
-            // 
-            // cbbLoaiBia
-            // 
-            this.cbbLoaiBia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbbLoaiBia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.cbbLoaiBia.FormattingEnabled = true;
-            this.cbbLoaiBia.Location = new System.Drawing.Point(396, 48);
-            this.cbbLoaiBia.Name = "cbbLoaiBia";
-            this.cbbLoaiBia.Size = new System.Drawing.Size(186, 24);
-            this.cbbLoaiBia.TabIndex = 28;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(608, 51);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 17);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "Số tờ";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(655, 48);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(102, 23);
-            this.numericUpDown1.TabIndex = 30;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(768, 50);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 17);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Thành tiền";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(850, 48);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(159, 23);
-            this.textBox3.TabIndex = 32;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(850, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 28);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "ĐẶT HÀNG";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(793, 545);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 32);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "SAVE";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(903, 545);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 32);
-            this.button3.TabIndex = 35;
-            this.button3.Text = "CANCEL";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // OrderNew
             // 
@@ -456,13 +458,13 @@
             this.panel4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pageNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -484,7 +486,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label orderId;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column1;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
@@ -500,7 +502,7 @@
         private System.Windows.Forms.ComboBox cbbSize;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown pageNum;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;

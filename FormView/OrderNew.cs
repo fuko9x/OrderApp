@@ -1,6 +1,7 @@
 ﻿using MaterialSkin.Controls;
 using OrderApp.Common;
 using OrderApp.Dao;
+using OrderApp.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,12 @@ namespace OrderApp.FormView
             InitializeComponent();
             formatControl();
             fillData();
+            setOrderId();
+        }
+
+        private void setOrderId()
+        {
+            this.orderId.Text = new OrderLogic().insertNewId();
         }
 
         private void formatControl()
@@ -67,6 +74,11 @@ namespace OrderApp.FormView
             {
 
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

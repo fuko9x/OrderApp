@@ -12,6 +12,18 @@ namespace OrderApp.Logic
 {
     class OrderLogic
     {
+        public String insertNewId()
+        {
+            DateTime systemTime = AppUtils.getServerTime();
+
+            OrderDao orderDao = new OrderDao();
+            String orderPreffix = "SX" + (systemTime.Month < 10 ? "0" + systemTime.Month.ToString() : systemTime.Month.ToString()) + systemTime.Year.ToString().Substring(2, 2);
+
+            int numberOrder = orderDao.countOrderById(orderPreffix + "%");
+            String newOrderId = orderPreffix + (numberOrder + 1).ToString().PadLeft(4, '0');
+            orderDao.insertId(newOrderId);
+            return newOrderId;
+        }
 
         public LogicResult addOrder(FormAddOrderObj frmObj)
         {
@@ -51,6 +63,12 @@ namespace OrderApp.Logic
             return new LogicResult(Contanst.MSG_INFO, msg, null);
         }
 
+        private OrderDto createOrderDto(DateTime systemTime)
+        {
+            OrderDto dto = new OrderDto();
+            dto.createTime = systemTime;
+            return dto;
+        }
 
         private OrderDto createOrderDto(FormAddOrderObj obj, DateTime systemTime)
         {

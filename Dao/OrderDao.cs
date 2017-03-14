@@ -20,7 +20,21 @@ namespace OrderApp.Dao
             cmd.Connection = Connection.getConnection();
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            return reader.GetInt32(0);
+            int numOrderInMonth = reader.GetInt32(0);
+            reader.Close();
+            return numOrderInMonth;
+        }
+
+        public void insertId(String id)
+        {
+            String strQuery = "INSERT INTO DON_DAT_HANG (ID)"
+                + " VALUES ("
+                + " @id )";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
         }
 
         public void insert(OrderDto dto)
