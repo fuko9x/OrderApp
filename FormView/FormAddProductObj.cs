@@ -17,7 +17,7 @@ namespace OrderApp.FormView
         public String loaiGiay;
         public Double donGia;
         public String description;
-        public int defaultPage;
+        public int numPageDefault;
         public Double addPageCost;
 
         public FormAddProductObj()

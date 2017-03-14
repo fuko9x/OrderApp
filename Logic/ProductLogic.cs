@@ -36,6 +36,8 @@ namespace OrderApp.Logic
             dto.size = frmObj.size;
             dto.donGia = frmObj.donGia;
             dto.notes = frmObj.description;
+            dto.numPageDefault = frmObj.numPageDefault;
+            dto.addPageCost = frmObj.addPageCost;
             return dto;
 
         }

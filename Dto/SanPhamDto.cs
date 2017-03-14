@@ -16,8 +16,10 @@ namespace OrderApp.Dto
         public String size;
         public String loaiBia;
         public String loaiGiay;
-        public double donGia;
+        public Double donGia;
         public String notes;
+        public int numPageDefault;
+        public Double addPageCost;
 
         public SanPhamDto()
         {

@@ -55,6 +55,8 @@ namespace OrderApp.Dao
                 + ", SIZE"
                 + ", DON_GIA"
                 + ", DESCRIPTION"
+                + ", NUM_PAGE_DEFAULT"
+                + ", ADDITIONAL_PAGES_COST"
                 + ") VALUES ("
                 + " @idSanPhamCha"
                 + ", @tenSP"
@@ -63,6 +65,8 @@ namespace OrderApp.Dao
                 + ", @size "
                 + ", @donGia "
                 + ", @decription "
+                + ", @numPageDefault "
+                + ", @addPageCost "
                 + ")";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
@@ -74,6 +78,8 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@size", dto.size);
             cmd.Parameters.AddWithValue("@donGia", dto.donGia);
             cmd.Parameters.AddWithValue("@decription", dto.notes);
+            cmd.Parameters.AddWithValue("@numPageDefault", dto.numPageDefault);
+            cmd.Parameters.AddWithValue("@addPageCost", dto.addPageCost);
             cmd.ExecuteNonQuery();
         }
     
