@@ -34,7 +34,9 @@ namespace OrderApp.FormView
 
         private void linkCreateOrder_Click(object sender, EventArgs e)
         {
-            AddOrder frmOrder = new AddOrder();
+            ///AddOrder frmOrder = new AddOrder();
+            //frmOrder.ShowDialog(this);
+            OrderNew frmOrder = new OrderNew();
             frmOrder.ShowDialog(this);
         }
 

@@ -331,6 +331,7 @@
     <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\search_icon.png" />
     <None Include="Resources\footer_print.png" />
     <Content Include="Resources\Report\footer_print.png" />
     <Content Include="Resources\Report\photo_print.png" />

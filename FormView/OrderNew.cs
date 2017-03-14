@@ -1,4 +1,6 @@
 ﻿using MaterialSkin.Controls;
+using OrderApp.Common;
+using OrderApp.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +18,55 @@ namespace OrderApp.FormView
         public OrderNew()
         {
             InitializeComponent();
+            formatControl();
+            fillData();
         }
 
-        private void cbbLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        private void formatControl()
         {
+            this.dataGridViewSanPham = (DataGridView)FormatLayoutUtil.formatDataGridview(this.dataGridViewSanPham);
+        }
 
+        private void fillData()
+        {
+            try
+            {
+                this.comboBoxLoaiSanPham.DataSource = SanPhamDao.getList();
+                this.comboBoxLoaiSanPham.ValueMember = "ID";
+                this.comboBoxLoaiSanPham.DisplayMember = "TEN_SAN_PHAM";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception" + ex.Message);
+            }
+        }
+
+        private void comboBoxLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBoxLoaiSanPham.SelectedIndex >= 0)
+                {
+                    int idSanPhamCha = (int)comboBoxLoaiSanPham.SelectedValue;
+                    DataTable dt = SanPhamDao.getListChiTiet(idSanPhamCha);
+
+                    List<String> listSize = new List<string>();
+                    List<String> listLoaiBia = new List<string>();
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        listSize.Add(row["SIZE"].ToString());
+                        listLoaiBia.Add(row["LOAI_BIA"].ToString());
+                    }
+                    //FILL combobox
+                    cbbSize.DataSource = listSize;
+                    cbbLoaiBia.DataSource = listLoaiBia;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }
