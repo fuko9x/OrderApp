@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,9 +20,23 @@ namespace OrderApp.FormView
         public OrderNew()
         {
             InitializeComponent();
-            formatControl();
-            fillData();
-            setOrderId();
+
+            initData();
+
+        }
+
+        private void initData()
+        {
+            try
+            {
+                formatControl();
+                fillData();
+                setOrderId();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void setOrderId()
@@ -32,6 +47,8 @@ namespace OrderApp.FormView
         private void formatControl()
         {
             this.dataGridViewSanPham = (DataGridView)FormatLayoutUtil.formatDataGridview(this.dataGridViewSanPham);
+
+            this.txtThanhTien.KeyPress += FormatLayoutUtil.AcceptNumber_KeyPress;
         }
 
         private void fillData()
@@ -61,8 +78,16 @@ namespace OrderApp.FormView
                     List<String> listLoaiBia = new List<string>();
                     foreach (DataRow row in dt.Rows)
                     {
-                        listSize.Add(row["SIZE"].ToString());
-                        listLoaiBia.Add(row["LOAI_BIA"].ToString());
+                        String size = row["SIZE"].ToString();
+                        if (!listSize.Contains(size))
+                        {
+                            listSize.Add(size);
+                        }
+                        String loaiBia = row["LOAI_BIA"].ToString();
+                        if (!listLoaiBia.Contains(loaiBia))
+                        {
+                            listLoaiBia.Add(loaiBia);
+                        }
                     }
                     //FILL combobox
                     cbbSize.DataSource = listSize;
@@ -76,9 +101,34 @@ namespace OrderApp.FormView
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
+        private void OrderNew_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc hủy đơn hàng này hay không?", "Confirmation", MessageBoxButtons.YesNoCancel);
+            if (result != DialogResult.Yes)
+            {
+                //Delete Order
+                OrderDao orderDao = new OrderDao();
+                orderDao.deleteId(orderId.Text);
+                e.Cancel = true;
+            }
+        }
+
+
+
+        private void txtThanhTien_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtThanhTien.Text = AppUtils.formatMoney2Number(txtThanhTien.Text, 0).ToString();
+        }
+
+        private void txtThanhTien_MouseLeave(object sender, EventArgs e)
+        {
+            txtThanhTien.Text = AppUtils.formatNumber2Monney(AppUtils.formatMoney2Number(txtThanhTien.Text, 0));
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -45,9 +45,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.TextBox();
             this.comboBoxLoaiSanPham = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.addPageCost = new System.Windows.Forms.TextBox();
+            this.numPageDefault = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPageDefault)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -85,6 +91,7 @@
             this.btnClose.TabIndex = 16;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // saveBtn
             // 
@@ -116,29 +123,29 @@
             // 
             // tenSanPham
             // 
-            this.tenSanPham.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tenSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tenSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.tenSanPham.Location = new System.Drawing.Point(183, 39);
             this.tenSanPham.Name = "tenSanPham";
-            this.tenSanPham.Size = new System.Drawing.Size(364, 26);
+            this.tenSanPham.Size = new System.Drawing.Size(415, 26);
             this.tenSanPham.TabIndex = 20;
             // 
             // loaiBia
             // 
-            this.loaiBia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.loaiBia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.loaiBia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.loaiBia.Location = new System.Drawing.Point(183, 109);
             this.loaiBia.Name = "loaiBia";
-            this.loaiBia.Size = new System.Drawing.Size(364, 26);
+            this.loaiBia.Size = new System.Drawing.Size(415, 26);
             this.loaiBia.TabIndex = 21;
             // 
             // size
             // 
-            this.size.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.size.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.size.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.size.Location = new System.Drawing.Point(183, 74);
             this.size.Name = "size";
-            this.size.Size = new System.Drawing.Size(364, 26);
+            this.size.Size = new System.Drawing.Size(415, 26);
             this.size.TabIndex = 22;
             // 
             // label2
@@ -160,7 +167,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(174, 35);
             this.label3.TabIndex = 24;
-            this.label3.Text = "Kích thước (mm)";
+            this.label3.Text = "Kích thước (cm)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
@@ -176,40 +183,40 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(3, 210);
+            this.label5.Location = new System.Drawing.Point(3, 252);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(174, 91);
+            this.label5.Size = new System.Drawing.Size(174, 19);
             this.label5.TabIndex = 26;
-            this.label5.Text = "Ghi chú";
+            this.label5.Text = "Số tiền thêm";
             // 
             // donGia
             // 
-            this.donGia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.donGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.donGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.donGia.Location = new System.Drawing.Point(183, 179);
             this.donGia.Name = "donGia";
-            this.donGia.Size = new System.Drawing.Size(364, 26);
+            this.donGia.Size = new System.Drawing.Size(415, 26);
             this.donGia.TabIndex = 27;
             // 
             // description
             // 
-            this.description.Dock = System.Windows.Forms.DockStyle.Left;
+            this.description.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.description.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.description.Location = new System.Drawing.Point(183, 213);
+            this.description.Location = new System.Drawing.Point(183, 281);
             this.description.Multiline = true;
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(364, 85);
+            this.description.Size = new System.Drawing.Size(415, 57);
             this.description.TabIndex = 28;
             // 
             // loaiGiay
             // 
-            this.loaiGiay.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.loaiGiay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.loaiGiay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.loaiGiay.Location = new System.Drawing.Point(183, 144);
             this.loaiGiay.Name = "loaiGiay";
-            this.loaiGiay.Size = new System.Drawing.Size(364, 26);
+            this.loaiGiay.Size = new System.Drawing.Size(415, 26);
             this.loaiGiay.TabIndex = 30;
             // 
             // label6
@@ -233,32 +240,39 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tenSanPham, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.id, 1, 9);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxLoaiSanPham, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.size, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.loaiBia, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.description, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.donGia, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.loaiGiay, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.label8, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label9, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.description, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.addPageCost, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.numPageDefault, 1, 6);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.tableLayoutPanel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(92, 125);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(92, 103);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowCount = 10;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(601, 362);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(601, 372);
             this.tableLayoutPanel2.TabIndex = 31;
             // 
             // label7
@@ -272,15 +286,66 @@
             this.label7.Text = "Chọn Sản Phẩm";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // id
+            // 
+            this.id.Location = new System.Drawing.Point(183, 344);
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Size = new System.Drawing.Size(415, 26);
+            this.id.TabIndex = 17;
+            this.id.Visible = false;
+            // 
             // comboBoxLoaiSanPham
             // 
-            this.comboBoxLoaiSanPham.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxLoaiSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxLoaiSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.comboBoxLoaiSanPham.FormattingEnabled = true;
-            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(183, 7);
+            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(183, 4);
             this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
-            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(364, 27);
+            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(415, 27);
             this.comboBoxLoaiSanPham.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 218);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(174, 19);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Số trang (mặc định)";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 278);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 19);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Ghi chú";
+            // 
+            // addPageCost
+            // 
+            this.addPageCost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.addPageCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
+            this.addPageCost.Location = new System.Drawing.Point(183, 248);
+            this.addPageCost.Name = "addPageCost";
+            this.addPageCost.Size = new System.Drawing.Size(415, 26);
+            this.addPageCost.TabIndex = 34;
+            // 
+            // numPageDefault
+            // 
+            this.numPageDefault.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numPageDefault.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
+            this.numPageDefault.Location = new System.Drawing.Point(183, 213);
+            this.numPageDefault.Name = "numPageDefault";
+            this.numPageDefault.Size = new System.Drawing.Size(415, 26);
+            this.numPageDefault.TabIndex = 35;
+            this.numPageDefault.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // AddProduct
             // 
@@ -296,6 +361,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPageDefault)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,5 +386,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBoxLoaiSanPham;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox addPageCost;
+        private System.Windows.Forms.NumericUpDown numPageDefault;
+        private System.Windows.Forms.TextBox id;
     }
 }

@@ -37,6 +37,16 @@ namespace OrderApp.Dao
             cmd.ExecuteNonQuery();
         }
 
+        public void deleteId(String id)
+        {
+            String strQuery = "DELETE FROM DON_DAT_HANG WHERE ID = @ID";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@ID", id);
+            cmd.ExecuteNonQuery();
+        }
+
         public void insert(OrderDto dto)
         {
             String strQuery = "INSERT INTO DON_DAT_HANG "

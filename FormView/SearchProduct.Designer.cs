@@ -145,7 +145,7 @@
             // 
             this.cbbLoaiSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbLoaiSanPham.FormattingEnabled = true;
-            this.cbbLoaiSanPham.Location = new System.Drawing.Point(156, 3);
+            this.cbbLoaiSanPham.Location = new System.Drawing.Point(156, 4);
             this.cbbLoaiSanPham.Name = "cbbLoaiSanPham";
             this.cbbLoaiSanPham.Size = new System.Drawing.Size(227, 27);
             this.cbbLoaiSanPham.TabIndex = 1;
@@ -166,7 +166,7 @@
             // 
             this.cbbKichThuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbKichThuoc.FormattingEnabled = true;
-            this.cbbKichThuoc.Location = new System.Drawing.Point(156, 64);
+            this.cbbKichThuoc.Location = new System.Drawing.Point(156, 63);
             this.cbbKichThuoc.Name = "cbbKichThuoc";
             this.cbbKichThuoc.Size = new System.Drawing.Size(227, 27);
             this.cbbKichThuoc.TabIndex = 5;
@@ -207,7 +207,7 @@
             // 
             this.cbbLoaiGiay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbLoaiGiay.FormattingEnabled = true;
-            this.cbbLoaiGiay.Location = new System.Drawing.Point(530, 34);
+            this.cbbLoaiGiay.Location = new System.Drawing.Point(530, 33);
             this.cbbLoaiGiay.Name = "cbbLoaiGiay";
             this.cbbLoaiGiay.Size = new System.Drawing.Size(215, 27);
             this.cbbLoaiGiay.TabIndex = 4;
@@ -228,7 +228,7 @@
             // 
             this.cbbLoaiBia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbLoaiBia.FormattingEnabled = true;
-            this.cbbLoaiBia.Location = new System.Drawing.Point(530, 4);
+            this.cbbLoaiBia.Location = new System.Drawing.Point(530, 3);
             this.cbbLoaiBia.Name = "cbbLoaiBia";
             this.cbbLoaiBia.Size = new System.Drawing.Size(215, 27);
             this.cbbLoaiBia.TabIndex = 2;
@@ -351,6 +351,7 @@
             this.btnEdit.TabIndex = 16;
             this.btnEdit.Text = "Chỉnh sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // SearchProduct
             // 

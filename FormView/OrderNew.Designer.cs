@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pageNum = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSearchKhachHang = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -70,7 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearchKhachHang)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +82,7 @@
             this.panelMain.AutoScroll = true;
             this.panelMain.AutoScrollMinSize = new System.Drawing.Size(0, 600);
             this.panelMain.BackColor = System.Drawing.Color.White;
-            this.panelMain.Controls.Add(this.button3);
+            this.panelMain.Controls.Add(this.btnCancel);
             this.panelMain.Controls.Add(this.button2);
             this.panelMain.Controls.Add(this.panel4);
             this.panelMain.Controls.Add(this.groupBox2);
@@ -93,14 +93,15 @@
             this.panelMain.Size = new System.Drawing.Size(1077, 519);
             this.panelMain.TabIndex = 0;
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.Location = new System.Drawing.Point(903, 545);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 32);
-            this.button3.TabIndex = 35;
-            this.button3.Text = "CANCEL";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(903, 545);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(88, 32);
+            this.btnCancel.TabIndex = 35;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // button2
             // 
@@ -116,9 +117,9 @@
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.lblTongTien);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(705, 486);
+            this.panel4.Location = new System.Drawing.Point(488, 486);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(335, 53);
+            this.panel4.Size = new System.Drawing.Size(552, 53);
             this.panel4.TabIndex = 7;
             // 
             // lblTongTien
@@ -126,7 +127,7 @@
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Times New Roman", 18F);
             this.lblTongTien.ForeColor = System.Drawing.Color.Maroon;
-            this.lblTongTien.Location = new System.Drawing.Point(199, 9);
+            this.lblTongTien.Location = new System.Drawing.Point(395, 9);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(108, 27);
             this.lblTongTien.TabIndex = 1;
@@ -136,7 +137,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 16F);
-            this.label2.Location = new System.Drawing.Point(74, 12);
+            this.label2.Location = new System.Drawing.Point(287, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 25);
             this.label2.TabIndex = 0;
@@ -146,7 +147,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtThanhTien);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.pageNum);
             this.groupBox2.Controls.Add(this.label10);
@@ -168,24 +169,24 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(850, 77);
+            this.button1.Location = new System.Drawing.Point(850, 85);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 28);
             this.button1.TabIndex = 33;
             this.button1.Text = "ĐẶT HÀNG";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtThanhTien
             // 
-            this.textBox3.Location = new System.Drawing.Point(850, 48);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(159, 23);
-            this.textBox3.TabIndex = 32;
+            this.txtThanhTien.Location = new System.Drawing.Point(850, 51);
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.Size = new System.Drawing.Size(159, 23);
+            this.txtThanhTien.TabIndex = 32;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(768, 50);
+            this.label11.Location = new System.Drawing.Point(768, 53);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 17);
             this.label11.TabIndex = 31;
@@ -193,7 +194,7 @@
             // 
             // pageNum
             // 
-            this.pageNum.Location = new System.Drawing.Point(655, 48);
+            this.pageNum.Location = new System.Drawing.Point(655, 51);
             this.pageNum.Name = "pageNum";
             this.pageNum.Size = new System.Drawing.Size(102, 23);
             this.pageNum.TabIndex = 30;
@@ -335,7 +336,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.btnSearchKhachHang);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.textBox1);
@@ -351,16 +352,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Khách hàng";
             // 
-            // pictureBox1
+            // btnSearchKhachHang
             // 
-            this.pictureBox1.Image = global::OrderApp.Properties.Resources.search_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(529, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnSearchKhachHang.Image = global::OrderApp.Properties.Resources.search_icon;
+            this.btnSearchKhachHang.Location = new System.Drawing.Point(529, 20);
+            this.btnSearchKhachHang.Name = "btnSearchKhachHang";
+            this.btnSearchKhachHang.Size = new System.Drawing.Size(25, 25);
+            this.btnSearchKhachHang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnSearchKhachHang.TabIndex = 7;
+            this.btnSearchKhachHang.TabStop = false;
             // 
             // textBox2
             // 
@@ -453,6 +453,7 @@
             this.Name = "OrderNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐẶT HÀNG";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrderNew_FormClosing);
             this.panelMain.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -462,7 +463,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearchKhachHang)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -487,7 +488,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label orderId;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnSearchKhachHang;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column1;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column3;
@@ -500,12 +501,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbbLoaiBia;
         private System.Windows.Forms.ComboBox cbbSize;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown pageNum;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button button2;
     }
 }

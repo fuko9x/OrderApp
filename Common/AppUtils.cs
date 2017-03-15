@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace OrderApp.Common
@@ -22,6 +23,25 @@ namespace OrderApp.Common
         public static DateTime getServerTime()
         {
             return new CommonDao().getServerTime();
+        }
+
+        public static String formatNumber2Monney(Decimal monney)
+        {
+            return String.Format("{0:#,###}", monney);
+        }
+
+        public static Decimal formatMoney2Number(String monney, Decimal defaultNumber)
+        {
+            try
+            {
+                Regex rgx = new Regex("[^0-9]");
+                String number = rgx.Replace(monney, "");
+                return Decimal.Parse(number);
+            }
+            catch (Exception ex)
+            {
+                return defaultNumber;
+            }
         }
 
 

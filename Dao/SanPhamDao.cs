@@ -86,7 +86,7 @@ namespace OrderApp.Dao
         public void updateSanPhamChiTiet(SanPhamDto dto)
         {
             String strQuery = "UPDATE SAN_PHAM_CHI_TIET SET"
-                + "TEN_SAN_PHAM = @tenSP"
+                + " TEN_SAN_PHAM = @tenSP"
                 + ", LOAI_BIA = @loaiBia"
                 + ", LOAI_GIAY = @loaiGiay"
                 + ", SIZE = @size"
@@ -94,7 +94,7 @@ namespace OrderApp.Dao
                 + ", DESCRIPTION = @decription"
                 + ", NUM_PAGE_DEFAULT = @numPageDefault"
                 + ", ADDITIONAL_PAGES_COST = @addPageCost"
-                + "WHERE id = @id";
+                + " WHERE id = @id";
 
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
