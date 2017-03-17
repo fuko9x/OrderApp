@@ -62,8 +62,17 @@ namespace OrderApp.FormView
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //EditCustomer frmEdit = new EditCustomer();
-            //frmEdit.ShowDialog(this);
+            if (listKhachHang.SelectedRows.Count == 1)
+            {
+                int rowSelected = listKhachHang.SelectedRows[0].Index;
+                String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+                AddCustomer frmEdit = new AddCustomer(selectedId);
+                if (frmEdit.ShowDialog(this) == DialogResult.OK)
+                {
+                    // no thing
+                }
+            }
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)

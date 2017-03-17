@@ -34,10 +34,6 @@
             this.cbbLoaiSanPham = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewSanPham = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_SAN_PHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN_SAN_PHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +44,10 @@
             this.NUM_PAGE_DEFAULT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADDITIONAL_PAGES_COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRIPTION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -112,7 +112,7 @@
             // 
             this.cbbLoaiSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbLoaiSanPham.FormattingEnabled = true;
-            this.cbbLoaiSanPham.Location = new System.Drawing.Point(156, 21);
+            this.cbbLoaiSanPham.Location = new System.Drawing.Point(156, 24);
             this.cbbLoaiSanPham.Name = "cbbLoaiSanPham";
             this.cbbLoaiSanPham.Size = new System.Drawing.Size(227, 27);
             this.cbbLoaiSanPham.TabIndex = 1;
@@ -157,6 +157,69 @@
             this.dataGridViewSanPham.Name = "dataGridViewSanPham";
             this.dataGridViewSanPham.Size = new System.Drawing.Size(845, 282);
             this.dataGridViewSanPham.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "ID";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // ID_SAN_PHAM
+            // 
+            this.ID_SAN_PHAM.DataPropertyName = "ID_SAN_PHAM";
+            this.ID_SAN_PHAM.HeaderText = "ID_SAN_PHAM";
+            this.ID_SAN_PHAM.Name = "ID_SAN_PHAM";
+            this.ID_SAN_PHAM.Visible = false;
+            // 
+            // TEN_SAN_PHAM
+            // 
+            this.TEN_SAN_PHAM.DataPropertyName = "TEN_SAN_PHAM";
+            this.TEN_SAN_PHAM.HeaderText = "Tên Sản Phẩm";
+            this.TEN_SAN_PHAM.Name = "TEN_SAN_PHAM";
+            this.TEN_SAN_PHAM.ReadOnly = true;
+            // 
+            // LOAI_BIA
+            // 
+            this.LOAI_BIA.DataPropertyName = "LOAI_BIA";
+            this.LOAI_BIA.HeaderText = "Loại Bìa";
+            this.LOAI_BIA.Name = "LOAI_BIA";
+            // 
+            // LOAI_GIAY
+            // 
+            this.LOAI_GIAY.DataPropertyName = "LOAI_GIAY";
+            this.LOAI_GIAY.HeaderText = "Loại Giấy";
+            this.LOAI_GIAY.Name = "LOAI_GIAY";
+            // 
+            // SIZE
+            // 
+            this.SIZE.DataPropertyName = "SIZE";
+            this.SIZE.HeaderText = "Size";
+            this.SIZE.Name = "SIZE";
+            // 
+            // DON_GIA
+            // 
+            this.DON_GIA.DataPropertyName = "DON_GIA";
+            this.DON_GIA.HeaderText = "Đơn Giá";
+            this.DON_GIA.Name = "DON_GIA";
+            // 
+            // NUM_PAGE_DEFAULT
+            // 
+            this.NUM_PAGE_DEFAULT.DataPropertyName = "NUM_PAGE_DEFAULT";
+            this.NUM_PAGE_DEFAULT.HeaderText = "Số trang";
+            this.NUM_PAGE_DEFAULT.Name = "NUM_PAGE_DEFAULT";
+            // 
+            // ADDITIONAL_PAGES_COST
+            // 
+            this.ADDITIONAL_PAGES_COST.DataPropertyName = "ADDITIONAL_PAGES_COST";
+            this.ADDITIONAL_PAGES_COST.HeaderText = "Tiền Thêm";
+            this.ADDITIONAL_PAGES_COST.Name = "ADDITIONAL_PAGES_COST";
+            // 
+            // DESCRIPTION
+            // 
+            this.DESCRIPTION.DataPropertyName = "DESCRIPTION";
+            this.DESCRIPTION.HeaderText = "Ghi Chú";
+            this.DESCRIPTION.Name = "DESCRIPTION";
             // 
             // tableLayoutPanel5
             // 
@@ -231,69 +294,6 @@
             this.btnEdit.Text = "Chỉnh sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "ID";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            // 
-            // ID_SAN_PHAM
-            // 
-            this.ID_SAN_PHAM.DataPropertyName = "ID_SAN_PHAM";
-            this.ID_SAN_PHAM.HeaderText = "ID_SAN_PHAM";
-            this.ID_SAN_PHAM.Name = "ID_SAN_PHAM";
-            this.ID_SAN_PHAM.Visible = false;
-            // 
-            // TEN_SAN_PHAM
-            // 
-            this.TEN_SAN_PHAM.DataPropertyName = "TEN_SAN_PHAM";
-            this.TEN_SAN_PHAM.HeaderText = "Tên Sản Phẩm";
-            this.TEN_SAN_PHAM.Name = "TEN_SAN_PHAM";
-            this.TEN_SAN_PHAM.ReadOnly = true;
-            // 
-            // LOAI_BIA
-            // 
-            this.LOAI_BIA.DataPropertyName = "LOAI_BIA";
-            this.LOAI_BIA.HeaderText = "Loại Bìa";
-            this.LOAI_BIA.Name = "LOAI_BIA";
-            // 
-            // LOAI_GIAY
-            // 
-            this.LOAI_GIAY.DataPropertyName = "LOAI_GIAY";
-            this.LOAI_GIAY.HeaderText = "Loại Giấy";
-            this.LOAI_GIAY.Name = "LOAI_GIAY";
-            // 
-            // SIZE
-            // 
-            this.SIZE.DataPropertyName = "SIZE";
-            this.SIZE.HeaderText = "Size";
-            this.SIZE.Name = "SIZE";
-            // 
-            // DON_GIA
-            // 
-            this.DON_GIA.DataPropertyName = "DON_GIA";
-            this.DON_GIA.HeaderText = "Đơn Giá";
-            this.DON_GIA.Name = "DON_GIA";
-            // 
-            // NUM_PAGE_DEFAULT
-            // 
-            this.NUM_PAGE_DEFAULT.DataPropertyName = "NUM_PAGE_DEFAULT";
-            this.NUM_PAGE_DEFAULT.HeaderText = "Số trang";
-            this.NUM_PAGE_DEFAULT.Name = "NUM_PAGE_DEFAULT";
-            // 
-            // ADDITIONAL_PAGES_COST
-            // 
-            this.ADDITIONAL_PAGES_COST.DataPropertyName = "ADDITIONAL_PAGES_COST";
-            this.ADDITIONAL_PAGES_COST.HeaderText = "Tiền Thêm";
-            this.ADDITIONAL_PAGES_COST.Name = "ADDITIONAL_PAGES_COST";
-            // 
-            // DESCRIPTION
-            // 
-            this.DESCRIPTION.DataPropertyName = "DESCRIPTION";
-            this.DESCRIPTION.HeaderText = "Ghi Chú";
-            this.DESCRIPTION.Name = "DESCRIPTION";
             // 
             // SearchProduct
             // 

@@ -14,9 +14,9 @@ namespace OrderApp.Dto
         public String diaChi;
         public String email;
         public String accFtp;
-        public float giamGia;
+        public String giamGia;
         public String sales;
-        public float salesPercent;
+        public Decimal salesPercent;
         public String notes;
         public DateTime startDate;
         public String vanChuyen;

@@ -365,7 +365,7 @@ namespace OrderApp.FormView
             // 
             this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbContact.FormattingEnabled = true;
-            this.cbbContact.Location = new System.Drawing.Point(128, 180);
+            this.cbbContact.Location = new System.Drawing.Point(128, 183);
             this.cbbContact.Name = "cbbContact";
             this.cbbContact.Size = new System.Drawing.Size(210, 27);
             this.cbbContact.TabIndex = 26;
@@ -391,7 +391,6 @@ namespace OrderApp.FormView
             this.notes.Name = "notes";
             this.notes.Size = new System.Drawing.Size(609, 94);
             this.notes.TabIndex = 12;
-            this.notes.TextChanged += new System.EventHandler(this.notes_TextChanged);
             // 
             // tableLayoutPanel1
             // 

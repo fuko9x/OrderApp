@@ -13,7 +13,8 @@ using OrderApp.Common;
 using System.Data.SqlClient;
 using OrderApp.Logic;
 using MaterialSkin.Controls;
-
+using OrderApp.Dao;
+using OrderApp.Dto;
 
 namespace OrderApp.FormView
 {
@@ -24,12 +25,34 @@ namespace OrderApp.FormView
         public static readonly int CONS_MODE_VIEW = 2;
 
         public int currentMode = CONS_MODE_ADD;
+        public String selectedId;
 
         private List<LienHeObj> listLienHe = new List<LienHeObj>();
 
         public AddCustomer()
         {
             InitializeComponent();
+        }
+
+        public AddCustomer(String idKH)
+        {
+            InitializeComponent();
+            this.selectedId = idKH;
+            if (StringUtils.isNotBlank(selectedId))
+            {
+                KhachHangDto dto = new KhachHangDao().getKhachHangById(selectedId);
+                this.idKhachHang.Text = selectedId;
+                this.tenKH.Text = dto.tenKhachHang;
+                this.diachi.Text = dto.diaChi;
+                this.email.Text = dto.email;
+                this.accFtp.Text = dto.accFtp;
+                this.salesName.Text = dto.sales;
+                this.salesPercent.Value = dto.salesPercent;
+                this.vanChuyen.Text = dto.vanChuyen;
+                this.ngayHopTac.Value = dto.startDate;
+                this.notes.Text = dto.notes;
+
+            }
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -56,8 +79,8 @@ namespace OrderApp.FormView
             destObj.accFtp = StringUtils.Trim(this.accFtp.Text);
             destObj.sales = StringUtils.Trim(this.salesName.Text);
 
-            destObj.salesPercent = (float)this.salesPercent.Value;
-            destObj.giamGia = (float)this.giamGia.Value;
+            destObj.salesPercent = (Decimal)this.salesPercent.Value;
+            destObj.giamGia = this.giamGia.Value.ToString();
 
             destObj.vanChuyen = StringUtils.Trim(this.vanChuyen.Text);
             destObj.startDate = this.ngayHopTac.Value;
@@ -113,11 +136,6 @@ namespace OrderApp.FormView
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void notes_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

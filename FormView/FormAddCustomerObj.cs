@@ -16,8 +16,8 @@ namespace OrderApp.FormView
         public String accFtp;
         public List<LienHeObj> listContracts;
         public String sales;
-        public float salesPercent;
-        public float giamGia;
+        public Decimal salesPercent;
+        public String giamGia;
         public String vanChuyen;
         public DateTime startDate;
         public String notes;

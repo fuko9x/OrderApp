@@ -224,5 +224,43 @@ namespace OrderApp.Dao
             reader.Close();
             return dtTable;
         }
+
+        public KhachHangDto getKhachHangById(String id)
+        {
+            KhachHangDto dto = new KhachHangDto();
+            String strQuery = "SELECT "
+                + "TEN_KHACH_HANG"
+                + ", DIA_CHI"
+                + ", EMAIL"
+                + ", ACC_FTP"
+                + ", GIAM_GIA"
+                + ", TEN_SALES"
+                + ", HOA_HONG_SALES"
+                + ", GHI_CHU"
+                + ", NGAY_BAT_DAU"
+                + ", VAN_CHUYEN"
+                + ", TRANG_THAI"
+                 + " FROM KHACH_HANG WHERE ID_KHACH_HANG = @id ";
+
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            dto.tenKhachHang = reader.GetString(0);
+            dto.diaChi = reader.GetString(1);
+            dto.email = reader.GetString(2);
+            dto.accFtp = reader.GetString(3);
+            dto.giamGia = reader.GetString(4);
+            dto.sales = reader.GetString(5);
+            dto.salesPercent = reader.GetDecimal(6);
+            dto.notes = reader.GetString(7);
+            dto.startDate = reader.GetDateTime(8);
+            dto.vanChuyen = reader.GetString(9);
+            dto.trangThaiNo = reader.GetBoolean(10);
+            reader.Close();
+            return dto;
+        }
     }
 }
