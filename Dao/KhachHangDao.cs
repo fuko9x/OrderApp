@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OrderApp.Dao
 {
@@ -144,25 +145,19 @@ namespace OrderApp.Dao
                 cmd.Parameters.AddWithValue("@createTime" + i, dto.createTime);
             }
         }
-            public void update(KhachHangDto dto)
+
+        public void update(KhachHangDto dto)
         {
-            SqlCommand cmd = new SqlCommand("Update  KHACH_HANG SET"
-                 + "("
-                 + " TEN_KHACH_HANG"
-                 + ", EMAIL"
-                 + ", ACC FTP"
-                 + ", TEN_KHACH_HANG"
-                  + ", CREATE_BY"
-                + ", CREATE_TIME"
-                + ")"
-                 + " = ("
-                 + " @tenKhachHang"
-                 + ", @diaChi"
-                 + ", @email"
-                + ", @accFtp"
-                 + ", @createBy"
-                + ", @createTime"
-                + ")");
+            SqlCommand cmd = new SqlCommand(
+                "UPDATE KHACH_HANG "
+                 + " SET TEN_KHACH_HANG = @tenKhachHang"
+                 + ", EMAIL = @emai"
+                 + ", DIA_CHI = @diaChi"
+                 + ", ACC_FTP = @accFtp"
+                 + ", CREATE_BY = @createBy"
+                 + ", CREATE_TIME = @createTime"
+                 + " WHERE ID_KHACH_HANG = @idKhachHang"
+            );
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Connection.getConnection();
             cmd.Parameters.AddWithValue("@tenKhachHang", dto.tenKhachHang);
@@ -171,44 +166,7 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@accFtp", dto.accFtp);
             cmd.Parameters.AddWithValue("@createBy", dto.createBy);
             cmd.Parameters.AddWithValue("@createTime", dto.createTime);
-            cmd.ExecuteNonQuery();
-        }
-        public void updateList(List<KhachHangDto> listKH)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = Connection.getConnection();
-            String sql = "Update KHACH_HANG SET"
-                     + "("
-                     + " TEN_KHACH_HANG"
-                     + ", EMAIL"
-                     + ", ACC FTP"
-                     + ", TEN_KHACH_HANG"
-                     + ", CREATE_BY"
-                     + ", CREATE_TIME"
-                     + ")"
-                     + " = ";
-            for (int i = 0; i < listKH.Count; i++)
-            {
-                sql += "("
-                + " @tenKhachHang" + i
-                + ", @diaChi" + i
-                + ", @email" + i
-                + ", @accFtp" + i
-                + ", @createBy" + i
-                + ", @createTime" + i
-                + " )"
-                ;
-                KhachHangDto dto = listKH[i];
-
-                cmd.Parameters.AddWithValue("@tenKhachHang" + i, dto.tenKhachHang);
-                cmd.Parameters.AddWithValue("@diaChi" + i, dto.diaChi);
-                cmd.Parameters.AddWithValue("@email" + i, dto.email);
-                cmd.Parameters.AddWithValue("@accFtp" + i, dto.accFtp);
-                cmd.Parameters.AddWithValue("@createBy" + i, dto.createBy);
-                cmd.Parameters.AddWithValue("@createTime" + i, dto.createTime);
-            }
-            cmd.CommandText = sql;
+            cmd.Parameters.AddWithValue("@idKhachHang", dto.idKhachHang);
             cmd.ExecuteNonQuery();
         }
 
@@ -222,46 +180,38 @@ namespace OrderApp.Dao
                 + ", TEN_SALES"
                 + ", GHI_CHU"
                 + ", TRANG_THAI"
-                + " FROM KHACH_HANG WHERE";
+                + " FROM KHACH_HANG WHERE 1=1 ";
             if (StringUtils.isNotBlank(dto.idKhachHang))
             {
-                strQuery += " ID_KHACH_HANG = @idKhachHang AND";
+                strQuery += " AND ID_KHACH_HANG LIKE @idKhachHang ";
             }
             if (StringUtils.isNotBlank(dto.tenKhachHang))
             {
-                strQuery += " TEN_KHACH_HANG like 'N%' + @tenKhachHang + '%' AND";
+                strQuery += " AND TEN_KHACH_HANG LIKE @tenKhachHang ";
             }
             if (StringUtils.isNotBlank(dto.sales))
             {
-                strQuery += " TEN_SALES like 'N%' + @sales + '%' AND";
+                strQuery += " AND TEN_SALES LIKE @sales ";
             }
             if (dto.isSearchTrangThai)
             {
-                strQuery += " TRANG_THAI = @trangThaiNo";
+                strQuery += " AND TRANG_THAI = @trangThaiNo";
             }
 
-            if(strQuery.EndsWith("AND"))
-            {
-                strQuery = strQuery.Substring(0, strQuery.Length - 3);
-            }
-            if (strQuery.EndsWith("WHERE"))
-            {
-                strQuery = strQuery.Substring(0, strQuery.Length - 5);
-            }
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Connection.getConnection();
             if (StringUtils.isNotBlank(dto.idKhachHang))
             {
-                cmd.Parameters.AddWithValue("@idKhachHang", dto.idKhachHang);
+                cmd.Parameters.AddWithValue("@idKhachHang", "%" + dto.idKhachHang  + "%");
             }
             if (StringUtils.isNotBlank(dto.tenKhachHang))
             {
-                cmd.Parameters.AddWithValue("@tenKhachHang", dto.tenKhachHang);
+                cmd.Parameters.AddWithValue("@tenKhachHang", "%" + dto.tenKhachHang + "%");
             }
             if (StringUtils.isNotBlank(dto.sales))
             {
-                cmd.Parameters.AddWithValue("@sales", dto.sales);
+                cmd.Parameters.AddWithValue("@sales", "%" + dto.sales + "%");
             }
             if (dto.isSearchTrangThai)
             {

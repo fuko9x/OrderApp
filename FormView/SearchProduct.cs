@@ -56,7 +56,7 @@ namespace OrderApp.FormView
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            loadData();
+            
         }
 
         private void cbbLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)

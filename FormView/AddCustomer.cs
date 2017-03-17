@@ -19,6 +19,11 @@ namespace OrderApp.FormView
 {
     public partial class AddCustomer : MaterialForm
     {
+        public static readonly int CONS_MODE_ADD = 0;
+        public static readonly int CONS_MODE_EDIT = 1;
+        public static readonly int CONS_MODE_VIEW = 2;
+
+        public int currentMode = CONS_MODE_ADD;
 
         private List<LienHeObj> listLienHe = new List<LienHeObj>();
 
@@ -108,6 +113,11 @@ namespace OrderApp.FormView
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void notes_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
