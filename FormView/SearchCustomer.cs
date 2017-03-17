@@ -62,8 +62,8 @@ namespace OrderApp.FormView
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditCustomer frmEdit = new EditCustomer();
-            frmEdit.ShowDialog(this);
+            //EditCustomer frmEdit = new EditCustomer();
+            //frmEdit.ShowDialog(this);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

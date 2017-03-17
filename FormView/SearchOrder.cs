@@ -32,8 +32,8 @@ namespace OrderApp.FormView
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditOrder frmOrderEdit = new EditOrder();
-            frmOrderEdit.ShowDialog(this);
+            //EditOrder frmOrderEdit = new EditOrder();
+            //frmOrderEdit.ShowDialog(this);
 
             this.actionSearch();
         }
