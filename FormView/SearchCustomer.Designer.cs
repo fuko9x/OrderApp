@@ -32,8 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tenKhachHang = new System.Windows.Forms.TextBox();
-            this.sales = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.idKhachHang = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
@@ -42,12 +40,6 @@
             this.btnClear = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
             this.listKhachHang = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +47,12 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listKhachHang)).BeginInit();
@@ -72,13 +70,11 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel5.Controls.Add(this.tenKhachHang, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.sales, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.lbID, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.idKhachHang, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.lbName, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.checkBox1, 3, 1);
             this.tableLayoutPanel5.Controls.Add(this.panel1, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.checkBox1, 2, 1);
             this.tableLayoutPanel5.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(10, 14);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -98,27 +94,6 @@
             this.tenKhachHang.Name = "tenKhachHang";
             this.tenKhachHang.Size = new System.Drawing.Size(220, 25);
             this.tenKhachHang.TabIndex = 2;
-            // 
-            // sales
-            // 
-            this.sales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.sales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sales.Location = new System.Drawing.Point(531, 4);
-            this.sales.Multiline = true;
-            this.sales.Name = "sales";
-            this.sales.Size = new System.Drawing.Size(220, 25);
-            this.sales.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(380, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tên Sales";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbID
             // 
@@ -158,9 +133,9 @@
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.checkBox1.Location = new System.Drawing.Point(531, 39);
+            this.checkBox1.Location = new System.Drawing.Point(380, 39);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(220, 24);
+            this.checkBox1.Size = new System.Drawing.Size(145, 24);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "Trạng thái nợ";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -254,6 +229,76 @@
             this.listKhachHang.Size = new System.Drawing.Size(840, 232);
             this.listKhachHang.TabIndex = 1;
             this.listKhachHang.DoubleClick += new System.EventHandler(this.listKhachHang_CellContentDoubleClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID_KHACH_HANG";
+            this.ID.FillWeight = 69.28933F;
+            this.ID.HeaderText = "Mã KH";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 90;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "TEN_KHACH_HANG";
+            this.Column1.FillWeight = 284.264F;
+            this.Column1.HeaderText = "Tên Khách Hàng";
+            this.Column1.MinimumWidth = 50;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "DIA_CHI";
+            this.Column2.FillWeight = 69.28933F;
+            this.Column2.HeaderText = "Địa Chỉ";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 220;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "GIAM_GIA";
+            this.Column3.FillWeight = 69.28933F;
+            this.Column3.HeaderText = "Giảm Giá";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column3.Width = 92;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TEN_SALES";
+            this.Column4.FillWeight = 69.28933F;
+            this.Column4.HeaderText = "Sales";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 200;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "TRANG_THAI";
+            this.Column5.FalseValue = "0";
+            this.Column5.FillWeight = 69.28933F;
+            this.Column5.HeaderText = "Trạng Thái";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column5.TrueValue = "1";
+            this.Column5.Width = 90;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "GHI_CHU";
+            this.Column6.FillWeight = 69.28933F;
+            this.Column6.HeaderText = "Ghi Chú";
+            this.Column6.MinimumWidth = 100;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 250;
             // 
             // tableLayoutPanel1
             // 
@@ -359,76 +404,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết quả tìm kiếm";
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID_KHACH_HANG";
-            this.ID.FillWeight = 69.28933F;
-            this.ID.HeaderText = "Mã KH";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 90;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "TEN_KHACH_HANG";
-            this.Column1.FillWeight = 284.264F;
-            this.Column1.HeaderText = "Tên Khách Hàng";
-            this.Column1.MinimumWidth = 50;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "DIA_CHI";
-            this.Column2.FillWeight = 69.28933F;
-            this.Column2.HeaderText = "Địa Chỉ";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 220;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "GIAM_GIA";
-            this.Column3.FillWeight = 69.28933F;
-            this.Column3.HeaderText = "Giảm Giá";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.Width = 92;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "TEN_SALES";
-            this.Column4.FillWeight = 69.28933F;
-            this.Column4.HeaderText = "Sales";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 200;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "TRANG_THAI";
-            this.Column5.FalseValue = "0";
-            this.Column5.FillWeight = 69.28933F;
-            this.Column5.HeaderText = "Trạng Thái";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column5.TrueValue = "1";
-            this.Column5.Width = 90;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "GHI_CHU";
-            this.Column6.FillWeight = 69.28933F;
-            this.Column6.HeaderText = "Ghi Chú";
-            this.Column6.MinimumWidth = 100;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 250;
-            // 
             // SearchCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,8 +430,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox sales;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.TextBox idKhachHang;
         private System.Windows.Forms.TextBox tenKhachHang;

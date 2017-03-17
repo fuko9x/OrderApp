@@ -26,6 +26,13 @@ namespace OrderApp.FormView
 
             sanPhamSelected = new SanPhamDto();
             loadData();
+
+            // Binh add
+            int idSanPhamCha = 0;
+            int.TryParse(cbbLoaiSanPham.SelectedValue.ToString(), out idSanPhamCha);
+            loadDataGridview(idSanPhamCha);
+            // END
+
         }
 
         private void formatControl()
@@ -87,7 +94,7 @@ namespace OrderApp.FormView
 
                 AddProduct frmProduct = new AddProduct();
                 frmProduct.editProduct(dto);
-                if(frmProduct.ShowDialog(this) == DialogResult.OK);
+                if(frmProduct.ShowDialog(this) == DialogResult.OK)
                 {
                     loadData();
                 }

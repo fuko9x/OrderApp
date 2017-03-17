@@ -30,25 +30,24 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbbLoaiSanPham = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbbKichThuoc = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.cbbLoaiGiay = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbbLoaiBia = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewSanPham = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_SAN_PHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN_SAN_PHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAI_BIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAI_GIAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SIZE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DON_GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUM_PAGE_DEFAULT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADDITIONAL_PAGES_COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRIPTION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -72,7 +71,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(19, 72);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 136F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(857, 393);
             this.tableLayoutPanel1.TabIndex = 3;
@@ -87,55 +86,23 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.56874F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox4, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.cbbLoaiSanPham, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.cbbKichThuoc, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtDonGia, 3, 2);
-            this.tableLayoutPanel2.Controls.Add(this.cbbLoaiGiay, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label6, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.cbbLoaiBia, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnSearch, 1, 3);
             this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(851, 130);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(851, 92);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(156, 33);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(227, 26);
-            this.textBox4.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(3, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên sản phẩm";
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Location = new System.Drawing.Point(3, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 19);
             this.label1.TabIndex = 0;
@@ -145,110 +112,11 @@
             // 
             this.cbbLoaiSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbLoaiSanPham.FormattingEnabled = true;
-            this.cbbLoaiSanPham.Location = new System.Drawing.Point(156, 3);
+            this.cbbLoaiSanPham.Location = new System.Drawing.Point(156, 21);
             this.cbbLoaiSanPham.Name = "cbbLoaiSanPham";
             this.cbbLoaiSanPham.Size = new System.Drawing.Size(227, 27);
             this.cbbLoaiSanPham.TabIndex = 1;
             this.cbbLoaiSanPham.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiSanPham_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(3, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 19);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Kích Thước (mm)";
-            // 
-            // cbbKichThuoc
-            // 
-            this.cbbKichThuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbKichThuoc.FormattingEnabled = true;
-            this.cbbKichThuoc.Location = new System.Drawing.Point(156, 64);
-            this.cbbKichThuoc.Name = "cbbKichThuoc";
-            this.cbbKichThuoc.Size = new System.Drawing.Size(227, 27);
-            this.cbbKichThuoc.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(389, 65);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 19);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Đơn giá";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(389, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Loại giấy";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtDonGia
-            // 
-            this.txtDonGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDonGia.Location = new System.Drawing.Point(530, 63);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(215, 26);
-            this.txtDonGia.TabIndex = 6;
-            // 
-            // cbbLoaiGiay
-            // 
-            this.cbbLoaiGiay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbLoaiGiay.FormattingEnabled = true;
-            this.cbbLoaiGiay.Location = new System.Drawing.Point(530, 34);
-            this.cbbLoaiGiay.Name = "cbbLoaiGiay";
-            this.cbbLoaiGiay.Size = new System.Drawing.Size(215, 27);
-            this.cbbLoaiGiay.TabIndex = 4;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(389, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 19);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Loại bìa / Khung";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cbbLoaiBia
-            // 
-            this.cbbLoaiBia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbLoaiBia.FormattingEnabled = true;
-            this.cbbLoaiBia.Location = new System.Drawing.Point(530, 4);
-            this.cbbLoaiBia.Name = "cbbLoaiBia";
-            this.cbbLoaiBia.Size = new System.Drawing.Size(215, 27);
-            this.cbbLoaiBia.TabIndex = 2;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnSearch.AutoSize = true;
-            this.btnSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSearch.Depth = 0;
-            this.btnSearch.Icon = null;
-            this.btnSearch.Location = new System.Drawing.Point(156, 93);
-            this.btnSearch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Primary = true;
-            this.btnSearch.Size = new System.Drawing.Size(81, 34);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "Tìm Kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -259,11 +127,11 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.dataGridViewSanPham, 0, 0);
             this.tableLayoutPanel3.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 139);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 102);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.08074F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(851, 251);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(851, 288);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // dataGridViewSanPham
@@ -274,9 +142,20 @@
             this.dataGridViewSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSanPham.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewSanPham.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.ID_SAN_PHAM,
+            this.TEN_SAN_PHAM,
+            this.LOAI_BIA,
+            this.LOAI_GIAY,
+            this.SIZE,
+            this.DON_GIA,
+            this.NUM_PAGE_DEFAULT,
+            this.ADDITIONAL_PAGES_COST,
+            this.DESCRIPTION});
             this.dataGridViewSanPham.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewSanPham.Name = "dataGridViewSanPham";
-            this.dataGridViewSanPham.Size = new System.Drawing.Size(845, 245);
+            this.dataGridViewSanPham.Size = new System.Drawing.Size(845, 282);
             this.dataGridViewSanPham.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -353,6 +232,69 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "ID";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // ID_SAN_PHAM
+            // 
+            this.ID_SAN_PHAM.DataPropertyName = "ID_SAN_PHAM";
+            this.ID_SAN_PHAM.HeaderText = "ID_SAN_PHAM";
+            this.ID_SAN_PHAM.Name = "ID_SAN_PHAM";
+            this.ID_SAN_PHAM.Visible = false;
+            // 
+            // TEN_SAN_PHAM
+            // 
+            this.TEN_SAN_PHAM.DataPropertyName = "TEN_SAN_PHAM";
+            this.TEN_SAN_PHAM.HeaderText = "Tên Sản Phẩm";
+            this.TEN_SAN_PHAM.Name = "TEN_SAN_PHAM";
+            this.TEN_SAN_PHAM.ReadOnly = true;
+            // 
+            // LOAI_BIA
+            // 
+            this.LOAI_BIA.DataPropertyName = "LOAI_BIA";
+            this.LOAI_BIA.HeaderText = "Loại Bìa";
+            this.LOAI_BIA.Name = "LOAI_BIA";
+            // 
+            // LOAI_GIAY
+            // 
+            this.LOAI_GIAY.DataPropertyName = "LOAI_GIAY";
+            this.LOAI_GIAY.HeaderText = "Loại Giấy";
+            this.LOAI_GIAY.Name = "LOAI_GIAY";
+            // 
+            // SIZE
+            // 
+            this.SIZE.DataPropertyName = "SIZE";
+            this.SIZE.HeaderText = "Size";
+            this.SIZE.Name = "SIZE";
+            // 
+            // DON_GIA
+            // 
+            this.DON_GIA.DataPropertyName = "DON_GIA";
+            this.DON_GIA.HeaderText = "Đơn Giá";
+            this.DON_GIA.Name = "DON_GIA";
+            // 
+            // NUM_PAGE_DEFAULT
+            // 
+            this.NUM_PAGE_DEFAULT.DataPropertyName = "NUM_PAGE_DEFAULT";
+            this.NUM_PAGE_DEFAULT.HeaderText = "Số trang";
+            this.NUM_PAGE_DEFAULT.Name = "NUM_PAGE_DEFAULT";
+            // 
+            // ADDITIONAL_PAGES_COST
+            // 
+            this.ADDITIONAL_PAGES_COST.DataPropertyName = "ADDITIONAL_PAGES_COST";
+            this.ADDITIONAL_PAGES_COST.HeaderText = "Tiền Thêm";
+            this.ADDITIONAL_PAGES_COST.Name = "ADDITIONAL_PAGES_COST";
+            // 
+            // DESCRIPTION
+            // 
+            this.DESCRIPTION.DataPropertyName = "DESCRIPTION";
+            this.DESCRIPTION.HeaderText = "Ghi Chú";
+            this.DESCRIPTION.Name = "DESCRIPTION";
+            // 
             // SearchProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,23 +320,22 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.DataGridView dataGridViewSanPham;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private MaterialSkin.Controls.MaterialRaisedButton btnAdd;
         private MaterialSkin.Controls.MaterialRaisedButton btnClose;
         private MaterialSkin.Controls.MaterialRaisedButton btnEdit;
-        private MaterialSkin.Controls.MaterialRaisedButton btnSearch;
         private System.Windows.Forms.ComboBox cbbLoaiSanPham;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbbKichThuoc;
-        private System.Windows.Forms.ComboBox cbbLoaiBia;
-        private System.Windows.Forms.ComboBox cbbLoaiGiay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_SAN_PHAM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN_SAN_PHAM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOAI_BIA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOAI_GIAY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SIZE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DON_GIA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NUM_PAGE_DEFAULT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADDITIONAL_PAGES_COST;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIPTION;
     }
 }

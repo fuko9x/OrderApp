@@ -49,7 +49,6 @@ namespace OrderApp.FormView
             FormSearchCustomerObj obj = new FormSearchCustomerObj();
             obj.idKhachHang = StringUtils.Trim(this.idKhachHang.Text);
             obj.tenKhachHang = StringUtils.Trim(this.tenKhachHang.Text);
-            obj.sales = StringUtils.Trim(this.sales.Text);
             //obj.trangThaiNo = this.trangthaiNo;
             return obj;
         }
