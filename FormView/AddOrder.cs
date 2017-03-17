@@ -26,8 +26,8 @@ namespace OrderApp.FormView
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            FrmConfirmOrder confirm = new FrmConfirmOrder();
-            confirm.ShowDialog(this);
+            //FrmConfirmOrder confirm = new FrmConfirmOrder();
+            //confirm.ShowDialog(this);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
