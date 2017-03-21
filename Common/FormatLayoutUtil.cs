@@ -28,7 +28,7 @@ namespace OrderApp.Common
 
                 gridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 
-                gridview.ColumnHeadersHeight = 30;
+                //gridview.ColumnHeadersHeight = 30;
                 gridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 
                 gridview.EnableHeadersVisualStyles = false;

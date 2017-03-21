@@ -43,15 +43,6 @@ namespace OrderApp.FormView
             this.Close();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            actionSearch();
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
@@ -63,6 +54,13 @@ namespace OrderApp.FormView
         {
             PrintOrder frmPrint = new PrintOrder();
             frmPrint.ShowDialog();
+        }
+
+        private void cbbTinhTrangDonHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String title = cbbTinhTrangDonHang.SelectedItem.ToString();
+            this.Text = title;
+            this.Invalidate();
         }
     }
 }
