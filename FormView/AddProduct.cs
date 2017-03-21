@@ -52,7 +52,7 @@ namespace OrderApp.FormView
             try
             {
                 //load combobox
-                this.comboBoxLoaiSanPham.DataSource = SanPhamDao.getList();
+                this.comboBoxLoaiSanPham.DataSource = SanPhamDao.getListSanPhamCha();
                 this.comboBoxLoaiSanPham.ValueMember = "ID";
                 this.comboBoxLoaiSanPham.DisplayMember = "TEN_SAN_PHAM";
 

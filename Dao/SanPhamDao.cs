@@ -12,10 +12,19 @@ namespace OrderApp.Dao
 {
     public class SanPhamDao
     {
-        public static DataTable getList()
+        public static DataTable getListSanPhamCha()
         {
             DataTable dt = new DataTable();
             String strQuery = "SELECT * FROM SAN_PHAM";
+            SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public static DataTable getListChiTiet()
+        {
+            DataTable dt = new DataTable();
+            String strQuery = "SELECT * FROM SAN_PHAM_CHI_TIET";
             SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
             adapter.Fill(dt);
             return dt;

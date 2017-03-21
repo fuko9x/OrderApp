@@ -28,9 +28,9 @@ namespace OrderApp.FormView
             loadData();
 
             // Binh add
-            int idSanPhamCha = 0;
-            int.TryParse(cbbLoaiSanPham.SelectedValue.ToString(), out idSanPhamCha);
-            loadDataGridview(idSanPhamCha);
+            //int idSanPhamCha = 0;
+            //int.TryParse(cbbLoaiSanPham.SelectedValue.ToString(), out idSanPhamCha);
+            //loadDataGridview(idSanPhamCha);
             // END
 
         }
@@ -42,13 +42,28 @@ namespace OrderApp.FormView
 
         private void loadData()
         {
-            this.dataGridViewSanPham.DataSource = SanPhamDao.getList();
-
             //Load combobox
-            this.cbbLoaiSanPham.DataSource = SanPhamDao.getList();
+            this.cbbLoaiSanPham.DataSource = SanPhamDao.getListSanPhamCha();
             this.cbbLoaiSanPham.ValueMember = "ID";
             this.cbbLoaiSanPham.DisplayMember = "TEN_SAN_PHAM";
 
+            reloadData();
+        }
+
+        private void reloadData()
+        {
+            int idSanPhamCha = 0;
+            if (cbbLoaiSanPham.SelectedIndex >= 0)
+            {
+                int.TryParse(cbbLoaiSanPham.SelectedValue.ToString(), out idSanPhamCha);
+            }
+            if (idSanPhamCha == 0) {
+                this.dataGridViewSanPham.DataSource = SanPhamDao.getListChiTiet();
+            }
+            else
+            {
+                this.dataGridViewSanPham.DataSource = SanPhamDao.getListChiTiet(idSanPhamCha);
+            }
         }
 
         private void loadDataGridview(int idSanPhamCha)
@@ -68,11 +83,7 @@ namespace OrderApp.FormView
 
         private void cbbLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbbLoaiSanPham.SelectedIndex >= 0) {
-                int idSanPhamCha = 0;
-                int.TryParse(cbbLoaiSanPham.SelectedValue.ToString(), out idSanPhamCha);
-                loadDataGridview(idSanPhamCha);
-            }
+            reloadData();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -96,9 +107,17 @@ namespace OrderApp.FormView
                 frmProduct.editProduct(dto);
                 if(frmProduct.ShowDialog(this) == DialogResult.OK)
                 {
-                    loadData();
+                    reloadData();
                 }
-                   
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddProduct frmAdd = new AddProduct();
+            if (frmAdd.ShowDialog(this) == DialogResult.OK)
+            {
+                loadData();
             }
         }
     }
