@@ -75,6 +75,36 @@ namespace OrderApp.FormView
             
         }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (listKhachHang.SelectedRows.Count == 1)
+            {
+                int rowSelected = listKhachHang.SelectedRows[0].Index;
+                String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        FormSearchCustomerObj obj = new FormSearchCustomerObj();
+                        obj.idKhachHang = selectedId;
+                        LogicResult logicRS = new CustomerLogic().deleteCustomerLogic(obj);
+
+                        FormSearchCustomerObj frmObj = tranfersInput();
+                        CustomerLogic logic = new CustomerLogic();
+                        LogicResult searchResult = logic.searchCustomerLogic(frmObj);
+                        outputObj = (FormSearchCustomerObj)searchResult.obj;
+                        this.listKhachHang.DataSource = outputObj.listKhachHangs;
+                        MessageBox.Show("SUCCESS: " + logicRS.msg);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR: " + ex.Message);
+                    }
+                }
+            }
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

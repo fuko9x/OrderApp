@@ -39,11 +39,17 @@ namespace OrderApp.Logic
             KhachHangDao khDao = new KhachHangDao();
 
             khDao.update(khDto);
+            LienHeDao lienHeDao = new LienHeDao();
+            List<LienHeDto> listLienHeOld = lienHeDao.getListLienHe(khDto.idKhachHang);
+            if (listLienHeOld.Count > 0)
+            {
+                lienHeDao.delete(khDto.idKhachHang);
+            }
             if (obj.listContracts != null && obj.listContracts.Count > 0)
             {
-                new LienHeDao().insertList(createListLienHeDto(obj));
+                List<LienHeDto> listInsertLienHe = createListLienHeDto(obj);
+                lienHeDao.insertList(listInsertLienHe);
             }
-
             return new LogicResult(Contanst.MSG_INFO, AppUtils.getAppConfig("MSGINFO004"), null);
         }
 
@@ -55,7 +61,33 @@ namespace OrderApp.Logic
             String msg = "";
             return new LogicResult(Contanst.MSG_INFO, msg, obj);
         }
-
+      
+        public LogicResult deleteCustomerLogic(FormSearchCustomerObj obj)
+        {
+            KhachHangDao khDao = new KhachHangDao();
+            LienHeDao lienHeDao = new LienHeDao();
+            khDao.deleteKhachHang(obj.idKhachHang);
+            List<LienHeDto> listLienHeOld = lienHeDao.getListLienHe(obj.idKhachHang);
+            if (listLienHeOld.Count > 0)
+            {
+                lienHeDao.delete(obj.idKhachHang);
+            }
+            return new LogicResult(Contanst.MSG_INFO, AppUtils.getAppConfig("MSGINFO005"), null);
+        }
+          
+        private HashSet<int> createListIdLienHe(List<LienHeDto> listLienHe)
+        {
+            HashSet<int> rs = new HashSet<int>();
+            if (listLienHe == null || listLienHe.Count == 0)
+            {
+                return null;
+            }
+            foreach (LienHeDto item in listLienHe)
+            {
+                rs.Add(item.id);
+            }
+            return rs;
+        }
         private List<LienHeDto> createListLienHeDto(FormAddCustomerObj obj)
         {
             List<LienHeDto> listDto = new List<LienHeDto>();

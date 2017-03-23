@@ -8,6 +8,7 @@ namespace OrderApp.Dto
 {
     public class LienHeDto
     {
+        public int id;
         public String name;
         public String phone;
         public String idKhacHang;

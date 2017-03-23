@@ -61,7 +61,13 @@ namespace OrderApp.FormView
             {
                 FormAddCustomerObj formObj = tranfersInput();
                 CustomerLogic logic = new CustomerLogic();
-                LogicResult result = logic.addCustommerLogic(formObj);
+                if (StringUtils.isBlank(selectedId))
+                {
+                    LogicResult result = logic.addCustommerLogic(formObj);
+                } else
+                {
+                    LogicResult result = logic.updateCustommerLogic(formObj);
+                }
             }
             catch (Exception ex)
             {

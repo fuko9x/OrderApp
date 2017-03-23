@@ -151,7 +151,7 @@ namespace OrderApp.Dao
             SqlCommand cmd = new SqlCommand(
                 "UPDATE KHACH_HANG "
                  + " SET TEN_KHACH_HANG = @tenKhachHang"
-                 + ", EMAIL = @emai"
+                 + ", EMAIL = @email"
                  + ", DIA_CHI = @diaChi"
                  + ", ACC_FTP = @accFtp"
                  + ", CREATE_BY = @createBy"
@@ -261,6 +261,17 @@ namespace OrderApp.Dao
             dto.trangThaiNo = reader.GetBoolean(10);
             reader.Close();
             return dto;
+        }
+
+        public void deleteKhachHang(String id)
+        {
+            String strQuery = "DELETE FROM KHACH_HANG WHERE ID_KHACH_HANG = @idKhachHang";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@idKhachHang", id);
+            cmd.ExecuteNonQuery();
+
         }
     }
 }

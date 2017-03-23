@@ -56,7 +56,19 @@ namespace OrderApp.Dao
                 dto.phone = reader.GetString(1);
                 listLienHeDto.Add(dto);
             }
+            reader.Close();
             return listLienHeDto;
+        }
+
+        public void delete(String idKhachHang)
+        {
+            String strQuery = "DELETE FROM LIEN_HE WHERE ID_KHACH_HANG = @idKhachHang";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@idKhachHang", idKhachHang);
+
+            cmd.ExecuteNonQuery();
         }
     }  
 }
