@@ -117,7 +117,6 @@
     <Compile Include="FormView\AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormView\DemoObj.cs" />
     <Compile Include="FormView\DetailProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,33 +135,15 @@
     <Compile Include="FormView\DetailOrder.Designer.cs">
       <DependentUpon>DetailOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormView\EditCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormView\EditCustomer.Designer.cs">
-      <DependentUpon>EditCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormView\EditOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormView\EditOrder.Designer.cs">
-      <DependentUpon>EditOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormView\EditProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormView\EditProduct.Designer.cs">
-      <DependentUpon>EditProduct.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormView\FormAddOrderObj.cs" />
     <Compile Include="FormView\FormAddProductObj.cs" />
     <Compile Include="FormView\FormEditCustomerObj.cs" />
     <Compile Include="FormView\FormSearchCustomerObj.cs" />
-    <Compile Include="FormView\FrmConfirmOrder.cs">
+    <Compile Include="FormView\FrmCongNoTongHop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormView\FrmConfirmOrder.Designer.cs">
-      <DependentUpon>FrmConfirmOrder.cs</DependentUpon>
+    <Compile Include="FormView\FrmCongNoTongHop.Designer.cs">
+      <DependentUpon>FrmCongNoTongHop.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\FrmLienHe.cs">
       <SubType>Form</SubType>
@@ -181,6 +162,12 @@
     </Compile>
     <Compile Include="FormView\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormView\FrmCongNoChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\FrmCongNoChiTiet.Designer.cs">
+      <DependentUpon>FrmCongNoChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\KhachHangSearchView.cs" />
     <Compile Include="FormView\LienHeObj.cs" />
@@ -248,17 +235,8 @@
     <EmbeddedResource Include="FormView\DetailProduct.resx">
       <DependentUpon>DetailProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormView\EditCustomer.resx">
-      <DependentUpon>EditCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormView\EditOrder.resx">
-      <DependentUpon>EditOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormView\EditProduct.resx">
-      <DependentUpon>EditProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormView\FrmConfirmOrder.resx">
-      <DependentUpon>FrmConfirmOrder.cs</DependentUpon>
+    <EmbeddedResource Include="FormView\FrmCongNoTongHop.resx">
+      <DependentUpon>FrmCongNoTongHop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\FrmLienHe.resx">
       <DependentUpon>FrmLienHe.cs</DependentUpon>
@@ -271,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\AddOrder.resx">
       <DependentUpon>AddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\FrmCongNoChiTiet.resx">
+      <DependentUpon>FrmCongNoChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\OrderNew.resx">
       <DependentUpon>OrderNew.cs</DependentUpon>
