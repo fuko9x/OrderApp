@@ -39,6 +39,21 @@ namespace OrderApp.Dao
             return dt;
         }
 
+        public static DataTable getChiTietSanPham(int idSanPhamCha, String size, String loaiBia)
+        {
+            DataTable dt = new DataTable();
+            String strQuery = "SELECT * FROM SAN_PHAM_CHI_TIET "
+                             + "WHERE ID_SAN_PHAM = " + idSanPhamCha
+                             + " AND SIZE = @size"
+                             + " AND LOAI_BIA = @loaiBia";
+            SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
+            adapter.SelectCommand.Parameters.AddWithValue("@size", size);
+            adapter.SelectCommand.Parameters.AddWithValue("@loaiBia", loaiBia);
+            adapter.Fill(dt);
+
+            return dt;
+        }
+
         public int insertSanPham(SanPhamDto dto)
         {
             String strQuery = "INSERT INTO SAN_PHAM (TEN_SAN_PHAM, NOTES) OUTPUT INSERTED.ID"

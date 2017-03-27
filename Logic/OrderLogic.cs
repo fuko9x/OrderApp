@@ -12,7 +12,7 @@ namespace OrderApp.Logic
 {
     class OrderLogic
     {
-        public String insertNewId()
+        public static String insertNewId()
         {
             DateTime systemTime = AppUtils.getServerTime();
 
@@ -36,7 +36,8 @@ namespace OrderApp.Logic
             int numberOrder = orderDao.countOrderById(orderPreffix + "%");
             String newOrderId = orderPreffix + (numberOrder + 1).ToString().PadLeft(4, '0');
             orderDto.id = newOrderId;
-            orderDao.insert(orderDto);
+
+            //orderDao.insert(orderDto);
 
             
             if (frmObj.listProduct.Count > 0)

@@ -1,8 +1,10 @@
 ﻿using MaterialSkin.Controls;
 using OrderApp.Common;
 using OrderApp.Dao;
+using OrderApp.Dto;
 using OrderApp.Logic;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,31 +19,32 @@ namespace OrderApp.FormView
 {
     public partial class OrderNew : MaterialForm
     {
+        //private creatOrder
+        private OrderDto orderDTO = new OrderDto();
+
         public OrderNew()
         {
             InitializeComponent();
 
             initData();
-
         }
 
         private void initData()
         {
             try
             {
+                orderDTO = new OrderDto();
+                orderDTO.id = OrderLogic.insertNewId();
+
                 formatControl();
                 fillData();
-                setOrderId();
-            }
-            catch (Exception ex)
-            {
+                updateUI();
 
+                this.comboBoxLoaiSanPham.SelectedIndex = 0;
             }
-        }
-
-        private void setOrderId()
-        {
-            this.orderId.Text = new OrderLogic().insertNewId();
+            catch (Exception ex){
+                MessageBox.Show(ex.Message, "Exception");
+            }
         }
 
         private void formatControl()
@@ -55,6 +58,7 @@ namespace OrderApp.FormView
         {
             try
             {
+                //fill combobox
                 this.comboBoxLoaiSanPham.DataSource = SanPhamDao.getListSanPhamCha();
                 this.comboBoxLoaiSanPham.ValueMember = "ID";
                 this.comboBoxLoaiSanPham.DisplayMember = "TEN_SAN_PHAM";
@@ -62,6 +66,27 @@ namespace OrderApp.FormView
             catch (Exception ex)
             {
                 MessageBox.Show("Exception" + ex.Message);
+            }
+        }
+
+        private void updateUI()
+        {
+            this.orderId.Text = orderDTO.id;
+            this.dtNgayDat.Value = orderDTO.ngayDat;
+            this.dtNgayGiao.Value = orderDTO.ngayGiao;
+
+            dataGridViewSanPham.ColumnCount = 4;
+            dataGridViewSanPham.Columns[0].Name = "Tên Sản Phẩm";
+            dataGridViewSanPham.Columns[1].Name = "Kích thước";
+            dataGridViewSanPham.Columns[2].Name = "Loại Giấy";
+            dataGridViewSanPham.Columns[3].Name = "Loại Bìa";
+
+            // update gridview
+            this.dataGridViewSanPham.Rows.Clear();
+            foreach (DonDatHangSPDto orderSP in orderDTO.listSanPham)
+            {
+                string[] row = new string[] { orderSP.tenSanPham, orderSP.kichThuoc, orderSP.loaiGiay, orderSP.loaiBia };
+                this.dataGridViewSanPham.Rows.Add(row);
             }
         }
 
@@ -107,14 +132,15 @@ namespace OrderApp.FormView
             DialogResult result = MessageBox.Show("Bạn có chắc hủy đơn hàng này hay không?", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (result != DialogResult.Yes)
             {
-                //Delete Order
-                OrderDao orderDao = new OrderDao();
-                orderDao.deleteId(orderId.Text);
                 e.Cancel = true;
             }
+            else
+            {
+                //Delete Order
+                OrderDao orderDao = new OrderDao();
+                orderDao.deleteId(orderDTO.id);
+            }
         }
-
-
 
         private void txtThanhTien_MouseDown(object sender, MouseEventArgs e)
         {
@@ -124,6 +150,83 @@ namespace OrderApp.FormView
         private void txtThanhTien_MouseLeave(object sender, EventArgs e)
         {
             txtThanhTien.Text = AppUtils.formatNumber2Monney(AppUtils.formatMoney2Number(txtThanhTien.Text, 0));
+        }
+
+        private void btnSearchKhachHang_Click(object sender, EventArgs e)
+        {
+            SearchCustomer frmSearch = new SearchCustomer();
+            if (frmSearch.ShowDialog(this) == DialogResult.OK)
+            {
+                this.orderDTO.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
+                this.txtTenKhachHang.Text = frmSearch.khachHangSelected.tenKhachHang;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DonDatHangSPDto orderSP = new DonDatHangSPDto();
+                orderSP.kichThuoc = cbbSize.Text;
+                orderSP.loaiBia = cbbLoaiBia.Text;
+                orderDTO.listSanPham.Add(orderSP);
+
+                updateUI();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void updateDataChanged()
+        {
+            try
+            {
+                int idSanPhamCha = (int)comboBoxLoaiSanPham.SelectedValue;
+                String size = cbbSize.Text;
+                String loaibia = cbbLoaiBia.Text;
+                DataTable dt = SanPhamDao.getChiTietSanPham(idSanPhamCha, size, loaibia);
+                if (dt.Rows.Count == 1)
+                {
+                    DataRow row = dt.Rows[0];
+                    txtSoTo.Value = (decimal)float.Parse(row["NUM_PAGE_DEFAULT"].ToString());
+                }
+            }
+            catch (Exception) { }
+        }
+
+        private void cbbSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateDataChanged();
+        }
+
+        private void cbbLoaiBia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateDataChanged();
+        }
+
+        private void txtSoTo_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idSanPhamCha = (int)comboBoxLoaiSanPham.SelectedValue;
+                String size = cbbSize.Text;
+                String loaibia = cbbLoaiBia.Text;
+                DataTable dt = SanPhamDao.getChiTietSanPham(idSanPhamCha, size, loaibia);
+                if (dt.Rows.Count == 1)
+                {
+                    DataRow row = dt.Rows[0];
+                    int numPageDefault = int.Parse(row["NUM_PAGE_DEFAULT"].ToString());
+                    double donGia = double.Parse(row["DON_GIA"].ToString());
+                    int soTo = (int) txtSoTo.Value;
+                    double costPageAdd = double.Parse(row["ADDITIONAL_PAGES_COST"].ToString());
+                    txtThanhTien.Text = AppUtils.cashProduct(numPageDefault, donGia, soTo, costPageAdd).ToString();
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
         }
     }
 }

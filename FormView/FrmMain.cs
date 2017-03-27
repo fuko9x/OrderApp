@@ -21,7 +21,7 @@ namespace OrderApp.FormView
         private void lblThemMoi_Click(object sender, EventArgs e)
         {
             AddCustomer frmCustomer = new AddCustomer();
-            frmCustomer.Show();
+            frmCustomer.ShowDialog();
         }
 
         
@@ -29,7 +29,7 @@ namespace OrderApp.FormView
         private void lblListKhachHang_Click(object sender, EventArgs e)
         {
             SearchCustomer frmSearch = new SearchCustomer();
-            frmSearch.Show();
+            frmSearch.ShowDialog();
         }
 
         private void linkCreateOrder_Click(object sender, EventArgs e)
