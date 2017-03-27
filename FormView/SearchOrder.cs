@@ -46,7 +46,7 @@ namespace OrderApp.FormView
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            AddOrder frmAdd = new AddOrder();
+            OrderNew frmAdd = new OrderNew();
             frmAdd.ShowDialog(this);
         }
 
