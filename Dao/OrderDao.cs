@@ -105,19 +105,23 @@ namespace OrderApp.Dao
                 {
                     sql += "("
                     + " @idDonDatHang" + i
-                    + ", @tenSanPham" + i
-                    + ", @soLuong" + i
-                    + ", @kichThuoc" + i
-                    + ", @donVi" + i
-                    + ", @soTrang" + i
-                    + ", @loaiBia" + i
-                    + ", @loaiGiay" + i
-                    + ", @donGia" + i
-                    + ", @thanhTien" + i
-                    + ", @cdcr" + i
-                    + ", @createBy" + i
-                    + ", @creatTime" + i
-                    + " )";
+                    + " , @tenSanPham" + i
+                    + " , @soLuong" + i
+                    + " , @kichThuoc" + i
+                    + " , @donVi" + i
+                    + " , @soTrang" + i
+                    + " , @loaiBia" + i
+                    + " , @loaiGiay" + i
+                    + " , @donGia" + i
+                    + " , @thanhTien" + i
+                    + " , @cdcr" + i
+                    + " , @createBy" + i
+                    + " , @createTime" + i
+                    + " ) ";
+                    if (i < orderDto.listSanPham.Count - 1)
+                    {
+                        sql += ", ";
+                    }
 
                     DonDatHangSPDto dto = orderDto.listSanPham[i];
 

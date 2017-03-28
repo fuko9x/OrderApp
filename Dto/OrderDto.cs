@@ -29,6 +29,8 @@ namespace OrderApp.Dto
             this.tongTien = this.vat = this.tongCong = this.phiVanChuyen = 0;
             this.ngayDat = DateTime.Now;
             this.ngayGiao = DateTime.Now.AddDays(3);
+            this.phone = "";
+            this.user = "";
             this.createTime = DateTime.Now;
             this.listSanPham = new List<DonDatHangSPDto>();
             this.listDichVu = new List<DichVuDto>();

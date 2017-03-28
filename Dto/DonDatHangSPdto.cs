@@ -24,5 +24,18 @@ namespace OrderApp.Dto
         public DateTime createTime;
         public String updateBy;
         public DateTime updateTime;
+
+        public DonDatHangSPDto()
+        {
+            id = "";
+            donVi = "";
+            cdcr = "";
+            loaiBia = "";
+            loaiGiay = "";
+            createBy = "";
+            updateBy = "";
+            createTime = DateTime.Now;
+            updateTime = DateTime.Now;
+        }
     }
 }
