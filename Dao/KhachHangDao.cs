@@ -248,17 +248,19 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            dto.tenKhachHang = reader.GetString(0);
-            dto.diaChi = reader.GetString(1);
-            dto.email = reader.GetString(2);
-            dto.accFtp = reader.GetString(3);
-            dto.giamGia = reader.GetString(4);
-            dto.sales = reader.GetString(5);
-            dto.salesPercent = reader.GetDecimal(6);
-            dto.notes = reader.GetString(7);
-            dto.startDate = reader.GetDateTime(8);
-            dto.vanChuyen = reader.GetString(9);
-            dto.trangThaiNo = reader.GetBoolean(10);
+
+            if (!reader.IsDBNull(0))    dto.tenKhachHang = reader.GetString(0);
+            if (!reader.IsDBNull(1))    dto.diaChi = reader.GetString(1);
+            if (!reader.IsDBNull(2))    dto.email = reader.GetString(2);
+            if (!reader.IsDBNull(3))    dto.accFtp = reader.GetString(3);
+            if (!reader.IsDBNull(4))    dto.giamGia = reader.GetString(4);
+            if (!reader.IsDBNull(5))    dto.sales = reader.GetString(5);
+            if (!reader.IsDBNull(6))    dto.salesPercent = reader.GetDecimal(6);
+            if (!reader.IsDBNull(7))    dto.notes = reader.GetString(7);
+            if (!reader.IsDBNull(8))    dto.startDate = reader.GetDateTime(8);
+            if (!reader.IsDBNull(9))    dto.vanChuyen = reader.GetString(9);
+            if (!reader.IsDBNull(10))   dto.trangThaiNo = reader.GetBoolean(10);
+
             reader.Close();
             return dto;
         }

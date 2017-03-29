@@ -25,6 +25,15 @@ namespace OrderApp.Dao
             return numOrderInMonth;
         }
 
+        public static DataTable getListOrder()
+        {
+            DataTable dt = new DataTable();
+            String strQuery = "SELECT * FROM DON_DAT_HANG";
+            SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
+            adapter.Fill(dt);
+            return dt;
+        }
+
         public void insertId(String id)
         {
             String strQuery = "INSERT INTO DON_DAT_HANG (ID)"

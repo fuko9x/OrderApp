@@ -123,18 +123,6 @@
     <Compile Include="FormView\DetailProduct.Designer.cs">
       <DependentUpon>DetailProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormView\DetailCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormView\DetailCustomer.Designer.cs">
-      <DependentUpon>DetailCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormView\DetailOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormView\DetailOrder.Designer.cs">
-      <DependentUpon>DetailOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormView\FormAddOrderObj.cs" />
     <Compile Include="FormView\FormAddProductObj.cs" />
     <Compile Include="FormView\FormEditCustomerObj.cs" />
@@ -219,12 +207,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormView\DetailCustomer.resx">
-      <DependentUpon>DetailCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormView\DetailOrder.resx">
-      <DependentUpon>DetailOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\DetailProduct.resx">
       <DependentUpon>DetailProduct.cs</DependentUpon>

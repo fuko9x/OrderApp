@@ -1,5 +1,6 @@
 ﻿using MaterialSkin.Controls;
 using OrderApp.Common;
+using OrderApp.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +19,17 @@ namespace OrderApp.FormView
         {
             InitializeComponent();
             formatControl();
+            fillData();
         }
 
         private void formatControl()
         {
             this.dataGridViewDonHang = (DataGridView)FormatLayoutUtil.formatDataGridview(this.dataGridViewDonHang);
+        }
+
+        private void fillData()
+        {
+            //this.dataGridViewDonHang.DataSource = OrderDao.getListOrder();
         }
 
         private void actionSearch()

@@ -29,7 +29,14 @@ namespace OrderApp.FormView
         {
             InitializeComponent();
 
+            txtTenKhachHang.Click += TxtTenKhachHang_Click;
+
             initData();
+        }
+
+        private void TxtTenKhachHang_Click(object sender, EventArgs e)
+        {
+            btnSearchKhachHang_Click(sender, e);
         }
 
         private void initData()
@@ -53,8 +60,44 @@ namespace OrderApp.FormView
         private void formatControl()
         {
             this.dataGridViewSanPham = (DataGridView)FormatLayoutUtil.formatDataGridview(this.dataGridViewSanPham);
+            this.dataGridViewSanPham.MouseClick += DataGridViewSanPham_MouseClick;
+
 
             this.txtThanhTien.KeyPress += FormatLayoutUtil.AcceptNumber_KeyPress;
+        }
+
+        private void DataGridViewSanPham_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                int currentMouseOverRow = dataGridViewSanPham.HitTest(e.X, e.Y).RowIndex;
+                if (currentMouseOverRow >= 0)
+                {
+                    this.dataGridViewSanPham.Rows[currentMouseOverRow].Selected = true;
+
+                    ContextMenu contextMenu = new ContextMenu();
+                    contextMenu.MenuItems.Add(new MenuItem("Edit", contextItemClick));
+                    contextMenu.MenuItems.Add(new MenuItem("Delete", contextItemClick));
+                    contextMenu.MenuItems.Add(new MenuItem("Close"));
+                    contextMenu.Show(dataGridViewSanPham, new Point(e.X, e.Y));
+                }
+            }
+        }
+
+        protected void contextItemClick(object sender, EventArgs e)
+        {
+            MenuItem item = (MenuItem)sender;
+            if (item.Text == "Edit")
+            {
+
+            }
+            if (item.Text == "Delete")
+            {
+                int selectedRow = this.dataGridViewSanPham.SelectedRows[0].Index;
+                this.orderDTO.listSanPham.RemoveAt(selectedRow);
+
+                updateUI();
+            }
         }
 
         private void fillData()
@@ -203,6 +246,7 @@ namespace OrderApp.FormView
             {
                 this.orderDTO.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
                 this.txtTenKhachHang.Text = frmSearch.khachHangSelected.tenKhachHang;
+                this.txtDiaDiemGiaoHang.Text = frmSearch.khachHangSelected.diaChi;
             }
         }
 
@@ -287,6 +331,11 @@ namespace OrderApp.FormView
                     return;
                 }
 
+                orderDTO.ngayDat = dtNgayDat.Value;
+                orderDTO.ngayGiao = dtNgayGiao.Value;
+                orderDTO.thanhToan = false;
+                orderDTO.notes = txtGhiChu.Text;
+
                 OrderDao orderDao = new OrderDao();
                 orderDao.creatOrder(orderDTO);
 
@@ -306,6 +355,11 @@ namespace OrderApp.FormView
                 return false;
             }
             return true;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

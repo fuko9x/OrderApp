@@ -342,7 +342,7 @@
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Thêm Mới";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.saveBtn_Click);
+            this.btnAdd.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // btnClose
             // 

@@ -298,9 +298,11 @@
             // comboBoxLoaiSanPham
             // 
             this.comboBoxLoaiSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxLoaiSanPham.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBoxLoaiSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxLoaiSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.comboBoxLoaiSanPham.FormattingEnabled = true;
-            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(214, 7);
+            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(214, 4);
             this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
             this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(487, 27);
             this.comboBoxLoaiSanPham.TabIndex = 21;

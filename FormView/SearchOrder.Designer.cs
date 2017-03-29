@@ -68,7 +68,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(6, 19);
+            this.label2.Location = new System.Drawing.Point(6, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 19);
             this.label2.TabIndex = 12;
@@ -81,7 +81,7 @@
             this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(114, 16);
+            this.dateTimePicker2.Location = new System.Drawing.Point(114, 17);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(112, 23);
             this.dateTimePicker2.TabIndex = 14;
@@ -91,7 +91,7 @@
             this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(295, 15);
+            this.dateTimePicker1.Location = new System.Drawing.Point(295, 17);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(115, 23);
             this.dateTimePicker1.TabIndex = 13;

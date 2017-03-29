@@ -24,7 +24,34 @@ namespace OrderApp.FormView
         {
             InitializeComponent();
 
+            formatControl();
+
             this.khachHangSelected = new KhachHangDto();
+        }
+
+        private void formatControl()
+        {
+            this.listKhachHang = (DataGridView)FormatLayoutUtil.formatDataGridview(this.listKhachHang);
+            this.listKhachHang.MouseClick += ListKhachHang_MouseClick;
+        }
+
+        private void ListKhachHang_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                int currentMouseOverRow = listKhachHang.HitTest(e.X, e.Y).RowIndex;
+                if (currentMouseOverRow >= 0)
+                {
+                    this.listKhachHang.Rows[currentMouseOverRow].Selected = true;
+
+                    ContextMenu contextMenu = new ContextMenu();
+                    contextMenu.MenuItems.Add(new MenuItem("Add", addBtn_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Edit", btnEdit_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Delete", btnXoa_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Close"));
+                    contextMenu.Show(listKhachHang, new Point(e.X, e.Y));
+                }
+            }
         }
 
         private void search_Click(object sender, EventArgs e)
@@ -53,11 +80,10 @@ namespace OrderApp.FormView
             return obj;
         }
 
-        private void saveBtn_Click(object sender, EventArgs e)
+        private void addBtn_Click(object sender, EventArgs e)
         {
             AddCustomer frmAdd = new AddCustomer();
-            frmAdd.Show();
-            this.Close();
+            frmAdd.ShowDialog(this);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -123,10 +149,12 @@ namespace OrderApp.FormView
                 int rowSelected = listKhachHang.SelectedRows[0].Index;
                 String idKhachHang = outputObj.listKhachHangs.Rows[rowSelected]["ID_KHACH_HANG"].ToString();
                 String tenKhachHang = outputObj.listKhachHangs.Rows[rowSelected]["TEN_KHACH_HANG"].ToString();
+                String diaChi = outputObj.listKhachHangs.Rows[rowSelected]["DIA_CHI"].ToString();
 
                 this.khachHangSelected = new KhachHangDto();
                 this.khachHangSelected.idKhachHang = idKhachHang;
                 this.khachHangSelected.tenKhachHang = tenKhachHang;
+                this.khachHangSelected.diaChi = diaChi;
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
