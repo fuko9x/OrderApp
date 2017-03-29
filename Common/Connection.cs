@@ -23,7 +23,8 @@ namespace OrderApp.Common
             strUrl += "database=" + AppUtils.getAppConfig("Database") + ";";
             strUrl += "Trusted_Connection=" + AppUtils.getAppConfig("TrustedConnection") + ";";
             strUrl += "connection timeout=" + AppUtils.getAppConfig("Timeout");
-            con = new SqlConnection("server=192.168.1.112\\SQLEXPRESS;database=ORDERDB;UID=sa;password=123"); 
+            con = new SqlConnection("server=localhost;database=ORDERDB;UID=sa;password=123");
+            //con = new SqlConnection("server=192.168.1.112\\SQLEXPRESS;database=ORDERDB;UID=sa;password=123");
             //con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ORDERDB;Integrated Security=True"); 
 
             con.Open();

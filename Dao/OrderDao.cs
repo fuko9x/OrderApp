@@ -210,5 +210,31 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@createTime", dto.createTime);
             cmd.ExecuteNonQuery();
         }
+        
+        public SqlDataReader getDebtByCustomer(String idKhachHang)
+        {
+            String strQuery = "SELECT a.ID"
+                                + ", a.NGAY_GIAO"
+                                + ", sp.TEN_SAN_PHAM"
+                                + ", sp.CD_CR"
+                                + ", sp.KICH_THUOC"
+                                + ", sp.SO_TRANG"
+                                + ", sp.LOAI_BIA"
+                                + ", sp.LOAI_GIAY"
+                                + ", sp.SO_LUONG"
+                                + ", sp.DON_GIA"
+                                + ", ISNULL(sp.CHIET_KHAU, 1) AS CHIET_KHAU"
+                                + ", sp.THANH_TIEN"
+                                + " FROM DON_DAT_HANG a"
+                                + " LEFT JOIN DON_DAT_HANG_SP sp"
+                                + " ON a.ID = sp.ID_DON_DAT_HANG"
+                                + " WHERE a.ID_KHACH_HANG = '" + idKhachHang + "'"
+                                + " ORDER BY NGAY_GIAO DESC";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            SqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
     }
 }
