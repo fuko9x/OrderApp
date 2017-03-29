@@ -68,6 +68,8 @@ namespace OrderApp.FormView
                 {
                     LogicResult result = logic.updateCustommerLogic(formObj);
                 }
+
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -91,7 +93,15 @@ namespace OrderApp.FormView
             destObj.vanChuyen = StringUtils.Trim(this.vanChuyen.Text);
             destObj.startDate = this.ngayHopTac.Value;
             destObj.notes = StringUtils.Trim(this.notes.Text);
-            destObj.listContracts = this.listLienHe;
+            if (this.listLienHe != null || this.listLienHe.Count > 0)
+            {
+                destObj.listContracts = this.listLienHe;
+            } else
+            {
+                if (StringUtils.isNotBlank(this.cbbContact.Text) || StringUtils.isNotBlank(this.phoneContact.Text)) {
+                    destObj.listContracts.Add(new LienHeObj(cbbContact.Text.Trim(), phoneContact.Text.Trim()));
+                }
+            }
 
             destObj.user = "BINH";
             

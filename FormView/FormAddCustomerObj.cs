@@ -23,5 +23,10 @@ namespace OrderApp.FormView
         public String notes;
         public Boolean trangThaiNo;
         public String user;
+
+        public FormAddCustomerObj()
+        {
+            listContracts = new List<LienHeObj>();
+        }
     }
 }

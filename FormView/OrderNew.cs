@@ -164,7 +164,7 @@ namespace OrderApp.FormView
 
             lblCong.Text = orderDTO.tongCong.ToString(formatMoney);
             lblThuevat.Text = orderDTO.vat.ToString(formatMoney); //10%
-            lblTongTien.Text = tongTien.ToString(formatMoney);
+            lblTongTien.Text = orderDTO.tongTien.ToString(formatMoney);
         }
 
         private void comboBoxLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)
@@ -254,16 +254,19 @@ namespace OrderApp.FormView
         {
             try
             {
-                DonDatHangSPDto orderSP = new DonDatHangSPDto();
-                orderSP.idOrder = orderDTO.id;
-                orderSP.tenSanPham = cbbLoaiSanPham.Text;
-                orderSP.kichThuoc = cbbSize.Text;
-                orderSP.loaiBia = cbbLoaiBia.Text;
-                orderSP.soTrang = (int)txtSoTo.Value;
-                orderSP.thanhTien = double.Parse( txtThanhTien.Text);
-                orderDTO.listSanPham.Add(orderSP);
+                if (StringUtils.isNotBlank(txtThanhTien.Text))
+                {
+                    DonDatHangSPDto orderSP = new DonDatHangSPDto();
+                    orderSP.idOrder = orderDTO.id;
+                    orderSP.tenSanPham = cbbLoaiSanPham.Text;
+                    orderSP.kichThuoc = cbbSize.Text;
+                    orderSP.loaiBia = cbbLoaiBia.Text;
+                    orderSP.soTrang = (int)txtSoTo.Value;
+                    orderSP.thanhTien = double.Parse(txtThanhTien.Text);
+                    orderDTO.listSanPham.Add(orderSP);
 
-                updateUI();
+                    updateUI();
+                }
             }
             catch (Exception)
             {

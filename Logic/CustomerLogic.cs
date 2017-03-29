@@ -28,8 +28,8 @@ namespace OrderApp.Logic
             {
                 new LienHeDao().insertList(createListLienHeDto(obj));
             }
-            msg = AppUtils.getAppConfig("MSGINFO001").Replace("{0}", khDto.idKhachHang);
-            return new LogicResult(Contanst.MSG_INFO, msg, null);
+            
+            return new LogicResult(Contanst.MSG_INFO, "", null);
         }
 
         public LogicResult updateCustommerLogic(FormAddCustomerObj obj)
