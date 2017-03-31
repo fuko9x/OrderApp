@@ -25,11 +25,46 @@ namespace OrderApp.Dao
             return numOrderInMonth;
         }
 
-        public static DataTable getListOrder()
+        public DataTable getListOrder(DateTime dateFrom, DateTime dateTo, int searchType,  Boolean status)
         {
             DataTable dt = new DataTable();
-            String strQuery = "SELECT * FROM DON_DAT_HANG";
-            SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
+            String strQuery = "SELECT"
+                + " Row_number() over(order by d.ID) STT"
+                + ", d.ID"
+                + ", k.TEN_KHACH_HANG"
+                + ", d.NGAY_DAT"
+                + ", d.NGAY_GIAO"
+                + ", d.TONG_TIEN"
+                + ", (CASE d.TRANG_THAI_THANH_TOAN WHEN 'TRUE' THEN 'OK' ELSE '-' END) AS TRANG_THAI_THANH_TOAN"
+                + ", (CASE d.TRANG_THAI_XUAT_KHO WHEN 'TRUE' THEN 'OK' ELSE '-' END) AS TRANG_THAI_XUAT_KHO"
+                + " FROM DON_DAT_HANG d"
+                + " LEFT JOIN KHACH_HANG k"
+                + " ON d.ID_KHACH_HANG = k.ID_KHACH_HANG"
+                + " WHERE NGAY_GIAO > @dateFrom AND NGAY_GIAO < @dateTo";
+            
+            // add dieu kien trang thai don hang
+            switch (searchType)
+            {
+                case 0:
+                    break;
+                case 1:
+                    // TRANG_THAI_THANH_TOAN
+                    strQuery += " AND TRANG_THAI_THANH_TOAN = @status";
+                    break;
+                case 2:
+                    // TRANG_THAI_XUAT_KHO
+                    strQuery += " AND TRANG_THAI_XUAT_KHO = @status";
+                    break;
+            }
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@dateFrom", dateFrom);
+            cmd.Parameters.AddWithValue("@dateTo", dateTo);
+            cmd.Parameters.AddWithValue("@status", status);
+
+            cmd.Connection = Connection.getConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = cmd;
             adapter.Fill(dt);
             return dt;
         }

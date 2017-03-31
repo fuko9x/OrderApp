@@ -68,6 +68,29 @@ namespace OrderApp.FormView
             String title = cbbTinhTrangDonHang.SelectedItem.ToString();
             this.Text = title;
             this.Invalidate();
+
+            // Search
+            DataTable dt = new DataTable();
+            OrderDao dao = new OrderDao();
+            switch (cbbTinhTrangDonHang.SelectedIndex)
+            {
+                case 0:
+                    dt = dao.getListOrder(this.dateFrom.Value, this.dateTo.Value, 0, false);
+                    break;
+                case 1:
+                    dt = dao.getListOrder(this.dateFrom.Value, this.dateTo.Value, 2, false);
+                    break;
+                case 2:
+                    dt = dao.getListOrder(this.dateFrom.Value, this.dateTo.Value, 2, true);
+                    break;
+                case 3:
+                    dt = dao.getListOrder(this.dateFrom.Value, this.dateTo.Value, 1, false);
+                    break;
+                case 4:
+                    dt = dao.getListOrder(this.dateFrom.Value, this.dateTo.Value, 1, true);
+                    break;
+            }
+            this.dataGridViewDonHang.DataSource = dt;
         }
     }
 }
