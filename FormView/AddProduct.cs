@@ -69,6 +69,8 @@ namespace OrderApp.FormView
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            // Check input
+            if (checkValideSubmit() == false) return;
             FormAddProductObj frmObj = tranfersInput();
 
             if (currentMode == CONS_MODE_ADD)
@@ -128,6 +130,32 @@ namespace OrderApp.FormView
             obj.numPageDefault = (int)this.numPageDefault.Value;
             obj.addPageCost = float.Parse(this.addPageCost.Text);
             return obj;
+        }
+
+
+        private Boolean checkValideSubmit()
+        {
+            Boolean isValid = true;
+            List<TextBox> listRequite = new List<TextBox>()
+            {
+                this.tenSanPham
+                , this.size
+                , this.donGia
+                , this.addPageCost
+            };
+            foreach (TextBox checkTextBox in listRequite)
+            {
+                if (String.IsNullOrEmpty(checkTextBox.Text))
+                {
+                    isValid = false;
+                    errorProvider.SetError(checkTextBox, "Requite");
+                }
+                else
+                {
+                    errorProvider.SetError(checkTextBox, String.Empty);
+                }
+            }
+            return isValid;
         }
     }
 }
