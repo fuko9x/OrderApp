@@ -74,11 +74,32 @@ namespace OrderApp.FormView
             }
         }
 
+        private void menuItemDelete_Click(object sender, EventArgs e)
+        {
+            int rowIndex = this.listViewLienHe.SelectedItems[0].Index;
+            this.listLienHe.RemoveAt(rowIndex);
+            loadData();
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
+        private void listViewLienHe_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                int currentMouseOverRow = listViewLienHe.HitTest(e.X, e.Y).Item.Index;
+                if (currentMouseOverRow >= 0)
+                {
+                    ContextMenu contextMenu = new ContextMenu();
+                    contextMenu.MenuItems.Add(new MenuItem("Set Default"));
+                    contextMenu.MenuItems.Add(new MenuItem("Delete", menuItemDelete_Click) );
+                    contextMenu.MenuItems.Add(new MenuItem("Close"));
+                    contextMenu.Show(listViewLienHe, new Point(e.X, e.Y));
+                }
+            }
+        }
     }
 }

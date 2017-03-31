@@ -137,6 +137,7 @@
             this.listViewLienHe.Size = new System.Drawing.Size(404, 109);
             this.listViewLienHe.TabIndex = 0;
             this.listViewLienHe.UseCompatibleStateImageBehavior = false;
+            this.listViewLienHe.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewLienHe_MouseClick);
             // 
             // FrmLienHe
             // 
