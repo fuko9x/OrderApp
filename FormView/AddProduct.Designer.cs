@@ -1,4 +1,6 @@
-﻿namespace OrderApp.FormView
+﻿using System.Windows.Forms;
+
+namespace OrderApp.FormView
 {
     partial class AddProduct
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
             this.saveBtn = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -51,9 +54,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.addPageCost = new System.Windows.Forms.TextBox();
             this.numPageDefault = new System.Windows.Forms.NumericUpDown();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPageDefault)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -116,7 +121,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 35);
+            this.label1.Size = new System.Drawing.Size(199, 35);
             this.label1.TabIndex = 19;
             this.label1.Text = "Nhập Tên";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,27 +130,27 @@
             // 
             this.tenSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tenSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.tenSanPham.Location = new System.Drawing.Point(214, 39);
+            this.tenSanPham.Location = new System.Drawing.Point(208, 39);
             this.tenSanPham.Name = "tenSanPham";
-            this.tenSanPham.Size = new System.Drawing.Size(487, 26);
+            this.tenSanPham.Size = new System.Drawing.Size(472, 26);
             this.tenSanPham.TabIndex = 1;
             // 
             // loaiBia
             // 
             this.loaiBia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.loaiBia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.loaiBia.Location = new System.Drawing.Point(214, 109);
+            this.loaiBia.Location = new System.Drawing.Point(208, 109);
             this.loaiBia.Name = "loaiBia";
-            this.loaiBia.Size = new System.Drawing.Size(487, 26);
+            this.loaiBia.Size = new System.Drawing.Size(472, 26);
             this.loaiBia.TabIndex = 3;
             // 
             // size
             // 
             this.size.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.size.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.size.Location = new System.Drawing.Point(214, 74);
+            this.size.Location = new System.Drawing.Point(208, 74);
             this.size.Name = "size";
-            this.size.Size = new System.Drawing.Size(487, 26);
+            this.size.Size = new System.Drawing.Size(472, 26);
             this.size.TabIndex = 2;
             // 
             // label2
@@ -154,7 +159,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(3, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 35);
+            this.label2.Size = new System.Drawing.Size(199, 35);
             this.label2.TabIndex = 23;
             this.label2.Text = "Loại bìa / Khung";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,7 +170,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(3, 70);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 35);
+            this.label3.Size = new System.Drawing.Size(199, 35);
             this.label3.TabIndex = 24;
             this.label3.Text = "Kích thước (cm)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,7 +181,7 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Location = new System.Drawing.Point(3, 175);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(205, 35);
+            this.label4.Size = new System.Drawing.Size(199, 35);
             this.label4.TabIndex = 25;
             this.label4.Text = "Đơn Giá (VND)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -187,7 +192,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(3, 252);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(205, 19);
+            this.label5.Size = new System.Drawing.Size(199, 19);
             this.label5.TabIndex = 26;
             this.label5.Text = "Số tiền thêm";
             // 
@@ -195,28 +200,28 @@
             // 
             this.donGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.donGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.donGia.Location = new System.Drawing.Point(214, 179);
+            this.donGia.Location = new System.Drawing.Point(208, 179);
             this.donGia.Name = "donGia";
-            this.donGia.Size = new System.Drawing.Size(487, 26);
+            this.donGia.Size = new System.Drawing.Size(472, 26);
             this.donGia.TabIndex = 5;
             // 
             // description
             // 
             this.description.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.description.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.description.Location = new System.Drawing.Point(214, 281);
+            this.description.Location = new System.Drawing.Point(208, 281);
             this.description.Multiline = true;
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(487, 57);
+            this.description.Size = new System.Drawing.Size(472, 57);
             this.description.TabIndex = 8;
             // 
             // loaiGiay
             // 
             this.loaiGiay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.loaiGiay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.loaiGiay.Location = new System.Drawing.Point(214, 144);
+            this.loaiGiay.Location = new System.Drawing.Point(208, 144);
             this.loaiGiay.Name = "loaiGiay";
-            this.loaiGiay.Size = new System.Drawing.Size(487, 26);
+            this.loaiGiay.Size = new System.Drawing.Size(472, 26);
             this.loaiGiay.TabIndex = 4;
             // 
             // label6
@@ -225,7 +230,7 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Location = new System.Drawing.Point(3, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(205, 35);
+            this.label6.Size = new System.Drawing.Size(199, 35);
             this.label6.TabIndex = 29;
             this.label6.Text = "Loại Giấy";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -235,9 +240,10 @@
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tenSanPham, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.id, 1, 9);
@@ -281,17 +287,17 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(205, 35);
+            this.label7.Size = new System.Drawing.Size(199, 35);
             this.label7.TabIndex = 13;
             this.label7.Text = "Chọn Sản Phẩm";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // id
             // 
-            this.id.Location = new System.Drawing.Point(214, 344);
+            this.id.Location = new System.Drawing.Point(208, 344);
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Size = new System.Drawing.Size(487, 26);
+            this.id.Size = new System.Drawing.Size(470, 26);
             this.id.TabIndex = 17;
             this.id.Visible = false;
             // 
@@ -302,9 +308,9 @@
             this.comboBoxLoaiSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxLoaiSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.comboBoxLoaiSanPham.FormattingEnabled = true;
-            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(214, 7);
+            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(208, 4);
             this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
-            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(487, 27);
+            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(472, 27);
             this.comboBoxLoaiSanPham.TabIndex = 0;
             // 
             // label8
@@ -313,7 +319,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 218);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(205, 19);
+            this.label8.Size = new System.Drawing.Size(199, 19);
             this.label8.TabIndex = 31;
             this.label8.Text = "Số trang (mặc định)";
             // 
@@ -330,24 +336,29 @@
             // 
             this.addPageCost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.addPageCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.addPageCost.Location = new System.Drawing.Point(214, 248);
+            this.addPageCost.Location = new System.Drawing.Point(208, 248);
             this.addPageCost.Name = "addPageCost";
-            this.addPageCost.Size = new System.Drawing.Size(487, 26);
+            this.addPageCost.Size = new System.Drawing.Size(472, 26);
             this.addPageCost.TabIndex = 7;
             // 
             // numPageDefault
             // 
             this.numPageDefault.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numPageDefault.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.numPageDefault.Location = new System.Drawing.Point(214, 213);
+            this.numPageDefault.Location = new System.Drawing.Point(208, 213);
             this.numPageDefault.Name = "numPageDefault";
-            this.numPageDefault.Size = new System.Drawing.Size(487, 26);
+            this.numPageDefault.Size = new System.Drawing.Size(472, 26);
             this.numPageDefault.TabIndex = 6;
             this.numPageDefault.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // AddProduct
             // 
@@ -364,6 +375,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPageDefault)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +405,6 @@
         private System.Windows.Forms.TextBox addPageCost;
         private System.Windows.Forms.NumericUpDown numPageDefault;
         private System.Windows.Forms.TextBox id;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -59,6 +59,10 @@ namespace OrderApp.FormView
         {
             try
             {
+                if (checkValideSubmit() == false)
+                {
+                    return;
+                }
                 FormAddCustomerObj formObj = tranfersInput();
                 CustomerLogic logic = new CustomerLogic();
                 if (StringUtils.isBlank(selectedId))
@@ -75,6 +79,31 @@ namespace OrderApp.FormView
             {
                 MessageBox.Show("Exception: " + ex.Message);
             }
+        }
+
+        private Boolean checkValideSubmit()
+        {
+            Boolean isValid = true;
+            List<TextBox> listRequite = new List<TextBox>()
+            {
+                this.idKhachHang
+                , this.diachi
+                , this.tenKH
+                , this.phoneContact
+            };
+            foreach (TextBox checkTextBox in listRequite)
+            {
+                if (String.IsNullOrEmpty(checkTextBox.Text))
+                {
+                    isValid = false;
+                    errorProvider.SetError(checkTextBox, "Chưa nhập giá trị");
+                }
+                else
+                {
+                    errorProvider.SetError(checkTextBox, String.Empty);
+                }
+            }
+            return isValid;
         }
 
         private FormAddCustomerObj tranfersInput()
