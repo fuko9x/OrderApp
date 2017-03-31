@@ -88,7 +88,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Primary = true;
             this.btnClose.Size = new System.Drawing.Size(151, 34);
-            this.btnClose.TabIndex = 16;
+            this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -105,7 +105,7 @@
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Primary = true;
             this.saveBtn.Size = new System.Drawing.Size(148, 34);
-            this.saveBtn.TabIndex = 15;
+            this.saveBtn.TabIndex = 9;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
@@ -128,7 +128,7 @@
             this.tenSanPham.Location = new System.Drawing.Point(214, 39);
             this.tenSanPham.Name = "tenSanPham";
             this.tenSanPham.Size = new System.Drawing.Size(487, 26);
-            this.tenSanPham.TabIndex = 20;
+            this.tenSanPham.TabIndex = 1;
             // 
             // loaiBia
             // 
@@ -137,7 +137,7 @@
             this.loaiBia.Location = new System.Drawing.Point(214, 109);
             this.loaiBia.Name = "loaiBia";
             this.loaiBia.Size = new System.Drawing.Size(487, 26);
-            this.loaiBia.TabIndex = 21;
+            this.loaiBia.TabIndex = 3;
             // 
             // size
             // 
@@ -146,7 +146,7 @@
             this.size.Location = new System.Drawing.Point(214, 74);
             this.size.Name = "size";
             this.size.Size = new System.Drawing.Size(487, 26);
-            this.size.TabIndex = 22;
+            this.size.TabIndex = 2;
             // 
             // label2
             // 
@@ -198,7 +198,7 @@
             this.donGia.Location = new System.Drawing.Point(214, 179);
             this.donGia.Name = "donGia";
             this.donGia.Size = new System.Drawing.Size(487, 26);
-            this.donGia.TabIndex = 27;
+            this.donGia.TabIndex = 5;
             // 
             // description
             // 
@@ -208,7 +208,7 @@
             this.description.Multiline = true;
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(487, 57);
-            this.description.TabIndex = 28;
+            this.description.TabIndex = 8;
             // 
             // loaiGiay
             // 
@@ -217,7 +217,7 @@
             this.loaiGiay.Location = new System.Drawing.Point(214, 144);
             this.loaiGiay.Name = "loaiGiay";
             this.loaiGiay.Size = new System.Drawing.Size(487, 26);
-            this.loaiGiay.TabIndex = 30;
+            this.loaiGiay.TabIndex = 4;
             // 
             // label6
             // 
@@ -302,10 +302,10 @@
             this.comboBoxLoaiSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxLoaiSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.comboBoxLoaiSanPham.FormattingEnabled = true;
-            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(214, 4);
+            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(214, 7);
             this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
             this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(487, 27);
-            this.comboBoxLoaiSanPham.TabIndex = 21;
+            this.comboBoxLoaiSanPham.TabIndex = 0;
             // 
             // label8
             // 
@@ -333,7 +333,7 @@
             this.addPageCost.Location = new System.Drawing.Point(214, 248);
             this.addPageCost.Name = "addPageCost";
             this.addPageCost.Size = new System.Drawing.Size(487, 26);
-            this.addPageCost.TabIndex = 34;
+            this.addPageCost.TabIndex = 7;
             // 
             // numPageDefault
             // 
@@ -342,7 +342,7 @@
             this.numPageDefault.Location = new System.Drawing.Point(214, 213);
             this.numPageDefault.Name = "numPageDefault";
             this.numPageDefault.Size = new System.Drawing.Size(487, 26);
-            this.numPageDefault.TabIndex = 35;
+            this.numPageDefault.TabIndex = 6;
             this.numPageDefault.Value = new decimal(new int[] {
             10,
             0,
