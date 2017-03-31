@@ -124,6 +124,7 @@ namespace OrderApp.Dao
                 cmd.Transaction = sqlTransaction;
                 cmd.Parameters.AddWithValue("@id", orderDto.id);
                 cmd.Parameters.AddWithValue("@idKhachHang", orderDto.idKhachHang);
+                cmd.Parameters.AddWithValue("@ngayDat", orderDto.ngayDat);
                 cmd.Parameters.AddWithValue("@ngayGiao", orderDto.ngayGiao);
                 cmd.Parameters.AddWithValue("@tongCong", orderDto.tongCong);
                 cmd.Parameters.AddWithValue("@vat", orderDto.vat);
