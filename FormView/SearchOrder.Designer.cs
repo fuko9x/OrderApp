@@ -38,10 +38,11 @@
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnCreate = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnDetail = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewDonHang = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -134,17 +135,19 @@
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnCount = 8;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 143F));
-            this.tableLayoutPanel1.Controls.Add(this.btnClose, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnEdit, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnClose, 7, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnEdit, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCreate, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnDetail, 3, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 480);
             this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(690, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -196,15 +199,32 @@
             this.btnCreate.CausesValidation = false;
             this.btnCreate.Depth = 0;
             this.btnCreate.Icon = null;
-            this.btnCreate.Location = new System.Drawing.Point(426, 3);
+            this.btnCreate.Location = new System.Drawing.Point(294, 3);
             this.btnCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Primary = true;
-            this.btnCreate.Size = new System.Drawing.Size(133, 36);
-            this.btnCreate.TabIndex = 17;
+            this.btnCreate.Size = new System.Drawing.Size(126, 36);
+            this.btnCreate.TabIndex = 18;
             this.btnCreate.Text = "Tạo Mới";
             this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetail.AutoSize = true;
+            this.btnDetail.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDetail.CausesValidation = false;
+            this.btnDetail.Depth = 0;
+            this.btnDetail.Icon = null;
+            this.btnDetail.Location = new System.Drawing.Point(426, 3);
+            this.btnDetail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Primary = true;
+            this.btnDetail.Size = new System.Drawing.Size(133, 36);
+            this.btnDetail.TabIndex = 19;
+            this.btnDetail.Text = "Chi Tiết";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // groupBox2
             // 
@@ -235,7 +255,7 @@
             this.dataGridViewDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewDonHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
+            this.ID,
             this.Column3,
             this.Column4,
             this.Column5,
@@ -257,12 +277,12 @@
             this.Column1.ReadOnly = true;
             this.Column1.Width = 40;
             // 
-            // Column2
+            // ID
             // 
-            this.Column2.DataPropertyName = "ID";
-            this.Column2.HeaderText = "SỐ ORDER";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "SỐ ORDER";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // Column3
             // 
@@ -337,13 +357,14 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private MaterialSkin.Controls.MaterialRaisedButton btnClose;
         private MaterialSkin.Controls.MaterialRaisedButton btnEdit;
-        private MaterialSkin.Controls.MaterialRaisedButton btnCreate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridViewDonHang;
         private System.Windows.Forms.ComboBox cbbTinhTrangDonHang;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCreate;
+        private MaterialSkin.Controls.MaterialRaisedButton btnDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;

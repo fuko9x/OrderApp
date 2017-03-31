@@ -92,5 +92,13 @@ namespace OrderApp.FormView
             }
             this.dataGridViewDonHang.DataSource = dt;
         }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            int rowSelected = this.dataGridViewDonHang.SelectedRows[0].Index;
+            String selectedId = this.dataGridViewDonHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+            OrderDetail frm = new OrderDetail(selectedId);
+            frm.ShowDialog(this);
+        }
     }
 }

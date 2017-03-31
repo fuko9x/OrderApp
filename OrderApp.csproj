@@ -127,6 +127,12 @@
     <Compile Include="FormView\FormAddProductObj.cs" />
     <Compile Include="FormView\FormEditCustomerObj.cs" />
     <Compile Include="FormView\FormSearchCustomerObj.cs" />
+    <Compile Include="FormView\FrmChiTietCongNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\FrmChiTietCongNo.Designer.cs">
+      <DependentUpon>FrmChiTietCongNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormView\FrmCongNoTongHop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,12 @@
     </Compile>
     <Compile Include="FormView\KhachHangSearchView.cs" />
     <Compile Include="FormView\LienHeObj.cs" />
+    <Compile Include="FormView\OrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\OrderDetail.Designer.cs">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormView\OrderNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,11 +211,15 @@
     <EmbeddedResource Include="FormView\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormView\AddOrder.resx" />
     <EmbeddedResource Include="FormView\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\DemoExcel.resx">
       <DependentUpon>DemoExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\FrmChiTietCongNo.resx">
+      <DependentUpon>FrmChiTietCongNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\FrmCongNoTongHop.resx">
       <DependentUpon>FrmCongNoTongHop.cs</DependentUpon>
@@ -219,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\FrmCongNoChiTiet.resx">
       <DependentUpon>FrmCongNoChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\OrderDetail.resx">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\OrderNew.resx">
       <DependentUpon>OrderNew.cs</DependentUpon>

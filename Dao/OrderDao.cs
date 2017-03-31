@@ -30,7 +30,7 @@ namespace OrderApp.Dao
             DataTable dt = new DataTable();
             String strQuery = "SELECT"
                 + " Row_number() over(order by d.ID) STT"
-                + ", d.ID"
+                + ", d.ID as ID"
                 + ", k.TEN_KHACH_HANG"
                 + ", d.NGAY_DAT"
                 + ", d.NGAY_GIAO"
@@ -72,7 +72,7 @@ namespace OrderApp.Dao
         public static OrderDto getOderByID(String id)
         {
             DataTable dt = new DataTable();
-            String strQuery = "SELECT * FROM DON_DAT_HANG WHERE ID = @id";
+            String strQuery = "SELECT * FROM DON_DAT_HANG WHERE ID = '" + id + " '";
             SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
             adapter.Fill(dt);
             return null;
