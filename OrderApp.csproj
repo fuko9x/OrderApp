@@ -123,12 +123,6 @@
     <Compile Include="FormView\AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormView\DetailProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormView\DetailProduct.Designer.cs">
-      <DependentUpon>DetailProduct.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormView\FormAddOrderObj.cs" />
     <Compile Include="FormView\FormAddProductObj.cs" />
     <Compile Include="FormView\FormEditCustomerObj.cs" />
@@ -177,12 +171,6 @@
     <Compile Include="FormView\PrintOrder.Designer.cs">
       <DependentUpon>PrintOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormView\Product.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormView\Product.Designer.cs">
-      <DependentUpon>Product.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormView\SearchCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,9 +205,6 @@
     <EmbeddedResource Include="FormView\DemoExcel.resx">
       <DependentUpon>DemoExcel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormView\DetailProduct.resx">
-      <DependentUpon>DetailProduct.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormView\FrmCongNoTongHop.resx">
       <DependentUpon>FrmCongNoTongHop.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,9 +225,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\PrintOrder.resx">
       <DependentUpon>PrintOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormView\Product.resx">
-      <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\SearchCustomer.resx">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
