@@ -64,3 +64,4 @@ E:\Project\OrderApp\bin\Debug\OrderApp.pdb
 E:\Project\OrderApp\bin\Debug\MaterialSkin.dll
 E:\Project\OrderApp\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 E:\Project\OrderApp\bin\Debug\MaterialSkin.pdb
+E:\50. OrderApp\OrderApp\OrderApp\obj\Debug\OrderApp.csproj.ResolveComReference.cache

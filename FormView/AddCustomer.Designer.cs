@@ -128,7 +128,7 @@ namespace OrderApp.FormView
             this.giamGia.Location = new System.Drawing.Point(523, 137);
             this.giamGia.Name = "giamGia";
             this.giamGia.Size = new System.Drawing.Size(214, 26);
-            this.giamGia.TabIndex = 18;
+            this.giamGia.TabIndex = 9;
             // 
             // label10
             // 
@@ -160,7 +160,7 @@ namespace OrderApp.FormView
             this.salesPercent.Location = new System.Drawing.Point(523, 94);
             this.salesPercent.Name = "salesPercent";
             this.salesPercent.Size = new System.Drawing.Size(214, 26);
-            this.salesPercent.TabIndex = 17;
+            this.salesPercent.TabIndex = 8;
             // 
             // label9
             // 
@@ -365,10 +365,10 @@ namespace OrderApp.FormView
             // 
             this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbContact.FormattingEnabled = true;
-            this.cbbContact.Location = new System.Drawing.Point(128, 183);
+            this.cbbContact.Location = new System.Drawing.Point(128, 180);
             this.cbbContact.Name = "cbbContact";
             this.cbbContact.Size = new System.Drawing.Size(210, 27);
-            this.cbbContact.TabIndex = 26;
+            this.cbbContact.TabIndex = 5;
             this.cbbContact.SelectedIndexChanged += new System.EventHandler(this.cbbContact_SelectedIndexChanged);
             // 
             // label8
@@ -425,7 +425,7 @@ namespace OrderApp.FormView
             this.btnClose.Name = "btnClose";
             this.btnClose.Primary = true;
             this.btnClose.Size = new System.Drawing.Size(145, 36);
-            this.btnClose.TabIndex = 16;
+            this.btnClose.TabIndex = 14;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -442,7 +442,7 @@ namespace OrderApp.FormView
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Primary = true;
             this.saveBtn.Size = new System.Drawing.Size(144, 36);
-            this.saveBtn.TabIndex = 15;
+            this.saveBtn.TabIndex = 13;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
