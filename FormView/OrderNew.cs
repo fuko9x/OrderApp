@@ -121,7 +121,7 @@ namespace OrderApp.FormView
             this.dtNgayDat.Value = orderDTO.ngayDat;
             this.dtNgayGiao.Value = orderDTO.ngayGiao;
 
-            dataGridViewSanPham.ColumnCount = 6;
+            dataGridViewSanPham.ColumnCount = 8;
             dataGridViewSanPham.Columns[0].Name = "Tên Sản Phẩm";
             dataGridViewSanPham.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
@@ -137,8 +137,14 @@ namespace OrderApp.FormView
             dataGridViewSanPham.Columns[4].Name = "Số Trang";
             dataGridViewSanPham.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            dataGridViewSanPham.Columns[5].Name = "Thành Tiền";
+            dataGridViewSanPham.Columns[5].Name = "Đơn Giá";
             dataGridViewSanPham.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            dataGridViewSanPham.Columns[6].Name = "Số Lượng";
+            dataGridViewSanPham.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            dataGridViewSanPham.Columns[7].Name = "Thành Tiền";
+            dataGridViewSanPham.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             // update gridview
             this.dataGridViewSanPham.Rows.Clear();
@@ -151,6 +157,8 @@ namespace OrderApp.FormView
                     , orderSP.loaiGiay
                     , orderSP.loaiBia
                     , orderSP.soTrang.ToString()
+                    , orderSP.donGia.ToString(formatMoney)
+                    , orderSP.soluong.ToString()
                     , orderSP.thanhTien.ToString(formatMoney)
                 };
                 this.dataGridViewSanPham.Rows.Add(row);
@@ -171,6 +179,11 @@ namespace OrderApp.FormView
         {
             try
             {
+                cbbSize.DataSource = null;
+                cbbLoaiBia.DataSource = null;
+                txtDonGia.Text = "";
+                txtThanhTien.Text = "";
+
                 if (cbbLoaiSanPham.SelectedIndex >= 0)
                 {
                     int idSanPhamCha = (int)cbbLoaiSanPham.SelectedValue;
@@ -262,7 +275,10 @@ namespace OrderApp.FormView
                     orderSP.kichThuoc = cbbSize.Text;
                     orderSP.loaiBia = cbbLoaiBia.Text;
                     orderSP.soTrang = (int)txtSoTo.Value;
-                    orderSP.thanhTien = double.Parse(txtDonGia.Text);
+                    orderSP.donGia = double.Parse(txtDonGia.Text);
+                    orderSP.soluong = (int)txtSoLuong.Value;
+                    orderSP.thanhTien = orderSP.donGia * orderSP.soluong;
+                    orderSP.cdcr = txtTenCDCR.Text;
                     orderDTO.listSanPham.Add(orderSP);
 
                     updateUI();
@@ -324,6 +340,18 @@ namespace OrderApp.FormView
             }
         }
 
+        private void txtSoLuong_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Double thanhTien = double.Parse(txtDonGia.Text) * (double)txtSoLuong.Value;
+                txtThanhTien.Text = thanhTien.ToString();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -364,5 +392,7 @@ namespace OrderApp.FormView
         {
             this.Close();
         }
+
+
     }
 }

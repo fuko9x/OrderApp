@@ -109,6 +109,7 @@ namespace OrderApp.Dao
                 String strQuery = ""
                     + " UPDATE DON_DAT_HANG SET"
                     + " ID_KHACH_HANG = @idKhachHang"
+                    + ", NGAY_DAT = @ngayDat"
                     + ", NGAY_GIAO = @ngayGiao"
                     + ", TONG_CONG = @tongCong"
                     + ", VAT = @vat"
