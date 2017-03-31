@@ -63,7 +63,7 @@ namespace OrderApp.FormView
             this.dataGridViewSanPham.MouseClick += DataGridViewSanPham_MouseClick;
 
 
-            this.txtThanhTien.KeyPress += FormatLayoutUtil.AcceptNumber_KeyPress;
+            this.txtDonGia.KeyPress += FormatLayoutUtil.AcceptNumber_KeyPress;
         }
 
         private void DataGridViewSanPham_MouseClick(object sender, MouseEventArgs e)
@@ -231,12 +231,12 @@ namespace OrderApp.FormView
 
         private void txtThanhTien_MouseDown(object sender, MouseEventArgs e)
         {
-            txtThanhTien.Text = AppUtils.formatMoney2Number(txtThanhTien.Text, 0).ToString();
+            txtDonGia.Text = AppUtils.formatMoney2Number(txtDonGia.Text, 0).ToString();
         }
 
         private void txtThanhTien_MouseLeave(object sender, EventArgs e)
         {
-            txtThanhTien.Text = AppUtils.formatNumber2Monney(AppUtils.formatMoney2Number(txtThanhTien.Text, 0));
+            txtDonGia.Text = AppUtils.formatNumber2Monney(AppUtils.formatMoney2Number(txtDonGia.Text, 0));
         }
 
         private void btnSearchKhachHang_Click(object sender, EventArgs e)
@@ -254,7 +254,7 @@ namespace OrderApp.FormView
         {
             try
             {
-                if (StringUtils.isNotBlank(txtThanhTien.Text))
+                if (StringUtils.isNotBlank(txtDonGia.Text))
                 {
                     DonDatHangSPDto orderSP = new DonDatHangSPDto();
                     orderSP.idOrder = orderDTO.id;
@@ -262,7 +262,7 @@ namespace OrderApp.FormView
                     orderSP.kichThuoc = cbbSize.Text;
                     orderSP.loaiBia = cbbLoaiBia.Text;
                     orderSP.soTrang = (int)txtSoTo.Value;
-                    orderSP.thanhTien = double.Parse(txtThanhTien.Text);
+                    orderSP.thanhTien = double.Parse(txtDonGia.Text);
                     orderDTO.listSanPham.Add(orderSP);
 
                     updateUI();
@@ -316,7 +316,7 @@ namespace OrderApp.FormView
                     double donGia = double.Parse(row["DON_GIA"].ToString());
                     int soTo = (int) txtSoTo.Value;
                     double costPageAdd = double.Parse(row["ADDITIONAL_PAGES_COST"].ToString());
-                    txtThanhTien.Text = AppUtils.cashProduct(numPageDefault, donGia, soTo, costPageAdd).ToString();
+                    txtDonGia.Text = AppUtils.cashProduct(numPageDefault, donGia, soTo, costPageAdd).ToString();
                 }
             }
             catch (Exception ex) {
