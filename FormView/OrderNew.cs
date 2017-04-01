@@ -374,7 +374,14 @@ namespace OrderApp.FormView
                 if (dt.Rows.Count == 1)
                 {
                     DataRow row = dt.Rows[0];
-                    txtSoTo.Value = (decimal)float.Parse(row["NUM_PAGE_DEFAULT"].ToString());
+                    int numPageDefault = int.Parse(row["NUM_PAGE_DEFAULT"].ToString());
+                    double donGiaDefault = double.Parse(row["DON_GIA"].ToString());
+                    int soTo = (int)txtSoTo.Value;
+                    double costPageAdd = double.Parse(row["ADDITIONAL_PAGES_COST"].ToString());
+                    double donGia = AppUtils.cashProduct(numPageDefault, donGiaDefault, soTo, costPageAdd);
+
+                    txtDonGia.Text = donGia.ToString();
+                    txtThanhTien.Text = (donGia * (double)txtSoLuong.Value).ToString("#,###");
                 }
             }
             catch (Exception) { }
@@ -401,20 +408,24 @@ namespace OrderApp.FormView
             {
                 int idSanPhamCha = (int)cbbLoaiSanPham.SelectedValue;
                 String size = cbbSize.Text;
-                String loaibia = cbbLoaiBia.Text;
-                DataTable dt = SanPhamDao.getChiTietSanPham(idSanPhamCha, size, loaibia);
+                String loaiBia = cbbLoaiBia.Text;
+                String loaiGiay = cbbLoaiGiay.Text;
+                DataTable dt = SanPhamDao.getChiTietSanPham(idSanPhamCha, size, loaiBia, loaiGiay);
                 if (dt.Rows.Count == 1)
                 {
                     DataRow row = dt.Rows[0];
                     int numPageDefault = int.Parse(row["NUM_PAGE_DEFAULT"].ToString());
-                    double donGia = double.Parse(row["DON_GIA"].ToString());
+                    double donGiaDefault = double.Parse(row["DON_GIA"].ToString());
                     int soTo = (int) txtSoTo.Value;
                     double costPageAdd = double.Parse(row["ADDITIONAL_PAGES_COST"].ToString());
-                    txtDonGia.Text = AppUtils.cashProduct(numPageDefault, donGia, soTo, costPageAdd).ToString();
+                    double donGia = AppUtils.cashProduct(numPageDefault, donGiaDefault, soTo, costPageAdd);
+
+                    txtDonGia.Text = donGia.ToString();
+                    txtThanhTien.Text = (donGia * (double)txtSoLuong.Value).ToString() ;
                 }
             }
             catch (Exception ex) {
-                MessageBox.Show(ex.Message, "ERROR");
+                //MessageBox.Show(ex.Message, "ERROR");
             }
         }
 
