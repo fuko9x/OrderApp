@@ -34,9 +34,26 @@ namespace OrderApp.FormView
         public void editProduct(SanPhamDto dto)
         {
             this.Text = "CẬP NHẬT SẢN PHẨM ID: #" + dto.id;
-
+            this.comboBoxLoaiSanPham.SelectedValue = dto.idSanPhamCha;
             this.id.Text = dto.id.ToString();
             this.currentMode = CONS_MODE_EDIT;
+            this.tenSanPham.Text = dto.name;
+            this.loaiBia.Text = dto.loaiBia;
+            this.loaiGiay.Text = dto.loaiGiay;
+            this.size.Text = dto.size;
+            this.description.Text = dto.notes;
+            this.donGia.Text = dto.donGia.ToString();
+            this.numPageDefault.Value = dto.numPageDefault;
+            this.addPageCost.Text = dto.addPageCost.ToString();
+
+            this.comboBoxLoaiSanPham.DropDownStyle = ComboBoxStyle.DropDownList;
+            //this.comboBoxLoaiSanPham.Visible = false;
+        }
+
+        public void cloneProduct(SanPhamDto dto)
+        {
+            this.comboBoxLoaiSanPham.SelectedValue = dto.idSanPhamCha;
+            this.currentMode = CONS_MODE_ADD;
             this.tenSanPham.Text = dto.name;
             this.loaiBia.Text = dto.loaiBia;
             this.loaiGiay.Text = dto.loaiGiay;
@@ -65,12 +82,10 @@ namespace OrderApp.FormView
             }
         }
 
-
-
-        private void saveBtn_Click(object sender, EventArgs e)
+        private Boolean saveAction()
         {
             // Check input
-            if (checkValideSubmit() == false) return;
+            if (checkValideSubmit() == false) return false;
             FormAddProductObj frmObj = tranfersInput();
 
             if (currentMode == CONS_MODE_ADD)
@@ -82,8 +97,7 @@ namespace OrderApp.FormView
                 }
                 else
                 {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    return true;
                 }
             }
             if (currentMode == CONS_MODE_EDIT)
@@ -95,11 +109,40 @@ namespace OrderApp.FormView
                 }
                 else
                 {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    return true;
                 }
             }
-            
+            return true;
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            if (saveAction())
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        private void btnSaveNew_Click(object sender, EventArgs e)
+        {
+            if (saveAction())
+            {
+                this.currentMode = CONS_MODE_ADD;
+                clearForm();
+            }
+        }
+
+        private void clearForm()
+        {
+            this.tenSanPham.Text = "";
+            this.comboBoxLoaiSanPham.Text = "";
+            this.loaiBia.Text = "";
+            this.loaiGiay.Text = "";
+            this.size.Text = "";
+            this.donGia.Text = "";
+            this.addPageCost.Text = "";
+            this.description.Text = "";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -157,5 +200,7 @@ namespace OrderApp.FormView
             }
             return isValid;
         }
+
+
     }
 }

@@ -24,7 +24,7 @@ namespace OrderApp.Dao
         public static DataTable getListChiTiet()
         {
             DataTable dt = new DataTable();
-            String strQuery = "SELECT * FROM SAN_PHAM_CHI_TIET";
+            String strQuery = "SELECT * FROM SAN_PHAM_CHI_TIET ORDER BY LOAI_BIA, LOAI_GIAY, SIZE ";
             SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
             adapter.Fill(dt);
             return dt;
@@ -33,7 +33,8 @@ namespace OrderApp.Dao
         public static DataTable getListChiTiet(int idSanPhamCha)
         {
             DataTable dt = new DataTable();
-            String strQuery = "SELECT * FROM SAN_PHAM_CHI_TIET WHERE ID_SAN_PHAM = " + idSanPhamCha;
+            String strQuery = "SELECT * FROM SAN_PHAM_CHI_TIET WHERE ID_SAN_PHAM = " + idSanPhamCha
+                + " ORDER BY LOAI_BIA, LOAI_GIAY, SIZE ";
             SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
             adapter.Fill(dt);
             return dt;

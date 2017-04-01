@@ -19,6 +19,7 @@ namespace OrderApp.FormView
 {
     public partial class OrderNew : MaterialForm
     {
+        private Boolean initData = false;
         //private creatOrder
         private OrderDto orderDTO = new OrderDto();
         private readonly String formatMoney = "#,### VND";
@@ -31,7 +32,13 @@ namespace OrderApp.FormView
 
             txtTenKhachHang.Click += TxtTenKhachHang_Click;
 
-            initData();
+            initDataAction();
+        }
+
+        private void Form_Load(object sender, EventArgs e)
+        {
+            this.initData = true;
+
         }
 
         private void TxtTenKhachHang_Click(object sender, EventArgs e)
@@ -53,7 +60,7 @@ namespace OrderApp.FormView
             txtThanhTien.Text = "";
         }
 
-        private void initData()
+        private void initDataAction()
         {
             try
             {
@@ -197,6 +204,8 @@ namespace OrderApp.FormView
         {
             try
             {
+                if (this.initData == false) return;
+
                 cbbSize.DataSource = null;
                 cbbLoaiBia.DataSource = null;
                 cbbLoaiGiay.DataSource = null;
@@ -279,7 +288,7 @@ namespace OrderApp.FormView
 
         private void btnSearchKhachHang_Click(object sender, EventArgs e)
         {
-            SearchCustomer frmSearch = new SearchCustomer();
+            SearchCustomer frmSearch = new SearchCustomer(true);
             if (frmSearch.ShowDialog(this) == DialogResult.OK)
             {
                 this.orderDTO.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
@@ -360,6 +369,8 @@ namespace OrderApp.FormView
         {
             try
             {
+                if (this.initData == false) return;
+
                 txtSoTo.Value = 10;
                 txtDonGia.Text = "";
                 txtSoLuong.Value = txtSoLuong.Minimum;
@@ -433,6 +444,11 @@ namespace OrderApp.FormView
         {
             try
             {
+                if (String.IsNullOrEmpty(txtDonGia.Text))
+                {
+                    txtDonGia.Focus();
+                    return;
+                }
                 Double thanhTien = double.Parse(txtDonGia.Text) * (double)txtSoLuong.Value;
                 txtThanhTien.Text = thanhTien.ToString();
             }

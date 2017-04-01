@@ -35,8 +35,6 @@
             this.lbID = new System.Windows.Forms.Label();
             this.idKhachHang = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClear = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.listKhachHang = new System.Windows.Forms.DataGridView();
@@ -48,14 +46,13 @@
             this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnXoa = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnXoa = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel5.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listKhachHang)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -74,23 +71,22 @@
             this.tableLayoutPanel5.Controls.Add(this.lbID, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.idKhachHang, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.lbName, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.panel1, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.checkBox1, 2, 1);
+            this.tableLayoutPanel5.Controls.Add(this.checkBox1, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnSearch, 2, 1);
             this.tableLayoutPanel5.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(10, 14);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.99751F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.00249F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(840, 114);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(840, 71);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
             // tenKhachHang
             // 
             this.tenKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tenKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tenKhachHang.Location = new System.Drawing.Point(154, 38);
+            this.tenKhachHang.Location = new System.Drawing.Point(154, 40);
             this.tenKhachHang.Multiline = true;
             this.tenKhachHang.Name = "tenKhachHang";
             this.tenKhachHang.Size = new System.Drawing.Size(220, 25);
@@ -101,7 +97,7 @@
             this.lbID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbID.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbID.Location = new System.Drawing.Point(3, 7);
+            this.lbID.Location = new System.Drawing.Point(3, 8);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(145, 19);
             this.lbID.TabIndex = 0;
@@ -112,7 +108,7 @@
             // 
             this.idKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.idKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.idKhachHang.Location = new System.Drawing.Point(154, 4);
+            this.idKhachHang.Location = new System.Drawing.Point(154, 5);
             this.idKhachHang.Multiline = true;
             this.idKhachHang.Name = "idKhachHang";
             this.idKhachHang.Size = new System.Drawing.Size(220, 25);
@@ -122,36 +118,12 @@
             // 
             this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbName.Location = new System.Drawing.Point(3, 41);
+            this.lbName.Location = new System.Drawing.Point(3, 43);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(145, 19);
             this.lbName.TabIndex = 1;
             this.lbName.Text = "Tên Khách Hàng";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnClear);
-            this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Location = new System.Drawing.Point(154, 71);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 40);
-            this.panel1.TabIndex = 6;
-            // 
-            // btnClear
-            // 
-            this.btnClear.AutoSize = true;
-            this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnClear.Depth = 0;
-            this.btnClear.Icon = null;
-            this.btnClear.Location = new System.Drawing.Point(117, 1);
-            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Primary = true;
-            this.btnClear.Size = new System.Drawing.Size(63, 36);
-            this.btnClear.TabIndex = 25;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
@@ -159,11 +131,11 @@
             this.btnSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSearch.Depth = 0;
             this.btnSearch.Icon = null;
-            this.btnSearch.Location = new System.Drawing.Point(3, 0);
+            this.btnSearch.Location = new System.Drawing.Point(380, 38);
             this.btnSearch.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Primary = true;
-            this.btnSearch.Size = new System.Drawing.Size(81, 36);
+            this.btnSearch.Size = new System.Drawing.Size(81, 30);
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -174,7 +146,7 @@
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.checkBox1.Location = new System.Drawing.Point(380, 39);
+            this.checkBox1.Location = new System.Drawing.Point(380, 5);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(145, 24);
             this.checkBox1.TabIndex = 4;
@@ -227,7 +199,7 @@
             this.listKhachHang.RowHeadersVisible = false;
             this.listKhachHang.RowHeadersWidth = 80;
             this.listKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listKhachHang.Size = new System.Drawing.Size(840, 232);
+            this.listKhachHang.Size = new System.Drawing.Size(840, 272);
             this.listKhachHang.TabIndex = 1;
             this.listKhachHang.DoubleClick += new System.EventHandler(this.listKhachHang_CellContentDoubleClick);
             // 
@@ -327,6 +299,23 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(859, 40);
             this.tableLayoutPanel1.TabIndex = 18;
             // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.AutoSize = true;
+            this.btnXoa.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnXoa.Depth = 0;
+            this.btnXoa.Icon = null;
+            this.btnXoa.Location = new System.Drawing.Point(3, 3);
+            this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Primary = true;
+            this.btnXoa.Size = new System.Drawing.Size(74, 34);
+            this.btnXoa.TabIndex = 18;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -387,7 +376,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.groupBox1.Location = new System.Drawing.Point(18, 65);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(859, 134);
+            this.groupBox1.Size = new System.Drawing.Size(859, 94);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
@@ -400,29 +389,12 @@
             this.groupBox2.Controls.Add(this.listKhachHang);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.groupBox2.Location = new System.Drawing.Point(18, 205);
+            this.groupBox2.Location = new System.Drawing.Point(18, 165);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(859, 267);
+            this.groupBox2.Size = new System.Drawing.Size(859, 307);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kết quả tìm kiếm";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.AutoSize = true;
-            this.btnXoa.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnXoa.Depth = 0;
-            this.btnXoa.Icon = null;
-            this.btnXoa.Location = new System.Drawing.Point(3, 3);
-            this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Primary = true;
-            this.btnXoa.Size = new System.Drawing.Size(74, 34);
-            this.btnXoa.TabIndex = 18;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // SearchCustomer
             // 
@@ -438,8 +410,6 @@
             this.Text = "TÌM KIẾM THÔNG TIN KHÁCH HÀNG";
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listKhachHang)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -462,8 +432,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private MaterialSkin.Controls.MaterialRaisedButton btnSearch;
         private MaterialSkin.Controls.MaterialRaisedButton btnClose;
-        private System.Windows.Forms.Panel panel1;
-        private MaterialSkin.Controls.MaterialRaisedButton btnClear;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.DataGridView listKhachHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;

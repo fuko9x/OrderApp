@@ -38,6 +38,9 @@ namespace OrderApp.FormView
         {
             InitializeComponent();
             this.selectedId = idKH;
+            this.Text = "CẬP NHẬT KHÁCH HÀNG : #" + idKH;
+            this.idKhachHang.ReadOnly = true;
+
             if (StringUtils.isNotBlank(selectedId))
             {
                 KhachHangDto dto = new KhachHangDao().getKhachHangById(selectedId);
@@ -51,7 +54,6 @@ namespace OrderApp.FormView
                 this.vanChuyen.Text = dto.vanChuyen;
                 this.ngayHopTac.Value = dto.startDate;
                 this.notes.Text = dto.notes;
-
             }
         }
 
@@ -84,23 +86,24 @@ namespace OrderApp.FormView
         private Boolean checkValideSubmit()
         {
             Boolean isValid = true;
-            List<TextBox> listRequite = new List<TextBox>()
+            List<Control> listRequite = new List<Control>()
             {
                 this.idKhachHang
                 , this.diachi
                 , this.tenKH
+                , this.cbbContact
                 , this.phoneContact
             };
-            foreach (TextBox checkTextBox in listRequite)
+            foreach (Control control in listRequite)
             {
-                if (String.IsNullOrEmpty(checkTextBox.Text))
+                if (String.IsNullOrEmpty(control.Text))
                 {
                     isValid = false;
-                    errorProvider.SetError(checkTextBox, "Chưa nhập giá trị");
+                    errorProvider.SetError(control, "Chưa nhập giá trị");
                 }
                 else
                 {
-                    errorProvider.SetError(checkTextBox, String.Empty);
+                    errorProvider.SetError(control, String.Empty);
                 }
             }
             return isValid;

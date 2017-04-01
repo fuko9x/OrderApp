@@ -340,6 +340,7 @@
             this.Name = "SearchOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐƠN ĐẶT HÀNG";
+            this.Load += new System.EventHandler(this.form_Load);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

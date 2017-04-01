@@ -15,11 +15,19 @@ namespace OrderApp.FormView
 {
     public partial class SearchOrder : MaterialForm
     {
+        private Boolean initData = false;
         public SearchOrder()
         {
+            initData = false;
             InitializeComponent();
             formatControl();
             fillData();
+        }
+
+        private void form_Load(object sender, EventArgs e)
+        {
+            this.initData = true;
+            this.cbbTinhTrangDonHang.SelectedIndex = 0;
         }
 
         private void formatControl()
@@ -65,6 +73,7 @@ namespace OrderApp.FormView
 
         private void cbbTinhTrangDonHang_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (this.initData == false) return;
             String title = cbbTinhTrangDonHang.SelectedItem.ToString();
             this.Text = title;
             this.Invalidate();

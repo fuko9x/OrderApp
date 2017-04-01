@@ -99,6 +99,8 @@
             // 
             // cbbLoaiSanPham
             // 
+            this.cbbLoaiSanPham.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbbLoaiSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbLoaiSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbLoaiSanPham.FormattingEnabled = true;
             this.cbbLoaiSanPham.Location = new System.Drawing.Point(156, 3);
@@ -305,6 +307,7 @@
             this.Name = "SearchProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TÌM KIẾM SẢN PHẨM";
+            this.Load += new System.EventHandler(this.SearchProduct_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

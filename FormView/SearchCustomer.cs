@@ -17,15 +17,18 @@ namespace OrderApp.FormView
     public partial class SearchCustomer : MaterialForm
     {
         private FormSearchCustomerObj outputObj;
+        private Boolean isGetKhachHang = false;
         public KhachHangDto khachHangSelected;
 
 
-        public SearchCustomer()
+
+        public SearchCustomer(Boolean isGetKhachHang = false)
         {
             InitializeComponent();
 
             formatControl();
 
+            this.isGetKhachHang = isGetKhachHang;
             this.khachHangSelected = new KhachHangDto();
         }
 
@@ -45,7 +48,7 @@ namespace OrderApp.FormView
                     this.listKhachHang.Rows[currentMouseOverRow].Selected = true;
 
                     ContextMenu contextMenu = new ContextMenu();
-                    contextMenu.MenuItems.Add(new MenuItem("Add", addBtn_Click));
+                    if(this.isGetKhachHang) contextMenu.MenuItems.Add(new MenuItem("Select", itemSelected_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Edit", btnEdit_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Delete", btnXoa_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Close"));
@@ -131,19 +134,16 @@ namespace OrderApp.FormView
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+
+
+        private void itemSelected_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            selectedKhacHang();
         }
 
-        private void listKhachHang_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void selectedKhacHang()
         {
-            
-        }
-
-        private void listKhachHang_CellContentDoubleClick(object sender, EventArgs e)
-        {
+            if (this.isGetKhachHang == false) return;
             if (listKhachHang.SelectedRows.Count > 0)
             {
                 int rowSelected = listKhachHang.SelectedRows[0].Index;
@@ -159,6 +159,17 @@ namespace OrderApp.FormView
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void listKhachHang_CellContentDoubleClick(object sender, EventArgs e)
+        {
+            selectedKhacHang();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

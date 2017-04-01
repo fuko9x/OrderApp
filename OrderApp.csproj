@@ -211,7 +211,6 @@
     <EmbeddedResource Include="FormView\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormView\AddOrder.resx" />
     <EmbeddedResource Include="FormView\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>

@@ -351,6 +351,11 @@
             // txtSoLuong
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(736, 75);
+            this.txtSoLuong.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.txtSoLuong.Minimum = new decimal(new int[] {
             1,
             0,
@@ -420,6 +425,11 @@
             // txtSoTo
             // 
             this.txtSoTo.Location = new System.Drawing.Point(736, 46);
+            this.txtSoTo.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.txtSoTo.Minimum = new decimal(new int[] {
             1,
             0,
@@ -568,7 +578,6 @@
             // 
             // btnSearchKhachHang
             // 
-            this.btnSearchKhachHang.Image = global::OrderApp.Properties.Resources.search_icon;
             this.btnSearchKhachHang.Location = new System.Drawing.Point(557, 22);
             this.btnSearchKhachHang.Name = "btnSearchKhachHang";
             this.btnSearchKhachHang.Size = new System.Drawing.Size(25, 25);
@@ -674,6 +683,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐẶT HÀNG";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrderNew_FormClosing);
+            this.Load += new System.EventHandler(this.Form_Load);
             this.panelMain.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
