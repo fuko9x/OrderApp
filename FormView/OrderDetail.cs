@@ -30,10 +30,12 @@ namespace OrderApp.FormView
         {
             try
             {
-                orderDTO = OrderDao.getOderByID(this.idOrder);
-                if (orderDTO != null)
+                DataTable dataTable = OrderDao.getOderByID(this.idOrder);
+                if (dataTable.Rows.Count > 0)
                 {
+                    DataRow row = dataTable.Rows[0];
                     // fill Data
+                    this.lblSoOrder.Text = this.idOrder;
                 }
                 
             }

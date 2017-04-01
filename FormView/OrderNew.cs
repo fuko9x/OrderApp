@@ -39,6 +39,20 @@ namespace OrderApp.FormView
             btnSearchKhachHang_Click(sender, e);
         }
 
+        private void setSetForm()
+        {
+            errorProvider.Clear();
+            cbbSize.Text = "";
+            cbbLoaiGiay.Text = "";
+            cbbLoaiBia.Text = "";
+
+            txtSoTo.Value = 10;
+            txtDonGia.Text = "";
+            txtSoLuong.Value = txtSoLuong.Minimum;
+            txtChietKhau.Value = txtChietKhau.Minimum;
+            txtThanhTien.Text = "";
+        }
+
         private void initData()
         {
             try
@@ -121,7 +135,7 @@ namespace OrderApp.FormView
             this.dtNgayDat.Value = orderDTO.ngayDat;
             this.dtNgayGiao.Value = orderDTO.ngayGiao;
 
-            dataGridViewSanPham.ColumnCount = 8;
+            dataGridViewSanPham.ColumnCount = 9;
             dataGridViewSanPham.Columns[0].Name = "Tên Sản Phẩm";
             dataGridViewSanPham.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
@@ -134,17 +148,20 @@ namespace OrderApp.FormView
             dataGridViewSanPham.Columns[3].Name = "Loại Bìa";
             dataGridViewSanPham.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            dataGridViewSanPham.Columns[4].Name = "Số Trang";
-            dataGridViewSanPham.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewSanPham.Columns[4].Name = "Tên CD && CR";
+            dataGridViewSanPham.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            dataGridViewSanPham.Columns[5].Name = "Đơn Giá";
+            dataGridViewSanPham.Columns[5].Name = "Số Trang";
             dataGridViewSanPham.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            dataGridViewSanPham.Columns[6].Name = "Số Lượng";
+            dataGridViewSanPham.Columns[6].Name = "Đơn Giá";
             dataGridViewSanPham.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            dataGridViewSanPham.Columns[7].Name = "Thành Tiền";
+            dataGridViewSanPham.Columns[7].Name = "Số Lượng";
             dataGridViewSanPham.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            dataGridViewSanPham.Columns[8].Name = "Thành Tiền";
+            dataGridViewSanPham.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             // update gridview
             this.dataGridViewSanPham.Rows.Clear();
@@ -156,6 +173,7 @@ namespace OrderApp.FormView
                     , orderSP.kichThuoc
                     , orderSP.loaiGiay
                     , orderSP.loaiBia
+                    , orderSP.cdcr
                     , orderSP.soTrang.ToString()
                     , orderSP.donGia.ToString(formatMoney)
                     , orderSP.soluong.ToString()
@@ -181,8 +199,9 @@ namespace OrderApp.FormView
             {
                 cbbSize.DataSource = null;
                 cbbLoaiBia.DataSource = null;
-                txtDonGia.Text = "";
-                txtThanhTien.Text = "";
+                cbbLoaiGiay.DataSource = null;
+
+                setSetForm();
 
                 if (cbbLoaiSanPham.SelectedIndex >= 0)
                 {
@@ -191,23 +210,29 @@ namespace OrderApp.FormView
 
                     List<String> listSize = new List<string>();
                     List<String> listLoaiBia = new List<string>();
+                    List<String> listLoaiGiay = new List<string>();
                     foreach (DataRow row in dt.Rows)
                     {
-                        String size = row["SIZE"].ToString();
+                        String size = row["SIZE"].ToString().Trim();
                         if (!listSize.Contains(size))
                         {
                             listSize.Add(size);
                         }
-                        String loaiBia = row["LOAI_BIA"].ToString();
+                        String loaiBia = row["LOAI_BIA"].ToString().Trim();
                         if (!listLoaiBia.Contains(loaiBia))
                         {
                             listLoaiBia.Add(loaiBia);
+                        }
+                        String loaiGiay = row["LOAI_GIAY"].ToString().Trim();
+                        if (!listLoaiGiay.Contains(loaiGiay))
+                        {
+                            listLoaiGiay.Add(loaiGiay);
                         }
                     }
                     //FILL combobox
                     cbbSize.DataSource = listSize;
                     cbbLoaiBia.DataSource = listLoaiBia;
-
+                    cbbLoaiGiay.DataSource = listLoaiGiay;
                 }
             }
             catch (Exception ex)
@@ -263,17 +288,56 @@ namespace OrderApp.FormView
             }
         }
 
+        private Boolean checkValidDatHang()
+        {
+            Boolean isValid = true;
+            List<Control> listRequited = new List<Control>()
+            {
+                cbbSize
+                , cbbLoaiBia
+                , cbbLoaiGiay
+                , txtDonGia
+            };
+            foreach (Control control in listRequited)
+            {
+                if (control.GetType() == typeof(TextBox))
+                {
+                    TextBox textBox = (TextBox)control;
+                    if (String.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        isValid = false;
+                        errorProvider.SetError(textBox, "Vui lòng nhập giá trị");
+                    }
+                    else
+                        errorProvider.SetError(textBox, String.Empty);
+                }
+                if (control.GetType() == typeof(ComboBox))
+                {
+                    ComboBox cbb = (ComboBox)control;
+                    if (String.IsNullOrWhiteSpace(cbb.Text))
+                    {
+                        isValid = false;
+                        errorProvider.SetError(cbb, "Vui lòng chọn hoặc nhập giá trị");
+                    }
+                    else
+                        errorProvider.SetError(cbb, String.Empty);
+                }
+            }
+            return isValid;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                if (StringUtils.isNotBlank(txtDonGia.Text))
+                if (checkValidDatHang())
                 {
                     DonDatHangSPDto orderSP = new DonDatHangSPDto();
                     orderSP.idOrder = orderDTO.id;
                     orderSP.tenSanPham = cbbLoaiSanPham.Text;
                     orderSP.kichThuoc = cbbSize.Text;
                     orderSP.loaiBia = cbbLoaiBia.Text;
+                    orderSP.loaiGiay = cbbLoaiGiay.Text;
                     orderSP.soTrang = (int)txtSoTo.Value;
                     orderSP.donGia = double.Parse(txtDonGia.Text);
                     orderSP.soluong = (int)txtSoLuong.Value;
@@ -282,6 +346,8 @@ namespace OrderApp.FormView
                     orderDTO.listSanPham.Add(orderSP);
 
                     updateUI();
+
+                    setSetForm();
                 }
             }
             catch (Exception)
@@ -294,10 +360,17 @@ namespace OrderApp.FormView
         {
             try
             {
+                txtSoTo.Value = 10;
+                txtDonGia.Text = "";
+                txtSoLuong.Value = txtSoLuong.Minimum;
+                txtChietKhau.Value = txtChietKhau.Minimum;
+                txtThanhTien.Text = "";
+
                 int idSanPhamCha = (int)cbbLoaiSanPham.SelectedValue;
                 String size = cbbSize.Text;
-                String loaibia = cbbLoaiBia.Text;
-                DataTable dt = SanPhamDao.getChiTietSanPham(idSanPhamCha, size, loaibia);
+                String loaiBia = cbbLoaiBia.Text;
+                String loaiGiay = cbbLoaiGiay.Text;
+                DataTable dt = SanPhamDao.getChiTietSanPham(idSanPhamCha, size, loaiBia, loaiGiay);
                 if (dt.Rows.Count == 1)
                 {
                     DataRow row = dt.Rows[0];
@@ -313,6 +386,11 @@ namespace OrderApp.FormView
         }
 
         private void cbbLoaiBia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateDataChanged();
+        }
+
+        private void cbbLoaiGiay_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateDataChanged();
         }

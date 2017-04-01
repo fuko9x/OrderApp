@@ -69,13 +69,13 @@ namespace OrderApp.Dao
             return dt;
         }
 
-        public static OrderDto getOderByID(String id)
+        public static DataTable getOderByID(String id)
         {
             DataTable dt = new DataTable();
             String strQuery = "SELECT * FROM DON_DAT_HANG WHERE ID = '" + id + " '";
             SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
             adapter.Fill(dt);
-            return null;
+            return dt;
         }
 
         public void insertId(String id)

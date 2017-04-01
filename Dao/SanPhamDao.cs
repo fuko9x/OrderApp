@@ -39,16 +39,25 @@ namespace OrderApp.Dao
             return dt;
         }
 
-        public static DataTable getChiTietSanPham(int idSanPhamCha, String size, String loaiBia)
+        public static DataTable getChiTietSanPham(int idSanPhamCha, String size = "", String loaiBia = "", String loaiGiay = "")
         {
             DataTable dt = new DataTable();
             String strQuery = "SELECT * FROM SAN_PHAM_CHI_TIET "
-                             + "WHERE ID_SAN_PHAM = " + idSanPhamCha
-                             + " AND SIZE = @size"
-                             + " AND LOAI_BIA = @loaiBia";
+                            + "WHERE ID_SAN_PHAM = " + idSanPhamCha;
+
+            if (!String.IsNullOrEmpty(size)) strQuery += " AND SIZE = @size";
+            if (!String.IsNullOrEmpty(loaiBia)) strQuery += " AND LOAI_BIA = @loaiBia";
+            if (!String.IsNullOrEmpty(loaiGiay)) strQuery += " AND LOAI_GIAY = @loaiGiay";
+
             SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
-            adapter.SelectCommand.Parameters.AddWithValue("@size", size);
-            adapter.SelectCommand.Parameters.AddWithValue("@loaiBia", loaiBia);
+
+            if (!String.IsNullOrEmpty(size))
+                adapter.SelectCommand.Parameters.AddWithValue("@size", size);
+            if (!String.IsNullOrEmpty(loaiBia))
+                adapter.SelectCommand.Parameters.AddWithValue("@loaiBia", loaiBia);
+            if (!String.IsNullOrEmpty(loaiGiay))
+                adapter.SelectCommand.Parameters.AddWithValue("@loaiGiay", loaiGiay);
+
             adapter.Fill(dt);
 
             return dt;
