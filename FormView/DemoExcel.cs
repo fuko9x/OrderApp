@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
+//susing Excel = Microsoft.Office.Interop.Excel;
 
 namespace OrderApp.FormView
 {
@@ -24,7 +24,7 @@ namespace OrderApp.FormView
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            /*
             KhachHangDto infoKH = new KhachHangDao().getKhachHangById("A0001");
             SqlDataReader reader = new OrderDao().getDebtByCustomer("A0001");
 
@@ -83,6 +83,8 @@ namespace OrderApp.FormView
 
             reader.Close();
             MessageBox.Show("Excel file created.");
+
+            */
         }
     }
 }

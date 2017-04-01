@@ -35,8 +35,8 @@
             this.lbID = new System.Windows.Forms.Label();
             this.idKhachHang = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
-            this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
             this.listKhachHang = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -125,6 +125,18 @@
             this.lbName.Text = "Tên Khách Hàng";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
+            this.checkBox1.Location = new System.Drawing.Point(380, 5);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(145, 24);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "Trạng thái nợ";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // btnSearch
             // 
             this.btnSearch.AutoSize = true;
@@ -140,18 +152,6 @@
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.search_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.checkBox1.Location = new System.Drawing.Point(380, 5);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(145, 24);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Trạng thái nợ";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // listKhachHang
             // 
@@ -408,6 +408,7 @@
             this.Name = "SearchCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TÌM KIẾM THÔNG TIN KHÁCH HÀNG";
+            this.Load += new System.EventHandler(this.form_Load);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listKhachHang)).EndInit();

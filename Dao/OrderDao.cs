@@ -116,7 +116,9 @@ namespace OrderApp.Dao
                     + ", TONG_TIEN = @tongTien"
                     + ", PHI_VAN_CHUYEN = @phiVanChuyen"
                     + ", NOTES = @notes"
+                    + ", LIEN_HE = @lienHe"
                     + ", SDT = @sdt"
+                    + ", DIA_DIEM_GIAO_HANG = @diaDiemGiaoHang"
                     + " WHERE id = @id";
                 SqlCommand cmd = new SqlCommand(strQuery);
                 cmd.CommandType = CommandType.Text;
@@ -131,7 +133,9 @@ namespace OrderApp.Dao
                 cmd.Parameters.AddWithValue("@tongTien", orderDto.tongTien);
                 cmd.Parameters.AddWithValue("@phiVanChuyen", orderDto.phiVanChuyen);
                 cmd.Parameters.AddWithValue("@notes", orderDto.notes);
-                cmd.Parameters.AddWithValue("@sdt", orderDto.phone);
+                cmd.Parameters.AddWithValue("@lienHe", orderDto.dienThoai);
+                cmd.Parameters.AddWithValue("@sdt", orderDto.dienThoai);
+                cmd.Parameters.AddWithValue("@diaDiemGiaoHang", orderDto.dienThoai);
                 cmd.ExecuteNonQuery();
 
                 // save Detail
@@ -222,7 +226,9 @@ namespace OrderApp.Dao
                 + ", TONG_TIEN"
                 + ", PHI_VAN_CHUYEN"
                 + ", NOTES"
+                + ", LIEN_HE"
                 + ", SDT"
+                + ", DIA_DIEM_GIAO_HANG"
                 + ", CREATE_BY"
                 + ", CREATE_TIME"
                 + ") VALUES ("
@@ -251,7 +257,9 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@tongTien", dto.tongTien);
             cmd.Parameters.AddWithValue("@phiVanChuyen", dto.phiVanChuyen);
             cmd.Parameters.AddWithValue("@notes", dto.notes);
-            cmd.Parameters.AddWithValue("@sdt", dto.phone);
+            cmd.Parameters.AddWithValue("@lienHe", dto.dienThoai);
+            cmd.Parameters.AddWithValue("@sdt", dto.dienThoai);
+            cmd.Parameters.AddWithValue("@diaDiemGiaoHang", dto.dienThoai);
             cmd.Parameters.AddWithValue("@user", dto.user);
             cmd.Parameters.AddWithValue("@createTime", dto.createTime);
             cmd.ExecuteNonQuery();

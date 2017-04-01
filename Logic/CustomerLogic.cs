@@ -26,7 +26,7 @@ namespace OrderApp.Logic
             khDao.insert(khDto);
             if (obj.listContracts != null && obj.listContracts.Count > 0)
             {
-                new LienHeDao().insertList(createListLienHeDto(obj));
+                new LienHeDao().insertList(obj.listContracts);
             }
             
             return new LogicResult(Contanst.MSG_INFO, "", null);
@@ -45,10 +45,9 @@ namespace OrderApp.Logic
             {
                 lienHeDao.delete(khDto.idKhachHang);
             }
-            if (obj.listContracts != null && obj.listContracts.Count > 0)
+            if (obj.listContracts.Count > 0)
             {
-                List<LienHeDto> listInsertLienHe = createListLienHeDto(obj);
-                lienHeDao.insertList(listInsertLienHe);
+                lienHeDao.insertList(obj.listContracts);
             }
             return new LogicResult(Contanst.MSG_INFO, AppUtils.getAppConfig("MSGINFO004"), null);
         }
@@ -87,19 +86,6 @@ namespace OrderApp.Logic
                 rs.Add(item.id);
             }
             return rs;
-        }
-        private List<LienHeDto> createListLienHeDto(FormAddCustomerObj obj)
-        {
-            List<LienHeDto> listDto = new List<LienHeDto>();
-            foreach (LienHeObj item in obj.listContracts)
-            {
-                LienHeDto dto = new LienHeDto();
-                dto.idKhacHang = obj.idKhachHang;
-                dto.name = item.name;
-                dto.phone = item.phone;
-                listDto.Add(dto);
-            }
-            return listDto;
         }
 
         private KhachHangDto createKhachHangDto(FormAddCustomerObj obj)

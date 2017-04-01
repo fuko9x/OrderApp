@@ -229,7 +229,7 @@ namespace OrderApp.Dao
         {
             KhachHangDto dto = new KhachHangDto();
             String strQuery = "SELECT "
-                + "TEN_KHACH_HANG"
+                + " TEN_KHACH_HANG"
                 + ", DIA_CHI"
                 + ", EMAIL"
                 + ", ACC_FTP"
@@ -249,6 +249,7 @@ namespace OrderApp.Dao
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
 
+            dto.idKhachHang = id;
             if (!reader.IsDBNull(0))    dto.tenKhachHang = reader.GetString(0);
             if (!reader.IsDBNull(1))    dto.diaChi = reader.GetString(1);
             if (!reader.IsDBNull(2))    dto.email = reader.GetString(2);
@@ -262,7 +263,38 @@ namespace OrderApp.Dao
             if (!reader.IsDBNull(10))   dto.trangThaiNo = reader.GetBoolean(10);
 
             reader.Close();
+
+            dto.listLienHe = getListLienHeByKhachHang(id);
             return dto;
+        }
+
+        public List<LienHeDto> getListLienHeByKhachHang(String idKhachHang)
+        {
+            List<LienHeDto> listLienHe = new List<LienHeDto>();
+            String strQuery = ""
+                + "SELECT "
+                + " ID "
+                + ", TEN "
+                + ", SDT "
+                + " FROM LIEN_HE "
+                + " WHERE ID_KHACH_HANG = @idKhachHang";
+
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@idKhachHang", idKhachHang);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                LienHeDto lienHe = new LienHeDto();
+                if (!reader.IsDBNull(0)) lienHe.id = reader.GetInt32(0);
+                if (!reader.IsDBNull(1)) lienHe.name = reader.GetString(1);
+                if (!reader.IsDBNull(2)) lienHe.phone = reader.GetString(2);
+
+                listLienHe.Add(lienHe);
+            }
+            reader.Close();
+            return listLienHe;
         }
 
         public void deleteKhachHang(String id)

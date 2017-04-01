@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrderApp.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace OrderApp.FormView
         public String diaChi;
         public String email;
         public String accFtp;
-        public List<LienHeObj> listContracts; 
+        public List<LienHeDto> listContracts; 
         public String user;
     }
 }

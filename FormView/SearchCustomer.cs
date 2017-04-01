@@ -1,5 +1,6 @@
 ﻿using MaterialSkin.Controls;
 using OrderApp.Common;
+using OrderApp.Dao;
 using OrderApp.Dto;
 using OrderApp.Logic;
 using System;
@@ -16,11 +17,10 @@ namespace OrderApp.FormView
 {
     public partial class SearchCustomer : MaterialForm
     {
+        private Boolean initData = false;
         private FormSearchCustomerObj outputObj;
         private Boolean isGetKhachHang = false;
         public KhachHangDto khachHangSelected;
-
-
 
         public SearchCustomer(Boolean isGetKhachHang = false)
         {
@@ -30,6 +30,12 @@ namespace OrderApp.FormView
 
             this.isGetKhachHang = isGetKhachHang;
             this.khachHangSelected = new KhachHangDto();
+        }
+
+        private void form_Load(object sender, EventArgs e)
+        {
+            initData = true;
+            btnSearch.PerformClick();
         }
 
         private void formatControl()
@@ -87,6 +93,7 @@ namespace OrderApp.FormView
         {
             AddCustomer frmAdd = new AddCustomer();
             frmAdd.ShowDialog(this);
+            search_Click(sender, e);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -96,10 +103,8 @@ namespace OrderApp.FormView
                 int rowSelected = listKhachHang.SelectedRows[0].Index;
                 String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
                 AddCustomer frmEdit = new AddCustomer(selectedId);
-                if (frmEdit.ShowDialog(this) == DialogResult.OK)
-                {
-                    // no thing
-                }
+                frmEdit.ShowDialog(this);
+                search_Click(sender, e);
             }
             
         }
@@ -147,14 +152,10 @@ namespace OrderApp.FormView
             if (listKhachHang.SelectedRows.Count > 0)
             {
                 int rowSelected = listKhachHang.SelectedRows[0].Index;
-                String idKhachHang = outputObj.listKhachHangs.Rows[rowSelected]["ID_KHACH_HANG"].ToString();
-                String tenKhachHang = outputObj.listKhachHangs.Rows[rowSelected]["TEN_KHACH_HANG"].ToString();
-                String diaChi = outputObj.listKhachHangs.Rows[rowSelected]["DIA_CHI"].ToString();
+                String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
 
-                this.khachHangSelected = new KhachHangDto();
-                this.khachHangSelected.idKhachHang = idKhachHang;
-                this.khachHangSelected.tenKhachHang = tenKhachHang;
-                this.khachHangSelected.diaChi = diaChi;
+                KhachHangDao khDao = new KhachHangDao();
+                this.khachHangSelected = khDao.getKhachHangById(selectedId);
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

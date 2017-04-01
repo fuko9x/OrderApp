@@ -1,4 +1,5 @@
-﻿using OrderApp.FormView;
+﻿using OrderApp.Dto;
+using OrderApp.FormView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace OrderApp.FormView
         public String diaChi;
         public String email;
         public String accFtp;
-        public List<LienHeObj> listContracts;
+        public List<LienHeDto> listContracts;
         public String sales;
         public Decimal salesPercent;
         public String giamGia;
@@ -26,7 +27,7 @@ namespace OrderApp.FormView
 
         public FormAddCustomerObj()
         {
-            listContracts = new List<LienHeObj>();
+            listContracts = new List<LienHeDto>();
         }
     }
 }

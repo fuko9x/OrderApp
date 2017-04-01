@@ -294,6 +294,16 @@ namespace OrderApp.FormView
                 this.orderDTO.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
                 this.txtTenKhachHang.Text = frmSearch.khachHangSelected.tenKhachHang;
                 this.txtDiaDiemGiaoHang.Text = frmSearch.khachHangSelected.diaChi;
+                if (frmSearch.khachHangSelected.listLienHe.Count > 0)
+                {
+                    this.txtLienHe.Text = frmSearch.khachHangSelected.listLienHe[0].name;
+                    this.txtSDT.Text = frmSearch.khachHangSelected.listLienHe[0].phone;
+                }
+                else
+                {
+                    this.txtLienHe.Text = "";
+                    this.txtSDT.Text = "";
+                }
             }
         }
 
@@ -467,6 +477,9 @@ namespace OrderApp.FormView
                     return;
                 }
 
+                orderDTO.lienHe = txtLienHe.Text;
+                orderDTO.dienThoai = txtSDT.Text;
+                orderDTO.diaDiemGiaoHang = txtDiaDiemGiaoHang.Text;
                 orderDTO.ngayDat = dtNgayDat.Value;
                 orderDTO.ngayGiao = dtNgayGiao.Value;
                 orderDTO.thanhToan = false;

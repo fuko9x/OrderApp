@@ -33,6 +33,7 @@ namespace OrderApp.FormView
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSaveNew = new MaterialSkin.Controls.MaterialRaisedButton();
             this.saveBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label1 = new System.Windows.Forms.Label();
             this.tenSanPham = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@ namespace OrderApp.FormView
             this.addPageCost = new System.Windows.Forms.TextBox();
             this.numPageDefault = new System.Windows.Forms.NumericUpDown();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnSaveNew = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPageDefault)).BeginInit();
@@ -102,6 +102,23 @@ namespace OrderApp.FormView
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnSaveNew
+            // 
+            this.btnSaveNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveNew.AutoSize = true;
+            this.btnSaveNew.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSaveNew.Depth = 0;
+            this.btnSaveNew.Icon = null;
+            this.btnSaveNew.Location = new System.Drawing.Point(433, 3);
+            this.btnSaveNew.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSaveNew.Name = "btnSaveNew";
+            this.btnSaveNew.Primary = true;
+            this.btnSaveNew.Size = new System.Drawing.Size(129, 34);
+            this.btnSaveNew.TabIndex = 11;
+            this.btnSaveNew.Text = "Save & New";
+            this.btnSaveNew.UseVisualStyleBackColor = true;
+            this.btnSaveNew.Click += new System.EventHandler(this.btnSaveNew_Click);
+            // 
             // saveBtn
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -136,7 +153,7 @@ namespace OrderApp.FormView
             this.tenSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.tenSanPham.Location = new System.Drawing.Point(207, 39);
             this.tenSanPham.Name = "tenSanPham";
-            this.tenSanPham.Size = new System.Drawing.Size(471, 26);
+            this.tenSanPham.Size = new System.Drawing.Size(470, 26);
             this.tenSanPham.TabIndex = 1;
             // 
             // loaiBia
@@ -145,7 +162,7 @@ namespace OrderApp.FormView
             this.loaiBia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.loaiBia.Location = new System.Drawing.Point(207, 109);
             this.loaiBia.Name = "loaiBia";
-            this.loaiBia.Size = new System.Drawing.Size(471, 26);
+            this.loaiBia.Size = new System.Drawing.Size(470, 26);
             this.loaiBia.TabIndex = 3;
             // 
             // size
@@ -154,7 +171,7 @@ namespace OrderApp.FormView
             this.size.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.size.Location = new System.Drawing.Point(207, 74);
             this.size.Name = "size";
-            this.size.Size = new System.Drawing.Size(471, 26);
+            this.size.Size = new System.Drawing.Size(470, 26);
             this.size.TabIndex = 2;
             // 
             // label2
@@ -206,7 +223,7 @@ namespace OrderApp.FormView
             this.donGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.donGia.Location = new System.Drawing.Point(207, 179);
             this.donGia.Name = "donGia";
-            this.donGia.Size = new System.Drawing.Size(471, 26);
+            this.donGia.Size = new System.Drawing.Size(470, 26);
             this.donGia.TabIndex = 5;
             // 
             // description
@@ -216,7 +233,7 @@ namespace OrderApp.FormView
             this.description.Location = new System.Drawing.Point(207, 281);
             this.description.Multiline = true;
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(471, 57);
+            this.description.Size = new System.Drawing.Size(470, 57);
             this.description.TabIndex = 8;
             // 
             // loaiGiay
@@ -225,7 +242,7 @@ namespace OrderApp.FormView
             this.loaiGiay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.loaiGiay.Location = new System.Drawing.Point(207, 144);
             this.loaiGiay.Name = "loaiGiay";
-            this.loaiGiay.Size = new System.Drawing.Size(471, 26);
+            this.loaiGiay.Size = new System.Drawing.Size(470, 26);
             this.loaiGiay.TabIndex = 4;
             // 
             // label6
@@ -247,7 +264,7 @@ namespace OrderApp.FormView
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tenSanPham, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.id, 1, 9);
@@ -312,9 +329,9 @@ namespace OrderApp.FormView
             this.comboBoxLoaiSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxLoaiSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.comboBoxLoaiSanPham.FormattingEnabled = true;
-            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(207, 4);
+            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(207, 7);
             this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
-            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(471, 27);
+            this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(470, 27);
             this.comboBoxLoaiSanPham.TabIndex = 0;
             // 
             // label8
@@ -342,7 +359,7 @@ namespace OrderApp.FormView
             this.addPageCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.addPageCost.Location = new System.Drawing.Point(207, 248);
             this.addPageCost.Name = "addPageCost";
-            this.addPageCost.Size = new System.Drawing.Size(471, 26);
+            this.addPageCost.Size = new System.Drawing.Size(470, 26);
             this.addPageCost.TabIndex = 7;
             // 
             // numPageDefault
@@ -361,7 +378,7 @@ namespace OrderApp.FormView
             0,
             0});
             this.numPageDefault.Name = "numPageDefault";
-            this.numPageDefault.Size = new System.Drawing.Size(471, 26);
+            this.numPageDefault.Size = new System.Drawing.Size(470, 26);
             this.numPageDefault.TabIndex = 6;
             this.numPageDefault.Value = new decimal(new int[] {
             10,
@@ -373,23 +390,6 @@ namespace OrderApp.FormView
             // 
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
-            // 
-            // btnSaveNew
-            // 
-            this.btnSaveNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveNew.AutoSize = true;
-            this.btnSaveNew.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSaveNew.Depth = 0;
-            this.btnSaveNew.Icon = null;
-            this.btnSaveNew.Location = new System.Drawing.Point(433, 3);
-            this.btnSaveNew.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSaveNew.Name = "btnSaveNew";
-            this.btnSaveNew.Primary = true;
-            this.btnSaveNew.Size = new System.Drawing.Size(129, 34);
-            this.btnSaveNew.TabIndex = 11;
-            this.btnSaveNew.Text = "Save & New";
-            this.btnSaveNew.UseVisualStyleBackColor = true;
-            this.btnSaveNew.Click += new System.EventHandler(this.btnSaveNew_Click);
             // 
             // AddProduct
             // 

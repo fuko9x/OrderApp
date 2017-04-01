@@ -12,12 +12,14 @@ namespace OrderApp.Dto
         public String idKhachHang;
         public DateTime ngayDat;
         public DateTime ngayGiao;
+        public String lienHe;
+        public String dienThoai;
+        public String diaDiemGiaoHang;
         public double tongTien;
         public double vat;
         public double tongCong;
         public double phiVanChuyen;
         public String notes;
-        public String phone;
         public Boolean thanhToan;
         public String user;
         public DateTime createTime;
@@ -29,7 +31,9 @@ namespace OrderApp.Dto
             this.tongTien = this.vat = this.tongCong = this.phiVanChuyen = 0;
             this.ngayDat = DateTime.Now;
             this.ngayGiao = DateTime.Now.AddDays(3);
-            this.phone = "";
+            this.lienHe = "";
+            this.dienThoai = "";
+            this.diaDiemGiaoHang = "";
             this.user = "";
             this.createTime = DateTime.Now;
             this.listSanPham = new List<DonDatHangSPDto>();

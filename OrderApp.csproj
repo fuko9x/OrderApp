@@ -116,13 +116,13 @@
     <Compile Include="FormView\DemoExcel.Designer.cs">
       <DependentUpon>DemoExcel.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormView\FormAddCustomerObj.cs" />
     <Compile Include="FormView\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormView\AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\FormAddCustomerObj.cs" />
     <Compile Include="FormView\FormAddOrderObj.cs" />
     <Compile Include="FormView\FormAddProductObj.cs" />
     <Compile Include="FormView\FormEditCustomerObj.cs" />
@@ -164,7 +164,6 @@
       <DependentUpon>FrmCongNoChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\KhachHangSearchView.cs" />
-    <Compile Include="FormView\LienHeObj.cs" />
     <Compile Include="FormView\OrderDetail.cs">
       <SubType>Form</SubType>
     </Compile>

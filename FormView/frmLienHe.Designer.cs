@@ -50,16 +50,15 @@
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 78);
+            this.groupBox1.Location = new System.Drawing.Point(12, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(417, 140);
+            this.groupBox1.Size = new System.Drawing.Size(417, 121);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(227, 102);
+            this.btnClose.Location = new System.Drawing.Point(234, 81);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 5;
@@ -71,7 +70,7 @@
             // 
             this.txtDienThoai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDienThoai.Location = new System.Drawing.Point(100, 67);
+            this.txtDienThoai.Location = new System.Drawing.Point(108, 45);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(235, 20);
             this.txtDienThoai.TabIndex = 4;
@@ -80,14 +79,14 @@
             // 
             this.txtNguoiLienHe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNguoiLienHe.Location = new System.Drawing.Point(100, 31);
+            this.txtNguoiLienHe.Location = new System.Drawing.Point(108, 19);
             this.txtNguoiLienHe.Name = "txtNguoiLienHe";
             this.txtNguoiLienHe.Size = new System.Drawing.Size(235, 20);
             this.txtNguoiLienHe.TabIndex = 3;
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(131, 102);
+            this.btnThem.Location = new System.Drawing.Point(139, 81);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 2;
@@ -98,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 67);
+            this.label2.Location = new System.Drawing.Point(26, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 1;
@@ -107,7 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 31);
+            this.label1.Location = new System.Drawing.Point(26, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 0;
@@ -120,9 +119,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.listViewLienHe);
-            this.groupBox2.Location = new System.Drawing.Point(12, 224);
+            this.groupBox2.Location = new System.Drawing.Point(12, 196);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(417, 135);
+            this.groupBox2.Size = new System.Drawing.Size(417, 163);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách";
@@ -134,7 +133,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewLienHe.Location = new System.Drawing.Point(7, 20);
             this.listViewLienHe.Name = "listViewLienHe";
-            this.listViewLienHe.Size = new System.Drawing.Size(404, 109);
+            this.listViewLienHe.Size = new System.Drawing.Size(404, 137);
             this.listViewLienHe.TabIndex = 0;
             this.listViewLienHe.UseCompatibleStateImageBehavior = false;
             this.listViewLienHe.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewLienHe_MouseClick);

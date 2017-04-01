@@ -32,7 +32,7 @@ namespace OrderApp.FormView
         private void SearchProduct_Load(object sender, EventArgs e)
         {
             initData = true;
-            cbbLoaiSanPham.SelectedIndex = 0;
+            reloadData();
         }
 
         private void formatControl()

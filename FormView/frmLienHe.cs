@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using OrderApp.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace OrderApp.FormView
 {
     public partial class FrmLienHe : MaterialForm
     {
-        public List<LienHeObj>listLienHe = new List<LienHeObj>();
+        public List<LienHeDto>listLienHe = new List<LienHeDto>();
 
         public FrmLienHe()
         {
@@ -52,7 +53,7 @@ namespace OrderApp.FormView
         private void loadData()
         {
             listViewLienHe.Items.Clear();
-            foreach (LienHeObj lienHe in listLienHe)
+            foreach (LienHeDto lienHe in listLienHe)
             {
                 ListViewItem listitem = new ListViewItem(lienHe.name);
                 listitem.SubItems.Add(lienHe.phone);
@@ -64,7 +65,7 @@ namespace OrderApp.FormView
         {
             if (txtNguoiLienHe.Text.Trim() != "" && txtDienThoai.Text.Trim() != "")
             {
-                LienHeObj lienHe = new LienHeObj(txtNguoiLienHe.Text, txtDienThoai.Text);
+                LienHeDto lienHe = new LienHeDto(txtNguoiLienHe.Text, txtDienThoai.Text);
                 listLienHe.Add(lienHe);
 
                 loadData();
@@ -72,6 +73,15 @@ namespace OrderApp.FormView
                 txtNguoiLienHe.Text = "";
                 txtDienThoai.Text = "";
             }
+        }
+
+        private void menuItemDefault_Click(object sender, EventArgs e)
+        {
+            int rowIndex = this.listViewLienHe.SelectedItems[0].Index;
+            LienHeDto lienHe = this.listLienHe[rowIndex];
+            this.listLienHe.RemoveAt(rowIndex);
+            this.listLienHe.Insert(0, lienHe);
+            loadData();
         }
 
         private void menuItemDelete_Click(object sender, EventArgs e)
@@ -94,7 +104,10 @@ namespace OrderApp.FormView
                 if (currentMouseOverRow >= 0)
                 {
                     ContextMenu contextMenu = new ContextMenu();
-                    contextMenu.MenuItems.Add(new MenuItem("Set Default"));
+                    if (this.listLienHe.Count > 1)
+                    {
+                        contextMenu.MenuItems.Add(new MenuItem("Set Default", menuItemDefault_Click));
+                    }
                     contextMenu.MenuItems.Add(new MenuItem("Delete", menuItemDelete_Click) );
                     contextMenu.MenuItems.Add(new MenuItem("Close"));
                     contextMenu.Show(listViewLienHe, new Point(e.X, e.Y));

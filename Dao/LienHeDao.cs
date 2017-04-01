@@ -22,7 +22,7 @@ namespace OrderApp.Dao
                 + ") VALUES ";
             for (int i = 0; i < listDto.Count; i++)
             {
-                strQuery += "(@name" + i
+                strQuery += "( @name" + i
                    + ", @phone" + i
                    + ", @idKhacHang" + i
                    + "),";
@@ -42,7 +42,7 @@ namespace OrderApp.Dao
 
         public List<LienHeDto> getListLienHe(String idKhachHang)
         {
-            String strQuery = "SELECT TEN, SDT FROM LIEN_HE WHERE ID_KHACH_HANG = @idKhachHang";
+            String strQuery = "SELECT ID, TEN, SDT FROM LIEN_HE WHERE ID_KHACH_HANG = @idKhachHang";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Connection.getConnection();
@@ -52,8 +52,9 @@ namespace OrderApp.Dao
             while (reader.Read())
             {
                 LienHeDto dto = new LienHeDto();
-                dto.name = reader.GetString(0);
-                dto.phone = reader.GetString(1);
+                dto.id = reader.GetInt32(0);
+                dto.name = reader.GetString(1);
+                dto.phone = reader.GetString(2);
                 listLienHeDto.Add(dto);
             }
             reader.Close();

@@ -81,7 +81,7 @@ namespace OrderApp.Logic
             dto.tongTien = obj.tongTien;
             dto.vat = obj.vat;
             dto.phiVanChuyen = obj.phiVanChuyen;
-            dto.phone = obj.phone;
+            dto.dienThoai = obj.phone;
             dto.notes = obj.notes;
             dto.createTime = systemTime;
             return dto;

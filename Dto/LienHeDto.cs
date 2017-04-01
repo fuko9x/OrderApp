@@ -12,5 +12,18 @@ namespace OrderApp.Dto
         public String name;
         public String phone;
         public String idKhacHang;
+
+        public LienHeDto()
+        {
+            this.name = "";
+            this.phone = "";
+        }
+
+        public LienHeDto(String name, String phone, String idKhachHang = "")
+        {
+            this.name = name;
+            this.phone = phone;
+            this.idKhacHang = idKhachHang;
+        }
     }
 }

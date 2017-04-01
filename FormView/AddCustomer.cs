@@ -24,10 +24,12 @@ namespace OrderApp.FormView
         public static readonly int CONS_MODE_EDIT = 1;
         public static readonly int CONS_MODE_VIEW = 2;
 
+        public Boolean initData = false;
+
         public int currentMode = CONS_MODE_ADD;
         public String selectedId;
 
-        private List<LienHeObj> listLienHe = new List<LienHeObj>();
+        private List<LienHeDto> listLienHe = new List<LienHeDto>();
 
         public AddCustomer()
         {
@@ -44,6 +46,7 @@ namespace OrderApp.FormView
             if (StringUtils.isNotBlank(selectedId))
             {
                 KhachHangDto dto = new KhachHangDao().getKhachHangById(selectedId);
+                this.listLienHe = dto.listLienHe;
                 this.idKhachHang.Text = selectedId;
                 this.tenKH.Text = dto.tenKhachHang;
                 this.diachi.Text = dto.diaChi;
@@ -55,6 +58,12 @@ namespace OrderApp.FormView
                 this.ngayHopTac.Value = dto.startDate;
                 this.notes.Text = dto.notes;
             }
+        }
+
+        private void form_Load(object sender, EventArgs e)
+        {
+            this.initData = true;
+            loadContact();
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -70,7 +79,8 @@ namespace OrderApp.FormView
                 if (StringUtils.isBlank(selectedId))
                 {
                     LogicResult result = logic.addCustommerLogic(formObj);
-                } else
+                }
+                else
                 {
                     LogicResult result = logic.updateCustommerLogic(formObj);
                 }
@@ -125,13 +135,19 @@ namespace OrderApp.FormView
             destObj.vanChuyen = StringUtils.Trim(this.vanChuyen.Text);
             destObj.startDate = this.ngayHopTac.Value;
             destObj.notes = StringUtils.Trim(this.notes.Text);
-            if (this.listLienHe != null || this.listLienHe.Count > 0)
+            if (this.listLienHe.Count > 0)
             {
                 destObj.listContracts = this.listLienHe;
-            } else
+                foreach (LienHeDto lienHe in destObj.listContracts)
+                {
+                    lienHe.idKhacHang = this.idKhachHang.Text;
+                }
+                
+            }
+            else
             {
                 if (StringUtils.isNotBlank(this.cbbContact.Text) || StringUtils.isNotBlank(this.phoneContact.Text)) {
-                    destObj.listContracts.Add(new LienHeObj(cbbContact.Text.Trim(), phoneContact.Text.Trim()));
+                    destObj.listContracts.Add(new LienHeDto(cbbContact.Text.Trim(), phoneContact.Text.Trim(), destObj.idKhachHang));
                 }
             }
 
@@ -146,12 +162,12 @@ namespace OrderApp.FormView
             {
                 if(cbbContact.Text.Trim() != "")
                 {
-                    this.listLienHe.Add(new LienHeObj(cbbContact.Text.Trim(), phoneContact.Text.Trim()));
+                    this.listLienHe.Add(new LienHeDto(cbbContact.Text.Trim(), phoneContact.Text.Trim()));
                 }
             }
             FrmLienHe frmLienHe = new FrmLienHe();
             frmLienHe.listLienHe = this.listLienHe;
-            frmLienHe.ShowDialog();
+            frmLienHe.ShowDialog(this);
 
             this.listLienHe = frmLienHe.listLienHe;
             loadContact();
@@ -162,7 +178,7 @@ namespace OrderApp.FormView
             this.cbbContact.Items.Clear();
             if (listLienHe.Count > 0)
             {
-                foreach (LienHeObj lienHe in listLienHe)
+                foreach (LienHeDto lienHe in listLienHe)
                 {
                     this.cbbContact.Items.Add(lienHe.name);
                 }
