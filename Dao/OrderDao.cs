@@ -72,10 +72,56 @@ namespace OrderApp.Dao
         public static DataTable getOderByID(String id)
         {
             DataTable dt = new DataTable();
-            String strQuery = "SELECT * FROM DON_DAT_HANG WHERE ID = '" + id + " '";
+            String strQuery = "SELECT dh.*, kh.TEN_KHACH_HANG "
+                + " FROM DON_DAT_HANG dh, KHACH_HANG kh "
+                + " WHERE dh.ID_KHACH_HANG = kh.ID_KHACH_HANG"
+                + " AND dh.ID = '" + id + " '";
             SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
             adapter.Fill(dt);
             return dt;
+        }
+
+        public static List<DonDatHangSPDto> getOderDetailByOrderID(String orderID)
+        {
+            String strQuery = "SELECT ID "
+                + ", TEN_SAN_PHAM "
+                + ", KICH_THUOC "
+                + ", DON_VI "
+                + ", SO_TRANG "
+                + ", LOAI_BIA "
+                + ", LOAI_GIAY "
+                + ", DON_GIA "
+                + ", SO_LUONG "
+                + ", THANH_TIEN "
+                + ", CD_CR "
+                + " FROM DON_DAT_HANG_SP "
+                + " WHERE ID_DON_DAT_HANG = @orderID";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@orderID", orderID);
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<DonDatHangSPDto> listDetail = new List<DonDatHangSPDto>();
+            while (reader.Read())
+            {
+                DonDatHangSPDto donHangDetail = new DonDatHangSPDto();
+                if (!reader.IsDBNull(0)) donHangDetail.id = reader.GetInt32(0);
+                if (!reader.IsDBNull(1)) donHangDetail.tenSanPham = reader.GetString(1);
+                if (!reader.IsDBNull(2)) donHangDetail.kichThuoc = reader.GetString(2);
+                if (!reader.IsDBNull(3)) donHangDetail.donVi = reader.GetString(3);
+                if (!reader.IsDBNull(4)) donHangDetail.soTrang = reader.GetInt32(4);
+                if (!reader.IsDBNull(5)) donHangDetail.loaiBia = reader.GetString(5);
+                if (!reader.IsDBNull(6)) donHangDetail.loaiGiay = reader.GetString(6);
+                if (!reader.IsDBNull(7)) donHangDetail.donGia = (double)reader.GetDecimal(7);
+                if (!reader.IsDBNull(8)) donHangDetail.soluong = reader.GetInt32(8);
+                if (!reader.IsDBNull(9)) donHangDetail.thanhTien = (double)reader.GetDecimal(9);
+                if (!reader.IsDBNull(10)) donHangDetail.cdcr = reader.GetString(10);
+                donHangDetail.idOrder = orderID;
+
+                listDetail.Add(donHangDetail);
+            }
+            reader.Close();
+            return listDetail;
         }
 
         public void insertId(String id)
@@ -133,9 +179,9 @@ namespace OrderApp.Dao
                 cmd.Parameters.AddWithValue("@tongTien", orderDto.tongTien);
                 cmd.Parameters.AddWithValue("@phiVanChuyen", orderDto.phiVanChuyen);
                 cmd.Parameters.AddWithValue("@notes", orderDto.notes);
-                cmd.Parameters.AddWithValue("@lienHe", orderDto.dienThoai);
+                cmd.Parameters.AddWithValue("@lienHe", orderDto.lienHe);
                 cmd.Parameters.AddWithValue("@sdt", orderDto.dienThoai);
-                cmd.Parameters.AddWithValue("@diaDiemGiaoHang", orderDto.dienThoai);
+                cmd.Parameters.AddWithValue("@diaDiemGiaoHang", orderDto.diaDiemGiaoHang);
                 cmd.ExecuteNonQuery();
 
                 // save Detail

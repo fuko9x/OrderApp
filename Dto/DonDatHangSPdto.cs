@@ -8,7 +8,7 @@ namespace OrderApp.Dto
 {
     public class DonDatHangSPDto
     {
-        public String id;
+        public int id;
         public String idOrder;
         public String tenSanPham;
         public int soluong;
@@ -27,7 +27,7 @@ namespace OrderApp.Dto
 
         public DonDatHangSPDto()
         {
-            id = "";
+            id = 0;
             donVi = "";
             cdcr = "";
             loaiBia = "";
