@@ -10,6 +10,7 @@ namespace OrderApp.Dto
     {
         public String id;
         public String idKhachHang;
+        public String tenKhachHang;
         public DateTime ngayDat;
         public DateTime ngayGiao;
         public String lienHe;
@@ -21,6 +22,7 @@ namespace OrderApp.Dto
         public double phiVanChuyen;
         public String notes;
         public Boolean thanhToan;
+        public Boolean xuatKho;
         public String user;
         public DateTime createTime;
         public List<DonDatHangSPDto> listSanPham;
@@ -31,6 +33,7 @@ namespace OrderApp.Dto
             this.tongTien = this.vat = this.tongCong = this.phiVanChuyen = 0;
             this.ngayDat = DateTime.Now;
             this.ngayGiao = DateTime.Now.AddDays(3);
+            this.tenKhachHang = "";
             this.lienHe = "";
             this.dienThoai = "";
             this.diaDiemGiaoHang = "";
@@ -39,6 +42,7 @@ namespace OrderApp.Dto
             this.listSanPham = new List<DonDatHangSPDto>();
             this.listDichVu = new List<DichVuDto>();
             this.thanhToan = false;
+            this.xuatKho = false;
             this.notes = "";
         }
     }

@@ -69,16 +69,35 @@ namespace OrderApp.Dao
             return dt;
         }
 
-        public static DataTable getOderByID(String id)
+        public static OrderDto getOderByID(String id)
         {
-            DataTable dt = new DataTable();
+            OrderDto order = new OrderDto();
             String strQuery = "SELECT dh.*, kh.TEN_KHACH_HANG "
                 + " FROM DON_DAT_HANG dh, KHACH_HANG kh "
                 + " WHERE dh.ID_KHACH_HANG = kh.ID_KHACH_HANG"
                 + " AND dh.ID = '" + id + " '";
-            SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
-            adapter.Fill(dt);
-            return dt;
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+
+            order.idKhachHang       = reader["ID_KHACH_HANG"] != null           ? (String)reader["ID_KHACH_HANG"] : String.Empty;
+            order.tenKhachHang      = reader["TEN_KHACH_HANG"] != null          ? (String)reader["TEN_KHACH_HANG"] : String.Empty;
+            order.ngayGiao          = reader["NGAY_GIAO"] != null               ? (DateTime) reader["NGAY_GIAO"] : DateTime.Now;
+            order.ngayDat           = reader["NGAY_DAT"] != null                ? (DateTime) reader["NGAY_DAT"] : DateTime.Now;
+            order.dienThoai         = reader["SDT"] != null                     ? (String)reader["SDT"].ToString() : String.Empty;
+            order.diaDiemGiaoHang   = reader["DIA_DIEM_GIAO_HANG"] != null      ? (String)reader["DIA_DIEM_GIAO_HANG"] : String.Empty;
+            order.tongCong          = reader["TONG_CONG"] != null               ? (double)(Decimal)reader["TONG_CONG"] : 0;
+            order.vat               = reader["VAT"] != null                     ? (double)(Decimal)reader["VAT"] : 0;
+            order.tongTien          = reader["TONG_TIEN"] != null               ? (double)(Decimal)reader["TONG_TIEN"] : 0;
+            order.phiVanChuyen      = reader["PHI_VAN_CHUYEN"] != null          ? (double)(Decimal)reader["PHI_VAN_CHUYEN"] : 0;
+            order.thanhToan         = reader["TRANG_THAI_THANH_TOAN"] != null   ? (Boolean)reader["TRANG_THAI_THANH_TOAN"] : false;
+            order.xuatKho           = reader["TRANG_THAI_XUAT_KHO"] != null     ? (Boolean)reader["TRANG_THAI_XUAT_KHO"] : false;
+            order.notes             = reader["NOTES"] != null                   ? (String)reader["NOTES"] : String.Empty;
+
+            reader.Close();
+            return order;
         }
 
         public static List<DonDatHangSPDto> getOderDetailByOrderID(String orderID)
@@ -122,6 +141,33 @@ namespace OrderApp.Dao
             }
             reader.Close();
             return listDetail;
+        }
+
+        public static void capNhatThanhToan(string idOrder, Boolean thanhToan)
+        {
+            String strQuery = ""
+                + " UPDATE DON_DAT_HANG SET"
+                + " TRANG_THAI_THANH_TOAN = @thanhToan"
+                + " WHERE ID = @idOrder";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@idOrder", idOrder);
+            cmd.Parameters.AddWithValue("@thanhToan", thanhToan);
+            cmd.ExecuteNonQuery();
+        }
+        public static void capNhatXuatKho(string idOrder, Boolean giaoHang)
+        {
+            String strQuery = ""
+                + " UPDATE DON_DAT_HANG SET"
+                + " TRANG_THAI_XUAT_KHO = @giaoHang"
+                + " WHERE ID = @idOrder";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@idOrder", idOrder);
+            cmd.Parameters.AddWithValue("@giaoHang", giaoHang);
+            cmd.ExecuteNonQuery();
         }
 
         public void insertId(String id)

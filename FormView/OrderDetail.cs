@@ -16,11 +16,13 @@ namespace OrderApp.FormView
 {
     public partial class OrderDetail : MaterialForm
     {
+
+        private Boolean initData;
         private String idOrder;
-        private OrderDto orderDTO;
 
         public OrderDetail(String strOderID)
         {
+            initData = false;
             InitializeComponent();
             initListView();
             this.idOrder = strOderID;
@@ -30,6 +32,7 @@ namespace OrderApp.FormView
         private void OrderDetail_Load(object sender, EventArgs e)
         {
             loadData();
+            initData = true;
         }
 
         private void initListView()
@@ -62,22 +65,24 @@ namespace OrderApp.FormView
         {
             try
             {
-                DataTable dataTable = OrderDao.getOderByID(this.idOrder);
-                if (dataTable.Rows.Count > 0)
+                OrderDto order = OrderDao.getOderByID(this.idOrder);
+                if (order != null)
                 {
-                    DataRow dataRow = dataTable.Rows[0];
                     // fill Data
                     this.lblSoOrder.Text = this.idOrder;
-                    this.lblTenKhachHang.Text = dataRow["TEN_KHACH_HANG"].ToString();
-                    this.lblNgayGiao.Text = dataRow["NGAY_GIAO"].ToString();
-                    this.lblNgayDat.Text = dataRow["NGAY_DAT"].ToString();
-                    this.lblSDT.Text = dataRow["SDT"].ToString();
-                    this.lblDiaChi.Text = dataRow["DIA_DIEM_GIAO_HANG"].ToString();
+                    this.lblTenKhachHang.Text = order.tenKhachHang;
+                    this.lblNgayGiao.Text = order.ngayGiao.ToString("dd/MM/yyyy");
+                    this.lblNgayDat.Text = order.ngayDat.ToString("dd/MM/yyyy");
+                    this.lblSDT.Text = order.dienThoai;
+                    this.lblDiaChi.Text = order.diaDiemGiaoHang;
 
-                    this.lblCong.Text = dataRow["TONG_CONG"].ToString();
-                    this.lblThueVAT.Text = dataRow["VAT"].ToString();
-                    this.lblTongTien.Text = dataRow["TONG_TIEN"].ToString();
+                    this.lblCong.Text = order.tongCong.ToString("#,### VND");
+                    this.lblThueVAT.Text = order.vat.ToString("#,### VND");
+                    this.lblTongTien.Text = order.tongTien.ToString("#,### VND");
 
+                    this.ckbThanhToan.Checked = order.thanhToan;
+                    this.ckbGiaoHang.Checked = order.xuatKho;
+                    this.lblGhiChu.Text = order.notes;
 
                     List<DonDatHangSPDto> dtProductDetail = OrderDao.getOderDetailByOrderID(this.idOrder);
                     lvProductDetail.Items.Clear();
@@ -133,6 +138,31 @@ namespace OrderApp.FormView
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ckbThanhToan_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (initData == false) return;
+                OrderDao.capNhatThanhToan(this.idOrder, ckbThanhToan.Checked);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR!!");
+            }
+        }
+
+        private void ckbGiaoHang_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (initData == false) return;
+                OrderDao.capNhatXuatKho(this.idOrder, ckbGiaoHang.Checked);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "ERROR!!");
+            }
         }
     }
 }
