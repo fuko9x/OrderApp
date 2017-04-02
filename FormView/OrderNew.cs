@@ -38,7 +38,8 @@ namespace OrderApp.FormView
         private void Form_Load(object sender, EventArgs e)
         {
             this.initData = true;
-
+            cbbLoaiSanPham.Text = "";
+            updateDataChanged();
         }
 
         private void TxtTenKhachHang_Click(object sender, EventArgs e)
@@ -244,10 +245,7 @@ namespace OrderApp.FormView
                     cbbLoaiGiay.DataSource = listLoaiGiay;
                 }
             }
-            catch (Exception ex)
-            {
-
-            }
+            catch (Exception){}
         }
 
 
