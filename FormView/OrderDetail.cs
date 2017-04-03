@@ -118,62 +118,67 @@ namespace OrderApp.FormView
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
-            Excel.Application xlApp = new Excel.Application();
-
-            if (xlApp == null)
+            using (var folderDialog = new FolderBrowserDialog())
             {
-                MessageBox.Show("Excel is not properly installed!!");
-                return;
-            }
-            Excel.Workbook xlWorkBook;
-            Excel.Worksheet xlWorkSheet;
-            object misValue = System.Reflection.Missing.Value;
-            xlWorkBook = xlApp.Workbooks.Open(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\OrderTemplate.xlsx", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
-            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Excel.Application xlApp = new Excel.Application();
 
-            xlWorkSheet.Cells[4, 1] = "Tên khách hàng : " + order.tenKhachHang;
-            xlWorkSheet.Cells[4, 5] = "Số Order : " + this.idOrder;
-            xlWorkSheet.Cells[6, 3] = "Địa chỉ : " + order.diaDiemGiaoHang;
-            xlWorkSheet.Cells[7, 1] = "Ngày đặt : " + order.ngayDat.ToString("dd/MM/yyyy");
-            xlWorkSheet.Cells[7, 4] = "Ngày đặt : " + order.ngayGiao.ToString("dd/MM/yyyy");
+                    if (xlApp == null)
+                    {
+                        MessageBox.Show("Excel is not properly installed!!");
+                        return;
+                    }
+                    Excel.Workbook xlWorkBook;
+                    Excel.Worksheet xlWorkSheet;
+                    object misValue = System.Reflection.Missing.Value;
+                    xlWorkBook = xlApp.Workbooks.Open(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\OrderTemplate.xlsx", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+                    xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
-            List<DonDatHangSPDto> dtProductDetail = OrderDao.getOderDetailByOrderID(this.idOrder);
-            lvProductDetail.Items.Clear();
-            for (int i = 0; i < dtProductDetail.Count; i++)
-            {
-                var r = xlWorkSheet.get_Range(string.Format("{0}:{0}", 10, Type.Missing));
-                var range = xlWorkSheet.get_Range(string.Format("{0}:{0}", 9, Type.Missing));
-                range.Select();
-                range.Copy();
-                r.Insert();
+                    xlWorkSheet.Cells[4, 1] = "Tên khách hàng : " + order.tenKhachHang;
+                    xlWorkSheet.Cells[4, 5] = "Số Order : " + this.idOrder;
+                    xlWorkSheet.Cells[6, 3] = "Địa chỉ : " + order.diaDiemGiaoHang;
+                    xlWorkSheet.Cells[7, 1] = "Ngày đặt : " + order.ngayDat.ToString("dd/MM/yyyy");
+                    xlWorkSheet.Cells[7, 4] = "Ngày đặt : " + order.ngayGiao.ToString("dd/MM/yyyy");
 
-                DonDatHangSPDto orderDetail = dtProductDetail[i];
-                xlWorkSheet.Cells[9, 1] = i + 1;
-                xlWorkSheet.Cells[9, 2] = orderDetail.tenSanPham;
-                xlWorkSheet.Cells[9, 3] = orderDetail.soluong;
-                xlWorkSheet.Cells[9, 4] = orderDetail.kichThuoc;
-                xlWorkSheet.Cells[9, 5] = orderDetail.soTrang;
-                xlWorkSheet.Cells[9, 6] = orderDetail.loaiBia;
-                xlWorkSheet.Cells[9, 7] = orderDetail.loaiGiay;
-                xlWorkSheet.Cells[9, 8] = orderDetail.donGia;
-                xlWorkSheet.Cells[9, 9] = orderDetail.chietKhau + "%";
-                xlWorkSheet.Cells[9, 10] = orderDetail.thanhTien;
-            }
-            DateTime now = DateTime.Now;
-            xlWorkSheet.Cells[10 + dtProductDetail.Count, 10] = order.tongCong;
-            xlWorkSheet.Cells[11 + dtProductDetail.Count, 10] = order.vat;
-            xlWorkSheet.Cells[12 + dtProductDetail.Count, 10] = order.tongTien;
+                    List<DonDatHangSPDto> dtProductDetail = OrderDao.getOderDetailByOrderID(this.idOrder);
+                    lvProductDetail.Items.Clear();
+                    for (int i = 0; i < dtProductDetail.Count; i++)
+                    {
+                        var r = xlWorkSheet.get_Range(string.Format("{0}:{0}", 10, Type.Missing));
+                        var range = xlWorkSheet.get_Range(string.Format("{0}:{0}", 9, Type.Missing));
+                        range.Select();
+                        range.Copy();
+                        r.Insert();
 
-            xlWorkBook.SaveAs(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\Order_" + this.idOrder + ".xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-            xlWorkBook.Close(true, misValue, misValue);
-            xlApp.Quit();
+                        DonDatHangSPDto orderDetail = dtProductDetail[i];
+                        xlWorkSheet.Cells[9, 1] = i + 1;
+                        xlWorkSheet.Cells[9, 2] = orderDetail.tenSanPham;
+                        xlWorkSheet.Cells[9, 3] = orderDetail.soluong;
+                        xlWorkSheet.Cells[9, 4] = orderDetail.kichThuoc;
+                        xlWorkSheet.Cells[9, 5] = orderDetail.soTrang;
+                        xlWorkSheet.Cells[9, 6] = orderDetail.loaiBia;
+                        xlWorkSheet.Cells[9, 7] = orderDetail.loaiGiay;
+                        xlWorkSheet.Cells[9, 8] = orderDetail.donGia;
+                        xlWorkSheet.Cells[9, 9] = orderDetail.chietKhau + "%";
+                        xlWorkSheet.Cells[9, 10] = orderDetail.thanhTien;
+                    }
+                    DateTime now = DateTime.Now;
+                    xlWorkSheet.Cells[10 + dtProductDetail.Count, 10] = order.tongCong;
+                    xlWorkSheet.Cells[11 + dtProductDetail.Count, 10] = order.vat;
+                    xlWorkSheet.Cells[12 + dtProductDetail.Count, 10] = order.tongTien;
 
-            Marshal.ReleaseComObject(xlWorkSheet);
-            Marshal.ReleaseComObject(xlWorkBook);
-            Marshal.ReleaseComObject(xlApp);
+                    xlWorkBook.SaveAs(folderDialog.SelectedPath + "\\Order_" + this.idOrder + ".xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                    xlWorkBook.Close(true, misValue, misValue);
+                    xlApp.Quit();
 
-            MessageBox.Show("Excel file created.");
+                    Marshal.ReleaseComObject(xlWorkSheet);
+                    Marshal.ReleaseComObject(xlWorkBook);
+                    Marshal.ReleaseComObject(xlApp);
+
+                    MessageBox.Show("Đã export đơn hàng");
+                }
+            }   
         }
 
         private void btnClose_Click(object sender, EventArgs e)
