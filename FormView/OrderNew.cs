@@ -67,6 +67,8 @@ namespace OrderApp.FormView
             {
                 orderDTO = new OrderDto();
                 orderDTO.id = OrderLogic.insertNewId();
+                this.Text = "TẠO ĐƠN HÀNG #: " + orderDTO.id;
+                Invalidate();
 
                 formatControl();
                 fillData();
@@ -98,7 +100,7 @@ namespace OrderApp.FormView
                     this.dataGridViewSanPham.Rows[currentMouseOverRow].Selected = true;
 
                     ContextMenu contextMenu = new ContextMenu();
-                    contextMenu.MenuItems.Add(new MenuItem("Edit", contextItemClick));
+                    //contextMenu.MenuItems.Add(new MenuItem("Edit", contextItemClick));
                     contextMenu.MenuItems.Add(new MenuItem("Delete", contextItemClick));
                     contextMenu.MenuItems.Add(new MenuItem("Close"));
                     contextMenu.Show(dataGridViewSanPham, new Point(e.X, e.Y));
@@ -109,10 +111,6 @@ namespace OrderApp.FormView
         protected void contextItemClick(object sender, EventArgs e)
         {
             MenuItem item = (MenuItem)sender;
-            if (item.Text == "Edit")
-            {
-
-            }
             if (item.Text == "Delete")
             {
                 int selectedRow = this.dataGridViewSanPham.SelectedRows[0].Index;

@@ -36,9 +36,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnCreate = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnExport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDetail = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCreate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewDonHang = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +75,7 @@
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(112, 23);
             this.dateFrom.TabIndex = 0;
+            this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
             // 
             // dateTo
             // 
@@ -85,6 +86,7 @@
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(115, 23);
             this.dateTo.TabIndex = 1;
+            this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
             // groupBox1
             // 
@@ -136,18 +138,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 8;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 143F));
             this.tableLayoutPanel1.Controls.Add(this.btnClose, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnEdit, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnCreate, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnExport, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnDetail, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnCreate, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 480);
             this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(690, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -163,50 +165,33 @@
             this.btnClose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnClose.Depth = 0;
             this.btnClose.Icon = null;
-            this.btnClose.Location = new System.Drawing.Point(711, 3);
+            this.btnClose.Location = new System.Drawing.Point(722, 3);
             this.btnClose.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClose.Name = "btnClose";
             this.btnClose.Primary = true;
-            this.btnClose.Size = new System.Drawing.Size(137, 36);
+            this.btnClose.Size = new System.Drawing.Size(126, 36);
             this.btnClose.TabIndex = 16;
             this.btnClose.Text = "Đóng";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnEdit
+            // btnExport
             // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.AutoSize = true;
-            this.btnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEdit.CausesValidation = false;
-            this.btnEdit.Depth = 0;
-            this.btnEdit.Icon = null;
-            this.btnEdit.Location = new System.Drawing.Point(573, 3);
-            this.btnEdit.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Primary = true;
-            this.btnEdit.Size = new System.Drawing.Size(124, 36);
-            this.btnEdit.TabIndex = 15;
-            this.btnEdit.Text = "Chỉnh Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreate.AutoSize = true;
-            this.btnCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCreate.CausesValidation = false;
-            this.btnCreate.Depth = 0;
-            this.btnCreate.Icon = null;
-            this.btnCreate.Location = new System.Drawing.Point(294, 3);
-            this.btnCreate.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Primary = true;
-            this.btnCreate.Size = new System.Drawing.Size(126, 36);
-            this.btnCreate.TabIndex = 18;
-            this.btnCreate.Text = "Tạo Mới";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.AutoSize = true;
+            this.btnExport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnExport.CausesValidation = false;
+            this.btnExport.Depth = 0;
+            this.btnExport.Icon = null;
+            this.btnExport.Location = new System.Drawing.Point(588, 3);
+            this.btnExport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Primary = true;
+            this.btnExport.Size = new System.Drawing.Size(120, 36);
+            this.btnExport.TabIndex = 15;
+            this.btnExport.Text = "Xuất Excel";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnDetail
             // 
@@ -216,15 +201,33 @@
             this.btnDetail.CausesValidation = false;
             this.btnDetail.Depth = 0;
             this.btnDetail.Icon = null;
-            this.btnDetail.Location = new System.Drawing.Point(426, 3);
+            this.btnDetail.Location = new System.Drawing.Point(454, 3);
             this.btnDetail.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Primary = true;
-            this.btnDetail.Size = new System.Drawing.Size(133, 36);
+            this.btnDetail.Size = new System.Drawing.Size(120, 36);
             this.btnDetail.TabIndex = 19;
             this.btnDetail.Text = "Chi Tiết";
             this.btnDetail.UseVisualStyleBackColor = true;
             this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreate.AutoSize = true;
+            this.btnCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCreate.CausesValidation = false;
+            this.btnCreate.Depth = 0;
+            this.btnCreate.Icon = null;
+            this.btnCreate.Location = new System.Drawing.Point(3, 3);
+            this.btnCreate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Primary = true;
+            this.btnCreate.Size = new System.Drawing.Size(121, 36);
+            this.btnCreate.TabIndex = 18;
+            this.btnCreate.Text = "Tạo Mới";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click_1);
             // 
             // groupBox2
             // 
@@ -357,7 +360,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private MaterialSkin.Controls.MaterialRaisedButton btnClose;
-        private MaterialSkin.Controls.MaterialRaisedButton btnEdit;
+        private MaterialSkin.Controls.MaterialRaisedButton btnExport;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridViewDonHang;

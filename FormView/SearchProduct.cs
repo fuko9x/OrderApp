@@ -52,8 +52,15 @@ namespace OrderApp.FormView
 
                     ContextMenu contextMenu = new ContextMenu();
                     contextMenu.MenuItems.Add(new MenuItem("Clone", btnClone_Click));
-                    contextMenu.MenuItems.Add(new MenuItem("Edit", btnEdit_Click));
-                    contextMenu.MenuItems.Add(new MenuItem("Close"));
+                    contextMenu.MenuItems.Add(new MenuItem("Chỉnh sửa", btnEdit_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Đóng"));
+                    contextMenu.Show(dataGridViewSanPham, new Point(e.X, e.Y));
+                }
+                else
+                {
+                    ContextMenu contextMenu = new ContextMenu();
+                    contextMenu.MenuItems.Add(new MenuItem("Tạo mới", btnAdd_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Đóng"));
                     contextMenu.Show(dataGridViewSanPham, new Point(e.X, e.Y));
                 }
             }

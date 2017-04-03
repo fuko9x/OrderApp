@@ -21,7 +21,6 @@ namespace OrderApp.FormView
             initData = false;
             InitializeComponent();
             formatControl();
-            fillData();
         }
 
         private void form_Load(object sender, EventArgs e)
@@ -33,24 +32,43 @@ namespace OrderApp.FormView
         private void formatControl()
         {
             this.dataGridViewDonHang = (DataGridView)FormatLayoutUtil.formatDataGridview(this.dataGridViewDonHang);
+            this.dataGridViewDonHang.MouseClick += DataGridViewDonHang_MouseClick;
         }
 
-        private void fillData()
+        private void DataGridViewDonHang_MouseClick(object sender, MouseEventArgs e)
         {
-            //this.dataGridViewDonHang.DataSource = OrderDao.getListOrder();
+            if (e.Button == MouseButtons.Right)
+            {
+                int currentMouseOverRow = dataGridViewDonHang.HitTest(e.X, e.Y).RowIndex;
+                if (currentMouseOverRow >= 0)
+                {
+                    this.dataGridViewDonHang.Rows[currentMouseOverRow].Selected = true;
+
+                    ContextMenu contextMenu = new ContextMenu();
+                    contextMenu.MenuItems.Add(new MenuItem("Tạo mới", btnCreate_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Xem chi tiết", btnDetail_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Xuất công nợ", btnExport_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Xuất Excel", btnExport_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Đóng"));
+                    contextMenu.Show(dataGridViewDonHang, new Point(e.X, e.Y));
+                }
+                else
+                {
+                    ContextMenu contextMenu = new ContextMenu();
+                    contextMenu.MenuItems.Add(new MenuItem("Tạo mới", btnCreate_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Đóng"));
+                    contextMenu.Show(dataGridViewDonHang, new Point(e.X, e.Y));
+                }
+            }
         }
 
-        private void actionSearch()
+
+        private void btnExport_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            //EditOrder frmOrderEdit = new EditOrder();
-            //frmOrderEdit.ShowDialog(this);
-
-            this.actionSearch();
+            if (dataGridViewDonHang.SelectedRows.Count > 0)
+            {
+                MessageBox.Show("Export đi Bình!!!", "WARNING");
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -63,6 +81,8 @@ namespace OrderApp.FormView
         {
             OrderNew frmAdd = new OrderNew();
             frmAdd.ShowDialog(this);
+
+            reloadData();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -71,7 +91,7 @@ namespace OrderApp.FormView
             frmPrint.ShowDialog();
         }
 
-        private void cbbTinhTrangDonHang_SelectedIndexChanged(object sender, EventArgs e)
+        private void reloadData()
         {
             if (this.initData == false) return;
             String title = cbbTinhTrangDonHang.SelectedItem.ToString();
@@ -102,12 +122,40 @@ namespace OrderApp.FormView
             this.dataGridViewDonHang.DataSource = dt;
         }
 
+        private void cbbTinhTrangDonHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            reloadData();
+        }
+
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            int rowSelected = this.dataGridViewDonHang.SelectedRows[0].Index;
-            String selectedId = this.dataGridViewDonHang.Rows[rowSelected].Cells["ID"].Value.ToString();
-            OrderDetail frm = new OrderDetail(selectedId);
-            frm.ShowDialog(this);
+            if (dataGridViewDonHang.SelectedRows.Count > 0)
+            {
+                int rowSelected = this.dataGridViewDonHang.SelectedRows[0].Index;
+                String selectedId = this.dataGridViewDonHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+                OrderDetail frm = new OrderDetail(selectedId);
+                frm.ShowDialog(this);
+
+                reloadData();
+            }
+        }
+
+        private void dateTo_ValueChanged(object sender, EventArgs e)
+        {
+            reloadData();
+        }
+
+        private void dateFrom_ValueChanged(object sender, EventArgs e)
+        {
+            reloadData();
+        }
+
+        private void btnCreate_Click_1(object sender, EventArgs e)
+        {
+            OrderNew frmNew = new OrderNew();
+            frmNew.ShowDialog(this);
+            //
+            reloadData();
         }
     }
 }

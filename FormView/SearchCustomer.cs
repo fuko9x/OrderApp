@@ -54,13 +54,29 @@ namespace OrderApp.FormView
                     this.listKhachHang.Rows[currentMouseOverRow].Selected = true;
 
                     ContextMenu contextMenu = new ContextMenu();
-                    if(this.isGetKhachHang) contextMenu.MenuItems.Add(new MenuItem("Select", itemSelected_Click));
-                    contextMenu.MenuItems.Add(new MenuItem("Edit", btnEdit_Click));
-                    contextMenu.MenuItems.Add(new MenuItem("Delete", btnXoa_Click));
-                    contextMenu.MenuItems.Add(new MenuItem("Close"));
+                    if(this.isGetKhachHang) contextMenu.MenuItems.Add(new MenuItem("Chọn", itemSelected_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Xuất công nợ", MenuItemCongno_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("-"));
+                    contextMenu.MenuItems.Add(new MenuItem("Tạo mới", addBtn_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Chỉnh sửa", btnEdit_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Xóa", btnXoa_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("-"));
+                    contextMenu.MenuItems.Add(new MenuItem("Đóng"));
+                    contextMenu.Show(listKhachHang, new Point(e.X, e.Y));
+                }
+                else
+                {
+                    ContextMenu contextMenu = new ContextMenu();
+                    contextMenu.MenuItems.Add(new MenuItem("Tạo mới", addBtn_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Đóng"));
                     contextMenu.Show(listKhachHang, new Point(e.X, e.Y));
                 }
             }
+        }
+
+        private void MenuItemCongno_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Xuất đi Bình!!");
         }
 
         private void search_Click(object sender, EventArgs e)
