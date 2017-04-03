@@ -64,6 +64,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.lblDonHang = new System.Windows.Forms.Label();
+            this.lblLinkSanPham = new System.Windows.Forms.Label();
+            this.lblLinkKhachHang = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -118,12 +123,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(19, 26);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -144,9 +149,9 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.pictureBox5);
             this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel4.Location = new System.Drawing.Point(285, 124);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(256, 92);
+            this.panel4.Size = new System.Drawing.Size(256, 95);
             this.panel4.TabIndex = 3;
             // 
             // linkOrderList
@@ -200,6 +205,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel3.Controls.Add(this.lblLinkKhachHang);
+            this.panel3.Controls.Add(this.lblLinkSanPham);
+            this.panel3.Controls.Add(this.lblDonHang);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -297,12 +305,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(285, 124);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 95);
+            this.panel1.Size = new System.Drawing.Size(256, 92);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -312,9 +322,9 @@
             this.label2.ForeColor = System.Drawing.Color.Maroon;
             this.label2.Location = new System.Drawing.Point(12, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 16);
+            this.label2.Size = new System.Drawing.Size(65, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Tạo Report";
+            this.label2.Text = "Thống kê";
             // 
             // pictureBox1
             // 
@@ -523,6 +533,63 @@
             this.panel7.Size = new System.Drawing.Size(351, 51);
             this.panel7.TabIndex = 5;
             // 
+            // lblDonHang
+            // 
+            this.lblDonHang.AutoSize = true;
+            this.lblDonHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblDonHang.ForeColor = System.Drawing.Color.Maroon;
+            this.lblDonHang.Location = new System.Drawing.Point(88, 13);
+            this.lblDonHang.Name = "lblDonHang";
+            this.lblDonHang.Size = new System.Drawing.Size(80, 15);
+            this.lblDonHang.TabIndex = 6;
+            this.lblDonHang.Text = "- Đơn Hàng";
+            this.lblDonHang.Click += new System.EventHandler(this.linkOrderList_Click);
+            // 
+            // lblLinkSanPham
+            // 
+            this.lblLinkSanPham.AutoSize = true;
+            this.lblLinkSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblLinkSanPham.ForeColor = System.Drawing.Color.Maroon;
+            this.lblLinkSanPham.Location = new System.Drawing.Point(87, 35);
+            this.lblLinkSanPham.Name = "lblLinkSanPham";
+            this.lblLinkSanPham.Size = new System.Drawing.Size(82, 15);
+            this.lblLinkSanPham.TabIndex = 7;
+            this.lblLinkSanPham.Text = "- Sản Phẩm";
+            this.lblLinkSanPham.Click += new System.EventHandler(this.lblListSanPham_Click);
+            // 
+            // lblLinkKhachHang
+            // 
+            this.lblLinkKhachHang.AutoSize = true;
+            this.lblLinkKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblLinkKhachHang.ForeColor = System.Drawing.Color.Maroon;
+            this.lblLinkKhachHang.Location = new System.Drawing.Point(88, 56);
+            this.lblLinkKhachHang.Name = "lblLinkKhachHang";
+            this.lblLinkKhachHang.Size = new System.Drawing.Size(94, 15);
+            this.lblLinkKhachHang.TabIndex = 8;
+            this.lblLinkKhachHang.Text = "- Khách Hàng";
+            this.lblLinkKhachHang.Click += new System.EventHandler(this.lblListKhachHang_Click);
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.Location = new System.Drawing.Point(88, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(165, 15);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "- Đơn Hàng Trong Ngày";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.label10.ForeColor = System.Drawing.Color.Maroon;
+            this.label10.Location = new System.Drawing.Point(88, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(151, 15);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "- Đơn Hàng Chưa Giao";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,5 +669,10 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label linkOrderList;
         private System.Windows.Forms.Label linkCreateOrder;
+        private System.Windows.Forms.Label lblLinkKhachHang;
+        private System.Windows.Forms.Label lblLinkSanPham;
+        private System.Windows.Forms.Label lblDonHang;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }
