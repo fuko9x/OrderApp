@@ -8,7 +8,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +33,6 @@ namespace OrderApp.FormView
             initListView();
             this.idOrder = strOderID;
             order = OrderDao.getOderByID(this.idOrder);
-            order.id = this.idOrder;
         }
 
 
@@ -128,14 +129,14 @@ namespace OrderApp.FormView
             Excel.Workbook xlWorkBook;
             Excel.Worksheet xlWorkSheet;
             object misValue = System.Reflection.Missing.Value;
-            xlWorkBook = xlApp.Workbooks.Open("E:\\template\\OrderTemplate.xlsx", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+            xlWorkBook = xlApp.Workbooks.Open(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\OrderTemplate.xlsx", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
             xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
             xlWorkSheet.Cells[4, 1] = "Tên khách hàng : " + order.tenKhachHang;
-            xlWorkSheet.Cells[4, 5] = "Số Order : " + order.id;
-            xlWorkSheet.Cells[6, 3] = "Địa chỉ : : " + order.diaDiemGiaoHang;
-            xlWorkSheet.Cells[7, 1] = "Ngày đặt : : " + order.ngayDat.ToString("dd/MM/yyyy");
-            xlWorkSheet.Cells[7, 4] = "Ngày đặt : : " + order.ngayGiao.ToString("dd/MM/yyyy");
+            xlWorkSheet.Cells[4, 5] = "Số Order : " + this.idOrder;
+            xlWorkSheet.Cells[6, 3] = "Địa chỉ : " + order.diaDiemGiaoHang;
+            xlWorkSheet.Cells[7, 1] = "Ngày đặt : " + order.ngayDat.ToString("dd/MM/yyyy");
+            xlWorkSheet.Cells[7, 4] = "Ngày đặt : " + order.ngayGiao.ToString("dd/MM/yyyy");
 
             List<DonDatHangSPDto> dtProductDetail = OrderDao.getOderDetailByOrderID(this.idOrder);
             lvProductDetail.Items.Clear();
@@ -164,7 +165,7 @@ namespace OrderApp.FormView
             xlWorkSheet.Cells[11 + dtProductDetail.Count, 10] = order.vat;
             xlWorkSheet.Cells[12 + dtProductDetail.Count, 10] = order.tongTien;
 
-            xlWorkBook.SaveAs("E:\\template\\Order_" + order.id + ".xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.SaveAs(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\Order_" + this.idOrder + ".xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();
 
