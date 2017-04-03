@@ -117,8 +117,9 @@
             this.cbbTinhTrangDonHang.Items.AddRange(new object[] {
             "TỔNG HỢP ĐƠN HÀNG",
             "ĐƠN HÀNG CHƯA GIAO",
-            "ĐƠN HÀNG GIAO TRONG NGÀY",
-            "ĐƠN HÀNG ĐÃ GIAO"});
+            "ĐƠN HÀNG ĐÃ GIAO",
+            "ĐƠN HÀNG CHƯA THANH TOÁN",
+            "ĐƠN HÀNG ĐÃ THANH TOÁN"});
             this.cbbTinhTrangDonHang.Location = new System.Drawing.Point(568, 16);
             this.cbbTinhTrangDonHang.Name = "cbbTinhTrangDonHang";
             this.cbbTinhTrangDonHang.Size = new System.Drawing.Size(274, 24);
