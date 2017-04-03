@@ -76,16 +76,23 @@ namespace OrderApp.FormView
                 }
                 FormAddCustomerObj formObj = tranfersInput();
                 CustomerLogic logic = new CustomerLogic();
+                LogicResult result;
                 if (StringUtils.isBlank(selectedId))
                 {
-                    LogicResult result = logic.addCustommerLogic(formObj);
+                    result = logic.addCustommerLogic(formObj);
                 }
                 else
                 {
-                    LogicResult result = logic.updateCustommerLogic(formObj);
+                    result = logic.updateCustommerLogic(formObj);
                 }
 
-                this.Close();
+                if (result.severity == Contanst.MSG_ERROR)
+                {
+                    MessageBox.Show(result.msg);
+                } else {
+                    this.Close();
+                }
+                
             }
             catch (Exception ex)
             {
