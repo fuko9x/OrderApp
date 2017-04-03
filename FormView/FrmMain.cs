@@ -37,7 +37,11 @@ namespace OrderApp.FormView
             ///AddOrder frmOrder = new AddOrder();
             //frmOrder.ShowDialog(this);
             OrderNew frmOrder = new OrderNew();
-            frmOrder.ShowDialog(this);
+            if (frmOrder.ShowDialog(this) == DialogResult.OK)
+            {
+                SearchOrder frmListOrder = new SearchOrder();
+                frmListOrder.ShowDialog(this);
+            }
         }
 
         private void linkOrderList_Click(object sender, EventArgs e)

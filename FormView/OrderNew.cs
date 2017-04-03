@@ -39,7 +39,7 @@ namespace OrderApp.FormView
         {
             this.initData = true;
             cbbLoaiSanPham.Text = "";
-            updateDataChanged();
+            this.initData = true;
         }
 
         private void TxtTenKhachHang_Click(object sender, EventArgs e)
@@ -141,7 +141,7 @@ namespace OrderApp.FormView
             this.dtNgayDat.Value = orderDTO.ngayDat;
             this.dtNgayGiao.Value = orderDTO.ngayGiao;
 
-            dataGridViewSanPham.ColumnCount = 9;
+            dataGridViewSanPham.ColumnCount = 10;
             dataGridViewSanPham.Columns[0].Name = "Tên Sản Phẩm";
             dataGridViewSanPham.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
@@ -158,16 +158,19 @@ namespace OrderApp.FormView
             dataGridViewSanPham.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             dataGridViewSanPham.Columns[5].Name = "Số Trang";
-            dataGridViewSanPham.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewSanPham.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dataGridViewSanPham.Columns[6].Name = "Đơn Giá";
             dataGridViewSanPham.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             dataGridViewSanPham.Columns[7].Name = "Số Lượng";
-            dataGridViewSanPham.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewSanPham.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dataGridViewSanPham.Columns[8].Name = "Thành Tiền";
-            dataGridViewSanPham.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewSanPham.Columns[8].Name = "Chiết Khấu";
+            dataGridViewSanPham.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dataGridViewSanPham.Columns[9].Name = "Thành Tiền";
+            dataGridViewSanPham.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             // update gridview
             this.dataGridViewSanPham.Rows.Clear();
@@ -183,6 +186,7 @@ namespace OrderApp.FormView
                     , orderSP.soTrang.ToString()
                     , orderSP.donGia.ToString(formatMoney)
                     , orderSP.soluong.ToString()
+                    , orderSP.chietKhau.ToString() + " %"
                     , orderSP.thanhTien.ToString(formatMoney)
                 };
                 this.dataGridViewSanPham.Rows.Add(row);
@@ -256,7 +260,11 @@ namespace OrderApp.FormView
                     return;
                 }
 
-                DialogResult result = MessageBox.Show("Bạn có chắc hủy đơn hàng này hay không?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                DialogResult result = MessageBox.Show(
+                    "Bạn có chắc hủy đơn hàng này hay không?"
+                    , "Confirmation"
+                    , MessageBoxButtons.YesNo
+                );
                 if (result != DialogResult.Yes)
                 {
                     e.Cancel = true;
@@ -266,6 +274,8 @@ namespace OrderApp.FormView
                     //Delete Order
                     OrderDao orderDao = new OrderDao();
                     orderDao.deleteId(orderDTO.id);
+
+                    this.DialogResult = DialogResult.Cancel;
                 }
             }
             catch (Exception ex){}
@@ -354,7 +364,9 @@ namespace OrderApp.FormView
                     orderSP.soTrang = (int)txtSoTo.Value;
                     orderSP.donGia = double.Parse(txtDonGia.Text);
                     orderSP.soluong = (int)txtSoLuong.Value;
+                    orderSP.chietKhau = (int)txtChietKhau.Value;
                     orderSP.thanhTien = orderSP.donGia * orderSP.soluong;
+                    orderSP.thanhTien = orderSP.thanhTien - (orderSP.chietKhau / 100 * orderSP.thanhTien);
                     orderSP.cdcr = txtTenCDCR.Text;
                     orderDTO.listSanPham.Add(orderSP);
 
@@ -453,12 +465,27 @@ namespace OrderApp.FormView
                     txtDonGia.Focus();
                     return;
                 }
-                Double thanhTien = double.Parse(txtDonGia.Text) * (double)txtSoLuong.Value;
-                txtThanhTien.Text = thanhTien.ToString();
+                Decimal thanhTien = decimal.Parse(txtDonGia.Text) * txtSoLuong.Value;
+                Decimal chietKhau = (txtChietKhau.Value / 100) * thanhTien;
+                
+                txtThanhTien.Text = (thanhTien - chietKhau).ToString("#,###");
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, "ERROR");
             }
+        }
+
+        private void txtChietKhau_ValueChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtDonGia.Text))
+            {
+                txtDonGia.Focus();
+                return;
+            }
+            Decimal thanhTien = decimal.Parse(txtDonGia.Text) * txtSoLuong.Value;
+            Decimal chietKhau = (txtChietKhau.Value / 100) * thanhTien;
+
+            txtThanhTien.Text = (thanhTien - chietKhau).ToString("#,###");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -483,6 +510,7 @@ namespace OrderApp.FormView
                 orderDao.creatOrder(orderDTO);
 
                 isSaved = true;
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
@@ -504,7 +532,5 @@ namespace OrderApp.FormView
         {
             this.Close();
         }
-
-
     }
 }
