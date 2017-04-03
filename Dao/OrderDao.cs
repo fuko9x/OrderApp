@@ -111,6 +111,7 @@ namespace OrderApp.Dao
                 + ", LOAI_GIAY "
                 + ", DON_GIA "
                 + ", SO_LUONG "
+                + ", CHIET_KHAU "
                 + ", THANH_TIEN "
                 + ", CD_CR "
                 + " FROM DON_DAT_HANG_SP "
@@ -133,8 +134,9 @@ namespace OrderApp.Dao
                 if (!reader.IsDBNull(6)) donHangDetail.loaiGiay = reader.GetString(6);
                 if (!reader.IsDBNull(7)) donHangDetail.donGia = (double)reader.GetDecimal(7);
                 if (!reader.IsDBNull(8)) donHangDetail.soluong = reader.GetInt32(8);
-                if (!reader.IsDBNull(9)) donHangDetail.thanhTien = (double)reader.GetDecimal(9);
-                if (!reader.IsDBNull(10)) donHangDetail.cdcr = reader.GetString(10);
+                if (!reader.IsDBNull(9)) donHangDetail.chietKhau = (double)reader.GetDecimal(9);
+                if (!reader.IsDBNull(10)) donHangDetail.thanhTien = (double)reader.GetDecimal(10);
+                if (!reader.IsDBNull(11)) donHangDetail.cdcr = reader.GetString(11);
                 donHangDetail.idOrder = orderID;
 
                 listDetail.Add(donHangDetail);
@@ -246,6 +248,7 @@ namespace OrderApp.Dao
                     + ", LOAI_BIA"
                     + ", LOAI_GIAY"
                     + ", DON_GIA"
+                    + ", CHIET_KHAU"
                     + ", THANH_TIEN"
                     + ", CD_CR"
                     + ", CREATE_BY"
@@ -264,6 +267,7 @@ namespace OrderApp.Dao
                     + " , @loaiBia" + i
                     + " , @loaiGiay" + i
                     + " , @donGia" + i
+                    + " , @chietKhau" + i
                     + " , @thanhTien" + i
                     + " , @cdcr" + i
                     + " , @createBy" + i
@@ -285,6 +289,7 @@ namespace OrderApp.Dao
                     cmd.Parameters.AddWithValue("@loaiBia" + i, dto.loaiBia);
                     cmd.Parameters.AddWithValue("@loaiGiay" + i, dto.loaiGiay);
                     cmd.Parameters.AddWithValue("@donGia" + i, dto.donGia);
+                    cmd.Parameters.AddWithValue("@chietKhau" + i, dto.chietKhau);
                     cmd.Parameters.AddWithValue("@thanhTien" + i, dto.thanhTien);
                     cmd.Parameters.AddWithValue("@cdcr" + i, dto.cdcr);
                     cmd.Parameters.AddWithValue("@createBy" + i, dto.createBy);
