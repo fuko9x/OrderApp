@@ -18,6 +18,7 @@ namespace OrderApp.Dto
         public String loaiBia;
         public String loaiGiay;
         public double donGia;
+        public double chietKhau;
         public double thanhTien;
         public String cdcr;
         public String createBy;
@@ -28,6 +29,7 @@ namespace OrderApp.Dto
         public DonDatHangSPDto()
         {
             id = 0;
+            chietKhau = 0;
             donVi = "";
             cdcr = "";
             loaiBia = "";

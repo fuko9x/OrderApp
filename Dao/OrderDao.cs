@@ -82,19 +82,19 @@ namespace OrderApp.Dao
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
 
-            order.idKhachHang       = reader["ID_KHACH_HANG"] != null           ? (String)reader["ID_KHACH_HANG"] : String.Empty;
-            order.tenKhachHang      = reader["TEN_KHACH_HANG"] != null          ? (String)reader["TEN_KHACH_HANG"] : String.Empty;
-            order.ngayGiao          = reader["NGAY_GIAO"] != null               ? (DateTime) reader["NGAY_GIAO"] : DateTime.Now;
-            order.ngayDat           = reader["NGAY_DAT"] != null                ? (DateTime) reader["NGAY_DAT"] : DateTime.Now;
-            order.dienThoai         = reader["SDT"] != null                     ? (String)reader["SDT"].ToString() : String.Empty;
-            order.diaDiemGiaoHang   = reader["DIA_DIEM_GIAO_HANG"] != null      ? (String)reader["DIA_DIEM_GIAO_HANG"] : String.Empty;
-            order.tongCong          = reader["TONG_CONG"] != null               ? (double)(Decimal)reader["TONG_CONG"] : 0;
-            order.vat               = reader["VAT"] != null                     ? (double)(Decimal)reader["VAT"] : 0;
-            order.tongTien          = reader["TONG_TIEN"] != null               ? (double)(Decimal)reader["TONG_TIEN"] : 0;
-            order.phiVanChuyen      = reader["PHI_VAN_CHUYEN"] != null          ? (double)(Decimal)reader["PHI_VAN_CHUYEN"] : 0;
-            order.thanhToan         = reader["TRANG_THAI_THANH_TOAN"] != null   ? (Boolean)reader["TRANG_THAI_THANH_TOAN"] : false;
-            order.xuatKho           = reader["TRANG_THAI_XUAT_KHO"] != null     ? (Boolean)reader["TRANG_THAI_XUAT_KHO"] : false;
-            order.notes             = reader["NOTES"] != null                   ? (String)reader["NOTES"] : String.Empty;
+            order.idKhachHang       = reader["ID_KHACH_HANG"] != DBNull.Value ? (String)reader["ID_KHACH_HANG"] : String.Empty;
+            order.tenKhachHang      = reader["TEN_KHACH_HANG"] != DBNull.Value ? (String)reader["TEN_KHACH_HANG"] : String.Empty;
+            order.ngayGiao          = reader["NGAY_GIAO"] != DBNull.Value ? (DateTime) reader["NGAY_GIAO"] : DateTime.Now;
+            order.ngayDat           = reader["NGAY_DAT"] != DBNull.Value ? (DateTime) reader["NGAY_DAT"] : DateTime.Now;
+            order.dienThoai         = reader["SDT"] != DBNull.Value ? (String)reader["SDT"].ToString() : String.Empty;
+            order.diaDiemGiaoHang   = reader["DIA_DIEM_GIAO_HANG"] != DBNull.Value ? (String)reader["DIA_DIEM_GIAO_HANG"] : String.Empty;
+            order.tongCong          = reader["TONG_CONG"] != DBNull.Value ? (double)(Decimal)reader["TONG_CONG"] : 0;
+            order.vat               = reader["VAT"] != DBNull.Value ? (double)(Decimal)reader["VAT"] : 0;
+            order.tongTien          = reader["TONG_TIEN"] != DBNull.Value ? (double)(Decimal)reader["TONG_TIEN"] : 0;
+            order.phiVanChuyen      = reader["PHI_VAN_CHUYEN"] != DBNull.Value ? (double)(Decimal)reader["PHI_VAN_CHUYEN"] : 0;
+            order.thanhToan         = reader["TRANG_THAI_THANH_TOAN"] != DBNull.Value ? (Boolean)reader["TRANG_THAI_THANH_TOAN"] : false;
+            order.xuatKho           = reader["TRANG_THAI_XUAT_KHO"] != DBNull.Value ? (Boolean)reader["TRANG_THAI_XUAT_KHO"] : false;
+            order.notes             = reader["NOTES"] != DBNull.Value ? (String)reader["NOTES"] : String.Empty;
 
             reader.Close();
             return order;

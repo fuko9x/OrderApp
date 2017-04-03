@@ -6,11 +6,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace OrderApp.FormView
 {
@@ -19,6 +22,7 @@ namespace OrderApp.FormView
 
         private Boolean initData;
         private String idOrder;
+        OrderDto order;
 
         public OrderDetail(String strOderID)
         {
@@ -26,6 +30,8 @@ namespace OrderApp.FormView
             InitializeComponent();
             initListView();
             this.idOrder = strOderID;
+            order = OrderDao.getOderByID(this.idOrder);
+            order.id = this.idOrder;
         }
 
 
@@ -65,7 +71,6 @@ namespace OrderApp.FormView
         {
             try
             {
-                OrderDto order = OrderDao.getOderByID(this.idOrder);
                 if (order != null)
                 {
                     // fill Data
@@ -112,13 +117,62 @@ namespace OrderApp.FormView
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            printPreviewDialog1.Document = printDocument1;
-            printPreviewDialog1.Icon = Resources.icon;
-            printPreviewDialog1.Text = "PRINT ORDER";
-            printPreviewDialog1.StartPosition = FormStartPosition.CenterParent;
-            printPreviewDialog1.PrintPreviewControl.AutoZoom = true;
-            printPreviewDialog1.PrintPreviewControl.Zoom = 1.0;
-            printPreviewDialog1.ShowDialog();
+
+            Excel.Application xlApp = new Excel.Application();
+
+            if (xlApp == null)
+            {
+                MessageBox.Show("Excel is not properly installed!!");
+                return;
+            }
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlWorkBook = xlApp.Workbooks.Open("E:\\template\\OrderTemplate.xlsx", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+            xlWorkSheet.Cells[4, 1] = "Tên khách hàng : " + order.tenKhachHang;
+            xlWorkSheet.Cells[4, 5] = "Số Order : " + order.id;
+            xlWorkSheet.Cells[6, 3] = "Địa chỉ : : " + order.diaDiemGiaoHang;
+            xlWorkSheet.Cells[7, 1] = "Ngày đặt : : " + order.ngayDat.ToString("dd/MM/yyyy");
+            xlWorkSheet.Cells[7, 4] = "Ngày đặt : : " + order.ngayGiao.ToString("dd/MM/yyyy");
+
+            List<DonDatHangSPDto> dtProductDetail = OrderDao.getOderDetailByOrderID(this.idOrder);
+            lvProductDetail.Items.Clear();
+            for (int i = 0; i < dtProductDetail.Count; i++)
+            {
+                var r = xlWorkSheet.get_Range(string.Format("{0}:{0}", 10, Type.Missing));
+                var range = xlWorkSheet.get_Range(string.Format("{0}:{0}", 9, Type.Missing));
+                range.Select();
+                range.Copy();
+                r.Insert();
+
+                DonDatHangSPDto orderDetail = dtProductDetail[i];
+                xlWorkSheet.Cells[9, 1] = i + 1;
+                xlWorkSheet.Cells[9, 2] = orderDetail.tenSanPham;
+                xlWorkSheet.Cells[9, 3] = orderDetail.soluong;
+                xlWorkSheet.Cells[9, 4] = orderDetail.kichThuoc;
+                xlWorkSheet.Cells[9, 5] = orderDetail.soTrang;
+                xlWorkSheet.Cells[9, 6] = orderDetail.loaiBia;
+                xlWorkSheet.Cells[9, 7] = orderDetail.loaiGiay;
+                xlWorkSheet.Cells[9, 8] = orderDetail.donGia;
+                xlWorkSheet.Cells[9, 9] = orderDetail.chietKhau + "%";
+                xlWorkSheet.Cells[9, 10] = orderDetail.thanhTien;
+            }
+            DateTime now = DateTime.Now;
+            xlWorkSheet.Cells[10 + dtProductDetail.Count, 10] = order.tongCong;
+            xlWorkSheet.Cells[11 + dtProductDetail.Count, 10] = order.vat;
+            xlWorkSheet.Cells[12 + dtProductDetail.Count, 10] = order.tongTien;
+
+            xlWorkBook.SaveAs("E:\\template\\Order_" + order.id + ".xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.Close(true, misValue, misValue);
+            xlApp.Quit();
+
+            Marshal.ReleaseComObject(xlWorkSheet);
+            Marshal.ReleaseComObject(xlWorkBook);
+            Marshal.ReleaseComObject(xlApp);
+
+            MessageBox.Show("Excel file created.");
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -310,9 +310,7 @@ namespace OrderApp.FormView
             Boolean isValid = true;
             List<Control> listRequited = new List<Control>()
             {
-                cbbSize
-                , cbbLoaiBia
-                , cbbLoaiGiay
+                cbbLoaiSanPham
                 , txtDonGia
             };
             foreach (Control control in listRequited)
