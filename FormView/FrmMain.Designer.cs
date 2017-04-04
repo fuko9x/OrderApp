@@ -32,12 +32,10 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.linkOrderList = new System.Windows.Forms.Label();
-            this.linkCreateOrder = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblLinkKhachHang = new System.Windows.Forms.Label();
+            this.lblLinkSanPham = new System.Windows.Forms.Label();
+            this.lblDonHang = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -45,18 +43,25 @@
             this.lblThemMoi = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.lblListSanPham = new System.Windows.Forms.Label();
             this.linkAdd = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDonHangChuaGiao = new System.Windows.Forms.Label();
+            this.lblDonHangTrongNgay = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.linkOrderList = new System.Windows.Forms.Label();
+            this.linkCreateOrder = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblUserName = new System.Windows.Forms.Label();
@@ -64,25 +69,21 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.lblDonHang = new System.Windows.Forms.Label();
-            this.lblLinkSanPham = new System.Windows.Forms.Label();
-            this.lblLinkKhachHang = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblDonHangChuaThanhToan = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
@@ -138,67 +139,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(827, 219);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.Peru;
-            this.panel4.Controls.Add(this.linkOrderList);
-            this.panel4.Controls.Add(this.linkCreateOrder);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.pictureBox5);
-            this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(256, 95);
-            this.panel4.TabIndex = 3;
-            // 
-            // linkOrderList
-            // 
-            this.linkOrderList.AutoSize = true;
-            this.linkOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.linkOrderList.ForeColor = System.Drawing.Color.Maroon;
-            this.linkOrderList.Location = new System.Drawing.Point(88, 39);
-            this.linkOrderList.Name = "linkOrderList";
-            this.linkOrderList.Size = new System.Drawing.Size(150, 15);
-            this.linkOrderList.TabIndex = 5;
-            this.linkOrderList.Text = "- Danh sách Đơn hàng";
-            this.linkOrderList.Click += new System.EventHandler(this.linkOrderList_Click);
-            // 
-            // linkCreateOrder
-            // 
-            this.linkCreateOrder.AutoSize = true;
-            this.linkCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.linkCreateOrder.ForeColor = System.Drawing.Color.Maroon;
-            this.linkCreateOrder.Location = new System.Drawing.Point(88, 15);
-            this.linkCreateOrder.Name = "linkCreateOrder";
-            this.linkCreateOrder.Size = new System.Drawing.Size(68, 15);
-            this.linkCreateOrder.TabIndex = 4;
-            this.linkCreateOrder.Text = "- Tạo mới";
-            this.linkCreateOrder.Click += new System.EventHandler(this.linkCreateOrder_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(9, 70);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 16);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Đơn Đặt Hàng";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::OrderApp.Properties.Resources.graphic_report_icon;
-            this.pictureBox5.Location = new System.Drawing.Point(12, 15);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(56, 52);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -215,6 +155,42 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(256, 92);
             this.panel3.TabIndex = 2;
+            // 
+            // lblLinkKhachHang
+            // 
+            this.lblLinkKhachHang.AutoSize = true;
+            this.lblLinkKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblLinkKhachHang.ForeColor = System.Drawing.Color.Maroon;
+            this.lblLinkKhachHang.Location = new System.Drawing.Point(88, 56);
+            this.lblLinkKhachHang.Name = "lblLinkKhachHang";
+            this.lblLinkKhachHang.Size = new System.Drawing.Size(94, 15);
+            this.lblLinkKhachHang.TabIndex = 8;
+            this.lblLinkKhachHang.Text = "- Khách Hàng";
+            this.lblLinkKhachHang.Click += new System.EventHandler(this.lblListKhachHang_Click);
+            // 
+            // lblLinkSanPham
+            // 
+            this.lblLinkSanPham.AutoSize = true;
+            this.lblLinkSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblLinkSanPham.ForeColor = System.Drawing.Color.Maroon;
+            this.lblLinkSanPham.Location = new System.Drawing.Point(87, 35);
+            this.lblLinkSanPham.Name = "lblLinkSanPham";
+            this.lblLinkSanPham.Size = new System.Drawing.Size(82, 15);
+            this.lblLinkSanPham.TabIndex = 7;
+            this.lblLinkSanPham.Text = "- Sản Phẩm";
+            this.lblLinkSanPham.Click += new System.EventHandler(this.lblListSanPham_Click);
+            // 
+            // lblDonHang
+            // 
+            this.lblDonHang.AutoSize = true;
+            this.lblDonHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblDonHang.ForeColor = System.Drawing.Color.Maroon;
+            this.lblDonHang.Location = new System.Drawing.Point(88, 13);
+            this.lblDonHang.Name = "lblDonHang";
+            this.lblDonHang.Size = new System.Drawing.Size(80, 15);
+            this.lblDonHang.TabIndex = 6;
+            this.lblDonHang.Text = "- Đơn Hàng";
+            this.lblDonHang.Click += new System.EventHandler(this.linkOrderList_Click);
             // 
             // label5
             // 
@@ -299,43 +275,6 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(285, 124);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 92);
-            this.panel1.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(12, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Thống kê";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::OrderApp.Properties.Resources.report_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 52);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -409,6 +348,67 @@
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.lblDonHangChuaThanhToan);
+            this.panel1.Controls.Add(this.lblDonHangChuaGiao);
+            this.panel1.Controls.Add(this.lblDonHangTrongNgay);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1.Location = new System.Drawing.Point(285, 124);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(256, 92);
+            this.panel1.TabIndex = 0;
+            // 
+            // lblDonHangChuaGiao
+            // 
+            this.lblDonHangChuaGiao.AutoSize = true;
+            this.lblDonHangChuaGiao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblDonHangChuaGiao.ForeColor = System.Drawing.Color.Maroon;
+            this.lblDonHangChuaGiao.Location = new System.Drawing.Point(86, 35);
+            this.lblDonHangChuaGiao.Name = "lblDonHangChuaGiao";
+            this.lblDonHangChuaGiao.Size = new System.Drawing.Size(142, 15);
+            this.lblDonHangChuaGiao.TabIndex = 8;
+            this.lblDonHangChuaGiao.Text = "Đơn Hàng Chưa Giao";
+            this.lblDonHangChuaGiao.Click += new System.EventHandler(this.lblDonHangChuaGiao_Click);
+            // 
+            // lblDonHangTrongNgay
+            // 
+            this.lblDonHangTrongNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblDonHangTrongNgay.ForeColor = System.Drawing.Color.Maroon;
+            this.lblDonHangTrongNgay.Location = new System.Drawing.Point(86, 13);
+            this.lblDonHangTrongNgay.Name = "lblDonHangTrongNgay";
+            this.lblDonHangTrongNgay.Size = new System.Drawing.Size(165, 15);
+            this.lblDonHangTrongNgay.TabIndex = 7;
+            this.lblDonHangTrongNgay.Text = "Đơn Hàng Trong Ngày";
+            this.lblDonHangTrongNgay.Click += new System.EventHandler(this.lblDonHangTrongNgay_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(12, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Thống kê";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::OrderApp.Properties.Resources.report_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -443,6 +443,67 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 1;
             this.pictureBox6.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Peru;
+            this.panel4.Controls.Add(this.linkOrderList);
+            this.panel4.Controls.Add(this.linkCreateOrder);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.pictureBox5);
+            this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(256, 95);
+            this.panel4.TabIndex = 3;
+            // 
+            // linkOrderList
+            // 
+            this.linkOrderList.AutoSize = true;
+            this.linkOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.linkOrderList.ForeColor = System.Drawing.Color.Maroon;
+            this.linkOrderList.Location = new System.Drawing.Point(88, 39);
+            this.linkOrderList.Name = "linkOrderList";
+            this.linkOrderList.Size = new System.Drawing.Size(150, 15);
+            this.linkOrderList.TabIndex = 5;
+            this.linkOrderList.Text = "- Danh sách Đơn hàng";
+            this.linkOrderList.Click += new System.EventHandler(this.linkOrderList_Click);
+            // 
+            // linkCreateOrder
+            // 
+            this.linkCreateOrder.AutoSize = true;
+            this.linkCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.linkCreateOrder.ForeColor = System.Drawing.Color.Maroon;
+            this.linkCreateOrder.Location = new System.Drawing.Point(88, 15);
+            this.linkCreateOrder.Name = "linkCreateOrder";
+            this.linkCreateOrder.Size = new System.Drawing.Size(68, 15);
+            this.linkCreateOrder.TabIndex = 4;
+            this.linkCreateOrder.Text = "- Tạo mới";
+            this.linkCreateOrder.Click += new System.EventHandler(this.linkCreateOrder_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
+            this.label6.Location = new System.Drawing.Point(9, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Đơn Đặt Hàng";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::OrderApp.Properties.Resources.graphic_report_icon;
+            this.pictureBox5.Location = new System.Drawing.Point(12, 15);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(56, 52);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
             // 
             // label1
             // 
@@ -533,62 +594,17 @@
             this.panel7.Size = new System.Drawing.Size(351, 51);
             this.panel7.TabIndex = 5;
             // 
-            // lblDonHang
+            // lblDonHangChuaThanhToan
             // 
-            this.lblDonHang.AutoSize = true;
-            this.lblDonHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.lblDonHang.ForeColor = System.Drawing.Color.Maroon;
-            this.lblDonHang.Location = new System.Drawing.Point(88, 13);
-            this.lblDonHang.Name = "lblDonHang";
-            this.lblDonHang.Size = new System.Drawing.Size(80, 15);
-            this.lblDonHang.TabIndex = 6;
-            this.lblDonHang.Text = "- Đơn Hàng";
-            this.lblDonHang.Click += new System.EventHandler(this.linkOrderList_Click);
-            // 
-            // lblLinkSanPham
-            // 
-            this.lblLinkSanPham.AutoSize = true;
-            this.lblLinkSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.lblLinkSanPham.ForeColor = System.Drawing.Color.Maroon;
-            this.lblLinkSanPham.Location = new System.Drawing.Point(87, 35);
-            this.lblLinkSanPham.Name = "lblLinkSanPham";
-            this.lblLinkSanPham.Size = new System.Drawing.Size(82, 15);
-            this.lblLinkSanPham.TabIndex = 7;
-            this.lblLinkSanPham.Text = "- Sản Phẩm";
-            this.lblLinkSanPham.Click += new System.EventHandler(this.lblListSanPham_Click);
-            // 
-            // lblLinkKhachHang
-            // 
-            this.lblLinkKhachHang.AutoSize = true;
-            this.lblLinkKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.lblLinkKhachHang.ForeColor = System.Drawing.Color.Maroon;
-            this.lblLinkKhachHang.Location = new System.Drawing.Point(88, 56);
-            this.lblLinkKhachHang.Name = "lblLinkKhachHang";
-            this.lblLinkKhachHang.Size = new System.Drawing.Size(94, 15);
-            this.lblLinkKhachHang.TabIndex = 8;
-            this.lblLinkKhachHang.Text = "- Khách Hàng";
-            this.lblLinkKhachHang.Click += new System.EventHandler(this.lblListKhachHang_Click);
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label9.ForeColor = System.Drawing.Color.Maroon;
-            this.label9.Location = new System.Drawing.Point(88, 13);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(165, 15);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "- Đơn Hàng Trong Ngày";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label10.ForeColor = System.Drawing.Color.Maroon;
-            this.label10.Location = new System.Drawing.Point(88, 35);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(151, 15);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "- Đơn Hàng Chưa Giao";
+            this.lblDonHangChuaThanhToan.AutoSize = true;
+            this.lblDonHangChuaThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblDonHangChuaThanhToan.ForeColor = System.Drawing.Color.Maroon;
+            this.lblDonHangChuaThanhToan.Location = new System.Drawing.Point(86, 56);
+            this.lblDonHangChuaThanhToan.Name = "lblDonHangChuaThanhToan";
+            this.lblDonHangChuaThanhToan.Size = new System.Drawing.Size(144, 15);
+            this.lblDonHangChuaThanhToan.TabIndex = 9;
+            this.lblDonHangChuaThanhToan.Text = "ĐH Chưa Thanh Toán";
+            this.lblDonHangChuaThanhToan.Click += new System.EventHandler(this.lblDonHangChuaThanhToan_Click);
             // 
             // FrmMain
             // 
@@ -607,24 +623,24 @@
             this.Text = "PHẦN MỀM QUẢN LÝ IN ẤN";
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -672,7 +688,8 @@
         private System.Windows.Forms.Label lblLinkKhachHang;
         private System.Windows.Forms.Label lblLinkSanPham;
         private System.Windows.Forms.Label lblDonHang;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblDonHangChuaGiao;
+        private System.Windows.Forms.Label lblDonHangTrongNgay;
+        private System.Windows.Forms.Label lblDonHangChuaThanhToan;
     }
 }

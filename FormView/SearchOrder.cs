@@ -15,18 +15,43 @@ namespace OrderApp.FormView
 {
     public partial class SearchOrder : MaterialForm
     {
+        public static readonly int CONS_DON_HANG_TRONG_NGAY = 0;
+        public static readonly int CONS_DON_HANG_CHUA_GIAO = 1;
+        public static readonly int CONS_DON_HANG_DA_GIAO = 2;
+        public static readonly int CONS_DON_HANG_CHUA_THANH_TOAN = 3;
+        public static readonly int CONS_DON_HANG_DA_THANH_TOAN = 4;
+
         private Boolean initData = false;
-        public SearchOrder()
+        private int initSelected = 0;
+        private String idKhachHang = "";
+
+        public SearchOrder(int initSelectedType = 0)
         {
             initData = false;
             InitializeComponent();
             formatControl();
+            this.initSelected = initSelectedType;
+        }
+
+        public void setIDKhachHang(String idKhachHang)
+        {
+            this.idKhachHang = idKhachHang;
         }
 
         private void form_Load(object sender, EventArgs e)
         {
             this.initData = true;
-            this.cbbTinhTrangDonHang.SelectedIndex = 0;
+            this.cbbTinhTrangDonHang.SelectedIndex = initSelected;
+            if (this.idKhachHang != "")
+            {
+                txtCustomerID.Text = this.idKhachHang;
+                btnSearch_Click(btnSearch, e);
+            }
+            else
+            {
+                this.cbbTinhTrangDonHang.SelectedIndex = initSelected;
+                reloadData();
+            }
         }
 
         private void formatControl()
@@ -156,6 +181,16 @@ namespace OrderApp.FormView
             frmNew.ShowDialog(this);
             //
             reloadData();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OrderDao dao = new OrderDao();
+                this.dataGridViewDonHang.DataSource = dao.searchListOrder(txtCustomerID.Text.Trim());
+            }
+            catch (Exception) { }
         }
     }
 }

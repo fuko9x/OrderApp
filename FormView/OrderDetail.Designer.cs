@@ -31,11 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderDetail));
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelPrint = new System.Windows.Forms.Panel();
+            this.ckbGiaoHang = new System.Windows.Forms.CheckBox();
+            this.ckbThanhToan = new System.Windows.Forms.CheckBox();
             this.lblNgayDat = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.lblGhiChu = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -67,9 +70,6 @@
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.ckbThanhToan = new System.Windows.Forms.CheckBox();
-            this.ckbGiaoHang = new System.Windows.Forms.CheckBox();
-            this.lblGhiChu = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelPrint.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -127,6 +127,28 @@
             this.panelPrint.Padding = new System.Windows.Forms.Padding(50, 40, 50, 40);
             this.panelPrint.Size = new System.Drawing.Size(837, 527);
             this.panelPrint.TabIndex = 0;
+            // 
+            // ckbGiaoHang
+            // 
+            this.ckbGiaoHang.AutoSize = true;
+            this.ckbGiaoHang.Location = new System.Drawing.Point(678, 201);
+            this.ckbGiaoHang.Name = "ckbGiaoHang";
+            this.ckbGiaoHang.Size = new System.Drawing.Size(86, 21);
+            this.ckbGiaoHang.TabIndex = 27;
+            this.ckbGiaoHang.Text = "Giao hàng";
+            this.ckbGiaoHang.UseVisualStyleBackColor = true;
+            this.ckbGiaoHang.CheckedChanged += new System.EventHandler(this.ckbGiaoHang_CheckedChanged);
+            // 
+            // ckbThanhToan
+            // 
+            this.ckbThanhToan.AutoSize = true;
+            this.ckbThanhToan.Location = new System.Drawing.Point(550, 201);
+            this.ckbThanhToan.Name = "ckbThanhToan";
+            this.ckbThanhToan.Size = new System.Drawing.Size(93, 21);
+            this.ckbThanhToan.TabIndex = 26;
+            this.ckbThanhToan.Text = "Thanh toán";
+            this.ckbThanhToan.UseVisualStyleBackColor = true;
+            this.ckbThanhToan.CheckedChanged += new System.EventHandler(this.ckbThanhToan_CheckedChanged);
             // 
             // lblNgayDat
             // 
@@ -196,6 +218,16 @@
             this.tableLayoutPanel3.SetRowSpan(this.panel8, 3);
             this.panel8.Size = new System.Drawing.Size(417, 70);
             this.panel8.TabIndex = 0;
+            // 
+            // lblGhiChu
+            // 
+            this.lblGhiChu.AutoEllipsis = true;
+            this.lblGhiChu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGhiChu.Location = new System.Drawing.Point(70, 4);
+            this.lblGhiChu.Name = "lblGhiChu";
+            this.lblGhiChu.Size = new System.Drawing.Size(344, 56);
+            this.lblGhiChu.TabIndex = 1;
+            this.lblGhiChu.Text = "........................";
             // 
             // label28
             // 
@@ -413,9 +445,9 @@
             this.lblMST.BackColor = System.Drawing.Color.Transparent;
             this.lblMST.Location = new System.Drawing.Point(97, 131);
             this.lblMST.Name = "lblMST";
-            this.lblMST.Size = new System.Drawing.Size(71, 17);
+            this.lblMST.Size = new System.Drawing.Size(48, 17);
             this.lblMST.TabIndex = 6;
-            this.lblMST.Text = "010227453";
+            this.lblMST.Text = "..........";
             // 
             // lblTenKhachHang
             // 
@@ -507,38 +539,6 @@
             this.btnPrint.Text = "Export Excel";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // ckbThanhToan
-            // 
-            this.ckbThanhToan.AutoSize = true;
-            this.ckbThanhToan.Location = new System.Drawing.Point(550, 201);
-            this.ckbThanhToan.Name = "ckbThanhToan";
-            this.ckbThanhToan.Size = new System.Drawing.Size(93, 21);
-            this.ckbThanhToan.TabIndex = 26;
-            this.ckbThanhToan.Text = "Thanh toán";
-            this.ckbThanhToan.UseVisualStyleBackColor = true;
-            this.ckbThanhToan.CheckedChanged += new System.EventHandler(this.ckbThanhToan_CheckedChanged);
-            // 
-            // ckbGiaoHang
-            // 
-            this.ckbGiaoHang.AutoSize = true;
-            this.ckbGiaoHang.Location = new System.Drawing.Point(678, 201);
-            this.ckbGiaoHang.Name = "ckbGiaoHang";
-            this.ckbGiaoHang.Size = new System.Drawing.Size(86, 21);
-            this.ckbGiaoHang.TabIndex = 27;
-            this.ckbGiaoHang.Text = "Giao hàng";
-            this.ckbGiaoHang.UseVisualStyleBackColor = true;
-            this.ckbGiaoHang.CheckedChanged += new System.EventHandler(this.ckbGiaoHang_CheckedChanged);
-            // 
-            // lblGhiChu
-            // 
-            this.lblGhiChu.AutoEllipsis = true;
-            this.lblGhiChu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGhiChu.Location = new System.Drawing.Point(70, 4);
-            this.lblGhiChu.Name = "lblGhiChu";
-            this.lblGhiChu.Size = new System.Drawing.Size(344, 56);
-            this.lblGhiChu.TabIndex = 1;
-            this.lblGhiChu.Text = "........................";
             // 
             // OrderDetail
             // 

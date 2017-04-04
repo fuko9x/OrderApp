@@ -40,7 +40,7 @@ namespace OrderApp.Dao
                 + " FROM DON_DAT_HANG d"
                 + " LEFT JOIN KHACH_HANG k"
                 + " ON d.ID_KHACH_HANG = k.ID_KHACH_HANG"
-                + " WHERE NGAY_GIAO > @dateFrom AND NGAY_GIAO < @dateTo";
+                + " WHERE NGAY_GIAO >= @dateFrom AND NGAY_GIAO <= @dateTo";
             
             // add dieu kien trang thai don hang
             switch (searchType)
@@ -56,12 +56,41 @@ namespace OrderApp.Dao
                     strQuery += " AND TRANG_THAI_XUAT_KHO = @status";
                     break;
             }
+            strQuery += " ORDER BY d.NGAY_GIAO ASC, d.ID_KHACH_HANG";
+
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.AddWithValue("@dateFrom", dateFrom);
-            cmd.Parameters.AddWithValue("@dateTo", dateTo);
+            cmd.Parameters.AddWithValue("@dateFrom", new DateTime(dateFrom.Year, dateFrom.Month, dateFrom.Day));
+            cmd.Parameters.AddWithValue("@dateTo", new DateTime(dateTo.Year, dateTo.Month, dateTo.Day));
             cmd.Parameters.AddWithValue("@status", status);
 
+            cmd.Connection = Connection.getConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public DataTable searchListOrder(String idKhachHang)
+        {
+            DataTable dt = new DataTable();
+            String strQuery = "SELECT"
+                + " Row_number() over(order by d.ID) STT"
+                + ", d.ID as ID"
+                + ", k.TEN_KHACH_HANG"
+                + ", d.NGAY_DAT"
+                + ", d.NGAY_GIAO"
+                + ", d.TONG_TIEN"
+                + ", (CASE d.TRANG_THAI_THANH_TOAN WHEN 'TRUE' THEN 'OK' ELSE '-' END) AS TRANG_THAI_THANH_TOAN"
+                + ", (CASE d.TRANG_THAI_XUAT_KHO WHEN 'TRUE' THEN 'OK' ELSE '-' END) AS TRANG_THAI_XUAT_KHO"
+                + " FROM DON_DAT_HANG d"
+                + " LEFT JOIN KHACH_HANG k"
+                + " ON d.ID_KHACH_HANG = k.ID_KHACH_HANG"
+                + " WHERE d.ID_KHACH_HANG LIKE @idKhachHang "
+                + " ORDER BY d.NGAY_GIAO ASC, d.ID_KHACH_HANG";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@idKhachHang", idKhachHang);
             cmd.Connection = Connection.getConnection();
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = cmd;

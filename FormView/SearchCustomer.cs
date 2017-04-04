@@ -60,6 +60,7 @@ namespace OrderApp.FormView
 
                     ContextMenu contextMenu = new ContextMenu();
                     if(this.isGetKhachHang) contextMenu.MenuItems.Add(new MenuItem("Chọn", itemSelected_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Xem đơn đặt hàng", MenuItemXemDonHang_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Xuất công nợ", MenuItemCongno_Click));
                     contextMenu.MenuItems.Add(new MenuItem("-"));
                     contextMenu.MenuItems.Add(new MenuItem("Tạo mới", addBtn_Click));
@@ -77,6 +78,16 @@ namespace OrderApp.FormView
                     contextMenu.Show(listKhachHang, new Point(e.X, e.Y));
                 }
             }
+        }
+
+        private void MenuItemXemDonHang_Click(object sender, EventArgs e)
+        {
+            int rowSelected = listKhachHang.SelectedRows[0].Index;
+            String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+
+            SearchOrder frmSearchOrder = new SearchOrder();
+            frmSearchOrder.setIDKhachHang(selectedId);
+            frmSearchOrder.ShowDialog(this);
         }
 
         private void MenuItemCongno_Click(object sender, EventArgs e)

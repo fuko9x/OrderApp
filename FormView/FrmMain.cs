@@ -61,5 +61,23 @@ namespace OrderApp.FormView
             SearchProduct frmSearch = new SearchProduct();
             frmSearch.Show();
         }
+
+        private void lblDonHangTrongNgay_Click(object sender, EventArgs e)
+        {
+            SearchOrder frmOrder = new SearchOrder(SearchOrder.CONS_DON_HANG_TRONG_NGAY);
+            frmOrder.ShowDialog(this);
+        }
+
+        private void lblDonHangChuaGiao_Click(object sender, EventArgs e)
+        {
+            SearchOrder frmOrder = new SearchOrder(SearchOrder.CONS_DON_HANG_CHUA_GIAO);
+            frmOrder.ShowDialog(this);
+        }
+
+        private void lblDonHangChuaThanhToan_Click(object sender, EventArgs e)
+        {
+            SearchOrder frmOrder = new SearchOrder(SearchOrder.CONS_DON_HANG_CHUA_THANH_TOAN);
+            frmOrder.ShowDialog(this);
+        }
     }
 }

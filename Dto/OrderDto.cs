@@ -32,7 +32,7 @@ namespace OrderApp.Dto
         {
             this.tongTien = this.vat = this.tongCong = this.phiVanChuyen = 0;
             this.ngayDat = DateTime.Now;
-            this.ngayGiao = DateTime.Now.AddDays(3);
+            this.ngayGiao = DateTime.Now;
             this.tenKhachHang = "";
             this.lienHe = "";
             this.dienThoai = "";
