@@ -409,6 +409,7 @@ namespace OrderApp.Dao
                                 + " LEFT JOIN DON_DAT_HANG_SP sp"
                                 + " ON a.ID = sp.ID_DON_DAT_HANG"
                                 + " WHERE a.ID_KHACH_HANG = '" + idKhachHang + "'"
+                                + "     AND a.TRANG_THAI_THANH_TOAN = 'false'"
                                 + " ORDER BY NGAY_GIAO DESC";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;

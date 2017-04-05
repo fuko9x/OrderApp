@@ -22,7 +22,6 @@ namespace OrderApp.FormView
 {
     public partial class SearchCustomer : MaterialForm
     {
-        private Boolean initData = false;
         private FormSearchCustomerObj outputObj;
         private Boolean isGetKhachHang = false;
         public KhachHangDto khachHangSelected;
@@ -39,7 +38,6 @@ namespace OrderApp.FormView
 
         private void form_Load(object sender, EventArgs e)
         {
-            initData = true;
             btnSearch.PerformClick();
         }
 
@@ -82,82 +80,32 @@ namespace OrderApp.FormView
 
         private void MenuItemXemDonHang_Click(object sender, EventArgs e)
         {
-            int rowSelected = listKhachHang.SelectedRows[0].Index;
-            String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
-
-            SearchOrder frmSearchOrder = new SearchOrder();
-            frmSearchOrder.setIDKhachHang(selectedId);
-            frmSearchOrder.ShowDialog(this);
+            try
+            {
+                int rowSelected = listKhachHang.SelectedRows[0].Index;
+                String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+                SearchOrder frmSearchOrder = new SearchOrder();
+                frmSearchOrder.setIDKhachHang(selectedId);
+                frmSearchOrder.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
         }
 
         private void MenuItemCongno_Click(object sender, EventArgs e)
         {
-            using (var folderDialog = new FolderBrowserDialog())
+            try
             {
-                if (folderDialog.ShowDialog() == DialogResult.OK)
-                {
-                    int rowSelected = listKhachHang.SelectedRows[0].Index;
-                    String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
-                    KhachHangDto infoKH = new KhachHangDao().getKhachHangById(selectedId);
-                    SqlDataReader reader = new OrderDao().getDebtByCustomer(selectedId);
-
-                    Excel.Application xlApp = new Excel.Application();
-
-                    if (xlApp == null)
-                    {
-                        MessageBox.Show("Excel is not properly installed!!");
-                        return;
-                    }
-
-
-                    Excel.Workbook xlWorkBook;
-                    Excel.Worksheet xlWorkSheet;
-                    object misValue = System.Reflection.Missing.Value;
-                    xlWorkBook = xlApp.Workbooks.Open(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\CongNoTemplate.xlsx", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
-                    xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-                    xlWorkSheet.Cells[8, 1] = "Tên khách hàng : " + infoKH.tenKhachHang;
-
-                    int i = 0;
-                    while (reader.Read())
-                    {
-                        var r = xlWorkSheet.get_Range(string.Format("{0}:{0}", 12, Type.Missing));
-                        var range = xlWorkSheet.get_Range(string.Format("{0}:{0}", 11, Type.Missing));
-                        range.Select();
-                        range.Copy();
-                        r.Insert();
-
-                        xlWorkSheet.Cells[11, 1] = reader.GetDateTime(reader.GetOrdinal("NGAY_GIAO")).Day;
-                        xlWorkSheet.Cells[11, 2] = reader.GetDateTime(reader.GetOrdinal("NGAY_GIAO")).Month;
-                        xlWorkSheet.Cells[11, 3] = reader.GetDateTime(reader.GetOrdinal("NGAY_GIAO")).Year;
-                        xlWorkSheet.Cells[11, 4] = reader.GetString(reader.GetOrdinal("ID"));
-                        xlWorkSheet.Cells[11, 5] = reader.GetString(reader.GetOrdinal("TEN_SAN_PHAM"));
-                        xlWorkSheet.Cells[11, 6] = reader.GetString(reader.GetOrdinal("CD_CR"));
-                        xlWorkSheet.Cells[11, 7] = reader.GetString(reader.GetOrdinal("KICH_THUOC"));
-                        xlWorkSheet.Cells[11, 8] = reader.GetInt32(reader.GetOrdinal("SO_TRANG"));
-                        xlWorkSheet.Cells[11, 9] = reader.GetString(reader.GetOrdinal("LOAI_BIA"));
-                        xlWorkSheet.Cells[11, 10] = reader.GetString(reader.GetOrdinal("LOAI_GIAY"));
-                        xlWorkSheet.Cells[11, 11] = reader.GetInt32(reader.GetOrdinal("SO_LUONG"));
-                        xlWorkSheet.Cells[11, 12] = reader.GetDecimal(reader.GetOrdinal("DON_GIA"));
-                        xlWorkSheet.Cells[11, 13] = reader.GetDecimal(reader.GetOrdinal("CHIET_KHAU"));
-                        xlWorkSheet.Cells[11, 14] = reader.GetDecimal(reader.GetOrdinal("THANH_TIEN"));
-                        i++;
-                    }
-                    DateTime now = DateTime.Now;
-                    xlWorkSheet.Cells[15 + i, 13] = "Ngày " + now.Day + " tháng " + now.Month + " năm " + now.Year;
-
-                    xlWorkBook.SaveAs(folderDialog.SelectedPath + "\\CongNo.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-                    xlWorkBook.Close(true, misValue, misValue);
-                    xlApp.Quit();
-
-                    Marshal.ReleaseComObject(xlWorkSheet);
-                    Marshal.ReleaseComObject(xlWorkBook);
-                    Marshal.ReleaseComObject(xlApp);
-
-                    reader.Close();
-                    MessageBox.Show("Đã hoàn thành export công nợ");
-                }
+                int rowSelected = listKhachHang.SelectedRows[0].Index;
+                String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+                AppUtils.exportDept(selectedId);
+            } catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
             }
+            
         }
 
         private void search_Click(object sender, EventArgs e)

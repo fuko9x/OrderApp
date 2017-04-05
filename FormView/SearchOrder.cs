@@ -1,6 +1,7 @@
 ﻿using MaterialSkin.Controls;
 using OrderApp.Common;
 using OrderApp.Dao;
+using OrderApp.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,7 +73,6 @@ namespace OrderApp.FormView
                     ContextMenu contextMenu = new ContextMenu();
                     contextMenu.MenuItems.Add(new MenuItem("Tạo mới", btnCreate_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Xem chi tiết", btnDetail_Click));
-                    contextMenu.MenuItems.Add(new MenuItem("Xuất công nợ", btnExport_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Xuất Excel", btnExport_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Đóng"));
                     contextMenu.Show(dataGridViewDonHang, new Point(e.X, e.Y));
@@ -92,7 +92,10 @@ namespace OrderApp.FormView
         {
             if (dataGridViewDonHang.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Export đi Bình!!!", "WARNING");
+                int rowSelected = this.dataGridViewDonHang.SelectedRows[0].Index;
+                String selectedId = this.dataGridViewDonHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+                OrderDto order = OrderDao.getOderByID(selectedId);
+                AppUtils.exportOrder(selectedId, order);
             }
         }
 
