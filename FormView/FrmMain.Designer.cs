@@ -50,6 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDonHangChuaThanhToan = new System.Windows.Forms.Label();
             this.lblDonHangChuaGiao = new System.Windows.Forms.Label();
             this.lblDonHangTrongNgay = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,11 +66,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelExit = new System.Windows.Forms.LinkLabel();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.lblDonHangChuaThanhToan = new System.Windows.Forms.Label();
+            this.lblBackup = new System.Windows.Forms.Label();
+            this.lblRestoreDB = new System.Windows.Forms.Label();
+            this.progressBarDataBase = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -365,6 +368,18 @@
             this.panel1.Size = new System.Drawing.Size(256, 92);
             this.panel1.TabIndex = 0;
             // 
+            // lblDonHangChuaThanhToan
+            // 
+            this.lblDonHangChuaThanhToan.AutoSize = true;
+            this.lblDonHangChuaThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblDonHangChuaThanhToan.ForeColor = System.Drawing.Color.Maroon;
+            this.lblDonHangChuaThanhToan.Location = new System.Drawing.Point(86, 56);
+            this.lblDonHangChuaThanhToan.Name = "lblDonHangChuaThanhToan";
+            this.lblDonHangChuaThanhToan.Size = new System.Drawing.Size(144, 15);
+            this.lblDonHangChuaThanhToan.TabIndex = 9;
+            this.lblDonHangChuaThanhToan.Text = "ĐH Chưa Thanh Toán";
+            this.lblDonHangChuaThanhToan.Click += new System.EventHandler(this.lblDonHangChuaThanhToan_Click);
+            // 
             // lblDonHangChuaGiao
             // 
             this.lblDonHangChuaGiao.AutoSize = true;
@@ -415,6 +430,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel6.Controls.Add(this.progressBarDataBase);
+            this.panel6.Controls.Add(this.lblRestoreDB);
+            this.panel6.Controls.Add(this.lblBackup);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.pictureBox6);
             this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -430,9 +448,9 @@
             this.label7.ForeColor = System.Drawing.Color.Maroon;
             this.label7.Location = new System.Drawing.Point(11, 70);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 16);
+            this.label7.Size = new System.Drawing.Size(68, 16);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Xem Lịch Sử";
+            this.label7.Text = "Database";
             // 
             // pictureBox6
             // 
@@ -528,7 +546,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.31579F));
             this.tableLayoutPanel2.Controls.Add(this.lblUserName, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.linkLabel1, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.linkLabelExit, 2, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(645, 69);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -549,20 +567,21 @@
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "Administrator";
             // 
-            // linkLabel1
+            // linkLabelExit
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Brown;
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.linkLabel1.Location = new System.Drawing.Point(193, 12);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(56, 17);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Thoát";
+            this.linkLabelExit.ActiveLinkColor = System.Drawing.Color.Brown;
+            this.linkLabelExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabelExit.AutoSize = true;
+            this.linkLabelExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelExit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.linkLabelExit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.linkLabelExit.Location = new System.Drawing.Point(193, 12);
+            this.linkLabelExit.Name = "linkLabelExit";
+            this.linkLabelExit.Size = new System.Drawing.Size(56, 17);
+            this.linkLabelExit.TabIndex = 1;
+            this.linkLabelExit.TabStop = true;
+            this.linkLabelExit.Text = "Thoát";
+            this.linkLabelExit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelExit_LinkClicked);
             // 
             // label11
             // 
@@ -594,17 +613,37 @@
             this.panel7.Size = new System.Drawing.Size(351, 51);
             this.panel7.TabIndex = 5;
             // 
-            // lblDonHangChuaThanhToan
+            // lblBackup
             // 
-            this.lblDonHangChuaThanhToan.AutoSize = true;
-            this.lblDonHangChuaThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.lblDonHangChuaThanhToan.ForeColor = System.Drawing.Color.Maroon;
-            this.lblDonHangChuaThanhToan.Location = new System.Drawing.Point(86, 56);
-            this.lblDonHangChuaThanhToan.Name = "lblDonHangChuaThanhToan";
-            this.lblDonHangChuaThanhToan.Size = new System.Drawing.Size(144, 15);
-            this.lblDonHangChuaThanhToan.TabIndex = 9;
-            this.lblDonHangChuaThanhToan.Text = "ĐH Chưa Thanh Toán";
-            this.lblDonHangChuaThanhToan.Click += new System.EventHandler(this.lblDonHangChuaThanhToan_Click);
+            this.lblBackup.AutoSize = true;
+            this.lblBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblBackup.ForeColor = System.Drawing.Color.Maroon;
+            this.lblBackup.Location = new System.Drawing.Point(85, 13);
+            this.lblBackup.Name = "lblBackup";
+            this.lblBackup.Size = new System.Drawing.Size(143, 15);
+            this.lblBackup.TabIndex = 7;
+            this.lblBackup.Text = "- BACKUP DATABASE";
+            this.lblBackup.Click += new System.EventHandler(this.lblBackup_Click);
+            // 
+            // lblRestoreDB
+            // 
+            this.lblRestoreDB.AutoSize = true;
+            this.lblRestoreDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblRestoreDB.ForeColor = System.Drawing.Color.Maroon;
+            this.lblRestoreDB.Location = new System.Drawing.Point(85, 35);
+            this.lblRestoreDB.Name = "lblRestoreDB";
+            this.lblRestoreDB.Size = new System.Drawing.Size(154, 15);
+            this.lblRestoreDB.TabIndex = 8;
+            this.lblRestoreDB.Text = "- RESTORE DATABASE";
+            this.lblRestoreDB.Click += new System.EventHandler(this.lblRestoreDB_Click);
+            // 
+            // progressBarDataBase
+            // 
+            this.progressBarDataBase.Location = new System.Drawing.Point(89, 63);
+            this.progressBarDataBase.Name = "progressBarDataBase";
+            this.progressBarDataBase.Size = new System.Drawing.Size(150, 15);
+            this.progressBarDataBase.TabIndex = 6;
+            this.progressBarDataBase.Visible = false;
             // 
             // FrmMain
             // 
@@ -682,7 +721,7 @@
         private System.Windows.Forms.Label lblListSanPham;
         private System.Windows.Forms.Label linkAdd;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabelExit;
         private System.Windows.Forms.Label linkOrderList;
         private System.Windows.Forms.Label linkCreateOrder;
         private System.Windows.Forms.Label lblLinkKhachHang;
@@ -691,5 +730,8 @@
         private System.Windows.Forms.Label lblDonHangChuaGiao;
         private System.Windows.Forms.Label lblDonHangTrongNgay;
         private System.Windows.Forms.Label lblDonHangChuaThanhToan;
+        private System.Windows.Forms.Label lblRestoreDB;
+        private System.Windows.Forms.Label lblBackup;
+        private System.Windows.Forms.ProgressBar progressBarDataBase;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using OrderApp.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -78,6 +80,91 @@ namespace OrderApp.FormView
         {
             SearchOrder frmOrder = new SearchOrder(SearchOrder.CONS_DON_HANG_CHUA_THANH_TOAN);
             frmOrder.ShowDialog(this);
+        }
+
+        private async void lblBackup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var folderDialog = new FolderBrowserDialog())
+                {
+                    folderDialog.SelectedPath = @"c:\";
+                    if (folderDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        DateTime dateBackup = DateTime.Now;
+                        String fileBackup = folderDialog.SelectedPath + AppUtils.getAppConfig("Database") + dateBackup.ToString("_yyyyMMdd") + ".bak";
+                        await BackupAsync(fileBackup);
+
+                        MessageBox.Show("Backup success", "MESSAGE");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message, "ERROR");
+            }
+        }
+
+        private async void lblRestoreDB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                openFileDialog.InitialDirectory = ".";
+                openFileDialog.Filter = "backup files (*.bak)|*.bak|All files (*.*)|*.*";
+                openFileDialog.Title = "Chọn file backup";
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    String fileRestore = openFileDialog.FileName;
+                    await RestoreAsync(fileRestore);
+
+                    MessageBox.Show("Dữ liệu đã được phục hồi", "MESSAGE");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message, "ERROR");
+            }
+        }
+
+        private async Task BackupAsync(String toFile)
+        {
+            // UI-thread
+            this.progressBarDataBase.Visible = true;
+            this.progressBarDataBase.Style = ProgressBarStyle.Marquee;
+            
+
+            // wait until task will be finished
+            await Task.Run(() => {
+                AppUtils.backupDatabase(toFile);
+            });
+
+            // going back to UI-thread
+            this.progressBarDataBase.Visible = false;
+        }
+
+        private async Task RestoreAsync(String fileRestore)
+        {
+            // UI-thread
+            this.progressBarDataBase.Visible = true;
+            this.progressBarDataBase.Style = ProgressBarStyle.Marquee;
+
+
+            // wait until task will be finished
+            await Task.Run(() => {
+                AppUtils.restoreDatabase(fileRestore);
+            });
+
+            // going back to UI-thread
+            this.progressBarDataBase.Visible = false;
+        }
+
+        private void linkLabelExit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -2,6 +2,7 @@
 using OrderApp.Dto;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -212,6 +213,29 @@ namespace OrderApp.Common
                     MessageBox.Show("Đã hoàn thành export công nợ");
                 }
             }
+        }
+
+        public static void backupDatabase(String toFile)
+        {
+            SqlCommand cmd = new SqlCommand("BACKUP DATABASE @dataBase TO DISK = @toFile");
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@dataBase", AppUtils.getAppConfig("Database"));
+            cmd.Parameters.AddWithValue("@toFile", toFile);
+
+            cmd.ExecuteNonQuery();
+        }
+        public static void restoreDatabase(String fromFile)
+        {
+            SqlCommand cmd = new SqlCommand("USE MASTER RESTORE DATABASE @dataBase FROM DISK = @fromFile");
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@dataBase", AppUtils.getAppConfig("Database"));
+            cmd.Parameters.AddWithValue("@fromFile", fromFile);
+
+            cmd.ExecuteNonQuery();
         }
     }
 }
