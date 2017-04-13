@@ -2,6 +2,7 @@
 using OrderApp.Dto;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
@@ -23,6 +24,14 @@ namespace OrderApp.Common
             return System.Configuration.ConfigurationManager.AppSettings[key];
         }
 
+        public static void saveAppConfig(String key, Object value)
+        {
+            Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            configuration.AppSettings.Settings[key].Value = value.ToString();
+            configuration.Save();
+
+            ConfigurationManager.RefreshSection("appSettings");
+        }
 
         /// <summary>
         /// Get Current Time In Database
@@ -217,25 +226,63 @@ namespace OrderApp.Common
 
         public static void backupDatabase(String toFile)
         {
-            SqlCommand cmd = new SqlCommand("BACKUP DATABASE @dataBase TO DISK = @toFile");
+            Connection.closeConnection();
+            String dbName = AppUtils.getAppConfig("Database");
+            SqlCommand cmd = new SqlCommand("USE [master]; "
+                 //+ " ALTER DATABASE " + dbName + " SET SINGLE_USER WITH ROLLBACK IMMEDIATE ;"
+                 + " BACKUP DATABASE @dataBase TO DISK = @toFile");
 
+            SqlConnection sqlConnectMaster = Connection.getConnection();
             cmd.CommandType = CommandType.Text;
-            cmd.Connection = Connection.getConnection();
-            cmd.Parameters.AddWithValue("@dataBase", AppUtils.getAppConfig("Database"));
+            cmd.Connection = sqlConnectMaster;
+            cmd.Parameters.AddWithValue("@dataBase", dbName);
             cmd.Parameters.AddWithValue("@toFile", toFile);
 
-            cmd.ExecuteNonQuery();
+            try
+            {
+                //sqlConnectMaster.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                Connection.closeConnection();
+            }
         }
+
         public static void restoreDatabase(String fromFile)
         {
-            SqlCommand cmd = new SqlCommand("USE MASTER RESTORE DATABASE @dataBase FROM DISK = @fromFile");
-
+            Connection.closeConnection();
+            String dbName = AppUtils.getAppConfig("Database");
+            SqlCommand cmd = new SqlCommand(" USE [master]; "
+                + " ALTER DATABASE " + dbName + " SET SINGLE_USER WITH ROLLBACK IMMEDIATE ;"
+                + " RESTORE DATABASE @dataBase FROM DISK = @fromFile "
+                + " WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 10 "
+            );
+            SqlConnection sqlConnectMaster = Connection.getConnection();
             cmd.CommandType = CommandType.Text;
-            cmd.Connection = Connection.getConnection();
-            cmd.Parameters.AddWithValue("@dataBase", AppUtils.getAppConfig("Database"));
+            cmd.Connection = sqlConnectMaster;
+            cmd.Parameters.AddWithValue("@dataBase", dbName);
             cmd.Parameters.AddWithValue("@fromFile", fromFile);
 
-            cmd.ExecuteNonQuery();
+            try
+            {
+                //sqlConnectMaster.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                Connection.closeConnection();
+            }
         }
+
+       
     }
 }

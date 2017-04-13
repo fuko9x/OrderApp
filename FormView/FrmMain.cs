@@ -20,6 +20,11 @@ namespace OrderApp.FormView
             InitializeComponent();
         }
 
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void lblThemMoi_Click(object sender, EventArgs e)
         {
             AddCustomer frmCustomer = new AddCustomer();
@@ -101,6 +106,7 @@ namespace OrderApp.FormView
             }
             catch (Exception ex)
             {
+                showLoading(false);
                 MessageBox.Show("ERROR: " + ex.Message, "ERROR");
             }
         }
@@ -126,6 +132,7 @@ namespace OrderApp.FormView
             }
             catch (Exception ex)
             {
+                showLoading(false);
                 MessageBox.Show("ERROR: " + ex.Message, "ERROR");
             }
         }
@@ -133,9 +140,7 @@ namespace OrderApp.FormView
         private async Task BackupAsync(String toFile)
         {
             // UI-thread
-            this.progressBarDataBase.Visible = true;
-            this.progressBarDataBase.Style = ProgressBarStyle.Marquee;
-            
+            showLoading();
 
             // wait until task will be finished
             await Task.Run(() => {
@@ -143,7 +148,13 @@ namespace OrderApp.FormView
             });
 
             // going back to UI-thread
-            this.progressBarDataBase.Visible = false;
+            showLoading(false);
+        }
+
+        private void showLoading(Boolean isLoading = true)
+        {
+            this.progressBarDataBase.Style = ProgressBarStyle.Marquee;
+            this.progressBarDataBase.Visible = isLoading;
         }
 
         private async Task RestoreAsync(String fileRestore)
@@ -166,5 +177,7 @@ namespace OrderApp.FormView
         {
             this.Close();
         }
+
+
     }
 }

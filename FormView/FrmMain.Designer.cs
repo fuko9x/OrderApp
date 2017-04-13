@@ -56,6 +56,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.progressBarDataBase = new System.Windows.Forms.ProgressBar();
+            this.lblRestoreDB = new System.Windows.Forms.Label();
+            this.lblBackup = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -70,9 +73,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.lblBackup = new System.Windows.Forms.Label();
-            this.lblRestoreDB = new System.Windows.Forms.Label();
-            this.progressBarDataBase = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -441,6 +441,38 @@
             this.panel6.Size = new System.Drawing.Size(257, 92);
             this.panel6.TabIndex = 5;
             // 
+            // progressBarDataBase
+            // 
+            this.progressBarDataBase.Location = new System.Drawing.Point(89, 63);
+            this.progressBarDataBase.Name = "progressBarDataBase";
+            this.progressBarDataBase.Size = new System.Drawing.Size(150, 15);
+            this.progressBarDataBase.TabIndex = 6;
+            this.progressBarDataBase.Visible = false;
+            // 
+            // lblRestoreDB
+            // 
+            this.lblRestoreDB.AutoSize = true;
+            this.lblRestoreDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblRestoreDB.ForeColor = System.Drawing.Color.Maroon;
+            this.lblRestoreDB.Location = new System.Drawing.Point(85, 35);
+            this.lblRestoreDB.Name = "lblRestoreDB";
+            this.lblRestoreDB.Size = new System.Drawing.Size(154, 15);
+            this.lblRestoreDB.TabIndex = 8;
+            this.lblRestoreDB.Text = "- RESTORE DATABASE";
+            this.lblRestoreDB.Click += new System.EventHandler(this.lblRestoreDB_Click);
+            // 
+            // lblBackup
+            // 
+            this.lblBackup.AutoSize = true;
+            this.lblBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblBackup.ForeColor = System.Drawing.Color.Maroon;
+            this.lblBackup.Location = new System.Drawing.Point(85, 13);
+            this.lblBackup.Name = "lblBackup";
+            this.lblBackup.Size = new System.Drawing.Size(143, 15);
+            this.lblBackup.TabIndex = 7;
+            this.lblBackup.Text = "- BACKUP DATABASE";
+            this.lblBackup.Click += new System.EventHandler(this.lblBackup_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -613,38 +645,6 @@
             this.panel7.Size = new System.Drawing.Size(351, 51);
             this.panel7.TabIndex = 5;
             // 
-            // lblBackup
-            // 
-            this.lblBackup.AutoSize = true;
-            this.lblBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.lblBackup.ForeColor = System.Drawing.Color.Maroon;
-            this.lblBackup.Location = new System.Drawing.Point(85, 13);
-            this.lblBackup.Name = "lblBackup";
-            this.lblBackup.Size = new System.Drawing.Size(143, 15);
-            this.lblBackup.TabIndex = 7;
-            this.lblBackup.Text = "- BACKUP DATABASE";
-            this.lblBackup.Click += new System.EventHandler(this.lblBackup_Click);
-            // 
-            // lblRestoreDB
-            // 
-            this.lblRestoreDB.AutoSize = true;
-            this.lblRestoreDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.lblRestoreDB.ForeColor = System.Drawing.Color.Maroon;
-            this.lblRestoreDB.Location = new System.Drawing.Point(85, 35);
-            this.lblRestoreDB.Name = "lblRestoreDB";
-            this.lblRestoreDB.Size = new System.Drawing.Size(154, 15);
-            this.lblRestoreDB.TabIndex = 8;
-            this.lblRestoreDB.Text = "- RESTORE DATABASE";
-            this.lblRestoreDB.Click += new System.EventHandler(this.lblRestoreDB_Click);
-            // 
-            // progressBarDataBase
-            // 
-            this.progressBarDataBase.Location = new System.Drawing.Point(89, 63);
-            this.progressBarDataBase.Name = "progressBarDataBase";
-            this.progressBarDataBase.Size = new System.Drawing.Size(150, 15);
-            this.progressBarDataBase.TabIndex = 6;
-            this.progressBarDataBase.Visible = false;
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -660,6 +660,7 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PHẦN MỀM QUẢN LÝ IN ẤN";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

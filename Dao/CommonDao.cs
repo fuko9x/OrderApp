@@ -14,7 +14,7 @@ namespace OrderApp.Dao
         public DateTime getServerTime()
         {
             DateTime now = new DateTime();
-            String strQuery = "Select SYSDATETIME()";
+            String strQuery = "Select GETDATE()";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Connection.getConnection();
