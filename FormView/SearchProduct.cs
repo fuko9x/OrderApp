@@ -53,6 +53,7 @@ namespace OrderApp.FormView
                     ContextMenu contextMenu = new ContextMenu();
                     contextMenu.MenuItems.Add(new MenuItem("Clone", btnClone_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Chỉnh sửa", btnEdit_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Xóa", btnDelete_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Đóng"));
                     contextMenu.Show(dataGridViewSanPham, new Point(e.X, e.Y));
                 }
@@ -171,6 +172,30 @@ namespace OrderApp.FormView
             }
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridViewSanPham.SelectedRows.Count > 0)
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                    if (result == DialogResult.Yes)
+                    {
+                        int rowSelected = dataGridViewSanPham.SelectedRows[0].Index;
 
+                        SanPhamDao spDao = new SanPhamDao();
+                        String idSanPham = dataGridViewSanPham.Rows[rowSelected].Cells["ID"].Value.ToString();
+                        spDao.deleteSanPhamChiTiet(int.Parse(idSanPham));
+
+                        reloadData();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR!!!");
+            }
+
+        }
     }
 }

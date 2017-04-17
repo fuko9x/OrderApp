@@ -144,6 +144,17 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@addPageCost", dto.addPageCost);
             cmd.ExecuteNonQuery();
         }
-    
+
+        public void deleteSanPhamChiTiet(int idProductDetail)
+        {
+            String strQuery = "DELETE FROM SAN_PHAM_CHI_TIET WHERE id = @id";
+
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@id", idProductDetail);
+            cmd.ExecuteNonQuery();
+        }
+
     }
 }

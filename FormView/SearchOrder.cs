@@ -72,6 +72,7 @@ namespace OrderApp.FormView
 
                     ContextMenu contextMenu = new ContextMenu();
                     contextMenu.MenuItems.Add(new MenuItem("Tạo mới", btnCreate_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Xóa đơn hàng", btnDeleteOrder_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Xem chi tiết", btnDetail_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Xuất Excel", btnExport_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Đóng"));
@@ -194,6 +195,29 @@ namespace OrderApp.FormView
                 this.dataGridViewDonHang.DataSource = dao.searchListOrder(txtCustomerID.Text.Trim());
             }
             catch (Exception) { }
+        }
+
+        private void btnDeleteOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridViewDonHang.SelectedRows.Count > 0)
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                    if (result == DialogResult.Yes) {
+                        int rowSelected = this.dataGridViewDonHang.SelectedRows[0].Index;
+                        String selectedId = this.dataGridViewDonHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+
+                        OrderDao dao = new OrderDao();
+                        dao.deleteId(selectedId);
+                        reloadData();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR!!!");
+            }
         }
     }
 }

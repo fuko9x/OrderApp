@@ -48,11 +48,14 @@
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -238,6 +241,7 @@
             this.tableLayoutPanel5.Controls.Add(this.btnAdd, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnClose, 5, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnEdit, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(18, 471);
             this.tableLayoutPanel5.MinimumSize = new System.Drawing.Size(690, 0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -297,6 +301,34 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(421, 41);
+            this.panel1.TabIndex = 18;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDelete.Depth = 0;
+            this.btnDelete.Icon = null;
+            this.btnDelete.Location = new System.Drawing.Point(4, 3);
+            this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Primary = true;
+            this.btnDelete.Size = new System.Drawing.Size(122, 36);
+            this.btnDelete.TabIndex = 16;
+            this.btnDelete.Text = "Xóa Sản Phẩm";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // SearchProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,6 +346,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -339,5 +373,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NUM_PAGE_DEFAULT;
         private System.Windows.Forms.DataGridViewTextBoxColumn ADDITIONAL_PAGES_COST;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIPTION;
+        private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
     }
 }

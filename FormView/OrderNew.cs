@@ -55,6 +55,7 @@ namespace OrderApp.FormView
             cbbLoaiBia.Text = "";
 
             txtSoTo.Value = 10;
+            txtTenCDCR.Text = "";
             txtDonGia.Text = "";
             txtSoLuong.Value = txtSoLuong.Minimum;
             txtChietKhau.Value = txtChietKhau.Minimum;
@@ -98,9 +99,10 @@ namespace OrderApp.FormView
                 if (currentMouseOverRow >= 0)
                 {
                     this.dataGridViewSanPham.Rows[currentMouseOverRow].Selected = true;
+                    this.btnUpdate.Enabled = false;
 
                     ContextMenu contextMenu = new ContextMenu();
-                    //contextMenu.MenuItems.Add(new MenuItem("Edit", contextItemClick));
+                    contextMenu.MenuItems.Add(new MenuItem("Edit", contextItemClick));
                     contextMenu.MenuItems.Add(new MenuItem("Delete", contextItemClick));
                     contextMenu.MenuItems.Add(new MenuItem("Close"));
                     contextMenu.Show(dataGridViewSanPham, new Point(e.X, e.Y));
@@ -111,12 +113,33 @@ namespace OrderApp.FormView
         protected void contextItemClick(object sender, EventArgs e)
         {
             MenuItem item = (MenuItem)sender;
-            if (item.Text == "Delete")
+
+            if (item.Text == "Edit")
             {
                 int selectedRow = this.dataGridViewSanPham.SelectedRows[0].Index;
-                this.orderDTO.listSanPham.RemoveAt(selectedRow);
+                DonDatHangSPDto orderSP = this.orderDTO.listSanPham[selectedRow];
+                cbbLoaiSanPham.Text = orderSP.tenSanPham;
+                cbbSize.Text = orderSP.kichThuoc;
+                cbbLoaiBia.Text = orderSP.loaiBia;
+                cbbLoaiGiay.Text = orderSP.loaiGiay;
+                txtSoTo.Value = orderSP.soTrang;
+                txtDonGia.Text = orderSP.donGia.ToString();
+                txtSoLuong.Value = orderSP.soluong;
+                txtChietKhau.Value = (decimal)orderSP.chietKhau;
+                txtTenCDCR.Text = orderSP.cdcr;
 
-                updateUI();
+                this.btnUpdate.Enabled = true;
+            }
+            if (item.Text == "Delete")
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    int selectedRow = this.dataGridViewSanPham.SelectedRows[0].Index;
+                    this.orderDTO.listSanPham.RemoveAt(selectedRow);
+
+                    updateUI();
+                }
             }
         }
 
@@ -144,33 +167,43 @@ namespace OrderApp.FormView
             dataGridViewSanPham.ColumnCount = 10;
             dataGridViewSanPham.Columns[0].Name = "Tên Sản Phẩm";
             dataGridViewSanPham.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewSanPham.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             dataGridViewSanPham.Columns[1].Name = "Kích thước";
             dataGridViewSanPham.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewSanPham.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             dataGridViewSanPham.Columns[2].Name = "Loại Giấy";
             dataGridViewSanPham.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewSanPham.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             dataGridViewSanPham.Columns[3].Name = "Loại Bìa";
             dataGridViewSanPham.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewSanPham.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
 
-            dataGridViewSanPham.Columns[4].Name = "Tên CD && CR";
+            dataGridViewSanPham.Columns[4].Name = "Tên CD & CR";
             dataGridViewSanPham.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewSanPham.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             dataGridViewSanPham.Columns[5].Name = "Số Trang";
             dataGridViewSanPham.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewSanPham.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             dataGridViewSanPham.Columns[6].Name = "Đơn Giá";
             dataGridViewSanPham.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewSanPham.Columns[6].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             dataGridViewSanPham.Columns[7].Name = "Số Lượng";
             dataGridViewSanPham.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewSanPham.Columns[7].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             dataGridViewSanPham.Columns[8].Name = "Chiết Khấu";
             dataGridViewSanPham.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewSanPham.Columns[8].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             dataGridViewSanPham.Columns[9].Name = "Thành Tiền";
             dataGridViewSanPham.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewSanPham.Columns[9].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             // update gridview
             this.dataGridViewSanPham.Rows.Clear();
@@ -375,9 +408,9 @@ namespace OrderApp.FormView
                     setSetForm();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show(ex.Message, "ERROR!!!");
             }
         }
 
@@ -515,7 +548,7 @@ namespace OrderApp.FormView
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Error!!!");
             }
         }
 
@@ -531,6 +564,41 @@ namespace OrderApp.FormView
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (checkValidDatHang())
+                {
+                    int selectedRow = this.dataGridViewSanPham.SelectedRows[0].Index;
+                    DonDatHangSPDto orderSP = this.orderDTO.listSanPham[selectedRow];
+                    orderSP.idOrder = orderDTO.id;
+                    orderSP.tenSanPham = cbbLoaiSanPham.Text;
+                    orderSP.kichThuoc = cbbSize.Text;
+                    orderSP.loaiBia = cbbLoaiBia.Text;
+                    orderSP.loaiGiay = cbbLoaiGiay.Text;
+                    orderSP.soTrang = (int)txtSoTo.Value;
+                    orderSP.donGia = double.Parse(txtDonGia.Text);
+                    orderSP.soluong = (int)txtSoLuong.Value;
+                    orderSP.chietKhau = (int)txtChietKhau.Value;
+                    orderSP.thanhTien = orderSP.donGia * orderSP.soluong;
+                    orderSP.thanhTien = orderSP.thanhTien - (orderSP.chietKhau / 100 * orderSP.thanhTien);
+                    orderSP.cdcr = txtTenCDCR.Text;
+                    //orderDTO.listSanPham.Add(orderSP);
+
+                    updateUI();
+
+                    setSetForm();
+
+                    this.btnUpdate.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR!!!");
+            }
         }
     }
 }

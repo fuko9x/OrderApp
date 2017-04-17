@@ -51,11 +51,14 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDeleteOrder = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDonHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -154,6 +157,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnExport, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnDetail, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCreate, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 480);
             this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(690, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -355,6 +359,32 @@
             this.btnSearch.TabStop = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnDeleteOrder);
+            this.panel1.Location = new System.Drawing.Point(130, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(310, 36);
+            this.panel1.TabIndex = 20;
+            // 
+            // btnDeleteOrder
+            // 
+            this.btnDeleteOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteOrder.AutoSize = true;
+            this.btnDeleteOrder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDeleteOrder.CausesValidation = false;
+            this.btnDeleteOrder.Depth = 0;
+            this.btnDeleteOrder.Icon = null;
+            this.btnDeleteOrder.Location = new System.Drawing.Point(0, 0);
+            this.btnDeleteOrder.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDeleteOrder.Name = "btnDeleteOrder";
+            this.btnDeleteOrder.Primary = true;
+            this.btnDeleteOrder.Size = new System.Drawing.Size(122, 36);
+            this.btnDeleteOrder.TabIndex = 19;
+            this.btnDeleteOrder.Text = "Xóa Đơn Hàng";
+            this.btnDeleteOrder.UseVisualStyleBackColor = true;
+            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
+            // 
             // SearchOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,6 +405,8 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDonHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,5 +436,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.PictureBox btnSearch;
+        private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnDeleteOrder;
     }
 }

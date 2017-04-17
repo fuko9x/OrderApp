@@ -46,6 +46,7 @@
             this.btnCancel = new MaterialSkin.Controls.MaterialRaisedButton();
             this.saveBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.txtChietKhau = new System.Windows.Forms.NumericUpDown();
@@ -318,6 +319,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.txtChietKhau);
@@ -351,6 +353,17 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chọn sản phẩm";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.Location = new System.Drawing.Point(300, 108);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(130, 28);
+            this.btnUpdate.TabIndex = 46;
+            this.btnUpdate.Text = "CẬP NHẬT";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label21
             // 
@@ -612,6 +625,7 @@
             this.dataGridViewSanPham.Location = new System.Drawing.Point(7, 148);
             this.dataGridViewSanPham.MultiSelect = false;
             this.dataGridViewSanPham.Name = "dataGridViewSanPham";
+            this.dataGridViewSanPham.ReadOnly = true;
             this.dataGridViewSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewSanPham.Size = new System.Drawing.Size(1038, 217);
             this.dataGridViewSanPham.TabIndex = 0;
@@ -896,5 +910,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton saveBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

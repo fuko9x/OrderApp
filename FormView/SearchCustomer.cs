@@ -156,14 +156,14 @@ namespace OrderApp.FormView
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (listKhachHang.SelectedRows.Count == 1)
+            try
             {
-                int rowSelected = listKhachHang.SelectedRows[0].Index;
-                String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
-                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa?", "Confirmation", MessageBoxButtons.YesNoCancel);
-                if (result == DialogResult.Yes)
+                if (listKhachHang.SelectedRows.Count == 1)
                 {
-                    try
+                    int rowSelected = listKhachHang.SelectedRows[0].Index;
+                    String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+                    DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                    if (result == DialogResult.Yes)
                     {
                         FormSearchCustomerObj obj = new FormSearchCustomerObj();
                         obj.idKhachHang = selectedId;
@@ -176,11 +176,11 @@ namespace OrderApp.FormView
                         this.listKhachHang.DataSource = outputObj.listKhachHangs;
                         MessageBox.Show("SUCCESS: " + logicRS.msg);
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("ERROR: " + ex.Message);
-                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
             }
         }
 
