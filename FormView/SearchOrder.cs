@@ -187,6 +187,27 @@ namespace OrderApp.FormView
             reloadData();
         }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridViewDonHang.SelectedRows.Count > 0)
+                {
+                    int rowSelected = this.dataGridViewDonHang.SelectedRows[0].Index;
+                    String orderID = this.dataGridViewDonHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+                    OrderNew frmNew = new OrderNew();
+                    frmNew.editOrder(orderID);
+                    frmNew.ShowDialog(this);
+                        
+                    reloadData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR!!!");
+            }
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
@@ -203,7 +224,7 @@ namespace OrderApp.FormView
             {
                 if (dataGridViewDonHang.SelectedRows.Count > 0)
                 {
-                    DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                    DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa?", "Confirmation", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes) {
                         int rowSelected = this.dataGridViewDonHang.SelectedRows[0].Index;
                         String selectedId = this.dataGridViewDonHang.Rows[rowSelected].Cells["ID"].Value.ToString();
@@ -219,5 +240,7 @@ namespace OrderApp.FormView
                 MessageBox.Show(ex.Message, "ERROR!!!");
             }
         }
+
+
     }
 }

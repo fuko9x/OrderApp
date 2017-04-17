@@ -19,6 +19,10 @@ namespace OrderApp.FormView
 {
     public partial class OrderNew : MaterialForm
     {
+
+        public static readonly int CONS_MODE_ADD = 0;
+        public static readonly int CONS_MODE_EDIT = 1;
+
         private Boolean initData = false;
         //private creatOrder
         private OrderDto orderDTO = new OrderDto();
@@ -26,18 +30,22 @@ namespace OrderApp.FormView
 
         private bool isSaved = false;
 
+        private int currentMode = CONS_MODE_ADD;
+
         public OrderNew()
         {
             InitializeComponent();
+        }
 
-            txtTenKhachHang.Click += TxtTenKhachHang_Click;
-
-            initDataAction();
+        public void editOrder(String idOrder)
+        {
+            this.orderDTO = OrderDao.getOderByID(idOrder);
+            this.currentMode = CONS_MODE_EDIT;
         }
 
         private void Form_Load(object sender, EventArgs e)
         {
-            this.initData = true;
+            initDataAction();
             cbbLoaiSanPham.Text = "";
             this.initData = true;
         }
@@ -66,9 +74,30 @@ namespace OrderApp.FormView
         {
             try
             {
-                orderDTO = new OrderDto();
-                orderDTO.id = OrderLogic.insertNewId();
-                this.Text = "TẠO ĐƠN HÀNG #: " + orderDTO.id;
+                if(currentMode == CONS_MODE_ADD)
+                {
+                    orderDTO = new OrderDto();
+                    orderDTO.id = OrderLogic.insertNewId();
+                    this.Text = "TẠO ĐƠN HÀNG #: " + orderDTO.id;
+                }
+                if (currentMode == CONS_MODE_EDIT)
+                {
+                    this.Text = "CẬP NHẬT ĐƠN HÀNG #: " + orderDTO.id;
+
+                    //this.orderDTO.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
+                    this.txtTenKhachHang.Text = this.orderDTO.tenKhachHang;
+                    this.txtDiaDiemGiaoHang.Text = this.orderDTO.diaDiemGiaoHang;
+                    this.txtLienHe.Text = this.orderDTO.lienHe;
+                    this.txtSDT.Text = this.orderDTO.dienThoai;
+
+                    this.dtNgayDat.Value = this.orderDTO.ngayDat;
+                    this.dtNgayGiao.Value = this.orderDTO.ngayGiao;
+                    this.txtGhiChu.Text = this.orderDTO.notes;
+
+                    this.orderDTO.listSanPham = OrderDao.getOderDetailByOrderID(orderDTO.id);
+
+                }
+                
                 Invalidate();
 
                 formatControl();
@@ -87,8 +116,50 @@ namespace OrderApp.FormView
             this.dataGridViewSanPham = (DataGridView)FormatLayoutUtil.formatDataGridview(this.dataGridViewSanPham);
             this.dataGridViewSanPham.MouseClick += DataGridViewSanPham_MouseClick;
 
+            dataGridViewSanPham.ColumnCount = 10;
+            dataGridViewSanPham.Columns[0].Name = "Tên Sản Phẩm";
+            dataGridViewSanPham.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewSanPham.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridViewSanPham.Columns[1].Name = "Kích thước";
+            dataGridViewSanPham.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewSanPham.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridViewSanPham.Columns[2].Name = "Loại Giấy";
+            dataGridViewSanPham.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewSanPham.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridViewSanPham.Columns[3].Name = "Loại Bìa";
+            dataGridViewSanPham.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewSanPham.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridViewSanPham.Columns[4].Name = "Tên CD & CR";
+            dataGridViewSanPham.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewSanPham.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridViewSanPham.Columns[5].Name = "Số Trang";
+            dataGridViewSanPham.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewSanPham.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridViewSanPham.Columns[6].Name = "Đơn Giá";
+            dataGridViewSanPham.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewSanPham.Columns[6].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridViewSanPham.Columns[7].Name = "Số Lượng";
+            dataGridViewSanPham.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewSanPham.Columns[7].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridViewSanPham.Columns[8].Name = "Chiết Khấu";
+            dataGridViewSanPham.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewSanPham.Columns[8].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dataGridViewSanPham.Columns[9].Name = "Thành Tiền";
+            dataGridViewSanPham.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewSanPham.Columns[9].SortMode = DataGridViewColumnSortMode.NotSortable;
+
 
             this.txtDonGia.KeyPress += FormatLayoutUtil.AcceptNumber_KeyPress;
+            txtTenKhachHang.Click += TxtTenKhachHang_Click;
         }
 
         private void DataGridViewSanPham_MouseClick(object sender, MouseEventArgs e)
@@ -164,47 +235,6 @@ namespace OrderApp.FormView
             this.dtNgayDat.Value = orderDTO.ngayDat;
             this.dtNgayGiao.Value = orderDTO.ngayGiao;
 
-            dataGridViewSanPham.ColumnCount = 10;
-            dataGridViewSanPham.Columns[0].Name = "Tên Sản Phẩm";
-            dataGridViewSanPham.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewSanPham.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            dataGridViewSanPham.Columns[1].Name = "Kích thước";
-            dataGridViewSanPham.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewSanPham.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            dataGridViewSanPham.Columns[2].Name = "Loại Giấy";
-            dataGridViewSanPham.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewSanPham.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            dataGridViewSanPham.Columns[3].Name = "Loại Bìa";
-            dataGridViewSanPham.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewSanPham.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            dataGridViewSanPham.Columns[4].Name = "Tên CD & CR";
-            dataGridViewSanPham.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewSanPham.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            dataGridViewSanPham.Columns[5].Name = "Số Trang";
-            dataGridViewSanPham.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewSanPham.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            dataGridViewSanPham.Columns[6].Name = "Đơn Giá";
-            dataGridViewSanPham.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewSanPham.Columns[6].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            dataGridViewSanPham.Columns[7].Name = "Số Lượng";
-            dataGridViewSanPham.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewSanPham.Columns[7].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            dataGridViewSanPham.Columns[8].Name = "Chiết Khấu";
-            dataGridViewSanPham.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewSanPham.Columns[8].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            dataGridViewSanPham.Columns[9].Name = "Thành Tiền";
-            dataGridViewSanPham.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewSanPham.Columns[9].SortMode = DataGridViewColumnSortMode.NotSortable;
-
             // update gridview
             this.dataGridViewSanPham.Rows.Clear();
             double tongTien = 0;
@@ -234,6 +264,8 @@ namespace OrderApp.FormView
             lblCong.Text = orderDTO.tongCong.ToString(formatMoney);
             lblThuevat.Text = orderDTO.vat.ToString(formatMoney); //10%
             lblTongTien.Text = orderDTO.tongTien.ToString(formatMoney);
+
+            this.btnUpdate.Enabled = false;
         }
 
         private void comboBoxLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)
@@ -293,22 +325,27 @@ namespace OrderApp.FormView
                     return;
                 }
 
-                DialogResult result = MessageBox.Show(
-                    "Bạn có chắc hủy đơn hàng này hay không?"
-                    , "Confirmation"
-                    , MessageBoxButtons.YesNo
-                );
-                if (result != DialogResult.Yes)
+                if (this.currentMode == CONS_MODE_ADD)
                 {
-                    e.Cancel = true;
-                }
-                else
-                {
-                    //Delete Order
-                    OrderDao orderDao = new OrderDao();
-                    orderDao.deleteId(orderDTO.id);
 
-                    this.DialogResult = DialogResult.Cancel;
+                    DialogResult result = MessageBox.Show(
+                        "Bạn có chắc hủy đơn hàng này hay không?"
+                        , "Confirmation"
+                        , MessageBoxButtons.YesNo
+                    );
+                    if (result != DialogResult.Yes)
+                    {
+                        e.Cancel = true;
+                    }
+                    else
+                    {
+                        //Delete Order
+                        OrderDao orderDao = new OrderDao();
+                        orderDao.deleteId(orderDTO.id);
+
+                        this.DialogResult = DialogResult.Cancel;
+                    }
+
                 }
             }
             catch (Exception ex){}
@@ -531,19 +568,26 @@ namespace OrderApp.FormView
                     return;
                 }
 
-                orderDTO.lienHe = txtLienHe.Text;
-                orderDTO.dienThoai = txtSDT.Text;
-                orderDTO.diaDiemGiaoHang = txtDiaDiemGiaoHang.Text;
+                orderDTO.lienHe = txtLienHe.Text.Trim();
+                orderDTO.dienThoai = txtSDT.Text.Trim();
+                orderDTO.diaDiemGiaoHang = txtDiaDiemGiaoHang.Text.Trim();
                 orderDTO.ngayDat = dtNgayDat.Value;
                 orderDTO.ngayGiao = dtNgayGiao.Value;
-                orderDTO.thanhToan = false;
-                orderDTO.notes = txtGhiChu.Text;
+                //orderDTO.thanhToan = false;
+                orderDTO.notes = txtGhiChu.Text.Trim();
 
                 OrderDao orderDao = new OrderDao();
-                orderDao.creatOrder(orderDTO);
-
-                isSaved = true;
-                this.DialogResult = DialogResult.OK;
+                if (this.currentMode == CONS_MODE_ADD)
+                {
+                    orderDao.creatOrder(orderDTO);
+                    isSaved = true;
+                    this.DialogResult = DialogResult.OK;
+                }
+                else if (this.currentMode == CONS_MODE_EDIT)
+                {
+                    orderDao.updateOrder(orderDTO);
+                }
+                
                 this.Close();
             }
             catch (Exception ex)

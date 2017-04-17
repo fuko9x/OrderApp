@@ -17,9 +17,9 @@ namespace OrderApp.Logic
             DateTime systemTime = AppUtils.getServerTime();
 
             OrderDao orderDao = new OrderDao();
-            String orderPreffix = "SX" + (systemTime.Month < 10 ? "0" + systemTime.Month.ToString() : systemTime.Month.ToString()) + systemTime.Year.ToString().Substring(2, 2);
+            String orderPreffix = "SX" + systemTime.ToString("MM") + systemTime.ToString("yy");
 
-            int numberOrder = orderDao.countOrderById(orderPreffix + "%");
+            int numberOrder = OrderDao.getMaxIdOrder(systemTime);
             String newOrderId = orderPreffix + (numberOrder + 1).ToString().PadLeft(4, '0');
             orderDao.insertId(newOrderId);
             return newOrderId;

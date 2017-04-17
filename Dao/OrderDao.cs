@@ -25,6 +25,28 @@ namespace OrderApp.Dao
             return numOrderInMonth;
         }
 
+        public static int getMaxIdOrder(DateTime systemTime)
+        {
+            String strQuery = "SELECT MAX(RIGHT(ID, 4))"
+                + " FROM DON_DAT_HANG "
+                + " WHERE SUBSTRING(ID, 3, 2) = @mm "
+                + " AND SUBSTRING(ID, 5, 2) = @yy ";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@mm", systemTime.ToString("MM"));
+            cmd.Parameters.AddWithValue("@yy", systemTime.ToString("yy"));
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            int numOrderInMonth = 0;
+            if (!reader.IsDBNull(0))
+            {
+                numOrderInMonth = int.Parse( reader.GetString(0));
+            }
+            reader.Close();
+            return numOrderInMonth;
+        }
+
         public DataTable getListOrder(DateTime dateFrom, DateTime dateTo, int searchType,  Boolean status)
         {
             DataTable dt = new DataTable();
@@ -111,10 +133,12 @@ namespace OrderApp.Dao
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
 
+            order.id = id;
             order.idKhachHang       = reader["ID_KHACH_HANG"] != DBNull.Value ? (String)reader["ID_KHACH_HANG"] : String.Empty;
             order.tenKhachHang      = reader["TEN_KHACH_HANG"] != DBNull.Value ? (String)reader["TEN_KHACH_HANG"] : String.Empty;
             order.ngayGiao          = reader["NGAY_GIAO"] != DBNull.Value ? (DateTime) reader["NGAY_GIAO"] : DateTime.Now;
             order.ngayDat           = reader["NGAY_DAT"] != DBNull.Value ? (DateTime) reader["NGAY_DAT"] : DateTime.Now;
+            order.lienHe            = reader["LIEN_HE"] != DBNull.Value ? (String)reader["LIEN_HE"].ToString() : String.Empty;
             order.dienThoai         = reader["SDT"] != DBNull.Value ? (String)reader["SDT"].ToString() : String.Empty;
             order.diaDiemGiaoHang   = reader["DIA_DIEM_GIAO_HANG"] != DBNull.Value ? (String)reader["DIA_DIEM_GIAO_HANG"] : String.Empty;
             order.tongCong          = reader["TONG_CONG"] != DBNull.Value ? (double)(Decimal)reader["TONG_CONG"] : 0;
@@ -213,13 +237,15 @@ namespace OrderApp.Dao
             cmd.ExecuteNonQuery();
         }
 
-        public void deleteId(String id)
+        public void deleteId(String idDonHang)
         {
-            String strQuery = "DELETE FROM DON_DAT_HANG WHERE ID = @id";
-            SqlCommand cmd = new SqlCommand(strQuery);
+            String strQuery = " DELETE DON_DAT_HANG_SP WHERE ID_DON_DAT_HANG = @orderID ;"
+                + " DELETE DON_DAT_HANG WHERE ID = @id";
+            SqlCommand cmd = new SqlCommand(strQuery); 
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Connection.getConnection();
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@orderID", idDonHang);
+            cmd.Parameters.AddWithValue("@id", idDonHang);
             cmd.ExecuteNonQuery();
         }
 
@@ -334,6 +360,134 @@ namespace OrderApp.Dao
                 sqlTransaction.Commit();
             }
             catch (Exception ex) {
+                sqlTransaction.Rollback();
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void updateOrder(OrderDto orderDto)
+        {
+            SqlConnection sqlConnection = Connection.getConnection();
+            SqlTransaction sqlTransaction = sqlConnection.BeginTransaction();
+            try
+            {
+                String strQuery = ""
+                    + " UPDATE DON_DAT_HANG SET"
+                    + " ID_KHACH_HANG = @idKhachHang"
+                    + ", NGAY_DAT = @ngayDat"
+                    + ", NGAY_GIAO = @ngayGiao"
+                    + ", TONG_CONG = @tongCong"
+                    + ", VAT = @vat"
+                    + ", TONG_TIEN = @tongTien"
+                    + ", PHI_VAN_CHUYEN = @phiVanChuyen"
+                    + ", NOTES = @notes"
+                    + ", LIEN_HE = @lienHe"
+                    + ", SDT = @sdt"
+                    + ", DIA_DIEM_GIAO_HANG = @diaDiemGiaoHang"
+                    + " WHERE id = @id";
+                SqlCommand cmd = new SqlCommand(strQuery);
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = sqlConnection;
+                cmd.Transaction = sqlTransaction;
+                cmd.Parameters.AddWithValue("@id", orderDto.id);
+                cmd.Parameters.AddWithValue("@idKhachHang", orderDto.idKhachHang);
+                cmd.Parameters.AddWithValue("@ngayDat", orderDto.ngayDat);
+                cmd.Parameters.AddWithValue("@ngayGiao", orderDto.ngayGiao);
+                cmd.Parameters.AddWithValue("@tongCong", orderDto.tongCong);
+                cmd.Parameters.AddWithValue("@vat", orderDto.vat);
+                cmd.Parameters.AddWithValue("@tongTien", orderDto.tongTien);
+                cmd.Parameters.AddWithValue("@phiVanChuyen", orderDto.phiVanChuyen);
+                cmd.Parameters.AddWithValue("@notes", orderDto.notes);
+                cmd.Parameters.AddWithValue("@lienHe", orderDto.lienHe);
+                cmd.Parameters.AddWithValue("@sdt", orderDto.dienThoai);
+                cmd.Parameters.AddWithValue("@diaDiemGiaoHang", orderDto.diaDiemGiaoHang);
+                cmd.ExecuteNonQuery();
+
+                // delete Detail
+                cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = sqlConnection;
+                cmd.Transaction = sqlTransaction;
+
+                String sqlDelete = "DELETE DON_DAT_HANG_SP WHERE ID_DON_DAT_HANG = @idDonHang";
+                cmd.CommandText = sqlDelete;
+                cmd.Parameters.AddWithValue("@idDonHang", orderDto.id);
+                cmd.ExecuteNonQuery();
+
+                // save Detail
+                cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = sqlConnection;
+                cmd.Transaction = sqlTransaction;
+
+                String sql = "INSERT INTO DON_DAT_HANG_SP ("
+                    + " ID_DON_DAT_HANG"
+                    + ", TEN_SAN_PHAM"
+                    + ", SO_LUONG"
+                    + ", KICH_THUOC"
+                    + ", DON_VI"
+                    + ", SO_TRANG"
+                    + ", LOAI_BIA"
+                    + ", LOAI_GIAY"
+                    + ", DON_GIA"
+                    + ", CHIET_KHAU"
+                    + ", THANH_TIEN"
+                    + ", CD_CR"
+                    + ", CREATE_BY"
+                    + ", CREATE_TIME"
+                    + " )"
+                    + " VALUES ";
+                for (int i = 0; i < orderDto.listSanPham.Count; i++)
+                {
+                    sql += "("
+                    + " @idDonDatHang" + i
+                    + " , @tenSanPham" + i
+                    + " , @soLuong" + i
+                    + " , @kichThuoc" + i
+                    + " , @donVi" + i
+                    + " , @soTrang" + i
+                    + " , @loaiBia" + i
+                    + " , @loaiGiay" + i
+                    + " , @donGia" + i
+                    + " , @chietKhau" + i
+                    + " , @thanhTien" + i
+                    + " , @cdcr" + i
+                    + " , @createBy" + i
+                    + " , @createTime" + i
+                    + " ) ";
+                    if (i < orderDto.listSanPham.Count - 1)
+                    {
+                        sql += ", ";
+                    }
+
+                    DonDatHangSPDto dto = orderDto.listSanPham[i];
+
+                    cmd.Parameters.AddWithValue("@idDonDatHang" + i, dto.idOrder);
+                    cmd.Parameters.AddWithValue("@tenSanPham" + i, dto.tenSanPham);
+                    cmd.Parameters.AddWithValue("@soLuong" + i, dto.soluong);
+                    cmd.Parameters.AddWithValue("@kichThuoc" + i, dto.kichThuoc);
+                    cmd.Parameters.AddWithValue("@donVi" + i, dto.donVi);
+                    cmd.Parameters.AddWithValue("@soTrang" + i, dto.soTrang);
+                    cmd.Parameters.AddWithValue("@loaiBia" + i, dto.loaiBia);
+                    cmd.Parameters.AddWithValue("@loaiGiay" + i, dto.loaiGiay);
+                    cmd.Parameters.AddWithValue("@donGia" + i, dto.donGia);
+                    cmd.Parameters.AddWithValue("@chietKhau" + i, dto.chietKhau);
+                    cmd.Parameters.AddWithValue("@thanhTien" + i, dto.thanhTien);
+                    cmd.Parameters.AddWithValue("@cdcr" + i, dto.cdcr);
+                    cmd.Parameters.AddWithValue("@createBy" + i, dto.createBy);
+                    cmd.Parameters.AddWithValue("@createTime" + i, dto.createTime);
+                }
+                cmd.CommandText = sql;
+                int numRowExcute = cmd.ExecuteNonQuery();
+                if (numRowExcute != orderDto.listSanPham.Count)
+                {
+                    throw new Exception("update ĐƠN ĐẶT HÀNG fail!");
+                }
+
+                sqlTransaction.Commit();
+            }
+            catch (Exception ex)
+            {
                 sqlTransaction.Rollback();
                 throw new Exception(ex.Message);
             }

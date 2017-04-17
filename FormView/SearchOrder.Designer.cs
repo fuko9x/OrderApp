@@ -39,6 +39,8 @@
             this.btnExport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDetail = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnCreate = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDeleteOrder = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewDonHang = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,14 +53,13 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDeleteOrder = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDonHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -237,6 +238,33 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click_1);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.btnDeleteOrder);
+            this.panel1.Location = new System.Drawing.Point(130, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(310, 36);
+            this.panel1.TabIndex = 20;
+            // 
+            // btnDeleteOrder
+            // 
+            this.btnDeleteOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteOrder.AutoSize = true;
+            this.btnDeleteOrder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDeleteOrder.CausesValidation = false;
+            this.btnDeleteOrder.Depth = 0;
+            this.btnDeleteOrder.Icon = null;
+            this.btnDeleteOrder.Location = new System.Drawing.Point(106, 0);
+            this.btnDeleteOrder.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDeleteOrder.Name = "btnDeleteOrder";
+            this.btnDeleteOrder.Primary = true;
+            this.btnDeleteOrder.Size = new System.Drawing.Size(122, 36);
+            this.btnDeleteOrder.TabIndex = 19;
+            this.btnDeleteOrder.Text = "Xóa Đơn Hàng";
+            this.btnDeleteOrder.UseVisualStyleBackColor = true;
+            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -359,31 +387,23 @@
             this.btnSearch.TabStop = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // panel1
+            // btnEdit
             // 
-            this.panel1.Controls.Add(this.btnDeleteOrder);
-            this.panel1.Location = new System.Drawing.Point(130, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 36);
-            this.panel1.TabIndex = 20;
-            // 
-            // btnDeleteOrder
-            // 
-            this.btnDeleteOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteOrder.AutoSize = true;
-            this.btnDeleteOrder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnDeleteOrder.CausesValidation = false;
-            this.btnDeleteOrder.Depth = 0;
-            this.btnDeleteOrder.Icon = null;
-            this.btnDeleteOrder.Location = new System.Drawing.Point(0, 0);
-            this.btnDeleteOrder.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnDeleteOrder.Name = "btnDeleteOrder";
-            this.btnDeleteOrder.Primary = true;
-            this.btnDeleteOrder.Size = new System.Drawing.Size(122, 36);
-            this.btnDeleteOrder.TabIndex = 19;
-            this.btnDeleteOrder.Text = "Xóa Đơn Hàng";
-            this.btnDeleteOrder.UseVisualStyleBackColor = true;
-            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.AutoSize = true;
+            this.btnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEdit.CausesValidation = false;
+            this.btnEdit.Depth = 0;
+            this.btnEdit.Icon = null;
+            this.btnEdit.Location = new System.Drawing.Point(3, 0);
+            this.btnEdit.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Primary = true;
+            this.btnEdit.Size = new System.Drawing.Size(94, 36);
+            this.btnEdit.TabIndex = 20;
+            this.btnEdit.Text = "CHỈNH SỬA";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // SearchOrder
             // 
@@ -402,11 +422,11 @@
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDonHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,5 +458,6 @@
         private System.Windows.Forms.PictureBox btnSearch;
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialRaisedButton btnDeleteOrder;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEdit;
     }
 }
