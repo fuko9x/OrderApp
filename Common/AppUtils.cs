@@ -7,6 +7,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -283,6 +285,30 @@ namespace OrderApp.Common
             }
         }
 
-       
+        public static Boolean checkMasterServer()
+        {
+            String server = AppUtils.getAppConfig("Server");
+            String serverName = server.Split('\\')[0].Trim().ToLower();
+            if (serverName == "." || serverName == "localhost" || serverName == "127.0.0.1" || serverName == getLocalIPAddress())
+            {
+                return true;
+            }
+            return false;
+        }
+
+
+        public static string getLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            return "";
+        }
+
     }
 }

@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -91,16 +93,20 @@ namespace OrderApp.FormView
         {
             try
             {
-                using (var folderDialog = new FolderBrowserDialog())
+                String ip = AppUtils.getLocalIPAddress();
+                if (AppUtils.checkMasterServer())
                 {
-                    folderDialog.SelectedPath = @"c:\";
-                    if (folderDialog.ShowDialog() == DialogResult.OK)
+                    using (var folderDialog = new FolderBrowserDialog())
                     {
-                        DateTime dateBackup = DateTime.Now;
-                        String fileBackup = folderDialog.SelectedPath + AppUtils.getAppConfig("Database") + dateBackup.ToString("_yyyyMMdd") + ".bak";
-                        await BackupAsync(fileBackup);
+                        folderDialog.SelectedPath = @"c:\";
+                        if (folderDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            DateTime dateBackup = DateTime.Now;
+                            String fileBackup = folderDialog.SelectedPath + AppUtils.getAppConfig("Database") + dateBackup.ToString("_yyyyMMdd") + ".bak";
+                            await BackupAsync(fileBackup);
 
-                        MessageBox.Show("Backup success", "MESSAGE");
+                            MessageBox.Show("Backup success", "MESSAGE");
+                        }
                     }
                 }
             }
@@ -115,6 +121,10 @@ namespace OrderApp.FormView
         {
             try
             {
+                if (!AppUtils.checkMasterServer())
+                {
+                    return;
+                }
                 OpenFileDialog openFileDialog = new OpenFileDialog();
 
                 openFileDialog.InitialDirectory = ".";
