@@ -94,6 +94,8 @@ namespace OrderApp.FormView
                     this.dtNgayGiao.Value = this.orderDTO.ngayGiao;
                     this.txtGhiChu.Text = this.orderDTO.notes;
 
+                    this.numberVAT.Value = (decimal)(orderDTO.vat / orderDTO.tongCong)*100;
+
                     this.orderDTO.listSanPham = OrderDao.getOderDetailByOrderID(orderDTO.id);
 
                 }
@@ -164,14 +166,14 @@ namespace OrderApp.FormView
 
         private void DataGridViewSanPham_MouseClick(object sender, MouseEventArgs e)
         {
+            this.btnUpdate.Enabled = false;
             if (e.Button == MouseButtons.Right)
             {
                 int currentMouseOverRow = dataGridViewSanPham.HitTest(e.X, e.Y).RowIndex;
                 if (currentMouseOverRow >= 0)
                 {
                     this.dataGridViewSanPham.Rows[currentMouseOverRow].Selected = true;
-                    this.btnUpdate.Enabled = false;
-
+                    
                     ContextMenu contextMenu = new ContextMenu();
                     contextMenu.MenuItems.Add(new MenuItem("Edit", contextItemClick));
                     contextMenu.MenuItems.Add(new MenuItem("Delete", contextItemClick));
@@ -257,7 +259,7 @@ namespace OrderApp.FormView
             }
 
             orderDTO.tongCong = tongTien;
-            orderDTO.vat = (tongTien * 0.1);
+            orderDTO.vat = (tongTien * ((double)numberVAT.Value/100));
             orderDTO.tongTien = orderDTO.tongCong + orderDTO.vat;
 
 
@@ -643,6 +645,31 @@ namespace OrderApp.FormView
             {
                 MessageBox.Show(ex.Message, "ERROR!!!");
             }
+        }
+
+        private void numberVAT_ValueChanged(object sender, EventArgs e)
+        {
+            updateUI();
+        }
+
+        private void numberVAT_KeyUp(object sender, KeyEventArgs e)
+        {
+            updateUI();
+        }
+
+        private void txtSoTo_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtSoTo_ValueChanged(sender, e);
+        }
+
+        private void txtSoLuong_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtSoLuong_ValueChanged(sender, e);
+        }
+
+        private void txtChietKhau_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtChietKhau_ValueChanged(sender, e);
         }
     }
 }

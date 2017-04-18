@@ -66,6 +66,7 @@ namespace OrderApp.FormView
             lvProductDetail.Columns.Add("Loại bìa", 100, HorizontalAlignment.Left);
             lvProductDetail.Columns.Add("Loại giấy", 120, HorizontalAlignment.Left);
             lvProductDetail.Columns.Add("Đơn giá", 100, HorizontalAlignment.Right);
+            lvProductDetail.Columns.Add("Chiết khấu", 100, HorizontalAlignment.Right);
             lvProductDetail.Columns.Add("Thành tiền", 120, HorizontalAlignment.Right);
         }
 
@@ -104,6 +105,7 @@ namespace OrderApp.FormView
                         listitem.SubItems.Add(orderDetail.loaiBia);
                         listitem.SubItems.Add(orderDetail.loaiGiay);
                         listitem.SubItems.Add(orderDetail.donGia.ToString("#,###"));
+                        listitem.SubItems.Add(orderDetail.chietKhau.ToString() + " %");
                         listitem.SubItems.Add(orderDetail.thanhTien.ToString("#,###"));
                         lvProductDetail.Items.Add(listitem);
                     }
@@ -119,7 +121,7 @@ namespace OrderApp.FormView
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            lvProductDetail.Items.Clear();
+            //lvProductDetail.Items.Clear();
             AppUtils.exportOrder(idOrder, order);
         }
 

@@ -72,6 +72,7 @@ namespace OrderApp.FormView
 
                     ContextMenu contextMenu = new ContextMenu();
                     contextMenu.MenuItems.Add(new MenuItem("Tạo mới", btnCreate_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Chỉnh sửa", btnEdit_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Xóa đơn hàng", btnDeleteOrder_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Xem chi tiết", btnDetail_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Xuất Excel", btnExport_Click));

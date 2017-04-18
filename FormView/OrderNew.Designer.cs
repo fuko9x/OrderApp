@@ -90,6 +90,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderKhachHang = new System.Windows.Forms.ErrorProvider(this.components);
+            this.numberVAT = new System.Windows.Forms.NumericUpDown();
+            this.label24 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -106,6 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderKhachHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberVAT)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -184,6 +187,8 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.label24);
+            this.panel4.Controls.Add(this.numberVAT);
             this.panel4.Controls.Add(this.lblTongTien);
             this.panel4.Controls.Add(this.lblThuevat);
             this.panel4.Controls.Add(this.label13);
@@ -212,9 +217,9 @@
             this.lblThuevat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblThuevat.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lblThuevat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblThuevat.Location = new System.Drawing.Point(100, 36);
+            this.lblThuevat.Location = new System.Drawing.Point(155, 36);
             this.lblThuevat.Name = "lblThuevat";
-            this.lblThuevat.Size = new System.Drawing.Size(181, 19);
+            this.lblThuevat.Size = new System.Drawing.Size(126, 19);
             this.lblThuevat.TabIndex = 4;
             this.lblThuevat.Text = "0 VND";
             this.lblThuevat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -246,9 +251,9 @@
             this.lblCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCong.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lblCong.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCong.Location = new System.Drawing.Point(98, 9);
+            this.lblCong.Location = new System.Drawing.Point(97, 9);
             this.lblCong.Name = "lblCong";
-            this.lblCong.Size = new System.Drawing.Size(182, 19);
+            this.lblCong.Size = new System.Drawing.Size(183, 19);
             this.lblCong.TabIndex = 1;
             this.lblCong.Text = "0 VND";
             this.lblCong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -390,6 +395,7 @@
             this.txtChietKhau.Size = new System.Drawing.Size(104, 23);
             this.txtChietKhau.TabIndex = 13;
             this.txtChietKhau.ValueChanged += new System.EventHandler(this.txtChietKhau_ValueChanged);
+            this.txtChietKhau.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtChietKhau_KeyUp);
             // 
             // cbbLoaiGiay
             // 
@@ -464,6 +470,7 @@
             0,
             0});
             this.txtSoLuong.ValueChanged += new System.EventHandler(this.txtSoLuong_ValueChanged);
+            this.txtSoLuong.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSoLuong_KeyUp);
             // 
             // label16
             // 
@@ -538,6 +545,7 @@
             0,
             0});
             this.txtSoTo.ValueChanged += new System.EventHandler(this.txtSoTo_ValueChanged);
+            this.txtSoTo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSoTo_KeyUp);
             // 
             // label10
             // 
@@ -811,6 +819,31 @@
             this.errorProviderKhachHang.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderKhachHang.ContainerControl = this;
             // 
+            // numberVAT
+            // 
+            this.numberVAT.Location = new System.Drawing.Point(84, 36);
+            this.numberVAT.Name = "numberVAT";
+            this.numberVAT.Size = new System.Drawing.Size(47, 20);
+            this.numberVAT.TabIndex = 6;
+            this.numberVAT.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numberVAT.ValueChanged += new System.EventHandler(this.numberVAT_ValueChanged);
+            this.numberVAT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numberVAT_KeyUp);
+            // 
+            // label24
+            // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label24.Location = new System.Drawing.Point(132, 37);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(22, 19);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "%";
+            // 
             // OrderNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -844,6 +877,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderKhachHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberVAT)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -911,5 +945,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.NumericUpDown numberVAT;
+        private System.Windows.Forms.Label label24;
     }
 }
