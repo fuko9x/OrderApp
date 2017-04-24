@@ -18,6 +18,7 @@ namespace OrderApp.FormView
         public List<LienHeDto> listContracts;
         public String sales;
         public Decimal salesPercent;
+        public Decimal soTienNo;
         public String giamGia;
         public String vanChuyen;
         public DateTime startDate;

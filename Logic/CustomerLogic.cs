@@ -99,6 +99,7 @@ namespace OrderApp.Logic
             dto.giamGia = obj.giamGia;
             dto.sales = obj.sales;
             dto.salesPercent = obj.salesPercent;
+            dto.soTienNo = obj.soTienNo;
             dto.notes = obj.notes;
             dto.startDate = obj.startDate;
             dto.vanChuyen = obj.vanChuyen;

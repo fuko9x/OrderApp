@@ -287,6 +287,21 @@ namespace OrderApp.Dao
                 cmd.Parameters.AddWithValue("@diaDiemGiaoHang", orderDto.diaDiemGiaoHang);
                 cmd.ExecuteNonQuery();
 
+                // update Số Tiền Nợ
+                cmd = new SqlCommand(
+                    "UPDATE KHACH_HANG "
+                     + " SET SO_TIEN_NO = SO_TIEN_NO + @soTienNo"
+                     + " WHERE ID_KHACH_HANG = @idKhachHang"
+                );
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = sqlConnection;
+                cmd.Transaction = sqlTransaction;
+
+                cmd.Parameters.AddWithValue("@soTienNo" , orderDto.tongTien);
+                cmd.Parameters.AddWithValue("@idKhachHang" , orderDto.idKhachHang);
+
+                cmd.ExecuteNonQuery();
+
                 // save Detail
                 cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;

@@ -38,6 +38,7 @@ namespace OrderApp.Dao
                 + "ID_KHACH_HANG"
                 + ", TEN_KHACH_HANG"
                 + ", DIA_CHI"
+                + ", SO_TIEN_NO"
                 + ", EMAIL"
                 + ", ACC_FTP"
                 + ", GIAM_GIA"
@@ -54,6 +55,7 @@ namespace OrderApp.Dao
                 + " @idKhachHang"
                 + ", @tenKhachHang"
                 + ", @diaChi"
+                + ", @soTienNo"
                 + ", @email"
                 + ", @accFtp"
                 + ", @giamGia"
@@ -71,6 +73,7 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@idKhachHang", dto.idKhachHang);
             cmd.Parameters.AddWithValue("@tenKhachHang", dto.tenKhachHang);
             cmd.Parameters.AddWithValue("@diaChi", dto.diaChi);
+            cmd.Parameters.AddWithValue("@soTienNo", dto.soTienNo);
             cmd.Parameters.AddWithValue("@email", dto.email);
             cmd.Parameters.AddWithValue("@accFtp", dto.accFtp);
             cmd.Parameters.AddWithValue("@giamGia", dto.giamGia);
@@ -95,6 +98,7 @@ namespace OrderApp.Dao
                 + " ID_KHACH_HANG"
                 + ", TEN_KHACH_HANG"
                 + ", DIA_CHI"
+                + ", SO_TIEN_NO"
                 + ", EMAIL"
                 + ", ACC_FTP"
                 + ", GIAM_GIA"
@@ -114,6 +118,7 @@ namespace OrderApp.Dao
                 + " @idKhachHang" + i
                 + ", @tenKhachHang" + i
                 + ", @diaChi" + i
+                + ", @soTienNo" + i
                 + ", @email" + i
                 + ", @accFtp" + i
                 + ", @giamGia" + i
@@ -132,6 +137,7 @@ namespace OrderApp.Dao
                 cmd.Parameters.AddWithValue("@idKhachHang" + i, dto.idKhachHang);
                 cmd.Parameters.AddWithValue("@tenKhachHang" + i, dto.tenKhachHang);
                 cmd.Parameters.AddWithValue("@diaChi" + i, dto.diaChi);
+                cmd.Parameters.AddWithValue("@soTienNo" + i, dto.soTienNo);
                 cmd.Parameters.AddWithValue("@email" + i, dto.email);
                 cmd.Parameters.AddWithValue("@accFtp" + i, dto.accFtp);
                 cmd.Parameters.AddWithValue("@giamGia" + i, dto.giamGia);
@@ -146,6 +152,20 @@ namespace OrderApp.Dao
             }
         }
 
+        public static void giamSoTienNo(String idKhachHang, Decimal soTienNo)
+        {
+            SqlCommand cmd = new SqlCommand(
+                    "UPDATE KHACH_HANG "
+                     + " SET SO_TIEN_NO = SO_TIEN_NO - @soTienNo"
+                     + " WHERE ID_KHACH_HANG = @idKhachHang"
+                );
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@soTienNo", soTienNo);
+            cmd.Parameters.AddWithValue("@idKhachHang", idKhachHang);
+            cmd.ExecuteNonQuery();
+        }
+
         public void update(KhachHangDto dto)
         {
             SqlCommand cmd = new SqlCommand(
@@ -156,6 +176,7 @@ namespace OrderApp.Dao
                  + ", ACC_FTP = @accFtp"
                  + ", CREATE_BY = @createBy"
                  + ", CREATE_TIME = @createTime"
+                 + ", SO_TIEN_NO = @soTienNo"
                  + " WHERE ID_KHACH_HANG = @idKhachHang"
             );
             cmd.CommandType = CommandType.Text;
@@ -166,6 +187,7 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@accFtp", dto.accFtp);
             cmd.Parameters.AddWithValue("@createBy", dto.createBy);
             cmd.Parameters.AddWithValue("@createTime", dto.createTime);
+            cmd.Parameters.AddWithValue("@soTienNo", dto.soTienNo);
             cmd.Parameters.AddWithValue("@idKhachHang", dto.idKhachHang);
             cmd.ExecuteNonQuery();
         }
@@ -176,6 +198,7 @@ namespace OrderApp.Dao
                  + " ID_KHACH_HANG"
                 + ", TEN_KHACH_HANG"
                 + ", DIA_CHI"
+                + ", SO_TIEN_NO"
                 + ", GIAM_GIA"
                 + ", TEN_SALES"
                 + ", GHI_CHU"
@@ -240,6 +263,7 @@ namespace OrderApp.Dao
                 + ", NGAY_BAT_DAU"
                 + ", VAN_CHUYEN"
                 + ", TRANG_THAI"
+                + ", SO_TIEN_NO"
                  + " FROM KHACH_HANG WHERE ID_KHACH_HANG = @id ";
 
             SqlCommand cmd = new SqlCommand(strQuery);
@@ -261,6 +285,7 @@ namespace OrderApp.Dao
             if (!reader.IsDBNull(8))    dto.startDate = reader.GetDateTime(8);
             if (!reader.IsDBNull(9))    dto.vanChuyen = reader.GetString(9);
             if (!reader.IsDBNull(10))   dto.trangThaiNo = reader.GetBoolean(10);
+            if (!reader.IsDBNull(11))   dto.soTienNo = reader.GetDecimal(11);
 
             reader.Close();
 

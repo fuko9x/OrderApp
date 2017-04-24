@@ -60,6 +60,7 @@ namespace OrderApp.FormView
                     if(this.isGetKhachHang) contextMenu.MenuItems.Add(new MenuItem("Chọn", itemSelected_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Xem đơn đặt hàng", MenuItemXemDonHang_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Xuất công nợ", MenuItemCongno_Click));
+                    contextMenu.MenuItems.Add(new MenuItem("Trả Trước", MenuItemTraTruoc_Click));
                     contextMenu.MenuItems.Add(new MenuItem("-"));
                     contextMenu.MenuItems.Add(new MenuItem("Tạo mới", addBtn_Click));
                     contextMenu.MenuItems.Add(new MenuItem("Chỉnh sửa", btnEdit_Click));
@@ -105,7 +106,24 @@ namespace OrderApp.FormView
             {
                 MessageBox.Show("ERROR: " + ex.Message);
             }
-            
+        }
+
+        private void MenuItemTraTruoc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int rowSelected = listKhachHang.SelectedRows[0].Index;
+                String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
+
+                FrmTraTruoc frm = new FrmTraTruoc(selectedId);
+                frm.ShowDialog(this);
+
+                btnSearch.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
         }
 
         private void search_Click(object sender, EventArgs e)

@@ -104,6 +104,7 @@
     <Compile Include="Dao\DichVuDao.cs" />
     <Compile Include="Dao\DonDatHangSpDao.cs" />
     <Compile Include="Dao\KhachHangDao.cs" />
+    <Compile Include="Dao\LichSuTraTruocDao.cs" />
     <Compile Include="Dao\LienHeDao.cs" />
     <Compile Include="Dao\OrderDao.cs" />
     <Compile Include="Dao\SanPhamDao.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Dto\DichVuDto.cs" />
     <Compile Include="Dto\DonDatHangSPDto.cs" />
     <Compile Include="Dto\KhachHangDto.cs" />
+    <Compile Include="Dto\LichSuTraTruocDto.cs" />
     <Compile Include="Dto\LienHeDto.cs" />
     <Compile Include="Dto\SanPhamDto.cs" />
     <Compile Include="FormView\AddProduct.cs">
@@ -172,6 +174,12 @@
     </Compile>
     <Compile Include="FormView\FrmCongNoChiTiet.Designer.cs">
       <DependentUpon>FrmCongNoChiTiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormView\FrmTraTruoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\FrmTraTruoc.Designer.cs">
+      <DependentUpon>FrmTraTruoc.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\KhachHangSearchView.cs" />
     <Compile Include="FormView\OrderDetail.cs">
@@ -243,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\FrmCongNoChiTiet.resx">
       <DependentUpon>FrmCongNoChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\FrmTraTruoc.resx">
+      <DependentUpon>FrmTraTruoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\OrderDetail.resx">
       <DependentUpon>OrderDetail.cs</DependentUpon>

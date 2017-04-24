@@ -17,6 +17,7 @@ namespace OrderApp.Dto
         public String giamGia;
         public String sales;
         public Decimal salesPercent;
+        public Decimal soTienNo;
         public String notes;
         public DateTime startDate;
         public String vanChuyen;
@@ -29,5 +30,11 @@ namespace OrderApp.Dto
 
         // mode search trangThaiNo
         public Boolean isSearchTrangThai;
+
+        public KhachHangDto()
+        {
+            soTienNo = 0;
+            salesPercent = 0;
+        }
     }
 }
