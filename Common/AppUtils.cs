@@ -93,7 +93,7 @@ namespace OrderApp.Common
                     Excel.Workbook xlWorkBook;
                     Excel.Worksheet xlWorkSheet;
                     object misValue = System.Reflection.Missing.Value;
-                    xlWorkBook = xlApp.Workbooks.Open(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\OrderTemplate.xlsx", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+                    xlWorkBook = xlApp.Workbooks.Open(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\OrderTemplate.xls", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
                     xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
                     xlWorkSheet.Cells[4, 1] = "Tên khách hàng : " + order.tenKhachHang;
@@ -129,6 +129,7 @@ namespace OrderApp.Common
                     xlWorkSheet.Cells[11 + dtProductDetail.Count, 10] = order.vat;
                     xlWorkSheet.Cells[12 + dtProductDetail.Count, 10] = order.tongTien;
 
+                    xlWorkBook.CheckCompatibility = false;
                     xlWorkBook.SaveAs(folderDialog.SelectedPath + "\\Order_" + idOrder + ".xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
                     xlWorkBook.Close(true, misValue, misValue);
                     xlApp.Quit();
@@ -164,7 +165,7 @@ namespace OrderApp.Common
                     Excel.Workbook xlWorkBook;
                     Excel.Worksheet xlWorkSheet;
                     object misValue = System.Reflection.Missing.Value;
-                    xlWorkBook = xlApp.Workbooks.Open(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\CongNoTemplate.xlsx", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+                    xlWorkBook = xlApp.Workbooks.Open(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\CongNoTemplate.xls", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
                     xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
                     xlWorkSheet.Cells[8, 1] = "Tên khách hàng : " + infoKH.tenKhachHang;
@@ -212,6 +213,7 @@ namespace OrderApp.Common
                     DateTime now = DateTime.Now;
                     xlWorkSheet.Cells[15 + i, 13] = "Ngày " + now.Day + " tháng " + now.Month + " năm " + now.Year;
 
+                    xlWorkBook.CheckCompatibility = false;
                     xlWorkBook.SaveAs(folderDialog.SelectedPath + "\\CongNo.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
                     xlWorkBook.Close(true, misValue, misValue);
                     xlApp.Quit();
