@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
@@ -40,9 +45,12 @@
             this.btnDetail = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnCreate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDeleteOrder = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewDonHang = new System.Windows.Forms.DataGridView();
+            this.txtCustomerID = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,9 +59,6 @@
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCustomerID = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.PictureBox();
-            this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,8 +81,9 @@
             // 
             this.dateFrom.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dateFrom.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
+            this.dateFrom.CustomFormat = "yyyy-MM-dd";
             this.dateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateFrom.Location = new System.Drawing.Point(114, 17);
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(112, 23);
@@ -87,8 +93,9 @@
             // dateTo
             // 
             this.dateTo.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTo.CustomFormat = "yyyy-MM-dd";
             this.dateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTo.Location = new System.Drawing.Point(295, 17);
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(115, 23);
@@ -247,6 +254,24 @@
             this.panel1.Size = new System.Drawing.Size(310, 36);
             this.panel1.TabIndex = 20;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.AutoSize = true;
+            this.btnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEdit.CausesValidation = false;
+            this.btnEdit.Depth = 0;
+            this.btnEdit.Icon = null;
+            this.btnEdit.Location = new System.Drawing.Point(3, 0);
+            this.btnEdit.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Primary = true;
+            this.btnEdit.Size = new System.Drawing.Size(94, 36);
+            this.btnEdit.TabIndex = 20;
+            this.btnEdit.Text = "CHỈNH SỬA";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // btnDeleteOrder
             // 
             this.btnDeleteOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -308,66 +333,6 @@
             this.dataGridViewDonHang.Size = new System.Drawing.Size(832, 322);
             this.dataGridViewDonHang.TabIndex = 1;
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "STT";
-            this.Column1.HeaderText = "STT";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 40;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "SỐ ORDER";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "TEN_KHACH_HANG";
-            this.Column3.HeaderText = "TÊN KH";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "NGAY_DAT";
-            this.Column4.HeaderText = "NGÀY ĐẶT";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "NGAY_GIAO";
-            this.Column5.HeaderText = "NGÀY GIAO";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column17
-            // 
-            this.Column17.DataPropertyName = "TONG_TIEN";
-            this.Column17.HeaderText = "TỔNG TIỀN";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            this.Column17.Width = 120;
-            // 
-            // Column19
-            // 
-            this.Column19.DataPropertyName = "TRANG_THAI_THANH_TOAN";
-            this.Column19.HeaderText = "THANH TOÁN";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            this.Column19.Width = 120;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "TRANG_THAI_XUAT_KHO";
-            this.Column6.HeaderText = "XUẤT KHO";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
             // txtCustomerID
             // 
             this.txtCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -387,23 +352,79 @@
             this.btnSearch.TabStop = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnEdit
+            // Column1
             // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.AutoSize = true;
-            this.btnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEdit.CausesValidation = false;
-            this.btnEdit.Depth = 0;
-            this.btnEdit.Icon = null;
-            this.btnEdit.Location = new System.Drawing.Point(3, 0);
-            this.btnEdit.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Primary = true;
-            this.btnEdit.Size = new System.Drawing.Size(94, 36);
-            this.btnEdit.TabIndex = 20;
-            this.btnEdit.Text = "CHỈNH SỬA";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.Column1.DataPropertyName = "STT";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column1.HeaderText = "STT";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 40;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ID.HeaderText = "SỐ ORDER";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TEN_KHACH_HANG";
+            this.Column3.HeaderText = "TÊN KH";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "NGAY_DAT";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle8.Format = "yyyy-MM-dd";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column4.HeaderText = "NGÀY ĐẶT";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "NGAY_GIAO";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle9.Format = "yyyy-MM-dd";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Column5.HeaderText = "NGÀY GIAO";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column17
+            // 
+            this.Column17.DataPropertyName = "TONG_TIEN";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle10.Format = "#,###";
+            this.Column17.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Column17.HeaderText = "TỔNG TIỀN";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            this.Column17.Width = 120;
+            // 
+            // Column19
+            // 
+            this.Column19.DataPropertyName = "TRANG_THAI_THANH_TOAN";
+            this.Column19.HeaderText = "THANH TOÁN";
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            this.Column19.Width = 120;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "TRANG_THAI_XUAT_KHO";
+            this.Column6.HeaderText = "XUẤT KHO";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // SearchOrder
             // 
@@ -446,6 +467,11 @@
         private System.Windows.Forms.ComboBox cbbTinhTrangDonHang;
         private MaterialSkin.Controls.MaterialRaisedButton btnCreate;
         private MaterialSkin.Controls.MaterialRaisedButton btnDetail;
+        private System.Windows.Forms.TextBox txtCustomerID;
+        private System.Windows.Forms.PictureBox btnSearch;
+        private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnDeleteOrder;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEdit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -454,10 +480,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.TextBox txtCustomerID;
-        private System.Windows.Forms.PictureBox btnSearch;
-        private System.Windows.Forms.Panel panel1;
-        private MaterialSkin.Controls.MaterialRaisedButton btnDeleteOrder;
-        private MaterialSkin.Controls.MaterialRaisedButton btnEdit;
     }
 }

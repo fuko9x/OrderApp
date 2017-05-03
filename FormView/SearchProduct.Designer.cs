@@ -28,12 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.cbbLoaiSanPham = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewSanPham = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_SAN_PHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN_SAN_PHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,12 +54,6 @@
             this.NUM_PAGE_DEFAULT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADDITIONAL_PAGES_COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRIPTION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnEdit = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -162,69 +166,6 @@
             this.dataGridViewSanPham.Size = new System.Drawing.Size(845, 340);
             this.dataGridViewSanPham.TabIndex = 0;
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "ID";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            // 
-            // ID_SAN_PHAM
-            // 
-            this.ID_SAN_PHAM.DataPropertyName = "ID_SAN_PHAM";
-            this.ID_SAN_PHAM.HeaderText = "ID_SAN_PHAM";
-            this.ID_SAN_PHAM.Name = "ID_SAN_PHAM";
-            this.ID_SAN_PHAM.Visible = false;
-            // 
-            // TEN_SAN_PHAM
-            // 
-            this.TEN_SAN_PHAM.DataPropertyName = "TEN_SAN_PHAM";
-            this.TEN_SAN_PHAM.HeaderText = "Tên Sản Phẩm";
-            this.TEN_SAN_PHAM.Name = "TEN_SAN_PHAM";
-            this.TEN_SAN_PHAM.ReadOnly = true;
-            // 
-            // LOAI_BIA
-            // 
-            this.LOAI_BIA.DataPropertyName = "LOAI_BIA";
-            this.LOAI_BIA.HeaderText = "Loại Bìa";
-            this.LOAI_BIA.Name = "LOAI_BIA";
-            // 
-            // LOAI_GIAY
-            // 
-            this.LOAI_GIAY.DataPropertyName = "LOAI_GIAY";
-            this.LOAI_GIAY.HeaderText = "Loại Giấy";
-            this.LOAI_GIAY.Name = "LOAI_GIAY";
-            // 
-            // SIZE
-            // 
-            this.SIZE.DataPropertyName = "SIZE";
-            this.SIZE.HeaderText = "Size";
-            this.SIZE.Name = "SIZE";
-            // 
-            // DON_GIA
-            // 
-            this.DON_GIA.DataPropertyName = "DON_GIA";
-            this.DON_GIA.HeaderText = "Đơn Giá";
-            this.DON_GIA.Name = "DON_GIA";
-            // 
-            // NUM_PAGE_DEFAULT
-            // 
-            this.NUM_PAGE_DEFAULT.DataPropertyName = "NUM_PAGE_DEFAULT";
-            this.NUM_PAGE_DEFAULT.HeaderText = "Số trang";
-            this.NUM_PAGE_DEFAULT.Name = "NUM_PAGE_DEFAULT";
-            // 
-            // ADDITIONAL_PAGES_COST
-            // 
-            this.ADDITIONAL_PAGES_COST.DataPropertyName = "ADDITIONAL_PAGES_COST";
-            this.ADDITIONAL_PAGES_COST.HeaderText = "Tiền Thêm";
-            this.ADDITIONAL_PAGES_COST.Name = "ADDITIONAL_PAGES_COST";
-            // 
-            // DESCRIPTION
-            // 
-            this.DESCRIPTION.DataPropertyName = "DESCRIPTION";
-            this.DESCRIPTION.HeaderText = "Ghi Chú";
-            this.DESCRIPTION.Name = "DESCRIPTION";
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -329,6 +270,94 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "ID";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // ID_SAN_PHAM
+            // 
+            this.ID_SAN_PHAM.DataPropertyName = "ID_SAN_PHAM";
+            this.ID_SAN_PHAM.HeaderText = "ID_SAN_PHAM";
+            this.ID_SAN_PHAM.Name = "ID_SAN_PHAM";
+            this.ID_SAN_PHAM.Visible = false;
+            // 
+            // TEN_SAN_PHAM
+            // 
+            this.TEN_SAN_PHAM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.TEN_SAN_PHAM.DataPropertyName = "TEN_SAN_PHAM";
+            this.TEN_SAN_PHAM.HeaderText = "Tên Sản Phẩm";
+            this.TEN_SAN_PHAM.Name = "TEN_SAN_PHAM";
+            this.TEN_SAN_PHAM.ReadOnly = true;
+            this.TEN_SAN_PHAM.Width = 180;
+            // 
+            // LOAI_BIA
+            // 
+            this.LOAI_BIA.DataPropertyName = "LOAI_BIA";
+            this.LOAI_BIA.FillWeight = 3.993535F;
+            this.LOAI_BIA.HeaderText = "Loại Bìa";
+            this.LOAI_BIA.Name = "LOAI_BIA";
+            // 
+            // LOAI_GIAY
+            // 
+            this.LOAI_GIAY.DataPropertyName = "LOAI_GIAY";
+            this.LOAI_GIAY.FillWeight = 3.993535F;
+            this.LOAI_GIAY.HeaderText = "Loại Giấy";
+            this.LOAI_GIAY.Name = "LOAI_GIAY";
+            // 
+            // SIZE
+            // 
+            this.SIZE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SIZE.DataPropertyName = "SIZE";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.SIZE.DefaultCellStyle = dataGridViewCellStyle1;
+            this.SIZE.FillWeight = 3.993535F;
+            this.SIZE.HeaderText = "Size";
+            this.SIZE.Name = "SIZE";
+            this.SIZE.Width = 80;
+            // 
+            // DON_GIA
+            // 
+            this.DON_GIA.DataPropertyName = "DON_GIA";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle2.Format = "#,###";
+            this.DON_GIA.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DON_GIA.FillWeight = 3.993535F;
+            this.DON_GIA.HeaderText = "Đơn Giá";
+            this.DON_GIA.Name = "DON_GIA";
+            // 
+            // NUM_PAGE_DEFAULT
+            // 
+            this.NUM_PAGE_DEFAULT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NUM_PAGE_DEFAULT.DataPropertyName = "NUM_PAGE_DEFAULT";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.NUM_PAGE_DEFAULT.DefaultCellStyle = dataGridViewCellStyle3;
+            this.NUM_PAGE_DEFAULT.FillWeight = 3.993535F;
+            this.NUM_PAGE_DEFAULT.HeaderText = "Số trang";
+            this.NUM_PAGE_DEFAULT.Name = "NUM_PAGE_DEFAULT";
+            this.NUM_PAGE_DEFAULT.Width = 80;
+            // 
+            // ADDITIONAL_PAGES_COST
+            // 
+            this.ADDITIONAL_PAGES_COST.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ADDITIONAL_PAGES_COST.DataPropertyName = "ADDITIONAL_PAGES_COST";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle4.Format = "#,###";
+            this.ADDITIONAL_PAGES_COST.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ADDITIONAL_PAGES_COST.FillWeight = 3.993535F;
+            this.ADDITIONAL_PAGES_COST.HeaderText = "Tiền Thêm";
+            this.ADDITIONAL_PAGES_COST.Name = "ADDITIONAL_PAGES_COST";
+            this.ADDITIONAL_PAGES_COST.Width = 85;
+            // 
+            // DESCRIPTION
+            // 
+            this.DESCRIPTION.DataPropertyName = "DESCRIPTION";
+            this.DESCRIPTION.FillWeight = 3.993535F;
+            this.DESCRIPTION.HeaderText = "Ghi Chú";
+            this.DESCRIPTION.Name = "DESCRIPTION";
+            // 
             // SearchProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +392,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnClose;
         private MaterialSkin.Controls.MaterialRaisedButton btnEdit;
         private System.Windows.Forms.ComboBox cbbLoaiSanPham;
+        private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_SAN_PHAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN_SAN_PHAM;
@@ -373,7 +404,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NUM_PAGE_DEFAULT;
         private System.Windows.Forms.DataGridViewTextBoxColumn ADDITIONAL_PAGES_COST;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIPTION;
-        private System.Windows.Forms.Panel panel1;
-        private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
     }
 }
