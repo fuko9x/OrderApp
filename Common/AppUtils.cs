@@ -1,4 +1,5 @@
-﻿using OrderApp.Dao;
+﻿using Microsoft.VisualBasic.FileIO;
+using OrderApp.Dao;
 using OrderApp.Dto;
 using System;
 using System.Collections.Generic;
@@ -227,25 +228,72 @@ namespace OrderApp.Common
                 }
             }
         }
+    
+
+        private static void exportCSV(String path, String tableName)
+        {
+            CommonDao commonDao = new CommonDao();
+            SqlDataReader reader = commonDao.getAllData(tableName);
+            StringBuilder sb = new StringBuilder();
+            StreamWriter sw = new StreamWriter(path + "\\" + tableName + ".csv", false, Encoding.UTF8);
+
+            //Get All column 
+            var columnNames = Enumerable.Range(0, reader.FieldCount)
+                                    .Select(reader.GetName) //OR .Select("\""+  reader.GetName"\"") 
+                                    .ToList();
+
+            //Create headers
+            sb.Append(string.Join(",", columnNames));
+
+            //Append Line
+            sb.AppendLine();
+
+            while (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    string value = reader[i].ToString();
+                    if (value.Contains(","))
+                        value = "\"" + value + "\"";
+
+                    sb.Append(value.Replace(Environment.NewLine, " ") + ",");
+                }
+                sb.Length--; // Remove the last comma
+                sb.AppendLine();
+            }
+            sw.Write(sb.ToString());
+            sw.Close();
+            reader.Close();
+        }
 
         public static void backupDatabase(String toFile)
         {
-            Connection.closeConnection();
-            String dbName = AppUtils.getAppConfig("Database");
-            SqlCommand cmd = new SqlCommand("USE [master]; "
-                 //+ " ALTER DATABASE " + dbName + " SET SINGLE_USER WITH ROLLBACK IMMEDIATE ;"
-                 + " BACKUP DATABASE @dataBase TO DISK = @toFile");
-
-            SqlConnection sqlConnectMaster = Connection.getConnection();
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = sqlConnectMaster;
-            cmd.Parameters.AddWithValue("@dataBase", dbName);
-            cmd.Parameters.AddWithValue("@toFile", toFile);
-
+            String backupPath = toFile + "\\BACKUP" + DateTime.Now.ToString("_yyyyMMdd");
+            if (Directory.Exists(backupPath))
+            {
+                String[] listFile = Directory.GetFiles(backupPath);
+                if (listFile.Length > 0)
+                {
+                    foreach (String file in listFile)
+                    {
+                        File.Delete(file);
+                    }
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory(backupPath);
+            }
+            
             try
             {
-                //sqlConnectMaster.Open();
-                cmd.ExecuteNonQuery();
+                exportCSV(backupPath, "KHACH_HANG");
+                exportCSV(backupPath, "DON_DAT_HANG");
+                exportCSV(backupPath, "DON_DAT_HANG_SP");
+                exportCSV(backupPath, "LICH_SU_TRA_TRUOC");
+                exportCSV(backupPath, "LIEN_HE");
+                exportCSV(backupPath, "SAN_PHAM");
+                exportCSV(backupPath, "SAN_PHAM_CHI_TIET");
             }
             catch (Exception e)
             {
@@ -257,34 +305,68 @@ namespace OrderApp.Common
             }
         }
 
-        public static void restoreDatabase(String fromFile)
+        public static void restoreDatabase(String path)
         {
-            Connection.closeConnection();
-            String dbName = AppUtils.getAppConfig("Database");
-            SqlCommand cmd = new SqlCommand(" USE [master]; "
-                + " ALTER DATABASE " + dbName + " SET SINGLE_USER WITH ROLLBACK IMMEDIATE ;"
-                + " RESTORE DATABASE @dataBase FROM DISK = @fromFile "
-                + " WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 10 "
-            );
-            SqlConnection sqlConnectMaster = Connection.getConnection();
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = sqlConnectMaster;
-            cmd.Parameters.AddWithValue("@dataBase", dbName);
-            cmd.Parameters.AddWithValue("@fromFile", fromFile);
+            cleanDataBase();
+            CommonDao commonDao = new CommonDao();
+            String[]  listFile = Directory.GetFiles(path);
+            foreach (String file in listFile)
+            {
+                DataTable data = GetDataTabletFromCSVFile(file);
+                String fileName = Path.GetFileName(file);
+                commonDao.insertDatabase(data, fileName.Split('.')[0]);
+            }
+            
+        }
 
+        private static DataTable GetDataTabletFromCSVFile(string csv_file_path)
+        {
+            DataTable csvData = new DataTable();
             try
             {
-                //sqlConnectMaster.Open();
-                cmd.ExecuteNonQuery();
+                using (TextFieldParser csvReader = new TextFieldParser(csv_file_path))
+                {
+                    csvReader.SetDelimiters(new string[] { "," });
+                    csvReader.HasFieldsEnclosedInQuotes = true;
+                    string[] colFields = csvReader.ReadFields();
+                    foreach (string column in colFields)
+                    {
+                        DataColumn datecolumn = new DataColumn(column);
+                        datecolumn.AllowDBNull = true;
+                        csvData.Columns.Add(datecolumn);
+                    }
+                    while (!csvReader.EndOfData)
+                    {
+                        string[] fieldData = csvReader.ReadFields();
+                        //Making empty value as null
+                        for (int i = 0; i < fieldData.Length; i++)
+                        {
+                            if (fieldData[i] == "")
+                            {
+                                fieldData[i] = null;
+                            }
+                        }
+                        csvData.Rows.Add(fieldData);
+                    }
+                }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception(e.Message);
+                throw new Exception(ex.Message);
             }
-            finally
-            {
-                Connection.closeConnection();
-            }
+            return csvData;
+        }
+
+    public static void cleanDataBase()
+        {
+            CommonDao commonDao = new CommonDao();
+            commonDao.cleanTable("KHACH_HANG");
+            commonDao.cleanTable("DON_DAT_HANG");
+            commonDao.cleanTable("DON_DAT_HANG_SP");
+            commonDao.cleanTable("LICH_SU_TRA_TRUOC");
+            commonDao.cleanTable("LIEN_HE");
+            commonDao.cleanTable("SAN_PHAM");
+            commonDao.cleanTable("SAN_PHAM_CHI_TIET");
         }
 
         public static Boolean checkMasterServer()

@@ -95,7 +95,7 @@ namespace OrderApp.FormView
                         if (folderDialog.ShowDialog() == DialogResult.OK)
                         {
                             DateTime dateBackup = DateTime.Now;
-                            String fileBackup = folderDialog.SelectedPath + AppUtils.getAppConfig("Database") + dateBackup.ToString("_yyyyMMdd") + ".bak";
+                            String fileBackup = folderDialog.SelectedPath;
                             await BackupAsync(fileBackup);
 
                             MessageBox.Show("Backup success", "MESSAGE");
@@ -118,19 +118,15 @@ namespace OrderApp.FormView
                 {
                     return;
                 }
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-
-                openFileDialog.InitialDirectory = ".";
-                openFileDialog.Filter = "backup files (*.bak)|*.bak|All files (*.*)|*.*";
-                openFileDialog.Title = "Chọn file backup";
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                using (var folderDialog = new FolderBrowserDialog())
                 {
-                    String fileRestore = openFileDialog.FileName;
-                    await RestoreAsync(fileRestore);
-
-                    MessageBox.Show("Dữ liệu đã được phục hồi", "MESSAGE");
+                    folderDialog.SelectedPath = @"c:\";
+                    if (folderDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        String folderCSV = folderDialog.SelectedPath;
+                        await RestoreAsync(folderCSV);
+                        MessageBox.Show("Dữ liệu đã được phục hồi", "MESSAGE");
+                    }
                 }
             }
             catch (Exception ex)
