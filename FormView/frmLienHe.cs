@@ -1,4 +1,4 @@
-﻿using MaterialSkin.Controls;
+﻿
 using OrderApp.Dto;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class FrmLienHe : MaterialForm
+    public partial class FrmLienHe : Form
     {
         public List<LienHeDto>listLienHe = new List<LienHeDto>();
 

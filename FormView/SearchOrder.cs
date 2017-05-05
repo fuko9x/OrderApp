@@ -1,4 +1,4 @@
-﻿using MaterialSkin.Controls;
+﻿
 using OrderApp.Common;
 using OrderApp.Dao;
 using OrderApp.Dto;
@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class SearchOrder : MaterialForm
+    public partial class SearchOrder : Form
     {
         public static readonly int CONS_DON_HANG_TRONG_NGAY = 0;
         public static readonly int CONS_DON_HANG_CHUA_GIAO = 1;

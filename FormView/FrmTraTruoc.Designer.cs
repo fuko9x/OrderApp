@@ -37,8 +37,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSoTien = new System.Windows.Forms.TextBox();
-            this.btnSave = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnCancel = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -126,12 +126,12 @@
             // 
             this.btnSave.AutoSize = true;
             this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSave.Depth = 0;
-            this.btnSave.Icon = null;
+            //this.btnSave.Depth = 0;
+            //this.btnSave.Icon = null;
             this.btnSave.Location = new System.Drawing.Point(726, 51);
-            this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
+            //this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSave.Name = "btnSave";
-            this.btnSave.Primary = true;
+            //this.btnSave.Primary = true;
             this.btnSave.Size = new System.Drawing.Size(55, 36);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "SAVE";
@@ -142,12 +142,12 @@
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCancel.Depth = 0;
-            this.btnCancel.Icon = null;
+            //this.btnCancel.Depth = 0;
+            //this.btnCancel.Icon = null;
             this.btnCancel.Location = new System.Drawing.Point(787, 51);
-            this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
+            //this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Primary = true;
+            //this.btnCancel.Primary = true;
             this.btnCancel.Size = new System.Drawing.Size(73, 36);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
@@ -264,8 +264,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtSoTien;
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialRaisedButton btnCancel;
-        private MaterialSkin.Controls.MaterialRaisedButton btnSave;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DateTimePicker dtNgayNhap;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtGhiChu;

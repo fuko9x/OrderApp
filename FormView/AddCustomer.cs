@@ -12,13 +12,13 @@ using System.Configuration;
 using OrderApp.Common;
 using System.Data.SqlClient;
 using OrderApp.Logic;
-using MaterialSkin.Controls;
+
 using OrderApp.Dao;
 using OrderApp.Dto;
 
 namespace OrderApp.FormView
 {
-    public partial class AddCustomer : MaterialForm
+    public partial class AddCustomer : Form
     {
         public static readonly int CONS_MODE_ADD = 0;
         public static readonly int CONS_MODE_EDIT = 1;

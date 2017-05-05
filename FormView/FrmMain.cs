@@ -1,4 +1,4 @@
-﻿using MaterialSkin.Controls;
+﻿
 using OrderApp.Common;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class FrmMain : MaterialForm
+    public partial class FrmMain : Form
     {
         public FrmMain()
         {

@@ -148,7 +148,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLienHe";
-            this.Sizable = false;
+            //this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thông Tin Liên Hệ";
             this.Load += new System.EventHandler(this.FrmLienHe_Load);

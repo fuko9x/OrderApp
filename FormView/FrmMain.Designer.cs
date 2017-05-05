@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            //this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -92,7 +92,8 @@
             this.SuspendLayout();
             // 
             // materialTabSelector1
-            // 
+            //
+            /**
             this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialTabSelector1.BaseTabControl = null;
@@ -102,7 +103,7 @@
             this.materialTabSelector1.Name = "materialTabSelector1";
             this.materialTabSelector1.Size = new System.Drawing.Size(897, 24);
             this.materialTabSelector1.TabIndex = 1;
-            this.materialTabSelector1.Text = "materialTabSelector1";
+            this.materialTabSelector1.Text = "materialTabSelector1"; */
             // 
             // groupBox1
             // 
@@ -654,7 +655,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.materialTabSelector1);
+            //this.Controls.Add(this.materialTabSelector1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmMain";
@@ -690,7 +691,7 @@
         }
 
         #endregion
-        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        //private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

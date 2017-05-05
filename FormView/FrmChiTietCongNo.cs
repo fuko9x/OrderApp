@@ -1,4 +1,4 @@
-﻿using MaterialSkin.Controls;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class FrmChiTietCongNo : MaterialForm
+    public partial class FrmChiTietCongNo : Form
     {
         public FrmChiTietCongNo()
         {

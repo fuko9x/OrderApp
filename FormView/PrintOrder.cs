@@ -1,4 +1,4 @@
-﻿using MaterialSkin.Controls;
+﻿
 using OrderApp.Properties;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class PrintOrder : MaterialForm
+    public partial class PrintOrder : Form
     {
         public PrintOrder()
         {

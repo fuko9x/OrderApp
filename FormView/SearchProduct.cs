@@ -1,4 +1,4 @@
-﻿using MaterialSkin.Controls;
+﻿
 using OrderApp.Common;
 using OrderApp.Dao;
 using OrderApp.Dto;
@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class SearchProduct : MaterialForm
+    public partial class SearchProduct : Form
     {
         private Boolean initData = false;
         public SanPhamDto sanPhamSelected;

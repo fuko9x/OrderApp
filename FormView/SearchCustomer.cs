@@ -1,4 +1,4 @@
-﻿using MaterialSkin.Controls;
+﻿
 using OrderApp.Common;
 using OrderApp.Dao;
 using OrderApp.Dto;
@@ -20,7 +20,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace OrderApp.FormView
 {
-    public partial class SearchCustomer : MaterialForm
+    public partial class SearchCustomer : Form
     {
         private FormSearchCustomerObj outputObj;
         private Boolean isGetKhachHang = false;

@@ -1,4 +1,4 @@
-﻿using MaterialSkin.Controls;
+﻿
 using OrderApp.Common;
 using OrderApp.Dao;
 using System;
@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class FrmTraTruoc : MaterialForm
+    public partial class FrmTraTruoc : Form
     {
         private String idKhachHang = "";
 

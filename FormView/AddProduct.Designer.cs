@@ -32,9 +32,9 @@ namespace OrderApp.FormView
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnClose = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnSaveNew = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.saveBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnSaveNew = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tenSanPham = new System.Windows.Forms.TextBox();
             this.loaiBia = new System.Windows.Forms.TextBox();
@@ -90,12 +90,12 @@ namespace OrderApp.FormView
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.AutoSize = true;
             this.btnClose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnClose.Depth = 0;
-            this.btnClose.Icon = null;
+            //this.btnClose.Depth = 0;
+            //this.btnClose.Icon = null;
             this.btnClose.Location = new System.Drawing.Point(568, 3);
-            this.btnClose.MouseState = MaterialSkin.MouseState.HOVER;
+            //this.btnClose.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClose.Name = "btnClose";
-            this.btnClose.Primary = true;
+            //this.btnClose.Primary = true;
             this.btnClose.Size = new System.Drawing.Size(126, 34);
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
@@ -107,12 +107,12 @@ namespace OrderApp.FormView
             this.btnSaveNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveNew.AutoSize = true;
             this.btnSaveNew.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSaveNew.Depth = 0;
-            this.btnSaveNew.Icon = null;
+            //this.btnSaveNew.Depth = 0;
+            //this.btnSaveNew.Icon = null;
             this.btnSaveNew.Location = new System.Drawing.Point(433, 3);
-            this.btnSaveNew.MouseState = MaterialSkin.MouseState.HOVER;
+            //this.btnSaveNew.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSaveNew.Name = "btnSaveNew";
-            this.btnSaveNew.Primary = true;
+            //this.btnSaveNew.Primary = true;
             this.btnSaveNew.Size = new System.Drawing.Size(129, 34);
             this.btnSaveNew.TabIndex = 11;
             this.btnSaveNew.Text = "Save & New";
@@ -124,12 +124,12 @@ namespace OrderApp.FormView
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.saveBtn.AutoSize = true;
             this.saveBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.saveBtn.Depth = 0;
-            this.saveBtn.Icon = null;
+            //this.saveBtn.Depth = 0;
+            //this.saveBtn.Icon = null;
             this.saveBtn.Location = new System.Drawing.Point(292, 3);
-            this.saveBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            //this.saveBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Primary = true;
+            //this.saveBtn.Primary = true;
             this.saveBtn.Size = new System.Drawing.Size(135, 34);
             this.saveBtn.TabIndex = 9;
             this.saveBtn.Text = "Save";
@@ -414,8 +414,8 @@ namespace OrderApp.FormView
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private MaterialSkin.Controls.MaterialRaisedButton btnClose;
-        private MaterialSkin.Controls.MaterialRaisedButton saveBtn;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tenSanPham;
         private System.Windows.Forms.TextBox loaiBia;
@@ -437,6 +437,6 @@ namespace OrderApp.FormView
         private System.Windows.Forms.NumericUpDown numPageDefault;
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private MaterialSkin.Controls.MaterialRaisedButton btnSaveNew;
+        private System.Windows.Forms.Button btnSaveNew;
     }
 }

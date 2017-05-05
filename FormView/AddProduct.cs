@@ -1,4 +1,4 @@
-﻿using MaterialSkin.Controls;
+﻿
 using OrderApp.Common;
 using OrderApp.Dao;
 using OrderApp.Dto;
@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace OrderApp.FormView
 {
-    public partial class AddProduct : MaterialForm
+    public partial class AddProduct : Form
     {
         public static readonly int CONS_MODE_ADD = 0;
         public static readonly int CONS_MODE_EDIT = 1;
