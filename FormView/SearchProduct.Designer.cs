@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchProduct));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbbLoaiSanPham = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewSanPham = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +46,9 @@
             this.NUM_PAGE_DEFAULT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADDITIONAL_PAGES_COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRIPTION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbbLoaiSanPham = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -55,9 +56,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -82,48 +83,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(858, 411);
             this.tableLayoutPanel1.TabIndex = 3;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 5;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.00931F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.39372F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.57731F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.01345F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.00621F));
-            this.tableLayoutPanel2.Controls.Add(this.cbbLoaiSanPham, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(852, 34);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // cbbLoaiSanPham
-            // 
-            this.cbbLoaiSanPham.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbbLoaiSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbbLoaiSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbLoaiSanPham.FormattingEnabled = true;
-            this.cbbLoaiSanPham.Location = new System.Drawing.Point(156, 3);
-            this.cbbLoaiSanPham.Name = "cbbLoaiSanPham";
-            this.cbbLoaiSanPham.Size = new System.Drawing.Size(227, 27);
-            this.cbbLoaiSanPham.TabIndex = 1;
-            this.cbbLoaiSanPham.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiSanPham_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Chọn sản phẩm";
             // 
             // tableLayoutPanel3
             // 
@@ -206,8 +165,8 @@
             // 
             this.SIZE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.SIZE.DataPropertyName = "SIZE";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.SIZE.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.SIZE.DefaultCellStyle = dataGridViewCellStyle1;
             this.SIZE.FillWeight = 3.993535F;
             this.SIZE.HeaderText = "Size";
             this.SIZE.Name = "SIZE";
@@ -216,9 +175,9 @@
             // DON_GIA
             // 
             this.DON_GIA.DataPropertyName = "DON_GIA";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle10.Format = "#,###";
-            this.DON_GIA.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle2.Format = "#,###";
+            this.DON_GIA.DefaultCellStyle = dataGridViewCellStyle2;
             this.DON_GIA.FillWeight = 3.993535F;
             this.DON_GIA.HeaderText = "Đơn Giá";
             this.DON_GIA.Name = "DON_GIA";
@@ -227,8 +186,8 @@
             // 
             this.NUM_PAGE_DEFAULT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.NUM_PAGE_DEFAULT.DataPropertyName = "NUM_PAGE_DEFAULT";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.NUM_PAGE_DEFAULT.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.NUM_PAGE_DEFAULT.DefaultCellStyle = dataGridViewCellStyle3;
             this.NUM_PAGE_DEFAULT.FillWeight = 3.993535F;
             this.NUM_PAGE_DEFAULT.HeaderText = "Số trang";
             this.NUM_PAGE_DEFAULT.Name = "NUM_PAGE_DEFAULT";
@@ -238,9 +197,9 @@
             // 
             this.ADDITIONAL_PAGES_COST.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ADDITIONAL_PAGES_COST.DataPropertyName = "ADDITIONAL_PAGES_COST";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle12.Format = "#,###";
-            this.ADDITIONAL_PAGES_COST.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle4.Format = "#,###";
+            this.ADDITIONAL_PAGES_COST.DefaultCellStyle = dataGridViewCellStyle4;
             this.ADDITIONAL_PAGES_COST.FillWeight = 3.993535F;
             this.ADDITIONAL_PAGES_COST.HeaderText = "Tiền Thêm";
             this.ADDITIONAL_PAGES_COST.Name = "ADDITIONAL_PAGES_COST";
@@ -252,6 +211,48 @@
             this.DESCRIPTION.FillWeight = 3.993535F;
             this.DESCRIPTION.HeaderText = "Ghi Chú";
             this.DESCRIPTION.Name = "DESCRIPTION";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.00931F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.39372F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.57731F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.01345F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.00621F));
+            this.tableLayoutPanel2.Controls.Add(this.cbbLoaiSanPham, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(852, 34);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // cbbLoaiSanPham
+            // 
+            this.cbbLoaiSanPham.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbbLoaiSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbbLoaiSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbbLoaiSanPham.FormattingEnabled = true;
+            this.cbbLoaiSanPham.Location = new System.Drawing.Point(156, 3);
+            this.cbbLoaiSanPham.Name = "cbbLoaiSanPham";
+            this.cbbLoaiSanPham.Size = new System.Drawing.Size(227, 27);
+            this.cbbLoaiSanPham.TabIndex = 1;
+            this.cbbLoaiSanPham.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiSanPham_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Chọn sản phẩm";
             // 
             // tableLayoutPanel5
             // 
@@ -343,14 +344,15 @@
             this.ClientSize = new System.Drawing.Size(882, 491);
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SearchProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TÌM KIẾM SẢN PHẨM";
             this.Load += new System.EventHandler(this.SearchProduct_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

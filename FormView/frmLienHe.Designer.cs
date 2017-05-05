@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLienHe));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtDienThoai = new System.Windows.Forms.TextBox();
@@ -50,15 +51,15 @@
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 69);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(417, 121);
+            this.groupBox1.Size = new System.Drawing.Size(417, 107);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(234, 81);
+            this.btnClose.Location = new System.Drawing.Point(234, 74);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 5;
@@ -86,7 +87,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(139, 81);
+            this.btnThem.Location = new System.Drawing.Point(136, 74);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 2;
@@ -119,9 +120,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.listViewLienHe);
-            this.groupBox2.Location = new System.Drawing.Point(12, 196);
+            this.groupBox2.Location = new System.Drawing.Point(12, 125);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(417, 163);
+            this.groupBox2.Size = new System.Drawing.Size(417, 140);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách";
@@ -133,7 +134,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewLienHe.Location = new System.Drawing.Point(7, 20);
             this.listViewLienHe.Name = "listViewLienHe";
-            this.listViewLienHe.Size = new System.Drawing.Size(404, 137);
+            this.listViewLienHe.Size = new System.Drawing.Size(404, 114);
             this.listViewLienHe.TabIndex = 0;
             this.listViewLienHe.UseCompatibleStateImageBehavior = false;
             this.listViewLienHe.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewLienHe_MouseClick);
@@ -142,13 +143,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 371);
+            this.ClientSize = new System.Drawing.Size(444, 277);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLienHe";
-            //this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thông Tin Liên Hệ";
             this.Load += new System.EventHandler(this.FrmLienHe_Load);

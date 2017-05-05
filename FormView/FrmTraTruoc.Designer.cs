@@ -32,7 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTraTruoc));
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,12 +53,6 @@
             this.btnSearchKhachHang = new System.Windows.Forms.PictureBox();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -75,6 +76,56 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(827, 278);
             this.dataGridView.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 80;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ID_KHACH_HANG";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column5.HeaderText = "Mã KH";
+            this.Column5.Name = "Column5";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TEN_KHACH_HANG";
+            this.Column2.HeaderText = "Tên Khách Hàng";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 250;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "SO_TIEN";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle3.Format = "N0";
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column6.HeaderText = "Số Tiền";
+            this.Column6.Name = "Column6";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "NGAY_TRA";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.Format = "yyyy-MM-dd";
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.HeaderText = "Ngày Trả";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 120;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "GHI_CHU";
+            this.Column4.HeaderText = "Ghi Chú";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 250;
             // 
             // groupBox1
             // 
@@ -212,56 +263,6 @@
             this.label4.Text = "Khách Hàng";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ID";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 80;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "ID_KHACH_HANG";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column5.HeaderText = "Mã KH";
-            this.Column5.Name = "Column5";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TEN_KHACH_HANG";
-            this.Column2.HeaderText = "Tên Khách Hàng";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 250;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "SO_TIEN";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle3.Format = "N0";
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column6.HeaderText = "Số Tiền";
-            this.Column6.Name = "Column6";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "NGAY_TRA";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.Format = "yyyy-MM-dd";
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column3.HeaderText = "Ngày Trả";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 120;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "GHI_CHU";
-            this.Column4.HeaderText = "Ghi Chú";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 250;
-            // 
             // FrmTraTruoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +273,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmTraTruoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
