@@ -118,13 +118,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.AutoScroll = true;
             this.panelMain.AutoScrollMinSize = new System.Drawing.Size(0, 600);
-            this.panelMain.BackColor = System.Drawing.Color.White;
             this.panelMain.Controls.Add(this.groupBox4);
             this.panelMain.Controls.Add(this.groupBox2);
             this.panelMain.Controls.Add(this.groupBox1);
-            this.panelMain.Location = new System.Drawing.Point(12, 67);
+            this.panelMain.Location = new System.Drawing.Point(9, 6);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1063, 610);
+            this.panelMain.Size = new System.Drawing.Size(1063, 628);
             this.panelMain.TabIndex = 0;
             // 
             // groupBox4
@@ -132,10 +131,10 @@
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox4.Location = new System.Drawing.Point(3, 480);
+            this.groupBox4.Location = new System.Drawing.Point(3, 492);
             this.groupBox4.MinimumSize = new System.Drawing.Size(1037, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1051, 127);
+            this.groupBox4.Size = new System.Drawing.Size(1045, 127);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             // 
@@ -153,7 +152,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1038, 106);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1015, 106);
             this.tableLayoutPanel2.TabIndex = 20;
             // 
             // panel2
@@ -162,7 +161,7 @@
             this.panel2.Controls.Add(this.txtGhiChu);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(393, 100);
+            this.panel2.Size = new System.Drawing.Size(384, 100);
             this.panel2.TabIndex = 21;
             // 
             // label15
@@ -195,7 +194,7 @@
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.lblCong);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(747, 3);
+            this.panel4.Location = new System.Drawing.Point(724, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(288, 93);
             this.panel4.TabIndex = 7;
@@ -297,25 +296,20 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.btnCancel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.saveBtn, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(402, 9);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(393, 9);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(233, 88);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(228, 88);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.AutoSize = true;
             this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            //this.btnCancel.Depth = 0;
-            //this.btnCancel.Icon = null;
-            this.btnCancel.Location = new System.Drawing.Point(119, 26);
-            //this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCancel.Location = new System.Drawing.Point(117, 30);
             this.btnCancel.Name = "btnCancel";
-            //this.btnCancel.Primary = true;
-            this.btnCancel.Size = new System.Drawing.Size(111, 36);
+            this.btnCancel.Size = new System.Drawing.Size(108, 28);
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -324,17 +318,12 @@
             // saveBtn
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBtn.AutoSize = true;
             this.saveBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            //this.saveBtn.Depth = 0;
-            //this.saveBtn.Icon = null;
-            this.saveBtn.Location = new System.Drawing.Point(3, 26);
-            //this.saveBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.saveBtn.Location = new System.Drawing.Point(3, 30);
             this.saveBtn.Name = "saveBtn";
-            //this.saveBtn.Primary = true;
-            this.saveBtn.Size = new System.Drawing.Size(110, 36);
+            this.saveBtn.Size = new System.Drawing.Size(108, 28);
             this.saveBtn.TabIndex = 17;
-            this.saveBtn.Text = "Save";
+            this.saveBtn.Text = "SAVE";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -374,7 +363,7 @@
             this.groupBox2.Location = new System.Drawing.Point(3, 103);
             this.groupBox2.MinimumSize = new System.Drawing.Size(1037, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1051, 371);
+            this.groupBox2.Size = new System.Drawing.Size(1045, 386);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chọn sản phẩm";
@@ -655,7 +644,7 @@
             this.dataGridViewSanPham.Name = "dataGridViewSanPham";
             this.dataGridViewSanPham.ReadOnly = true;
             this.dataGridViewSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewSanPham.Size = new System.Drawing.Size(1038, 217);
+            this.dataGridViewSanPham.Size = new System.Drawing.Size(1032, 222);
             this.dataGridViewSanPham.TabIndex = 0;
             // 
             // groupBox1
@@ -682,7 +671,7 @@
             this.groupBox1.Location = new System.Drawing.Point(3, 6);
             this.groupBox1.MinimumSize = new System.Drawing.Size(1037, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1051, 92);
+            this.groupBox1.Size = new System.Drawing.Size(1045, 92);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Khách hàng";
@@ -712,11 +701,10 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.orderId);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(869, 12);
+            this.panel1.Location = new System.Drawing.Point(846, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(171, 74);
             this.panel1.TabIndex = 1;
@@ -843,7 +831,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 680);
+            this.ClientSize = new System.Drawing.Size(1080, 645);
             this.Controls.Add(this.panelMain);
             this.Name = "OrderNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -859,7 +847,6 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberVAT)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtChietKhau)).EndInit();

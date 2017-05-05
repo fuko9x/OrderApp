@@ -66,5 +66,37 @@ namespace OrderApp.FormView
         {
             this.Close();
         }
+
+        private void btnSearchKhachHang_Click(object sender, EventArgs e)
+        {
+            searchClick();
+        }
+
+        private void txtTenKhachHang_MouseClick(object sender, MouseEventArgs e)
+        {
+            searchClick();
+        }
+
+        private void searchClick()
+        {
+            SearchCustomer frmSearch = new SearchCustomer(true);
+            if (frmSearch.ShowDialog(this) == DialogResult.OK)
+            {
+                this.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
+                this.txtTenKhachHang.Text = frmSearch.khachHangSelected.tenKhachHang;
+
+                loadData();
+            }
+        }
+
+        private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

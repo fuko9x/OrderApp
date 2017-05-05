@@ -87,10 +87,10 @@
             this.panelMain.AutoScroll = true;
             this.panelMain.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panelMain.Controls.Add(this.panelPrint);
-            this.panelMain.Location = new System.Drawing.Point(0, 63);
+            this.panelMain.Location = new System.Drawing.Point(0, 32);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(20, 20, 20, 100);
-            this.panelMain.Size = new System.Drawing.Size(936, 536);
+            this.panelMain.Size = new System.Drawing.Size(936, 567);
             this.panelMain.TabIndex = 0;
             // 
             // panelPrint
@@ -125,7 +125,7 @@
             this.panelPrint.Margin = new System.Windows.Forms.Padding(0);
             this.panelPrint.Name = "panelPrint";
             this.panelPrint.Padding = new System.Windows.Forms.Padding(50, 40, 50, 40);
-            this.panelPrint.Size = new System.Drawing.Size(837, 527);
+            this.panelPrint.Size = new System.Drawing.Size(837, 555);
             this.panelPrint.TabIndex = 0;
             // 
             // ckbGiaoHang
@@ -522,9 +522,9 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(273, 34);
+            this.btnClose.Location = new System.Drawing.Point(199, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(70, 23);
+            this.btnClose.Size = new System.Drawing.Size(104, 23);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -532,9 +532,9 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(193, 34);
+            this.btnPrint.Location = new System.Drawing.Point(93, 3);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(70, 23);
+            this.btnPrint.Size = new System.Drawing.Size(100, 23);
             this.btnPrint.TabIndex = 3;
             this.btnPrint.Text = "Export Excel";
             this.btnPrint.UseVisualStyleBackColor = true;

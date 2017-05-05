@@ -45,8 +45,8 @@ namespace OrderApp.FormView
             this.cbbTinhTrangDonHang.SelectedIndex = initSelected;
             if (this.idKhachHang != "")
             {
-                txtCustomerID.Text = this.idKhachHang;
-                btnSearch_Click(btnSearch, e);
+                OrderDao dao = new OrderDao();
+                this.dataGridViewDonHang.DataSource = dao.searchListOrder(this.idKhachHang);
             }
             else
             {
@@ -209,15 +209,6 @@ namespace OrderApp.FormView
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OrderDao dao = new OrderDao();
-                this.dataGridViewDonHang.DataSource = dao.searchListOrder(txtCustomerID.Text.Trim());
-            }
-            catch (Exception) { }
-        }
 
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {
@@ -242,6 +233,17 @@ namespace OrderApp.FormView
             }
         }
 
+        private void btnSearchKhachHang_Click(object sender, EventArgs e)
+        {
+            SearchCustomer frmSearch = new SearchCustomer(true);
+            if (frmSearch.ShowDialog(this) == DialogResult.OK)
+            {
+                this.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
+                this.txtTenKhachHang.Text = frmSearch.khachHangSelected.tenKhachHang;
 
+                OrderDao dao = new OrderDao();
+                this.dataGridViewDonHang.DataSource = dao.searchListOrder(this.idKhachHang);
+            }
+        }
     }
 }

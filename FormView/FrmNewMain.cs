@@ -61,7 +61,9 @@ namespace OrderApp.FormView
 
         private void NV_ThuTienToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            String idKhachHang = "";
+            FrmTraTruoc frmTraTruoc = new FrmTraTruoc(idKhachHang);
+            frmTraTruoc.ShowDialog(this);
         }
 
 
@@ -77,7 +79,8 @@ namespace OrderApp.FormView
 
         private void TK_CongNoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmCongNoTongHop frmCongNo = new FrmCongNoTongHop();
+            frmCongNo.ShowDialog(this);
         }
 
         #endregion

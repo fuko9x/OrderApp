@@ -77,26 +77,21 @@ namespace OrderApp.FormView
             this.tableLayoutPanel1.Controls.Add(this.btnClose, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSaveNew, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.saveBtn, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 490);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 407);
             this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(690, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(717, 40);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(717, 38);
             this.tableLayoutPanel1.TabIndex = 18;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.AutoSize = true;
             this.btnClose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            //this.btnClose.Depth = 0;
-            //this.btnClose.Icon = null;
             this.btnClose.Location = new System.Drawing.Point(568, 3);
-            //this.btnClose.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClose.Name = "btnClose";
-            //this.btnClose.Primary = true;
-            this.btnClose.Size = new System.Drawing.Size(126, 34);
+            this.btnClose.Size = new System.Drawing.Size(126, 32);
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -105,15 +100,10 @@ namespace OrderApp.FormView
             // btnSaveNew
             // 
             this.btnSaveNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveNew.AutoSize = true;
             this.btnSaveNew.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            //this.btnSaveNew.Depth = 0;
-            //this.btnSaveNew.Icon = null;
             this.btnSaveNew.Location = new System.Drawing.Point(433, 3);
-            //this.btnSaveNew.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSaveNew.Name = "btnSaveNew";
-            //this.btnSaveNew.Primary = true;
-            this.btnSaveNew.Size = new System.Drawing.Size(129, 34);
+            this.btnSaveNew.Size = new System.Drawing.Size(129, 32);
             this.btnSaveNew.TabIndex = 11;
             this.btnSaveNew.Text = "Save & New";
             this.btnSaveNew.UseVisualStyleBackColor = true;
@@ -122,15 +112,10 @@ namespace OrderApp.FormView
             // saveBtn
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBtn.AutoSize = true;
             this.saveBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            //this.saveBtn.Depth = 0;
-            //this.saveBtn.Icon = null;
             this.saveBtn.Location = new System.Drawing.Point(292, 3);
-            //this.saveBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveBtn.Name = "saveBtn";
-            //this.saveBtn.Primary = true;
-            this.saveBtn.Size = new System.Drawing.Size(135, 34);
+            this.saveBtn.Size = new System.Drawing.Size(135, 32);
             this.saveBtn.TabIndex = 9;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -286,7 +271,7 @@ namespace OrderApp.FormView
             this.tableLayoutPanel2.Controls.Add(this.numPageDefault, 1, 6);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.tableLayoutPanel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(41, 103);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(41, 23);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 10;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
@@ -329,7 +314,7 @@ namespace OrderApp.FormView
             this.comboBoxLoaiSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxLoaiSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.comboBoxLoaiSanPham.FormattingEnabled = true;
-            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(207, 4);
+            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(207, 7);
             this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
             this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(470, 27);
             this.comboBoxLoaiSanPham.TabIndex = 0;
@@ -395,14 +380,13 @@ namespace OrderApp.FormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 567);
+            this.ClientSize = new System.Drawing.Size(789, 461);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Sản phẩm";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPageDefault)).EndInit();

@@ -34,15 +34,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSoTien = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtGhiChu = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.dtNgayNhap = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtSoTien = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSearchKhachHang = new System.Windows.Forms.PictureBox();
+            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearchKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -69,14 +73,13 @@
             this.Column4});
             this.dataGridView.Location = new System.Drawing.Point(17, 18);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(843, 278);
+            this.dataGridView.Size = new System.Drawing.Size(827, 278);
             this.dataGridView.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.dtNgayNhap);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtGhiChu);
@@ -86,90 +89,20 @@
             this.groupBox1.Controls.Add(this.txtSoTien);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(12, 392);
+            this.groupBox1.Location = new System.Drawing.Point(12, 353);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(874, 126);
+            this.groupBox1.Size = new System.Drawing.Size(858, 126);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // groupBox2
+            // dtNgayNhap
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.dataGridView);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox2.Location = new System.Drawing.Point(12, 80);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(874, 306);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "NHẬP SỐ TIỀN";
-            // 
-            // txtSoTien
-            // 
-            this.txtSoTien.Location = new System.Drawing.Point(139, 22);
-            this.txtSoTien.Name = "txtSoTien";
-            this.txtSoTien.Size = new System.Drawing.Size(226, 23);
-            this.txtSoTien.TabIndex = 1;
-            // 
-            // btnSave
-            // 
-            this.btnSave.AutoSize = true;
-            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            //this.btnSave.Depth = 0;
-            //this.btnSave.Icon = null;
-            this.btnSave.Location = new System.Drawing.Point(726, 51);
-            //this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSave.Name = "btnSave";
-            //this.btnSave.Primary = true;
-            this.btnSave.Size = new System.Drawing.Size(55, 36);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "SAVE";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.AutoSize = true;
-            this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            //this.btnCancel.Depth = 0;
-            //this.btnCancel.Icon = null;
-            this.btnCancel.Location = new System.Drawing.Point(787, 51);
-            //this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnCancel.Name = "btnCancel";
-            //this.btnCancel.Primary = true;
-            this.btnCancel.Size = new System.Drawing.Size(73, 36);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 17);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "GHI CHÚ";
-            // 
-            // txtGhiChu
-            // 
-            this.txtGhiChu.Location = new System.Drawing.Point(139, 51);
-            this.txtGhiChu.Multiline = true;
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(468, 54);
-            this.txtGhiChu.TabIndex = 9;
+            this.dtNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayNhap.Location = new System.Drawing.Point(478, 22);
+            this.dtNgayNhap.Name = "dtNgayNhap";
+            this.dtNgayNhap.Size = new System.Drawing.Size(129, 23);
+            this.dtNgayNhap.TabIndex = 11;
+            this.dtNgayNhap.Value = new System.DateTime(2017, 4, 24, 20, 8, 9, 0);
             // 
             // label3
             // 
@@ -180,14 +113,104 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "NGÀY TRẢ";
             // 
-            // dtNgayNhap
+            // txtGhiChu
             // 
-            this.dtNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayNhap.Location = new System.Drawing.Point(478, 22);
-            this.dtNgayNhap.Name = "dtNgayNhap";
-            this.dtNgayNhap.Size = new System.Drawing.Size(129, 23);
-            this.dtNgayNhap.TabIndex = 11;
-            this.dtNgayNhap.Value = new System.DateTime(2017, 4, 24, 20, 8, 9, 0);
+            this.txtGhiChu.Location = new System.Drawing.Point(139, 51);
+            this.txtGhiChu.Multiline = true;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(468, 54);
+            this.txtGhiChu.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "GHI CHÚ";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancel.Location = new System.Drawing.Point(752, 55);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSave.Location = new System.Drawing.Point(646, 55);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 28);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtSoTien
+            // 
+            this.txtSoTien.Location = new System.Drawing.Point(139, 22);
+            this.txtSoTien.Name = "txtSoTien";
+            this.txtSoTien.Size = new System.Drawing.Size(226, 23);
+            this.txtSoTien.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "NHẬP SỐ TIỀN";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.dataGridView);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.groupBox2.Location = new System.Drawing.Point(12, 41);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(858, 306);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            // 
+            // btnSearchKhachHang
+            // 
+            this.btnSearchKhachHang.Image = global::OrderApp.Properties.Resources.search_icon;
+            this.btnSearchKhachHang.Location = new System.Drawing.Point(401, 10);
+            this.btnSearchKhachHang.Name = "btnSearchKhachHang";
+            this.btnSearchKhachHang.Size = new System.Drawing.Size(25, 25);
+            this.btnSearchKhachHang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnSearchKhachHang.TabIndex = 10;
+            this.btnSearchKhachHang.TabStop = false;
+            this.btnSearchKhachHang.Click += new System.EventHandler(this.btnSearchKhachHang_Click);
+            // 
+            // txtTenKhachHang
+            // 
+            this.txtTenKhachHang.Location = new System.Drawing.Point(151, 12);
+            this.txtTenKhachHang.Name = "txtTenKhachHang";
+            this.txtTenKhachHang.ReadOnly = true;
+            this.txtTenKhachHang.Size = new System.Drawing.Size(244, 20);
+            this.txtTenKhachHang.TabIndex = 8;
+            this.txtTenKhachHang.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtTenKhachHang_MouseClick);
+            this.txtTenKhachHang.TextChanged += new System.EventHandler(this.txtTenKhachHang_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(35, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Khách Hàng";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Column1
             // 
@@ -226,6 +249,7 @@
             // 
             this.Column3.DataPropertyName = "NGAY_TRA";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.Format = "yyyy-MM-dd";
             this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column3.HeaderText = "Ngày Trả";
             this.Column3.Name = "Column3";
@@ -242,7 +266,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 530);
+            this.ClientSize = new System.Drawing.Size(882, 491);
+            this.Controls.Add(this.btnSearchKhachHang);
+            this.Controls.Add(this.txtTenKhachHang);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -254,7 +281,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearchKhachHang)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -270,6 +299,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox btnSearchKhachHang;
+        private System.Windows.Forms.TextBox txtTenKhachHang;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

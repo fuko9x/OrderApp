@@ -104,10 +104,10 @@
             this.panelMain.AutoScrollMinSize = new System.Drawing.Size(0, 1080);
             this.panelMain.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panelMain.Controls.Add(this.panelPrint);
-            this.panelMain.Location = new System.Drawing.Point(0, 63);
+            this.panelMain.Location = new System.Drawing.Point(0, 41);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(20, 20, 20, 100);
-            this.panelMain.Size = new System.Drawing.Size(936, 536);
+            this.panelMain.Size = new System.Drawing.Size(936, 558);
             this.panelMain.TabIndex = 0;
             // 
             // panelPrint
@@ -157,7 +157,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel3.Controls.Add(this.panel8, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label29, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.label31, 3, 0);
@@ -193,7 +193,7 @@
             this.label29.AutoEllipsis = true;
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label29.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(431, 1);
+            this.label29.Location = new System.Drawing.Point(430, 1);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(90, 30);
             this.label29.TabIndex = 0;
@@ -204,9 +204,9 @@
             this.label31.AutoEllipsis = true;
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(606, 1);
+            this.label31.Location = new System.Drawing.Point(605, 1);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(98, 30);
+            this.label31.Size = new System.Drawing.Size(99, 30);
             this.label31.TabIndex = 0;
             this.label31.Text = "Kiểm hàng";
             // 
@@ -227,7 +227,7 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 142);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 117F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 118F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(708, 115);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -333,7 +333,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel1.Controls.Add(this.label21, 8, 0);
             this.tableLayoutPanel1.Controls.Add(this.label20, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.label19, 6, 0);
@@ -357,9 +357,9 @@
             // 
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label21.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(606, 1);
+            this.label21.Location = new System.Drawing.Point(605, 1);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(98, 40);
+            this.label21.Size = new System.Drawing.Size(99, 40);
             this.label21.TabIndex = 8;
             this.label21.Text = "Thành tiền";
             this.label21.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -368,7 +368,7 @@
             // 
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label20.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(528, 1);
+            this.label20.Location = new System.Drawing.Point(527, 1);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(71, 40);
             this.label20.TabIndex = 7;
@@ -379,7 +379,7 @@
             // 
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(431, 1);
+            this.label19.Location = new System.Drawing.Point(430, 1);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(90, 40);
             this.label19.TabIndex = 6;
@@ -390,7 +390,7 @@
             // 
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(335, 1);
+            this.label18.Location = new System.Drawing.Point(334, 1);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(89, 40);
             this.label18.TabIndex = 5;
@@ -401,7 +401,7 @@
             // 
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(281, 1);
+            this.label17.Location = new System.Drawing.Point(280, 1);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(47, 40);
             this.label17.TabIndex = 4;
@@ -412,7 +412,7 @@
             // 
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(197, 1);
+            this.label16.Location = new System.Drawing.Point(196, 1);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(77, 40);
             this.label16.TabIndex = 3;
@@ -423,7 +423,7 @@
             // 
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(158, 1);
+            this.label15.Location = new System.Drawing.Point(157, 1);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(32, 40);
             this.label15.TabIndex = 2;
@@ -436,7 +436,7 @@
             this.label14.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(43, 1);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(108, 40);
+            this.label14.Size = new System.Drawing.Size(107, 40);
             this.label14.TabIndex = 1;
             this.label14.Text = "Tên sản phẩm";
             this.label14.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -645,7 +645,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(157, 34);
+            this.btnClose.Location = new System.Drawing.Point(131, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(70, 23);
             this.btnClose.TabIndex = 4;
@@ -654,7 +654,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(81, 34);
+            this.btnPrint.Location = new System.Drawing.Point(53, 12);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(70, 23);
             this.btnPrint.TabIndex = 3;
