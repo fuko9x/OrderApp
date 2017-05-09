@@ -75,6 +75,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridViewSanPham = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtLienHe = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -85,7 +86,6 @@
             this.dtNgayDat = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSearchKhachHang = new System.Windows.Forms.PictureBox();
-            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.dtNgayGiao = new System.Windows.Forms.DateTimePicker();
             this.txtDiaDiemGiaoHang = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderKhachHang = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnBrowse = new System.Windows.Forms.Button();
+            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.panelMain.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -654,6 +654,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtTenKhachHang);
             this.groupBox1.Controls.Add(this.btnBrowse);
             this.groupBox1.Controls.Add(this.txtSDT);
             this.groupBox1.Controls.Add(this.txtLienHe);
@@ -663,7 +664,6 @@
             this.groupBox1.Controls.Add(this.dtNgayDat);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnSearchKhachHang);
-            this.groupBox1.Controls.Add(this.txtTenKhachHang);
             this.groupBox1.Controls.Add(this.dtNgayGiao);
             this.groupBox1.Controls.Add(this.txtDiaDiemGiaoHang);
             this.groupBox1.Controls.Add(this.label5);
@@ -678,6 +678,16 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Khách hàng";
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(375, 19);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(24, 24);
+            this.btnBrowse.TabIndex = 1002;
+            this.btnBrowse.Text = "...";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // txtSDT
             // 
@@ -770,13 +780,6 @@
             this.btnSearchKhachHang.TabStop = false;
             this.btnSearchKhachHang.Click += new System.EventHandler(this.btnSearchKhachHang_Click);
             // 
-            // txtTenKhachHang
-            // 
-            this.txtTenKhachHang.Location = new System.Drawing.Point(152, 20);
-            this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(222, 23);
-            this.txtTenKhachHang.TabIndex = 0;
-            // 
             // dtNgayGiao
             // 
             this.dtNgayGiao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -829,15 +832,13 @@
             this.errorProviderKhachHang.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderKhachHang.ContainerControl = this;
             // 
-            // btnBrowse
+            // txtTenKhachHang
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(375, 19);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(24, 24);
-            this.btnBrowse.TabIndex = 1002;
-            this.btnBrowse.Text = "...";
-            this.btnBrowse.UseVisualStyleBackColor = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            this.txtTenKhachHang.Location = new System.Drawing.Point(152, 19);
+            this.txtTenKhachHang.Name = "txtTenKhachHang";
+            this.txtTenKhachHang.Size = new System.Drawing.Size(217, 23);
+            this.txtTenKhachHang.TabIndex = 1003;
+            this.txtTenKhachHang.Leave += new System.EventHandler(this.btnSearchKhachHang_Click);
             // 
             // OrderNew
             // 
@@ -889,7 +890,6 @@
         private System.Windows.Forms.Label lblCong;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.DateTimePicker dtNgayGiao;
         private System.Windows.Forms.TextBox txtDiaDiemGiaoHang;
         private System.Windows.Forms.Label label5;
@@ -943,5 +943,6 @@
         private System.Windows.Forms.NumericUpDown numberVAT;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.TextBox txtTenKhachHang;
     }
 }

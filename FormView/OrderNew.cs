@@ -50,11 +50,6 @@ namespace OrderApp.FormView
             this.initData = true;
         }
 
-        private void TxtTenKhachHang_Click(object sender, EventArgs e)
-        {
-            btnSearchKhachHang_Click(sender, e);
-        }
-
         private void setSetForm()
         {
             errorProvider.Clear();
@@ -161,7 +156,6 @@ namespace OrderApp.FormView
 
 
             this.txtDonGia.KeyPress += FormatLayoutUtil.AcceptNumber_KeyPress;
-            txtTenKhachHang.Click += TxtTenKhachHang_Click;
         }
 
         private void DataGridViewSanPham_MouseClick(object sender, MouseEventArgs e)
@@ -364,9 +358,38 @@ namespace OrderApp.FormView
             txtDonGia.Text = AppUtils.formatNumber2Monney(AppUtils.formatMoney2Number(txtDonGia.Text, 0));
         }
 
+        private void noneEvent(object sender, EventArgs e)
+        {
+            MessageBox.Show("noneEvent", "Lỗi");
+        }
+
         private void btnSearchKhachHang_Click(object sender, EventArgs e)
         {
-            
+            if (StringUtils.isBlank(this.txtTenKhachHang.Text))
+            {
+                MessageBox.Show("Chưa nhập mã khách hàng.", "Lỗi");
+                return;
+            }
+            KhachHangDao khDao = new KhachHangDao();
+            if (!khDao.isExits(this.txtTenKhachHang.Text))
+            {
+                MessageBox.Show("Mã khách hàng không đúng.", "Lỗi");
+                return;
+            }
+            KhachHangDto khDto = khDao.getKhachHangById(this.txtTenKhachHang.Text);
+            this.orderDTO.idKhachHang = khDto.idKhachHang;
+            this.txtTenKhachHang.Text = khDto.tenKhachHang;
+            this.txtDiaDiemGiaoHang.Text = khDto.diaChi;
+            if (khDto.listLienHe.Count > 0)
+            {
+                this.txtLienHe.Text = khDto.listLienHe[0].name;
+                this.txtSDT.Text = khDto.listLienHe[0].phone;
+            }
+            else
+            {
+                this.txtLienHe.Text = "";
+                this.txtSDT.Text = "";
+            }
         }
 
         private void browseKhachHang()
@@ -680,6 +703,11 @@ namespace OrderApp.FormView
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             browseKhachHang();
+        }
+
+        private void noneEvent(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
