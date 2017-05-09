@@ -57,7 +57,6 @@ namespace OrderApp.FormView
                 this.vanChuyen.Text = dto.vanChuyen;
                 this.ngayHopTac.Value = dto.startDate;
                 this.notes.Text = dto.notes;
-                this.txtSoTienNo.Text = dto.soTienNo.ToString();
             }
         }
 
@@ -133,7 +132,6 @@ namespace OrderApp.FormView
             destObj.idKhachHang = StringUtils.Trim(this.idKhachHang.Text);
             destObj.tenKhachHang = StringUtils.Trim(this.tenKH.Text);
             destObj.diaChi = StringUtils.Trim(this.diachi.Text);
-            destObj.soTienNo = Decimal.Parse(this.txtSoTienNo.Text);
             destObj.email = StringUtils.Trim(this.email.Text);
             destObj.accFtp = StringUtils.Trim(this.accFtp.Text);
             destObj.sales = StringUtils.Trim(this.salesName.Text);

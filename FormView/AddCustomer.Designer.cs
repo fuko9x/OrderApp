@@ -64,8 +64,6 @@ namespace OrderApp.FormView
             this.btnClose = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSoTienNo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.infoPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.giamGia)).BeginInit();
@@ -86,7 +84,7 @@ namespace OrderApp.FormView
             this.infoPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.154205F));
             this.infoPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.17637F));
             this.infoPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.33981F));
-            this.infoPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.infoPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.infoPnl.Controls.Add(this.giamGia, 4, 3);
             this.infoPnl.Controls.Add(this.label10, 3, 2);
             this.infoPnl.Controls.Add(this.label6, 0, 1);
@@ -130,18 +128,18 @@ namespace OrderApp.FormView
             // 
             this.giamGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.giamGia.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.giamGia.Location = new System.Drawing.Point(499, 130);
+            this.giamGia.Location = new System.Drawing.Point(497, 130);
             this.giamGia.Name = "giamGia";
-            this.giamGia.Size = new System.Drawing.Size(200, 26);
+            this.giamGia.Size = new System.Drawing.Size(199, 26);
             this.giamGia.TabIndex = 9;
             // 
             // label10
             // 
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(371, 82);
+            this.label10.Location = new System.Drawing.Point(370, 82);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 41);
+            this.label10.Size = new System.Drawing.Size(121, 41);
             this.label10.TabIndex = 20;
             this.label10.Text = "NV Sales (%)";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,18 +160,18 @@ namespace OrderApp.FormView
             // 
             this.salesPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.salesPercent.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.salesPercent.Location = new System.Drawing.Point(499, 89);
+            this.salesPercent.Location = new System.Drawing.Point(497, 89);
             this.salesPercent.Name = "salesPercent";
-            this.salesPercent.Size = new System.Drawing.Size(200, 26);
+            this.salesPercent.Size = new System.Drawing.Size(199, 26);
             this.salesPercent.TabIndex = 8;
             // 
             // label9
             // 
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.Location = new System.Drawing.Point(371, 41);
+            this.label9.Location = new System.Drawing.Point(370, 41);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(122, 41);
+            this.label9.Size = new System.Drawing.Size(121, 41);
             this.label9.TabIndex = 19;
             this.label9.Text = "NV Sales";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,7 +181,7 @@ namespace OrderApp.FormView
             this.diachi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.diachi.Location = new System.Drawing.Point(122, 48);
             this.diachi.Name = "diachi";
-            this.diachi.Size = new System.Drawing.Size(200, 26);
+            this.diachi.Size = new System.Drawing.Size(199, 26);
             this.diachi.TabIndex = 2;
             // 
             // email
@@ -191,7 +189,7 @@ namespace OrderApp.FormView
             this.email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.email.Location = new System.Drawing.Point(122, 89);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(200, 26);
+            this.email.Size = new System.Drawing.Size(199, 26);
             this.email.TabIndex = 3;
             // 
             // accFtp
@@ -199,23 +197,23 @@ namespace OrderApp.FormView
             this.accFtp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.accFtp.Location = new System.Drawing.Point(122, 130);
             this.accFtp.Name = "accFtp";
-            this.accFtp.Size = new System.Drawing.Size(200, 26);
+            this.accFtp.Size = new System.Drawing.Size(199, 26);
             this.accFtp.TabIndex = 4;
             // 
             // salesName
             // 
             this.salesName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.salesName.Location = new System.Drawing.Point(499, 48);
+            this.salesName.Location = new System.Drawing.Point(497, 48);
             this.salesName.Name = "salesName";
-            this.salesName.Size = new System.Drawing.Size(200, 26);
+            this.salesName.Size = new System.Drawing.Size(199, 26);
             this.salesName.TabIndex = 7;
             // 
             // vanChuyen
             // 
             this.vanChuyen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.vanChuyen.Location = new System.Drawing.Point(499, 171);
+            this.vanChuyen.Location = new System.Drawing.Point(497, 171);
             this.vanChuyen.Name = "vanChuyen";
-            this.vanChuyen.Size = new System.Drawing.Size(200, 26);
+            this.vanChuyen.Size = new System.Drawing.Size(199, 26);
             this.vanChuyen.TabIndex = 10;
             // 
             // label2
@@ -270,9 +268,9 @@ namespace OrderApp.FormView
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.Location = new System.Drawing.Point(371, 123);
+            this.label11.Location = new System.Drawing.Point(370, 123);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(122, 41);
+            this.label11.Size = new System.Drawing.Size(121, 41);
             this.label11.TabIndex = 21;
             this.label11.Text = "Giảm giá (%)";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -281,9 +279,9 @@ namespace OrderApp.FormView
             // 
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.Location = new System.Drawing.Point(371, 164);
+            this.label12.Location = new System.Drawing.Point(370, 164);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(122, 41);
+            this.label12.Size = new System.Drawing.Size(121, 41);
             this.label12.TabIndex = 22;
             this.label12.Text = "Vận chuyển";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -293,16 +291,16 @@ namespace OrderApp.FormView
             this.phoneContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.phoneContact.Location = new System.Drawing.Point(122, 213);
             this.phoneContact.Name = "phoneContact";
-            this.phoneContact.Size = new System.Drawing.Size(200, 26);
+            this.phoneContact.Size = new System.Drawing.Size(199, 26);
             this.phoneContact.TabIndex = 6;
             // 
             // label13
             // 
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label13.Location = new System.Drawing.Point(371, 205);
+            this.label13.Location = new System.Drawing.Point(370, 205);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(122, 43);
+            this.label13.Size = new System.Drawing.Size(121, 43);
             this.label13.TabIndex = 22;
             this.label13.Text = "Ngày hợp tác ";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -311,9 +309,9 @@ namespace OrderApp.FormView
             // 
             this.ngayHopTac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ngayHopTac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ngayHopTac.Location = new System.Drawing.Point(499, 213);
+            this.ngayHopTac.Location = new System.Drawing.Point(497, 213);
             this.ngayHopTac.Name = "ngayHopTac";
-            this.ngayHopTac.Size = new System.Drawing.Size(200, 26);
+            this.ngayHopTac.Size = new System.Drawing.Size(199, 26);
             this.ngayHopTac.TabIndex = 11;
             // 
             // label4
@@ -332,7 +330,7 @@ namespace OrderApp.FormView
             // 
             this.btnAddLienHe.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAddLienHe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddLienHe.Location = new System.Drawing.Point(328, 171);
+            this.btnAddLienHe.Location = new System.Drawing.Point(327, 171);
             this.btnAddLienHe.Name = "btnAddLienHe";
             this.btnAddLienHe.Size = new System.Drawing.Size(33, 27);
             this.btnAddLienHe.TabIndex = 17;
@@ -343,17 +341,17 @@ namespace OrderApp.FormView
             // tenKH
             // 
             this.tenKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tenKH.Location = new System.Drawing.Point(499, 7);
+            this.tenKH.Location = new System.Drawing.Point(497, 7);
             this.tenKH.Name = "tenKH";
-            this.tenKH.Size = new System.Drawing.Size(200, 26);
+            this.tenKH.Size = new System.Drawing.Size(199, 26);
             this.tenKH.TabIndex = 1;
             // 
             // label14
             // 
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Location = new System.Drawing.Point(371, 0);
+            this.label14.Location = new System.Drawing.Point(370, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(122, 41);
+            this.label14.Size = new System.Drawing.Size(121, 41);
             this.label14.TabIndex = 25;
             this.label14.Text = "Tên Khách Hàng";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -363,16 +361,16 @@ namespace OrderApp.FormView
             this.idKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.idKhachHang.Location = new System.Drawing.Point(122, 7);
             this.idKhachHang.Name = "idKhachHang";
-            this.idKhachHang.Size = new System.Drawing.Size(200, 26);
+            this.idKhachHang.Size = new System.Drawing.Size(199, 26);
             this.idKhachHang.TabIndex = 0;
             // 
             // cbbContact
             // 
             this.cbbContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbContact.FormattingEnabled = true;
-            this.cbbContact.Location = new System.Drawing.Point(122, 174);
+            this.cbbContact.Location = new System.Drawing.Point(122, 171);
             this.cbbContact.Name = "cbbContact";
-            this.cbbContact.Size = new System.Drawing.Size(200, 27);
+            this.cbbContact.Size = new System.Drawing.Size(199, 27);
             this.cbbContact.TabIndex = 5;
             this.cbbContact.SelectedIndexChanged += new System.EventHandler(this.cbbContact_SelectedIndexChanged);
             // 
@@ -446,37 +444,12 @@ namespace OrderApp.FormView
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.txtSoTienNo);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.notes);
             this.panel1.Location = new System.Drawing.Point(27, 272);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(740, 120);
             this.panel1.TabIndex = 19;
-            // 
-            // txtSoTienNo
-            // 
-            this.txtSoTienNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSoTienNo.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.txtSoTienNo.Location = new System.Drawing.Point(123, 89);
-            this.txtSoTienNo.Name = "txtSoTienNo";
-            this.txtSoTienNo.ReadOnly = true;
-            this.txtSoTienNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtSoTienNo.Size = new System.Drawing.Size(579, 26);
-            this.txtSoTienNo.TabIndex = 20;
-            this.txtSoTienNo.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(6, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 19);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Số tiền nợ";
             // 
             // errorProvider
             // 
@@ -545,7 +518,5 @@ namespace OrderApp.FormView
         private NumericUpDown salesPercent;
         private Panel panel1;
         private ErrorProvider errorProvider;
-        private TextBox txtSoTienNo;
-        private Label label1;
     }
 }
