@@ -253,7 +253,7 @@ namespace OrderApp.FormView
 
         private void btnSearchKhachHang_Click(object sender, EventArgs e)
         {
-            loadData();
+            reloadData();
         }
 
         private void loadData()
@@ -278,7 +278,7 @@ namespace OrderApp.FormView
                 this.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
                 this.txtTenKhachHang.Text = frmSearch.khachHangSelected.idKhachHang;
 
-                loadData();
+                reloadData();
             }
         }
     }

@@ -70,6 +70,7 @@
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelPrint.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -540,11 +541,22 @@
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
+            // btnIn
+            // 
+            this.btnIn.Location = new System.Drawing.Point(13, 3);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(75, 23);
+            this.btnIn.TabIndex = 5;
+            this.btnIn.Text = "PRINT";
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
             // OrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(937, 600);
+            this.Controls.Add(this.btnIn);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.btnClose);
@@ -609,5 +621,6 @@
         private System.Windows.Forms.CheckBox ckbGiaoHang;
         private System.Windows.Forms.CheckBox ckbThanhToan;
         private System.Windows.Forms.Label lblGhiChu;
+        private System.Windows.Forms.Button btnIn;
     }
 }

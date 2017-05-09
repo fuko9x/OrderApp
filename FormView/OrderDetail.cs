@@ -181,5 +181,19 @@ namespace OrderApp.FormView
                 MessageBox.Show(ex.Message, "ERROR!!");
             }
         }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String path = AppUtils.createTempFolder();
+                AppUtils.exportOrder(order.id, order, path);
+                AppUtils.printExcelFile(path + "\\Order_" + order.id + ".xls");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message, "ERROR");
+            }
+        }
     }
 }
