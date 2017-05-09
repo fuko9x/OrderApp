@@ -204,5 +204,11 @@ namespace OrderApp.FormView
             FrmTraTruoc frmTraTruoc = new FrmTraTruoc(idKhachHang);
             frmTraTruoc.ShowDialog(this);
         }
+
+        private void khNoTienToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmKhachHangNoTien frm = new FrmKhachHangNoTien();
+            frm.ShowDialog(this);
+        }
     }
 }
