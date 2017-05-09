@@ -101,7 +101,14 @@ namespace OrderApp.FormView
             {
                 int rowSelected = listKhachHang.SelectedRows[0].Index;
                 String selectedId = listKhachHang.Rows[rowSelected].Cells["ID"].Value.ToString();
-                AppUtils.exportDept(selectedId);
+                using (var folderDialog = new FolderBrowserDialog())
+                {
+                    if (folderDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        AppUtils.exportDept(selectedId, folderDialog.SelectedPath);
+                        MessageBox.Show("Đã hoàn thành export công nợ");
+                    }
+                }
             } catch (Exception ex)
             {
                 MessageBox.Show("ERROR: " + ex.Message);

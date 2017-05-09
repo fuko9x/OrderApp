@@ -99,7 +99,14 @@ namespace OrderApp.FormView
                 int rowSelected = this.dataGridViewDonHang.SelectedRows[0].Index;
                 String selectedId = this.dataGridViewDonHang.Rows[rowSelected].Cells["ID"].Value.ToString();
                 OrderDto order = OrderDao.getOderByID(selectedId);
-                AppUtils.exportOrder(selectedId, order);
+                using (var folderDialog = new FolderBrowserDialog())
+                {
+                    if (folderDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        AppUtils.exportOrder(selectedId, order, folderDialog.SelectedPath);
+                        MessageBox.Show("Đã export đơn hàng");
+                    }
+                }
             }
         }
 

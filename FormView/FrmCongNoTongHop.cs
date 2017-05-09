@@ -103,7 +103,14 @@ namespace OrderApp.FormView
             {
                 if (StringUtils.isNotBlank(txtTenKhachHang.Text))
                 {
-                    AppUtils.exportDept(txtTenKhachHang.Text);
+                    using (var folderDialog = new FolderBrowserDialog())
+                    {
+                        if (folderDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            AppUtils.exportDept(txtTenKhachHang.Text, folderDialog.SelectedPath);
+                            MessageBox.Show("Đã hoàn thành export công nợ");
+                        }
+                    }
                 } else
                 {
                     MessageBox.Show("Chưa chọn khách hàng", "MESSAGE");

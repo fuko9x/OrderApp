@@ -33,7 +33,20 @@ namespace OrderApp.FormView
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                using (var folderDialog = new FolderBrowserDialog())
+                {
+                    if (folderDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        AppUtils.exportSummaryDept(folderDialog.SelectedPath);
+                        MessageBox.Show("Đã hoàn thành export công nợ");
+                    }
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message, "ERROR");
+            }
         }
 
         private void FrmKhachHangNoTien_Load(object sender, EventArgs e)
@@ -42,6 +55,19 @@ namespace OrderApp.FormView
             DataTable dtTable = new DataTable();
             dtTable.Load(reader);
             this.dataGridViewMain.DataSource = dtTable;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String path = AppUtils.createTempFolder();
+                AppUtils.exportSummaryDept(path);
+                AppUtils.printExcelFile(path + "\\TongHopCongNo.xls");
+            } catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message, "ERROR");
+            }
         }
     }
 }
