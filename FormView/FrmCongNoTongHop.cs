@@ -121,5 +121,25 @@ namespace OrderApp.FormView
             }
             
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (StringUtils.isNotBlank(txtTenKhachHang.Text))
+            {
+                try
+                {
+                    String path = AppUtils.createTempFolder();
+                    AppUtils.exportDept(txtTenKhachHang.Text, path);
+                    AppUtils.printExcelFile(path + "\\CongNo.xls");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: " + ex.Message, "ERROR");
+                }
+            } else
+            {
+                MessageBox.Show("Chưa chọn khách hàng", "MESSAGE");
+            }
+        }
     }
 }
