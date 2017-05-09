@@ -229,7 +229,7 @@ namespace OrderApp.Common
             }
         }
 
-        public static void exportSummaryDept(String idKH)
+        public static void exportSummaryDept()
         {
             using (var folderDialog = new FolderBrowserDialog())
             {
@@ -417,7 +417,7 @@ namespace OrderApp.Common
             return csvData;
         }
 
-    public static void cleanDataBase()
+        public static void cleanDataBase()
         {
             CommonDao commonDao = new CommonDao();
             commonDao.cleanTable("KHACH_HANG");
@@ -453,6 +453,5 @@ namespace OrderApp.Common
             }
             return "";
         }
-
     }
 }

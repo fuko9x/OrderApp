@@ -100,13 +100,16 @@ namespace OrderApp.FormView
         {
             try
             {
-                if (StringUtils.isNotBlank(this.idKhachHang))
+                if (StringUtils.isNotBlank(txtTenKhachHang.Text))
                 {
-                    AppUtils.exportDept(this.idKhachHang);
+                    AppUtils.exportDept(txtTenKhachHang.Text);
+                } else
+                {
+                    MessageBox.Show("Chưa chọn khách hàng", "MESSAGE");
                 }
             } catch (Exception ex)
             {
-                MessageBox.Show("ERROR: " + ex.Message);
+                MessageBox.Show("ERROR: " + ex.Message, "ERROR");
             }
             
         }
