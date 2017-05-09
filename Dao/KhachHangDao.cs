@@ -199,11 +199,9 @@ namespace OrderApp.Dao
                  + " ID_KHACH_HANG"
                 + ", TEN_KHACH_HANG"
                 + ", DIA_CHI"
-                + ", SO_TIEN_NO"
-                + ", GIAM_GIA"
+                + ", ACC_FTP"
                 + ", TEN_SALES"
                 + ", GHI_CHU"
-                + ", TRANG_THAI"
                 + " FROM KHACH_HANG WHERE 1=1 ";
             if (StringUtils.isNotBlank(dto.idKhachHang))
             {

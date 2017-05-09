@@ -29,7 +29,8 @@ namespace OrderApp.Dao
         public static DataTable getList(String idKhachHang)
         {
             DataTable dt = new DataTable();
-            String strQuery = "SELECT LS.*, KH.TEN_KHACH_HANG FROM LICH_SU_TRA_TRUOC LS, KHACH_HANG KH "
+            String strQuery = "SELECT LS.*, KH.TEN_KHACH_HANG FROM LICH_SU_TRA_TRUOC LS"
+                + " LEFT JOIN KHACH_HANG KH ON LS.ID_KHACH_HANG = KH.ID_KHACH_HANG"
                 + " WHERE LS.ID_KHACH_HANG = @idKhachHang "
                 + " ORDER BY LS.NGAY_TRA DESC , LS.ID DESC";
             SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
