@@ -35,10 +35,15 @@ namespace OrderApp.FormView
         private void loadData()
         {
             String idKhachHang = txtTenKhachHang.Text;
-            if (!String.IsNullOrEmpty(idKhachHang)) {
-                OrderDao orderDao = new OrderDao();
-                DataTable dt = new DataTable();
+            OrderDao orderDao = new OrderDao();
+            DataTable dt = new DataTable();
+            if (!String.IsNullOrEmpty(idKhachHang))
+            {
                 dt.Load(orderDao.getDebtByCustomer(idKhachHang));
+                this.dataGridView.DataSource = dt;
+            }else
+            {
+                dt.Load(orderDao.getDebtByCustomer());
                 this.dataGridView.DataSource = dt;
             }
         }
