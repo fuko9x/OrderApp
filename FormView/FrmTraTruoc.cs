@@ -54,6 +54,11 @@ namespace OrderApp.FormView
         {
             try
             {
+                if (String.IsNullOrWhiteSpace(txtTenKhachHang.Text))
+                {
+                    MessageBox.Show("Chưa chọn Khách Hàng", "MESSAGE");
+                    return;
+                }
                 Dto.LichSuTraTruocDto lsDto = new Dto.LichSuTraTruocDto();
                 lsDto.idKhachHang = txtTenKhachHang.Text;
                 lsDto.soTien = Decimal.Parse(txtSoTien.Text);

@@ -366,6 +366,11 @@ namespace OrderApp.FormView
 
         private void btnSearchKhachHang_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void browseKhachHang()
+        {
             SearchCustomer frmSearch = new SearchCustomer(true);
             if (frmSearch.ShowDialog(this) == DialogResult.OK)
             {
@@ -670,6 +675,11 @@ namespace OrderApp.FormView
         private void txtChietKhau_KeyUp(object sender, KeyEventArgs e)
         {
             txtChietKhau_ValueChanged(sender, e);
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            browseKhachHang();
         }
     }
 }

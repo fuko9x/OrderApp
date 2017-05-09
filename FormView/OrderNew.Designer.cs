@@ -93,6 +93,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderKhachHang = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -653,6 +654,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.btnBrowse);
             this.groupBox1.Controls.Add(this.txtSDT);
             this.groupBox1.Controls.Add(this.txtLienHe);
             this.groupBox1.Controls.Add(this.label23);
@@ -772,8 +774,7 @@
             // 
             this.txtTenKhachHang.Location = new System.Drawing.Point(152, 20);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.ReadOnly = true;
-            this.txtTenKhachHang.Size = new System.Drawing.Size(244, 23);
+            this.txtTenKhachHang.Size = new System.Drawing.Size(222, 23);
             this.txtTenKhachHang.TabIndex = 0;
             // 
             // dtNgayGiao
@@ -827,6 +828,16 @@
             // 
             this.errorProviderKhachHang.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderKhachHang.ContainerControl = this;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(375, 19);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(24, 24);
+            this.btnBrowse.TabIndex = 1002;
+            this.btnBrowse.Text = "...";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // OrderNew
             // 
@@ -931,5 +942,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.NumericUpDown numberVAT;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button btnBrowse;
     }
 }
