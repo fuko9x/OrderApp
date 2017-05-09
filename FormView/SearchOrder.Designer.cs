@@ -61,6 +61,7 @@
             this.btnSearchKhachHang = new System.Windows.Forms.PictureBox();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -381,7 +382,7 @@
             // btnSearchKhachHang
             // 
             this.btnSearchKhachHang.Image = global::OrderApp.Properties.Resources.search_icon;
-            this.btnSearchKhachHang.Location = new System.Drawing.Point(394, 9);
+            this.btnSearchKhachHang.Location = new System.Drawing.Point(391, 8);
             this.btnSearchKhachHang.Name = "btnSearchKhachHang";
             this.btnSearchKhachHang.Size = new System.Drawing.Size(25, 25);
             this.btnSearchKhachHang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -393,8 +394,7 @@
             // 
             this.txtTenKhachHang.Location = new System.Drawing.Point(144, 11);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.ReadOnly = true;
-            this.txtTenKhachHang.Size = new System.Drawing.Size(244, 20);
+            this.txtTenKhachHang.Size = new System.Drawing.Size(218, 20);
             this.txtTenKhachHang.TabIndex = 21;
             // 
             // label4
@@ -406,11 +406,22 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "Khách Hàng";
             // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(362, 9);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(24, 23);
+            this.btnBrowse.TabIndex = 28;
+            this.btnBrowse.Text = "...";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
             // SearchOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 491);
+            this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnSearchKhachHang);
             this.Controls.Add(this.txtTenKhachHang);
             this.Controls.Add(this.label4);
@@ -461,5 +472,6 @@
         private System.Windows.Forms.PictureBox btnSearchKhachHang;
         private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnBrowse;
     }
 }

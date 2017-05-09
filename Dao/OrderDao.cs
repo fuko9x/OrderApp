@@ -93,7 +93,7 @@ namespace OrderApp.Dao
             return dt;
         }
 
-        public DataTable searchListOrder(String idKhachHang)
+        public DataTable searchListOrder(String idKhachHang = "")
         {
             DataTable dt = new DataTable();
             String strQuery = "SELECT"
@@ -107,12 +107,18 @@ namespace OrderApp.Dao
                 + ", (CASE d.TRANG_THAI_XUAT_KHO WHEN 'TRUE' THEN 'OK' ELSE '-' END) AS TRANG_THAI_XUAT_KHO"
                 + " FROM DON_DAT_HANG d"
                 + " LEFT JOIN KHACH_HANG k"
-                + " ON d.ID_KHACH_HANG = k.ID_KHACH_HANG"
-                + " WHERE d.ID_KHACH_HANG LIKE @idKhachHang "
-                + " ORDER BY d.NGAY_GIAO ASC, d.ID_KHACH_HANG";
+                + " ON d.ID_KHACH_HANG = k.ID_KHACH_HANG";
+           if (idKhachHang != "")
+           {
+                strQuery += " WHERE d.ID_KHACH_HANG LIKE @idKhachHang ";
+           }
+            strQuery += " ORDER BY d.NGAY_GIAO ASC, d.ID_KHACH_HANG";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.AddWithValue("@idKhachHang", idKhachHang);
+            if (idKhachHang != "")
+            {
+                cmd.Parameters.AddWithValue("@idKhachHang", idKhachHang);
+            }
             cmd.Connection = Connection.getConnection();
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = cmd;

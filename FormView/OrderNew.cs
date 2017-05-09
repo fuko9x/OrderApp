@@ -26,7 +26,8 @@ namespace OrderApp.FormView
         private Boolean initData = false;
         //private creatOrder
         private OrderDto orderDTO = new OrderDto();
-        private readonly String formatMoney = "#,### VND";
+        private readonly String formatMoney = "#,###";
+        private readonly String formatMoneyVND = "#,### VND";
 
         private bool isSaved = false;
 
@@ -259,13 +260,14 @@ namespace OrderApp.FormView
             }
 
             orderDTO.tongCong = tongTien;
-            orderDTO.vat = (tongTien * ((double)numberVAT.Value/100));
-            orderDTO.tongTien = orderDTO.tongCong + orderDTO.vat;
+            orderDTO.vat = (double)numberVAT.Value;
+            double vat = tongTien * ((double)numberVAT.Value / 100);
+            orderDTO.tongTien = orderDTO.tongCong + vat;
 
 
-            lblCong.Text = orderDTO.tongCong.ToString(formatMoney);
-            lblThuevat.Text = orderDTO.vat.ToString(formatMoney); //10%
-            lblTongTien.Text = orderDTO.tongTien.ToString(formatMoney);
+            lblCong.Text = orderDTO.tongCong.ToString(formatMoneyVND);
+            lblThuevat.Text = vat.ToString(formatMoneyVND);
+            lblTongTien.Text = orderDTO.tongTien.ToString(formatMoneyVND);
 
             this.btnUpdate.Enabled = false;
         }
@@ -565,37 +567,58 @@ namespace OrderApp.FormView
             txtThanhTien.Text = (thanhTien - chietKhau).ToString("#,###");
         }
 
+        private void SaveAction()
+        {
+            if (!checkUIvalid())
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "THÔNG BÁO");
+                return;
+            }
+
+            orderDTO.lienHe = txtLienHe.Text.Trim();
+            orderDTO.dienThoai = txtSDT.Text.Trim();
+            orderDTO.diaDiemGiaoHang = txtDiaDiemGiaoHang.Text.Trim();
+            orderDTO.ngayDat = dtNgayDat.Value;
+            orderDTO.ngayGiao = dtNgayGiao.Value;
+            //orderDTO.thanhToan = false;
+            orderDTO.notes = txtGhiChu.Text.Trim();
+
+            OrderDao orderDao = new OrderDao();
+            if (this.currentMode == CONS_MODE_ADD)
+            {
+                orderDao.creatOrder(orderDTO);
+                isSaved = true;
+                this.DialogResult = DialogResult.OK;
+            }
+            else if (this.currentMode == CONS_MODE_EDIT)
+            {
+                orderDao.updateOrder(orderDTO);
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!checkUIvalid())
-                {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!" , "THÔNG BÁO");
-                    return;
-                }
-
-                orderDTO.lienHe = txtLienHe.Text.Trim();
-                orderDTO.dienThoai = txtSDT.Text.Trim();
-                orderDTO.diaDiemGiaoHang = txtDiaDiemGiaoHang.Text.Trim();
-                orderDTO.ngayDat = dtNgayDat.Value;
-                orderDTO.ngayGiao = dtNgayGiao.Value;
-                //orderDTO.thanhToan = false;
-                orderDTO.notes = txtGhiChu.Text.Trim();
-
-                OrderDao orderDao = new OrderDao();
-                if (this.currentMode == CONS_MODE_ADD)
-                {
-                    orderDao.creatOrder(orderDTO);
-                    isSaved = true;
-                    this.DialogResult = DialogResult.OK;
-                }
-                else if (this.currentMode == CONS_MODE_EDIT)
-                {
-                    orderDao.updateOrder(orderDTO);
-                }
-                
+                SaveAction();
                 this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!!!");
+            }
+        }
+
+        private void btnSaveNew_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveAction();
+                this.currentMode = CONS_MODE_ADD;
+                orderDTO = new OrderDto();
+                initDataAction();
+                setSetForm();
+                updateUI();
             }
             catch (Exception ex)
             {
@@ -681,5 +704,6 @@ namespace OrderApp.FormView
         {
             browseKhachHang();
         }
+
     }
 }
