@@ -287,8 +287,8 @@ namespace OrderApp.Dao
                 cmd.Transaction = sqlTransaction;
                 cmd.Parameters.AddWithValue("@id", orderDto.id);
                 cmd.Parameters.AddWithValue("@idKhachHang", orderDto.idKhachHang);
-                cmd.Parameters.AddWithValue("@ngayDat", orderDto.ngayDat);
-                cmd.Parameters.AddWithValue("@ngayGiao", orderDto.ngayGiao);
+                cmd.Parameters.AddWithValue("@ngayDat", new DateTime(orderDto.ngayDat.Year, orderDto.ngayDat.Month, orderDto.ngayDat.Day));
+                cmd.Parameters.AddWithValue("@ngayGiao", new DateTime(orderDto.ngayGiao.Year, orderDto.ngayGiao.Month, orderDto.ngayGiao.Day));
                 cmd.Parameters.AddWithValue("@tongCong", orderDto.tongCong);
                 cmd.Parameters.AddWithValue("@vat", orderDto.vat);
                 cmd.Parameters.AddWithValue("@tongTien", orderDto.tongTien);
@@ -418,8 +418,8 @@ namespace OrderApp.Dao
                 cmd.Transaction = sqlTransaction;
                 cmd.Parameters.AddWithValue("@id", orderDto.id);
                 cmd.Parameters.AddWithValue("@idKhachHang", orderDto.idKhachHang);
-                cmd.Parameters.AddWithValue("@ngayDat", orderDto.ngayDat);
-                cmd.Parameters.AddWithValue("@ngayGiao", orderDto.ngayGiao);
+                cmd.Parameters.AddWithValue("@ngayDat", new DateTime(orderDto.ngayDat.Year, orderDto.ngayDat.Month, orderDto.ngayDat.Day));
+                cmd.Parameters.AddWithValue("@ngayGiao", new DateTime(orderDto.ngayGiao.Year, orderDto.ngayGiao.Month, orderDto.ngayGiao.Day));
                 cmd.Parameters.AddWithValue("@tongCong", orderDto.tongCong);
                 cmd.Parameters.AddWithValue("@vat", orderDto.vat);
                 cmd.Parameters.AddWithValue("@tongTien", orderDto.tongTien);
