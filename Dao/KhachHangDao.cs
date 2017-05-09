@@ -332,7 +332,7 @@ namespace OrderApp.Dao
 
         }
 
-        public SqlDataReader getTienNo()
+        public static SqlDataReader getTienNo()
         {
             String strQuery = "SELECT "
                 + " ID_KHACH_HANG"

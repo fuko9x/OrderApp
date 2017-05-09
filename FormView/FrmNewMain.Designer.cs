@@ -58,6 +58,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.progressBarMain = new System.Windows.Forms.ProgressBar();
+            this.khNoTienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelThuTien.SuspendLayout();
@@ -163,7 +164,8 @@
             // 
             this.ThongKeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TK_DonHangToolStripMenuItem,
-            this.TK_CongNoToolStripMenuItem});
+            this.TK_CongNoToolStripMenuItem,
+            this.khNoTienToolStripMenuItem});
             this.ThongKeToolStripMenuItem.Name = "ThongKeToolStripMenuItem";
             this.ThongKeToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.ThongKeToolStripMenuItem.Text = "Thống kê";
@@ -350,6 +352,13 @@
             this.progressBarMain.TabIndex = 7;
             this.progressBarMain.Visible = false;
             // 
+            // khNoTienToolStripMenuItem
+            // 
+            this.khNoTienToolStripMenuItem.Name = "khNoTienToolStripMenuItem";
+            this.khNoTienToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.khNoTienToolStripMenuItem.Text = "Khách Hàng Nợ Tiền";
+            this.khNoTienToolStripMenuItem.Click += new System.EventHandler(this.khNoTienToolStripMenuItem_Click);
+            // 
             // FrmNewMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,5 +424,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ProgressBar progressBarMain;
+        private System.Windows.Forms.ToolStripMenuItem khNoTienToolStripMenuItem;
     }
 }

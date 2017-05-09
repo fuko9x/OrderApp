@@ -69,7 +69,10 @@ namespace OrderApp.FormView
             try
             {
                 //load combobox
-                this.comboBoxLoaiSanPham.DataSource = SanPhamDao.getListSanPhamCha();
+                DataTable dt = SanPhamDao.getListSanPhamCha();
+
+
+                this.comboBoxLoaiSanPham.DataSource = dt;
                 this.comboBoxLoaiSanPham.ValueMember = "ID";
                 this.comboBoxLoaiSanPham.DisplayMember = "TEN_SAN_PHAM";
 

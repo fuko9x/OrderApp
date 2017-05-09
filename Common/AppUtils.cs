@@ -236,7 +236,7 @@ namespace OrderApp.Common
                 if (folderDialog.ShowDialog() == DialogResult.OK)
                 {
 
-                    SqlDataReader reader = new KhachHangDao().getTienNo();
+                    SqlDataReader reader = KhachHangDao.getTienNo();
 
                     Excel.Application xlApp = new Excel.Application();
 
