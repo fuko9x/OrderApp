@@ -186,7 +186,7 @@ namespace OrderApp.FormView
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(3, 175);
+            this.label4.Location = new System.Drawing.Point(3, 210);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(198, 35);
             this.label4.TabIndex = 25;
@@ -207,7 +207,7 @@ namespace OrderApp.FormView
             // 
             this.donGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.donGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
-            this.donGia.Location = new System.Drawing.Point(207, 179);
+            this.donGia.Location = new System.Drawing.Point(207, 214);
             this.donGia.Name = "donGia";
             this.donGia.Size = new System.Drawing.Size(470, 26);
             this.donGia.TabIndex = 5;
@@ -257,19 +257,19 @@ namespace OrderApp.FormView
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxLoaiSanPham, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.size, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.loaiBia, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.donGia, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.loaiGiay, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.label8, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 8);
             this.tableLayoutPanel2.Controls.Add(this.description, 1, 8);
             this.tableLayoutPanel2.Controls.Add(this.addPageCost, 1, 7);
-            this.tableLayoutPanel2.Controls.Add(this.numPageDefault, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label8, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.numPageDefault, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.donGia, 1, 6);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.tableLayoutPanel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(41, 23);
@@ -324,7 +324,7 @@ namespace OrderApp.FormView
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 218);
+            this.label8.Location = new System.Drawing.Point(3, 183);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(198, 19);
             this.label8.TabIndex = 31;
@@ -357,7 +357,7 @@ namespace OrderApp.FormView
             0,
             0,
             0});
-            this.numPageDefault.Location = new System.Drawing.Point(207, 213);
+            this.numPageDefault.Location = new System.Drawing.Point(207, 178);
             this.numPageDefault.Maximum = new decimal(new int[] {
             100000,
             0,
