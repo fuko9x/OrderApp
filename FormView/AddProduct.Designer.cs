@@ -328,7 +328,7 @@ namespace OrderApp.FormView
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(198, 19);
             this.label8.TabIndex = 31;
-            this.label8.Text = "Số trang (mặc định)";
+            this.label8.Text = "Số Tờ Mặc Định)";
             // 
             // label9
             // 
@@ -367,7 +367,7 @@ namespace OrderApp.FormView
             this.numPageDefault.Size = new System.Drawing.Size(470, 26);
             this.numPageDefault.TabIndex = 6;
             this.numPageDefault.Value = new decimal(new int[] {
-            10,
+            15,
             0,
             0,
             0});
