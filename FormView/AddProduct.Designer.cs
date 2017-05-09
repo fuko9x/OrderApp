@@ -201,7 +201,7 @@ namespace OrderApp.FormView
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(198, 19);
             this.label5.TabIndex = 26;
-            this.label5.Text = "Số tiền thêm";
+            this.label5.Text = "Số Tiền Tăng Trang";
             // 
             // donGia
             // 
