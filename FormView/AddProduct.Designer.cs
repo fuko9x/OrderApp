@@ -296,7 +296,7 @@ namespace OrderApp.FormView
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(198, 35);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Chọn Sản Phẩm";
+            this.label7.Text = "Loại Sản Phẩm";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // id
@@ -315,7 +315,7 @@ namespace OrderApp.FormView
             this.comboBoxLoaiSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxLoaiSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.comboBoxLoaiSanPham.FormattingEnabled = true;
-            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(207, 4);
+            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(207, 7);
             this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
             this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(470, 27);
             this.comboBoxLoaiSanPham.TabIndex = 0;
