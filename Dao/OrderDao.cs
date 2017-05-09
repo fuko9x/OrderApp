@@ -560,7 +560,7 @@ namespace OrderApp.Dao
             cmd.ExecuteNonQuery();
         }
         
-        public SqlDataReader getDebtByCustomer(String idKhachHang)
+        public SqlDataReader getDebtByCustomer(String idKhachHang = "")
         {
             String strQuery = "SELECT a.ID"
                                 + ", a.NGAY_GIAO"
