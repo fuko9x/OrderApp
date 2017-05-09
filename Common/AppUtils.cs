@@ -228,7 +228,67 @@ namespace OrderApp.Common
                 }
             }
         }
-    
+
+        public static void exportSummaryDept(String idKH)
+        {
+            using (var folderDialog = new FolderBrowserDialog())
+            {
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+
+                    SqlDataReader reader = new KhachHangDao().getTienNo();
+
+                    Excel.Application xlApp = new Excel.Application();
+
+                    if (xlApp == null)
+                    {
+                        MessageBox.Show("Excel is not properly installed!!");
+                        return;
+                    }
+
+
+                    Excel.Workbook xlWorkBook;
+                    Excel.Worksheet xlWorkSheet;
+                    object misValue = System.Reflection.Missing.Value;
+                    xlWorkBook = xlApp.Workbooks.Open(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\SummaryDeptTemplate.xls", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+                    xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                    int i = 0;
+                    decimal sum = 0;
+                    while (reader.Read())
+                    {
+                        var r = xlWorkSheet.get_Range(string.Format("{0}:{0}", 10, Type.Missing));
+                        var range = xlWorkSheet.get_Range(string.Format("{0}:{0}", 9, Type.Missing));
+                        range.Select();
+                        range.Copy();
+                        r.Insert();
+
+                        xlWorkSheet.Cells[9, 1] = reader.GetString(reader.GetOrdinal("ID_KHACH_HANG"));
+                        xlWorkSheet.Cells[9, 2] = reader.GetString(reader.GetOrdinal("TEN_KHACH_HANG"));
+                        Decimal soTienNo = reader.GetDecimal(reader.GetOrdinal("SO_TIEN_NO"));
+                        xlWorkSheet.Cells[9, 3] = soTienNo;
+
+                        sum += soTienNo;
+                        i++;
+                    }
+
+                    xlWorkSheet.Cells[10 + i, 3] = sum;
+
+                    xlWorkBook.CheckCompatibility = false;
+                    xlWorkBook.SaveAs(folderDialog.SelectedPath + "\\TongHopCongNo.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                    xlWorkBook.Close(true, misValue, misValue);
+                    xlApp.Quit();
+
+                    Marshal.ReleaseComObject(xlWorkSheet);
+                    Marshal.ReleaseComObject(xlWorkBook);
+                    Marshal.ReleaseComObject(xlApp);
+
+                    reader.Close();
+                    MessageBox.Show("Đã hoàn thành export công nợ");
+                }
+            }
+        }
+
 
         private static void exportCSV(String path, String tableName)
         {

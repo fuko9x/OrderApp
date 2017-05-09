@@ -95,5 +95,20 @@ namespace OrderApp.FormView
         {
             searchKhachHang();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (StringUtils.isNotBlank(this.idKhachHang))
+                {
+                    AppUtils.exportDept(this.idKhachHang);
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+            
+        }
     }
 }

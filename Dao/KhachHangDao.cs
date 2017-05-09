@@ -331,5 +331,20 @@ namespace OrderApp.Dao
             cmd.ExecuteNonQuery();
 
         }
+
+        public SqlDataReader getTienNo()
+        {
+            String strQuery = "SELECT "
+                + " ID_KHACH_HANG"
+               + ", TEN_KHACH_HANG"
+               + ", ISNULL(SO_TIEN_NO, 0) AS SO_TIEN_NO"
+               + " FROM KHACH_HANG";
+
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            SqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
     }
 }
