@@ -44,7 +44,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDeleteOrder = new System.Windows.Forms.Button();
@@ -154,7 +153,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 8;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
@@ -165,7 +164,6 @@
             this.tableLayoutPanel1.Controls.Add(this.btnClose, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnExport, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnDetail, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnCreate, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 441);
             this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(690, 0);
@@ -213,27 +211,14 @@
             this.btnDetail.UseVisualStyleBackColor = true;
             this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
-            // btnCreate
-            // 
-            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCreate.CausesValidation = false;
-            this.btnCreate.Location = new System.Drawing.Point(3, 7);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(121, 28);
-            this.btnCreate.TabIndex = 18;
-            this.btnCreate.Text = "Tạo Mới";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click_1);
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.btnDeleteOrder);
-            this.panel1.Location = new System.Drawing.Point(130, 3);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Location = new System.Drawing.Point(19, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(294, 36);
+            this.panel1.Size = new System.Drawing.Size(405, 36);
             this.panel1.TabIndex = 20;
             // 
             // btnEdit
@@ -243,7 +228,7 @@
             this.btnEdit.CausesValidation = false;
             this.btnEdit.Location = new System.Drawing.Point(3, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(113, 28);
+            this.btnEdit.Size = new System.Drawing.Size(111, 28);
             this.btnEdit.TabIndex = 20;
             this.btnEdit.Text = "Chỉnh sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -254,9 +239,9 @@
             this.btnDeleteOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteOrder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDeleteOrder.CausesValidation = false;
-            this.btnDeleteOrder.Location = new System.Drawing.Point(122, 4);
+            this.btnDeleteOrder.Location = new System.Drawing.Point(120, 4);
             this.btnDeleteOrder.Name = "btnDeleteOrder";
-            this.btnDeleteOrder.Size = new System.Drawing.Size(113, 28);
+            this.btnDeleteOrder.Size = new System.Drawing.Size(111, 28);
             this.btnDeleteOrder.TabIndex = 19;
             this.btnDeleteOrder.Text = "Xóa Đơn Hàng";
             this.btnDeleteOrder.UseVisualStyleBackColor = true;
@@ -445,7 +430,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridViewDonHang;
         private System.Windows.Forms.ComboBox cbbTinhTrangDonHang;
-        private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDeleteOrder;
