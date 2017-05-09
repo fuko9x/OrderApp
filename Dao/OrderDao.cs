@@ -574,12 +574,18 @@ namespace OrderApp.Dao
                                 + ", ISNULL(sp.DON_GIA, 0) AS DON_GIA"
                                 + ", ISNULL(sp.CHIET_KHAU, 1) AS CHIET_KHAU"
                                 + ", ISNULL(sp.THANH_TIEN, 0) AS THANH_TIEN"
+                                + ", ISNULL(a.VAT, 0) AS VAT"
+                                + ", sp.THANH_TIEN + sp.THANH_TIEN * ISNULL(a.VAT, 0)/100 AS TONG_TIEN"
                                 + " FROM DON_DAT_HANG a"
                                 + " LEFT JOIN DON_DAT_HANG_SP sp"
-                                + " ON a.ID = sp.ID_DON_DAT_HANG"
-                                + " WHERE a.ID_KHACH_HANG = '" + idKhachHang + "'"
-                                + "     AND a.TRANG_THAI_THANH_TOAN = 'false'"
-                                + " ORDER BY NGAY_GIAO DESC";
+                                + " ON a.ID = sp.ID_DON_DAT_HANG";
+            if (StringUtils.isNotBlank(idKhachHang))
+            {
+                strQuery += " WHERE a.ID_KHACH_HANG = '" + idKhachHang + "'";
+                //+ "     AND a.TRANG_THAI_THANH_TOAN = 'false'"
+            }
+
+            strQuery += " ORDER BY NGAY_GIAO DESC";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Connection.getConnection();
