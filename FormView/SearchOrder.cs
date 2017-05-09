@@ -46,7 +46,8 @@ namespace OrderApp.FormView
             if (this.idKhachHang != "")
             {
                 txtTenKhachHang.Text = this.idKhachHang;
-                loadData();
+                //loadData();
+                reloadData();
             }
             else
             {
@@ -134,19 +135,19 @@ namespace OrderApp.FormView
             switch (cbbTinhTrangDonHang.SelectedIndex)
             {
                 case 0:
-                    dt = dao.getListOrder(this.dateFrom.Value, this.dateTo.Value, 0, false);
+                    dt = dao.getListOrder(this.idKhachHang, this.dateFrom.Value, this.dateTo.Value, 0, false);
                     break;
                 case 1:
-                    dt = dao.getListOrder(this.dateFrom.Value, this.dateTo.Value, 2, false);
+                    dt = dao.getListOrder(this.idKhachHang, this.dateFrom.Value, this.dateTo.Value, 2, false);
                     break;
                 case 2:
-                    dt = dao.getListOrder(this.dateFrom.Value, this.dateTo.Value, 2, true);
+                    dt = dao.getListOrder(this.idKhachHang, this.dateFrom.Value, this.dateTo.Value, 2, true);
                     break;
                 case 3:
-                    dt = dao.getListOrder(this.dateFrom.Value, this.dateTo.Value, 1, false);
+                    dt = dao.getListOrder(this.idKhachHang, this.dateFrom.Value, this.dateTo.Value, 1, false);
                     break;
                 case 4:
-                    dt = dao.getListOrder(this.dateFrom.Value, this.dateTo.Value, 1, true);
+                    dt = dao.getListOrder(this.idKhachHang, this.dateFrom.Value, this.dateTo.Value, 1, true);
                     break;
             }
             this.dataGridViewDonHang.DataSource = dt;

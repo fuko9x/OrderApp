@@ -47,7 +47,7 @@ namespace OrderApp.Dao
             return numOrderInMonth;
         }
 
-        public DataTable getListOrder(DateTime dateFrom, DateTime dateTo, int searchType,  Boolean status)
+        public DataTable getListOrder(String idKhachHang, DateTime dateFrom, DateTime dateTo, int searchType,  Boolean status)
         {
             DataTable dt = new DataTable();
             String strQuery = "SELECT"
@@ -64,6 +64,11 @@ namespace OrderApp.Dao
                 + " ON d.ID_KHACH_HANG = k.ID_KHACH_HANG"
                 + " WHERE NGAY_GIAO >= @dateFrom AND NGAY_GIAO <= @dateTo";
             
+            // add dk ma khach hang
+            if (StringUtils.isNotBlank(idKhachHang)) {
+                strQuery += " AND d.ID_KHACH_HANG = @idKhachHang";
+            }
+
             // add dieu kien trang thai don hang
             switch (searchType)
             {
@@ -85,6 +90,7 @@ namespace OrderApp.Dao
             cmd.Parameters.AddWithValue("@dateFrom", new DateTime(dateFrom.Year, dateFrom.Month, dateFrom.Day));
             cmd.Parameters.AddWithValue("@dateTo", new DateTime(dateTo.Year, dateTo.Month, dateTo.Day));
             cmd.Parameters.AddWithValue("@status", status);
+            cmd.Parameters.AddWithValue("@idKhachHang", idKhachHang);
 
             cmd.Connection = Connection.getConnection();
             SqlDataAdapter adapter = new SqlDataAdapter();
