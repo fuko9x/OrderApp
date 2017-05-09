@@ -24,6 +24,8 @@ namespace OrderApp.FormView
             InitializeComponent();
 
             formatControl();
+
+            this.dtNgayNhap.Value = System.DateTime.Now;
         }
 
         private void formatControl()

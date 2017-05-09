@@ -154,7 +154,7 @@
             this.dtNgayNhap.Name = "dtNgayNhap";
             this.dtNgayNhap.Size = new System.Drawing.Size(129, 23);
             this.dtNgayNhap.TabIndex = 11;
-            this.dtNgayNhap.Value = new System.DateTime(2017, 4, 24, 20, 8, 9, 0);
+            this.dtNgayNhap.Value = new System.DateTime(2017, 5, 9, 11, 19, 48, 0);
             // 
             // label3
             // 
