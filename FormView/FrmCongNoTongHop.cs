@@ -1,6 +1,7 @@
 ﻿
 using OrderApp.Common;
 using OrderApp.Dao;
+using OrderApp.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,15 +37,40 @@ namespace OrderApp.FormView
         {
             String idKhachHang = txtTenKhachHang.Text;
             OrderDao orderDao = new OrderDao();
+            KhachHangDao khDao = new KhachHangDao();
             DataTable dt = new DataTable();
             if (!String.IsNullOrEmpty(idKhachHang))
             {
                 dt.Load(orderDao.getDebtByCustomer(idKhachHang));
                 this.dataGridView.DataSource = dt;
-            }else
+
+                // On all tables' rows
+                Double total = 0;
+                foreach (DataRow dtRow in dt.Rows)
+                {
+                    if (dtRow["TONG_TIEN"] != null)
+                    {
+                        total += Double.Parse(dtRow["TONG_TIEN"].ToString());
+                    }
+                }
+                lblTongTien.Text = total.ToString("#,###");
+                KhachHangDto dto = khDao.getKhachHangById(idKhachHang);
+                lblSoTienNo.Text = dto.soTienNo.ToString("#,###");
+            }
+            else
             {
                 dt.Load(orderDao.getDebtByCustomer());
                 this.dataGridView.DataSource = dt;
+                Double total = 0;
+                foreach (DataRow dtRow in dt.Rows)
+                {
+                    String tongTien = dtRow["TONG_TIEN"].ToString();
+                    if (!String.IsNullOrWhiteSpace(tongTien))
+                    {
+                        total += Double.Parse(tongTien);
+                    }                }
+                lblTongTien.Text = total.ToString("#,###");
+                lblSoTienNo.Text = "";
             }
         }
 
