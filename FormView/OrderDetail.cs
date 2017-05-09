@@ -121,8 +121,21 @@ namespace OrderApp.FormView
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            //lvProductDetail.Items.Clear();
-            AppUtils.exportOrder(idOrder, order);
+            try
+            {
+                using (var folderDialog = new FolderBrowserDialog())
+                {
+                    if (folderDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        AppUtils.exportOrder(idOrder, order, folderDialog.SelectedPath);
+                        MessageBox.Show("Đã export đơn hàng");
+                    }
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR!!");
+            }
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)
