@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -151,6 +152,15 @@ namespace OrderApp.FormView
                     break;
             }
             this.dataGridViewDonHang.DataSource = dt;
+
+            // SUM MONEY IN ALL ORDER
+            Decimal totalMoney = 0;
+            foreach (DataRow row in dt.Rows)
+            {
+                totalMoney += Decimal.Parse(row["TONG_TIEN"].ToString());
+            }
+            CultureInfo cul = CultureInfo.GetCultureInfo("en-US");
+            this.lblSum.Text = totalMoney.ToString("#,###", cul.NumberFormat); ;
         }
 
         private void cbbTinhTrangDonHang_SelectedIndexChanged(object sender, EventArgs e)

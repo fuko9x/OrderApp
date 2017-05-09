@@ -45,8 +45,8 @@
             this.btnExport = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnDeleteOrder = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewDonHang = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +61,8 @@
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblSum = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -222,19 +224,6 @@
             this.panel1.Size = new System.Drawing.Size(405, 36);
             this.panel1.TabIndex = 20;
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEdit.CausesValidation = false;
-            this.btnEdit.Location = new System.Drawing.Point(3, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(111, 28);
-            this.btnEdit.TabIndex = 20;
-            this.btnEdit.Text = "Chỉnh sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // btnDeleteOrder
             // 
             this.btnDeleteOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -248,11 +237,26 @@
             this.btnDeleteOrder.UseVisualStyleBackColor = true;
             this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEdit.CausesValidation = false;
+            this.btnEdit.Location = new System.Drawing.Point(3, 4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(111, 28);
+            this.btnEdit.TabIndex = 20;
+            this.btnEdit.Text = "Chỉnh sửa";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.lblSum);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.dataGridViewDonHang);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
@@ -287,7 +291,7 @@
             this.dataGridViewDonHang.Name = "dataGridViewDonHang";
             this.dataGridViewDonHang.ReadOnly = true;
             this.dataGridViewDonHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDonHang.Size = new System.Drawing.Size(816, 307);
+            this.dataGridViewDonHang.Size = new System.Drawing.Size(816, 277);
             this.dataGridViewDonHang.TabIndex = 1;
             // 
             // Column1
@@ -401,6 +405,24 @@
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(619, 302);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tổng Tiền";
+            // 
+            // lblSum
+            // 
+            this.lblSum.AutoSize = true;
+            this.lblSum.Location = new System.Drawing.Point(703, 302);
+            this.lblSum.Name = "lblSum";
+            this.lblSum.Size = new System.Drawing.Size(46, 17);
+            this.lblSum.TabIndex = 3;
+            this.lblSum.Text = "label5";
+            // 
             // SearchOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,6 +444,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDonHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearchKhachHang)).EndInit();
             this.ResumeLayout(false);
@@ -457,5 +480,7 @@
         private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.Label lblSum;
+        private System.Windows.Forms.Label label3;
     }
 }
