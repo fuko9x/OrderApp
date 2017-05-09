@@ -381,6 +381,7 @@ namespace OrderApp.FormView
             if (frmSearch.ShowDialog(this) == DialogResult.OK)
             {
                 this.orderDTO.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
+                this.orderDTO.tenKhachHang = frmSearch.khachHangSelected.tenKhachHang;
                 this.txtTenKhachHang.Text = frmSearch.khachHangSelected.tenKhachHang;
                 this.txtDiaDiemGiaoHang.Text = frmSearch.khachHangSelected.diaChi;
                 if (frmSearch.khachHangSelected.listLienHe.Count > 0)
@@ -603,7 +604,32 @@ namespace OrderApp.FormView
                 }
                 SaveAction();
                 isSaved = true;
-                this.Close();
+
+                DialogResult result = MessageBox.Show(
+                        "Bạn có muốn in đơn hàng này ?"
+                        , "Confirmation"
+                        , MessageBoxButtons.YesNo
+                    );
+                if (result != DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    try
+                    {
+                        String path = AppUtils.createTempFolder();
+                        AppUtils.exportOrder(orderDTO.id, orderDTO, path);
+                        AppUtils.printExcelFile(path + "\\Order_" + orderDTO.id + ".xls");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR: " + ex.Message, "ERROR");
+                    }
+
+                    this.DialogResult = DialogResult.Cancel;
+                }
+                
             }
             catch (Exception ex)
             {
