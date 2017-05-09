@@ -84,24 +84,28 @@ namespace OrderApp.FormView
                 if (currentMode == CONS_MODE_EDIT)
                 {
                     this.Text = "CẬP NHẬT ĐƠN HÀNG #: " + orderDTO.id;
-
-                    //this.orderDTO.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
-                    this.txtTenKhachHang.Text = this.orderDTO.tenKhachHang;
-                    this.txtDiaDiemGiaoHang.Text = this.orderDTO.diaDiemGiaoHang;
-                    this.txtLienHe.Text = this.orderDTO.lienHe;
-                    this.txtSDT.Text = this.orderDTO.dienThoai;
-
-                    this.dtNgayDat.Value = this.orderDTO.ngayDat;
-                    this.dtNgayGiao.Value = this.orderDTO.ngayGiao;
-                    this.txtGhiChu.Text = this.orderDTO.notes;
-
-                    this.numberVAT.Value = (decimal)(orderDTO.vat / orderDTO.tongCong)*100;
-
                     this.orderDTO.listSanPham = OrderDao.getOderDetailByOrderID(orderDTO.id);
+                }
 
+                //this.orderDTO.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
+                this.txtTenKhachHang.Text = this.orderDTO.tenKhachHang;
+                this.txtDiaDiemGiaoHang.Text = this.orderDTO.diaDiemGiaoHang;
+                this.txtLienHe.Text = this.orderDTO.lienHe;
+                this.txtSDT.Text = this.orderDTO.dienThoai;
+
+                this.dtNgayDat.Value = this.orderDTO.ngayDat;
+                this.dtNgayGiao.Value = this.orderDTO.ngayGiao;
+                this.txtGhiChu.Text = this.orderDTO.notes;
+
+                if(orderDTO.tongCong != 0)
+                {
+                    this.numberVAT.Value = (decimal)(orderDTO.vat / orderDTO.tongCong) * 100;
+                }
+                else
+                {
+                    this.numberVAT.Value = 0;
                 }
                 
-                Invalidate();
 
                 formatControl();
                 fillData();
@@ -569,12 +573,6 @@ namespace OrderApp.FormView
 
         private void SaveAction()
         {
-            if (!checkUIvalid())
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "THÔNG BÁO");
-                return;
-            }
-
             orderDTO.lienHe = txtLienHe.Text.Trim();
             orderDTO.dienThoai = txtSDT.Text.Trim();
             orderDTO.diaDiemGiaoHang = txtDiaDiemGiaoHang.Text.Trim();
@@ -587,8 +585,6 @@ namespace OrderApp.FormView
             if (this.currentMode == CONS_MODE_ADD)
             {
                 orderDao.creatOrder(orderDTO);
-                isSaved = true;
-                this.DialogResult = DialogResult.OK;
             }
             else if (this.currentMode == CONS_MODE_EDIT)
             {
@@ -600,7 +596,13 @@ namespace OrderApp.FormView
         {
             try
             {
+                if (!checkUIvalid())
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "THÔNG BÁO");
+                    return;
+                }
                 SaveAction();
+                isSaved = true;
                 this.Close();
             }
             catch (Exception ex)
@@ -613,9 +615,13 @@ namespace OrderApp.FormView
         {
             try
             {
+                if (!checkUIvalid())
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "THÔNG BÁO");
+                    return;
+                }
                 SaveAction();
                 this.currentMode = CONS_MODE_ADD;
-                orderDTO = new OrderDto();
                 initDataAction();
                 setSetForm();
                 updateUI();

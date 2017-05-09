@@ -68,7 +68,8 @@ namespace OrderApp.FormView
                     if (!String.IsNullOrWhiteSpace(tongTien))
                     {
                         total += Double.Parse(tongTien);
-                    }                }
+                    }
+                }
                 lblTongTien.Text = total.ToString("#,###");
                 lblSoTienNo.Text = "";
             }

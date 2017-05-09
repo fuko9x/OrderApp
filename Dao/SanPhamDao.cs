@@ -30,11 +30,15 @@ namespace OrderApp.Dao
             return dt;
         }
 
-        public static DataTable getListChiTiet(int idSanPhamCha)
+        public static DataTable getListChiTiet(int idSanPhamCha = 0)
         {
             DataTable dt = new DataTable();
-            String strQuery = "SELECT * FROM SAN_PHAM_CHI_TIET WHERE ID_SAN_PHAM = " + idSanPhamCha
-                + " ORDER BY LOAI_BIA, LOAI_GIAY, SIZE ";
+            String strQuery = "SELECT * FROM SAN_PHAM_CHI_TIET ";
+            if (idSanPhamCha != 0)
+            {
+                strQuery += " WHERE ID_SAN_PHAM = " + idSanPhamCha;
+            }
+            strQuery += " ORDER BY LOAI_BIA, LOAI_GIAY, SIZE ";
             SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
             adapter.Fill(dt);
             return dt;

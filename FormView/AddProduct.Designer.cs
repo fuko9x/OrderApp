@@ -52,9 +52,9 @@ namespace OrderApp.FormView
             this.label7 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.TextBox();
             this.comboBoxLoaiSanPham = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.addPageCost = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.numPageDefault = new System.Windows.Forms.NumericUpDown();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
@@ -315,20 +315,10 @@ namespace OrderApp.FormView
             this.comboBoxLoaiSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxLoaiSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(1)))), ((int)(((byte)(77)))));
             this.comboBoxLoaiSanPham.FormattingEnabled = true;
-            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(207, 7);
+            this.comboBoxLoaiSanPham.Location = new System.Drawing.Point(207, 4);
             this.comboBoxLoaiSanPham.Name = "comboBoxLoaiSanPham";
             this.comboBoxLoaiSanPham.Size = new System.Drawing.Size(470, 27);
             this.comboBoxLoaiSanPham.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 183);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(198, 19);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Số Tờ Mặc Định)";
             // 
             // label9
             // 
@@ -347,6 +337,16 @@ namespace OrderApp.FormView
             this.addPageCost.Name = "addPageCost";
             this.addPageCost.Size = new System.Drawing.Size(470, 26);
             this.addPageCost.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 183);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(198, 19);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Số Tờ Mặc Định)";
             // 
             // numPageDefault
             // 

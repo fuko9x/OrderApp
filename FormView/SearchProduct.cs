@@ -70,7 +70,13 @@ namespace OrderApp.FormView
         private void loadData()
         {
             //Load combobox
-            this.cbbLoaiSanPham.DataSource = SanPhamDao.getListSanPhamCha();
+            DataTable dt = SanPhamDao.getListSanPhamCha();
+            DataRow row = dt.NewRow();
+            row["ID"] = 0;
+            row["TEN_SAN_PHAM"] = "--- All ---";
+            dt.Rows.InsertAt(row, 0);
+
+            this.cbbLoaiSanPham.DataSource = dt;
             this.cbbLoaiSanPham.ValueMember = "ID";
             this.cbbLoaiSanPham.DisplayMember = "TEN_SAN_PHAM";
             //reloadData();
@@ -83,9 +89,14 @@ namespace OrderApp.FormView
             {
                 int.TryParse(cbbLoaiSanPham.SelectedValue.ToString(), out idSanPhamCha);
             }
+
             if (idSanPhamCha != 0)
             {
                 this.dataGridViewSanPham.DataSource = SanPhamDao.getListChiTiet(idSanPhamCha);
+            }
+            else
+            {
+                this.dataGridViewSanPham.DataSource = SanPhamDao.getListChiTiet();
             }
         }
 
