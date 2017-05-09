@@ -33,12 +33,21 @@ namespace OrderApp.FormView
 
         private void FrmTraTruoc_Load(object sender, EventArgs e)
         {
+            txtTenKhachHang.Text = this.idKhachHang;
             loadData();
         }
 
         private void loadData()
         {
-            this.dataGridView.DataSource = LichSuTraTruocDao.getList(this.idKhachHang);
+            String idKhachHang = txtTenKhachHang.Text;
+            if (!String.IsNullOrWhiteSpace(idKhachHang))
+            {
+                this.dataGridView.DataSource = LichSuTraTruocDao.getList(idKhachHang);
+            }
+            else
+            {
+                this.dataGridView.DataSource = LichSuTraTruocDao.getList();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -46,7 +55,7 @@ namespace OrderApp.FormView
             try
             {
                 Dto.LichSuTraTruocDto lsDto = new Dto.LichSuTraTruocDto();
-                lsDto.idKhachHang = this.idKhachHang;
+                lsDto.idKhachHang = txtTenKhachHang.Text;
                 lsDto.soTien = Decimal.Parse(txtSoTien.Text);
                 lsDto.ngayTra = dtNgayNhap.Value;
                 lsDto.ghiChu = txtGhiChu.Text;
@@ -69,13 +78,9 @@ namespace OrderApp.FormView
 
         private void btnSearchKhachHang_Click(object sender, EventArgs e)
         {
-            searchClick();
+            loadData();
         }
 
-        private void txtTenKhachHang_MouseClick(object sender, MouseEventArgs e)
-        {
-            searchClick();
-        }
 
         private void searchClick()
         {
@@ -83,20 +88,17 @@ namespace OrderApp.FormView
             if (frmSearch.ShowDialog(this) == DialogResult.OK)
             {
                 this.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
-                this.txtTenKhachHang.Text = frmSearch.khachHangSelected.tenKhachHang;
+                this.txtTenKhachHang.Text = frmSearch.khachHangSelected.idKhachHang;
 
                 loadData();
             }
         }
 
-        private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
+
+ 
+        private void btnBrowse_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            searchClick();
         }
     }
 }

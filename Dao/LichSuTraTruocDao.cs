@@ -37,5 +37,14 @@ namespace OrderApp.Dao
             adapter.Fill(dt);
             return dt;
         }
+        public static DataTable getList()
+        {
+            DataTable dt = new DataTable();
+            String strQuery = "SELECT LS.*, KH.TEN_KHACH_HANG FROM LICH_SU_TRA_TRUOC LS, KHACH_HANG KH "
+                + " ORDER BY LS.NGAY_TRA DESC , LS.ID DESC";
+            SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
+            adapter.Fill(dt);
+            return dt;
+        }
     }
 }

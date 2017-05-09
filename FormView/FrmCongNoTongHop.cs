@@ -34,22 +34,18 @@ namespace OrderApp.FormView
 
         private void loadData()
         {
-            if (!String.IsNullOrEmpty(this.idKhachHang)) {
+            String idKhachHang = txtTenKhachHang.Text;
+            if (!String.IsNullOrEmpty(idKhachHang)) {
                 OrderDao orderDao = new OrderDao();
                 DataTable dt = new DataTable();
-                dt.Load(orderDao.getDebtByCustomer(this.idKhachHang));
+                dt.Load(orderDao.getDebtByCustomer(idKhachHang));
                 this.dataGridView.DataSource = dt;
             }
         }
 
         private void btnSearchKhachHang_Click(object sender, EventArgs e)
         {
-            searchKhachHang();
-        }
-
-        private void txtTenKhachHang_Click(object sender, EventArgs e)
-        {
-            searchKhachHang();
+            loadData();
         }
 
         private void searchKhachHang()
@@ -58,12 +54,15 @@ namespace OrderApp.FormView
             if (frmSearch.ShowDialog(this) == DialogResult.OK)
             {
                 this.idKhachHang = frmSearch.khachHangSelected.idKhachHang;
-                this.txtTenKhachHang.Text = frmSearch.khachHangSelected.tenKhachHang;
+                this.txtTenKhachHang.Text = frmSearch.khachHangSelected.idKhachHang;
 
                 loadData();
             }
         }
 
-
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            searchKhachHang();
+        }
     }
 }

@@ -53,6 +53,7 @@
             this.btnSearchKhachHang = new System.Windows.Forms.PictureBox();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnBrowse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -235,7 +236,7 @@
             // btnSearchKhachHang
             // 
             this.btnSearchKhachHang.Image = global::OrderApp.Properties.Resources.search_icon;
-            this.btnSearchKhachHang.Location = new System.Drawing.Point(401, 10);
+            this.btnSearchKhachHang.Location = new System.Drawing.Point(422, 8);
             this.btnSearchKhachHang.Name = "btnSearchKhachHang";
             this.btnSearchKhachHang.Size = new System.Drawing.Size(25, 25);
             this.btnSearchKhachHang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -247,11 +248,8 @@
             // 
             this.txtTenKhachHang.Location = new System.Drawing.Point(151, 12);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.ReadOnly = true;
             this.txtTenKhachHang.Size = new System.Drawing.Size(244, 20);
             this.txtTenKhachHang.TabIndex = 8;
-            this.txtTenKhachHang.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtTenKhachHang_MouseClick);
-            this.txtTenKhachHang.TextChanged += new System.EventHandler(this.txtTenKhachHang_TextChanged);
             // 
             // label4
             // 
@@ -261,13 +259,23 @@
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Khách Hàng";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(395, 10);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(24, 23);
+            this.btnBrowse.TabIndex = 28;
+            this.btnBrowse.Text = "...";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // FrmTraTruoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 491);
+            this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnSearchKhachHang);
             this.Controls.Add(this.txtTenKhachHang);
             this.Controls.Add(this.label4);
@@ -310,5 +318,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button btnBrowse;
     }
 }
