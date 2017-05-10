@@ -39,6 +39,14 @@ namespace OrderApp.FormView
             loadData();
         }
 
+        private void resetForm()
+        {
+            txtTenKhachHang.Text = "";
+            txtSoTien.Text = "";
+            txtGhiChu.Text = "";
+            dtNgayNhap.Value = DateTime.Now;
+        }
+
         private void loadData()
         {
             String idKhachHang = txtTenKhachHang.Text;
@@ -56,11 +64,19 @@ namespace OrderApp.FormView
         {
             try
             {
-                if (String.IsNullOrWhiteSpace(txtTenKhachHang.Text))
+                String idKhachHang = txtTenKhachHang.Text;
+                if (String.IsNullOrWhiteSpace(idKhachHang))
                 {
                     MessageBox.Show("Chưa chọn Khách Hàng", "MESSAGE");
                     return;
                 }
+                KhachHangDao khDAO = new KhachHangDao();
+                if (!khDAO.isExits(idKhachHang))
+                {
+                    MessageBox.Show("Mã Khách Hàng không tồn tại!", "MESSAGE");
+                    return;
+                }
+
                 Dto.LichSuTraTruocDto lsDto = new Dto.LichSuTraTruocDto();
                 lsDto.idKhachHang = txtTenKhachHang.Text;
                 lsDto.soTien = Decimal.Parse(txtSoTien.Text);
@@ -70,7 +86,9 @@ namespace OrderApp.FormView
 
                 KhachHangDao.giamSoTienNo(this.idKhachHang, lsDto.soTien);
 
-                this.Close();
+                //this.Close();
+                MessageBox.Show("Save successfully", "MESSAGE");
+                resetForm();
             }
             catch (Exception ex)
             {

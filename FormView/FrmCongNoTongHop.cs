@@ -141,5 +141,10 @@ namespace OrderApp.FormView
                 MessageBox.Show("Chưa chọn khách hàng", "MESSAGE");
             }
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
