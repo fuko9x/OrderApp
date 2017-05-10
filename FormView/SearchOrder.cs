@@ -137,6 +137,13 @@ namespace OrderApp.FormView
             this.Text = title;
             this.Invalidate();
 
+            idKhachHang = this.txtTenKhachHang.Text;
+            KhachHangDao khDAO = new KhachHangDao();
+            if (StringUtils.isNotBlank(idKhachHang) && !khDAO.isExits(idKhachHang))
+            {
+                MessageBox.Show("Mã Khách Hàng không tồn tại!", "MESSAGE");
+                return;
+            }
             // Search
             DataTable dt = new DataTable();
             OrderDao dao = new OrderDao();

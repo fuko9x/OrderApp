@@ -38,6 +38,7 @@ namespace OrderApp.Dao
             adapter.Fill(dt);
             return dt;
         }
+
         public static DataTable getList()
         {
             DataTable dt = new DataTable();
@@ -47,6 +48,31 @@ namespace OrderApp.Dao
             SqlDataAdapter adapter = new SqlDataAdapter(strQuery, Connection.getConnection());
             adapter.Fill(dt);
             return dt;
+        }
+
+        public static Decimal getSum(String idKhachHang, String dateTo, String dateFrom)
+        {
+            DataTable dt = new DataTable();
+            String strQuery = "SELECT SUM(SO_TIEN) FROM LICH_SU_TRA_TRUOC"
+                + " WHERE ID_KHACH_HANG = '" + idKhachHang + "'"
+                + " AND NGAY_TRA >= '" + dateTo + "' AND NGAY_TRA <= '" + dateFrom + "'";
+
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            Decimal sum = 0;
+            while (reader.Read())
+            {
+                if (!reader.IsDBNull(0))
+                {
+                    sum = reader.GetDecimal(0);
+                }
+                
+            }
+            reader.Close();
+            return sum;
         }
     }
 }

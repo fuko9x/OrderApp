@@ -38,28 +38,41 @@ namespace OrderApp.FormView
             String idKhachHang = txtTenKhachHang.Text;
             OrderDao orderDao = new OrderDao();
             KhachHangDao khDao = new KhachHangDao();
+            if(!khDao.isExits(idKhachHang))
+            {
+                MessageBox.Show("Mã Khách Hàng Không Tồn Tại", "MESSAGE");
+                return;
+            }
             DataTable dt = new DataTable();
+            String dateFrom = this.dateFrom.Value.ToString("yyyy-MM-dd");
+            String dateTo = this.dateTo.Value.ToString("yyyy-MM-dd");
             if (!String.IsNullOrEmpty(idKhachHang))
             {
-                dt.Load(orderDao.getDebtByCustomer(idKhachHang));
+                dt.Load(orderDao.getDebtByCustomer(dateFrom, dateTo, idKhachHang));
                 this.dataGridView.DataSource = dt;
 
                 // On all tables' rows
-                Double total = 0;
-                foreach (DataRow dtRow in dt.Rows)
+                if (dt.Rows.Count > 0)
                 {
-                    if (dtRow["TONG_TIEN"] != null)
+                    Decimal total = 0;
+                    foreach (DataRow dtRow in dt.Rows)
                     {
-                        total += Double.Parse(dtRow["TONG_TIEN"].ToString());
+                        if (dtRow["TONG_TIEN"] != null)
+                        {
+                            total += Decimal.Parse(dtRow["TONG_TIEN"].ToString());
+                        }
                     }
+                    lblTongTien.Text = total.ToString("#,###");
+                    Decimal soTienDaTra = LichSuTraTruocDao.getSum(idKhachHang, dateTo, dateFrom);
+                    lblSoTienDaTra.Text = soTienDaTra.ToString("#,###");
+                    lblSoTienNo.Text = (total - soTienDaTra).ToString("#,###");
                 }
-                lblTongTien.Text = total.ToString("#,###");
                 KhachHangDto dto = khDao.getKhachHangById(idKhachHang);
-                lblSoTienNo.Text = dto.soTienNo.ToString("#,###");
+                lblTongTienNo.Text = dto.soTienNo.ToString("#,###");
             }
             else
             {
-                dt.Load(orderDao.getDebtByCustomer());
+                dt.Load(orderDao.getDebtByCustomer(dateFrom, dateTo));
                 this.dataGridView.DataSource = dt;
                 Double total = 0;
                 foreach (DataRow dtRow in dt.Rows)
@@ -71,7 +84,7 @@ namespace OrderApp.FormView
                     }
                 }
                 lblTongTien.Text = total.ToString("#,###");
-                lblSoTienNo.Text = "";
+                lblSoTienDaTra.Text = "";
             }
         }
 
@@ -107,7 +120,9 @@ namespace OrderApp.FormView
                     {
                         if (folderDialog.ShowDialog() == DialogResult.OK)
                         {
-                            AppUtils.exportDept(txtTenKhachHang.Text, folderDialog.SelectedPath);
+                            String dateFrom = this.dateFrom.Value.Date.ToString("yyyy-MM-dd");
+                            String dateTo = this.dateTo.Value.Date.ToString("yyyy-MM-dd");
+                            AppUtils.exportDept(txtTenKhachHang.Text, folderDialog.SelectedPath, dateFrom, dateTo);
                             MessageBox.Show("Đã hoàn thành export công nợ");
                         }
                     }
@@ -128,8 +143,10 @@ namespace OrderApp.FormView
             {
                 try
                 {
+                    String dateFrom = this.dateFrom.Value.Date.ToString("yyyy-MM-dd");
+                    String dateTo = this.dateTo.Value.Date.ToString("yyyy-MM-dd");
                     String path = AppUtils.createTempFolder();
-                    AppUtils.exportDept(txtTenKhachHang.Text, path);
+                    AppUtils.exportDept(txtTenKhachHang.Text, path, dateFrom, dateTo);
                     AppUtils.printExcelFile(path + "\\CongNo.xls");
                 }
                 catch (Exception ex)

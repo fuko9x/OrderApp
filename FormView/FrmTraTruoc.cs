@@ -52,6 +52,12 @@ namespace OrderApp.FormView
             String idKhachHang = txtTenKhachHang.Text;
             if (!String.IsNullOrWhiteSpace(idKhachHang))
             {
+                KhachHangDao khDAO = new KhachHangDao();
+                if (!khDAO.isExits(idKhachHang))
+                {
+                    MessageBox.Show("Mã Khách Hàng không tồn tại!", "MESSAGE");
+                    return;
+                }
                 this.dataGridView.DataSource = LichSuTraTruocDao.getList(idKhachHang);
             }
             else

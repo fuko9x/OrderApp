@@ -137,11 +137,11 @@ namespace OrderApp.Common
             Marshal.ReleaseComObject(xlApp);
         }
 
-        public static void exportDept(String idKH, String path)
+        public static void exportDept(String idKH, String path, String dateTo, String dateFrom)
         {
 
             KhachHangDto infoKH = new KhachHangDao().getKhachHangById(idKH);
-            SqlDataReader reader = new OrderDao().getDebtByCustomer(idKH);
+            SqlDataReader reader = new OrderDao().getDebtByCustomer(dateTo, dateFrom, idKH);
 
             Excel.Application xlApp = new Excel.Application();
 

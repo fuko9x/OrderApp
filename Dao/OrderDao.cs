@@ -572,7 +572,7 @@ namespace OrderApp.Dao
             cmd.ExecuteNonQuery();
         }
         
-        public SqlDataReader getDebtByCustomer(String idKhachHang = "")
+        public SqlDataReader getDebtByCustomer(String dateFrom, String dateTo, String idKhachHang = "")
         {
             String strQuery = "SELECT a.ID"
                                 + ", a.NGAY_GIAO"
@@ -590,10 +590,11 @@ namespace OrderApp.Dao
                                 + ", sp.THANH_TIEN + sp.THANH_TIEN * ISNULL(a.VAT, 0)/100 AS TONG_TIEN"
                                 + " FROM DON_DAT_HANG a"
                                 + " LEFT JOIN DON_DAT_HANG_SP sp"
-                                + " ON a.ID = sp.ID_DON_DAT_HANG";
+                                + " ON a.ID = sp.ID_DON_DAT_HANG"
+                                + " WHERE a.NGAY_DAT >= '" + dateFrom + "' AND a.NGAY_DAT <= '" + dateTo + "'";
             if (StringUtils.isNotBlank(idKhachHang))
             {
-                strQuery += " WHERE a.ID_KHACH_HANG = '" + idKhachHang + "'";
+                strQuery += " AND a.ID_KHACH_HANG = '" + idKhachHang + "'";
                 //+ "     AND a.TRANG_THAI_THANH_TOAN = 'false'"
             }
 
