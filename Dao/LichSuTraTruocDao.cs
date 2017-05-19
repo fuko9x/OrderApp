@@ -55,7 +55,7 @@ namespace OrderApp.Dao
             DataTable dt = new DataTable();
             String strQuery = "SELECT SUM(SO_TIEN) FROM LICH_SU_TRA_TRUOC"
                 + " WHERE ID_KHACH_HANG = '" + idKhachHang + "'"
-                + " AND NGAY_TRA >= '" + dateTo + "' AND NGAY_TRA <= '" + dateFrom + "'";
+                + " AND NGAY_TRA >= '" + dateFrom + "' AND NGAY_TRA <= '" + dateTo + "'";
 
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
