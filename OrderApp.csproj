@@ -224,6 +224,12 @@
     <Compile Include="FormView\SearchOrder.Designer.cs">
       <DependentUpon>SearchOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\SearchOrderNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\SearchOrderNew.Designer.cs">
+      <DependentUpon>SearchOrderNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormView\SearchProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\SearchOrder.resx">
       <DependentUpon>SearchOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\SearchOrderNew.resx">
+      <DependentUpon>SearchOrderNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\SearchProduct.resx">
       <DependentUpon>SearchProduct.cs</DependentUpon>

@@ -53,15 +53,24 @@ namespace OrderApp.Dao
             String strQuery = "SELECT"
                 + " Row_number() over(order by d.ID) STT"
                 + ", d.ID as ID"
+                + ", ct.ID as ID_CHI_TIET_DON_HANG"
                 + ", k.TEN_KHACH_HANG"
                 + ", d.NGAY_DAT"
                 + ", d.NGAY_GIAO"
-                + ", d.TONG_TIEN"
-                + ", (CASE d.TRANG_THAI_THANH_TOAN WHEN 'TRUE' THEN 'OK' ELSE '-' END) AS TRANG_THAI_THANH_TOAN"
-                + ", (CASE d.TRANG_THAI_XUAT_KHO WHEN 'TRUE' THEN 'OK' ELSE '-' END) AS TRANG_THAI_XUAT_KHO"
+                + ", ct.TEN_SAN_PHAM"
+                + ", ct.SO_LUONG"
+                + ", ct.KICH_THUOC"
+                + ", ct.SO_TRANG"
+                + ", ct.LOAI_BIA"
+                + ", ct.LOAI_GIAY"
+                + ", ct.DON_GIA"
+                + ", ct.CHIET_KHAU"
+                + ", ct.THANH_TIEN"
+                + ", ct.TRANG_THAI_THANH_TOAN"
+                + ", ct.TRANG_THAI_XUAT_KHO"
                 + " FROM DON_DAT_HANG d"
-                + " LEFT JOIN KHACH_HANG k"
-                + " ON d.ID_KHACH_HANG = k.ID_KHACH_HANG"
+                + " LEFT JOIN DON_DAT_HANG_SP ct ON d.ID = ct.ID_DON_DAT_HANG "
+                + " LEFT JOIN KHACH_HANG k ON d.ID_KHACH_HANG = k.ID_KHACH_HANG "
                 + " WHERE NGAY_GIAO >= @dateFrom AND NGAY_GIAO <= @dateTo";
             
             // add dk ma khach hang
@@ -233,6 +242,34 @@ namespace OrderApp.Dao
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Connection.getConnection();
             cmd.Parameters.AddWithValue("@idOrder", idOrder);
+            cmd.Parameters.AddWithValue("@giaoHang", giaoHang);
+            cmd.ExecuteNonQuery();
+        }
+        //Details
+        public static void capNhatChiTietThanhToan(string idOrderDetail, Boolean thanhToan)
+        {
+            String strQuery = ""
+                + " UPDATE DON_DAT_HANG_SP SET"
+                + " TRANG_THAI_THANH_TOAN = @thanhToan"
+                + " WHERE ID = @id";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@id", idOrderDetail);
+            cmd.Parameters.AddWithValue("@thanhToan", thanhToan);
+            cmd.ExecuteNonQuery();
+        }
+
+        public static void capNhatChiTietXuatKho(string idOrderDetail, Boolean giaoHang)
+        {
+            String strQuery = ""
+                + " UPDATE DON_DAT_HANG_SP SET"
+                + " TRANG_THAI_XUAT_KHO = @giaoHang"
+                + " WHERE ID = @id";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            cmd.Parameters.AddWithValue("@id", idOrderDetail);
             cmd.Parameters.AddWithValue("@giaoHang", giaoHang);
             cmd.ExecuteNonQuery();
         }

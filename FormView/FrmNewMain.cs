@@ -73,7 +73,7 @@ namespace OrderApp.FormView
 
         private void TK_DonHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SearchOrder frmOrder = new SearchOrder(SearchOrder.CONS_DON_HANG_TRONG_NGAY);
+            SearchOrderNew frmOrder = new SearchOrderNew(SearchOrderNew.CONS_DON_HANG_TRONG_NGAY);
             frmOrder.ShowDialog(this);
         }
 
