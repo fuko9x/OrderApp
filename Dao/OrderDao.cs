@@ -85,14 +85,14 @@ namespace OrderApp.Dao
                     break;
                 case 1:
                     // TRANG_THAI_THANH_TOAN
-                    strQuery += " AND TRANG_THAI_THANH_TOAN = @status";
+                    strQuery += " AND ct.TRANG_THAI_THANH_TOAN = @status";
                     break;
                 case 2:
                     // TRANG_THAI_XUAT_KHO
-                    strQuery += " AND TRANG_THAI_XUAT_KHO = @status";
+                    strQuery += " AND ct.TRANG_THAI_XUAT_KHO = @status";
                     break;
             }
-            strQuery += " ORDER BY d.NGAY_GIAO ASC, d.ID_KHACH_HANG";
+            strQuery += " ORDER BY d.NGAY_GIAO, d.ID_KHACH_HANG";
 
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.CommandType = CommandType.Text;
