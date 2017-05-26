@@ -57,7 +57,7 @@ namespace OrderApp.FormView
                     Decimal total = 0;
                     foreach (DataRow dtRow in dt.Rows)
                     {
-                        if (StringUtils.isNotBlank((String)dtRow["ID"]) && dtRow["TONG_TIEN"] != null)
+                        if (StringUtils.isNotBlank((String)dtRow["ID"]) && dtRow["TONG_TIEN"] != DBNull.Value)
                         {
                             total += Decimal.Parse(dtRow["TONG_TIEN"].ToString());
                         }
@@ -77,9 +77,9 @@ namespace OrderApp.FormView
                 Double total = 0;
                 foreach (DataRow dtRow in dt.Rows)
                 {
-                    String tongTien = dtRow["TONG_TIEN"].ToString();
-                    if (!String.IsNullOrWhiteSpace(tongTien))
+                    if (StringUtils.isNotBlank((String)dtRow["ID"]) && dtRow["TONG_TIEN"] != DBNull.Value)
                     {
+                        String tongTien = dtRow["TONG_TIEN"].ToString();
                         total += Double.Parse(tongTien);
                     }
                 }

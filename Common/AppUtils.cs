@@ -143,76 +143,89 @@ namespace OrderApp.Common
             KhachHangDto infoKH = new KhachHangDao().getKhachHangById(idKH);
             SqlDataReader reader = new OrderDao().getDebtByCustomerWithPay(dateTo, dateFrom, idKH);
 
-            Excel.Application xlApp = new Excel.Application();
-
-            if (xlApp == null)
+            try
             {
-                MessageBox.Show("Chưa cài đặt excel, thao tác bị lỗi", "ERROR");
-                return;
+
+                Excel.Application xlApp = new Excel.Application();
+
+                if (xlApp == null)
+                {
+                    MessageBox.Show("Chưa cài đặt excel, thao tác bị lỗi", "ERROR");
+                    return;
+                }
+
+
+                Excel.Workbook xlWorkBook;
+                Excel.Worksheet xlWorkSheet;
+                object misValue = System.Reflection.Missing.Value;
+                xlWorkBook = xlApp.Workbooks.Open(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\CongNoTemplate.xls", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                xlWorkSheet.Cells[8, 1] = "Tên khách hàng : " + infoKH.tenKhachHang;
+
+                int i = 0;
+                decimal sumChietKhau = 0;
+                decimal sumThanhTien = 0;
+                int sumSoLuong = 0;
+                while (reader.Read())
+                {
+                    var r = xlWorkSheet.get_Range(string.Format("{0}:{0}", 12, Type.Missing));
+                    var range = xlWorkSheet.get_Range(string.Format("{0}:{0}", 11, Type.Missing));
+                    range.Select();
+                    range.Copy();
+                    r.Insert();
+
+                    xlWorkSheet.Cells[11, 1] = reader.GetDateTime(reader.GetOrdinal("NGAY_GIAO")).Day;
+                    xlWorkSheet.Cells[11, 2] = reader.GetDateTime(reader.GetOrdinal("NGAY_GIAO")).Month;
+                    xlWorkSheet.Cells[11, 3] = reader.GetDateTime(reader.GetOrdinal("NGAY_GIAO")).Year;
+                    xlWorkSheet.Cells[11, 4] = reader.GetString(reader.GetOrdinal("ID"));
+                    xlWorkSheet.Cells[11, 5] = reader.GetString(reader.GetOrdinal("TEN_SAN_PHAM"));
+                    xlWorkSheet.Cells[11, 6] = reader.GetString(reader.GetOrdinal("CD_CR"));
+                    xlWorkSheet.Cells[11, 7] = reader.GetString(reader.GetOrdinal("KICH_THUOC"));
+                    xlWorkSheet.Cells[11, 8] = !reader.IsDBNull(reader.GetOrdinal("SO_TRANG")) ? reader.GetInt32(reader.GetOrdinal("SO_TRANG")): 0;
+                    xlWorkSheet.Cells[11, 9] = reader.GetString(reader.GetOrdinal("LOAI_BIA"));
+                    xlWorkSheet.Cells[11, 10] = reader.GetString(reader.GetOrdinal("LOAI_GIAY"));
+                    int soLuong = !reader.IsDBNull(reader.GetOrdinal("SO_LUONG")) ? reader.GetInt32(reader.GetOrdinal("SO_LUONG")) : 0;
+                    decimal donGia = !reader.IsDBNull(reader.GetOrdinal("DON_GIA")) ? reader.GetDecimal(reader.GetOrdinal("DON_GIA")) : 0;
+                    decimal chietKhau = donGia * (
+                        (!reader.IsDBNull(reader.GetOrdinal("CHIET_KHAU")) ? reader.GetDecimal(reader.GetOrdinal("CHIET_KHAU")) : 0)
+                        )/ 100;
+                    decimal thanhTien = !reader.IsDBNull(reader.GetOrdinal("THANH_TIEN")) ? reader.GetDecimal(reader.GetOrdinal("THANH_TIEN")) : 0;
+                    xlWorkSheet.Cells[11, 11] = soLuong;
+                    xlWorkSheet.Cells[11, 12] = donGia;
+                    xlWorkSheet.Cells[11, 13] = chietKhau;
+                    xlWorkSheet.Cells[11, 14] = thanhTien;
+                    sumSoLuong += soLuong;
+                    sumChietKhau += chietKhau;
+                    sumThanhTien += thanhTien;
+                    i++;
+                }
+
+                xlWorkSheet.Cells[13 + i, 11] = sumSoLuong;
+                xlWorkSheet.Cells[13 + i, 13] = sumChietKhau;
+                xlWorkSheet.Cells[13 + i, 14] = sumThanhTien;
+
+                DateTime now = DateTime.Now;
+                xlWorkSheet.Cells[15 + i, 13] = "Ngày " + now.Day + " tháng " + now.Month + " năm " + now.Year;
+
+                xlWorkBook.CheckCompatibility = false;
+                xlWorkBook.SaveAs(path + "\\CongNo.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                xlWorkBook.Close(true, misValue, misValue);
+                xlApp.Quit();
+
+                Marshal.ReleaseComObject(xlWorkSheet);
+                Marshal.ReleaseComObject(xlWorkBook);
+                Marshal.ReleaseComObject(xlApp);
+
             }
-
-
-            Excel.Workbook xlWorkBook;
-            Excel.Worksheet xlWorkSheet;
-            object misValue = System.Reflection.Missing.Value;
-            xlWorkBook = xlApp.Workbooks.Open(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Template\\CongNoTemplate.xls", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
-            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-            xlWorkSheet.Cells[8, 1] = "Tên khách hàng : " + infoKH.tenKhachHang;
-
-            int i = 0;
-            decimal sumChietKhau = 0;
-            decimal sumThanhTien = 0;
-            int sumSoLuong = 0;
-            while (reader.Read())
+            catch (Exception ex)
             {
-                var r = xlWorkSheet.get_Range(string.Format("{0}:{0}", 12, Type.Missing));
-                var range = xlWorkSheet.get_Range(string.Format("{0}:{0}", 11, Type.Missing));
-                range.Select();
-                range.Copy();
-                r.Insert();
-
-                xlWorkSheet.Cells[11, 1] = reader.GetDateTime(reader.GetOrdinal("NGAY_GIAO")).Day;
-                xlWorkSheet.Cells[11, 2] = reader.GetDateTime(reader.GetOrdinal("NGAY_GIAO")).Month;
-                xlWorkSheet.Cells[11, 3] = reader.GetDateTime(reader.GetOrdinal("NGAY_GIAO")).Year;
-                xlWorkSheet.Cells[11, 4] = reader.GetString(reader.GetOrdinal("ID"));
-                xlWorkSheet.Cells[11, 5] = reader.GetString(reader.GetOrdinal("TEN_SAN_PHAM"));
-                xlWorkSheet.Cells[11, 6] = reader.GetString(reader.GetOrdinal("CD_CR"));
-                xlWorkSheet.Cells[11, 7] = reader.GetString(reader.GetOrdinal("KICH_THUOC"));
-                xlWorkSheet.Cells[11, 8] = reader.GetInt32(reader.GetOrdinal("SO_TRANG"));
-                xlWorkSheet.Cells[11, 9] = reader.GetString(reader.GetOrdinal("LOAI_BIA"));
-                xlWorkSheet.Cells[11, 10] = reader.GetString(reader.GetOrdinal("LOAI_GIAY"));
-                int soLuong = reader.GetInt32(reader.GetOrdinal("SO_LUONG"));
-                decimal donGia = reader.GetDecimal(reader.GetOrdinal("DON_GIA"));
-                decimal chietKhau = donGia * reader.GetDecimal(reader.GetOrdinal("CHIET_KHAU")) / 100;
-                decimal thanhTien = reader.GetDecimal(reader.GetOrdinal("THANH_TIEN"));
-                xlWorkSheet.Cells[11, 11] = soLuong;
-                xlWorkSheet.Cells[11, 12] = donGia;
-                xlWorkSheet.Cells[11, 13] = chietKhau;
-                xlWorkSheet.Cells[11, 14] = thanhTien;
-                sumSoLuong += soLuong;
-                sumChietKhau += chietKhau;
-                sumThanhTien += thanhTien;
-                i++;
+                throw new Exception(ex.Message);
             }
-
-            xlWorkSheet.Cells[13 + i, 11] = sumSoLuong;
-            xlWorkSheet.Cells[13 + i, 13] = sumChietKhau;
-            xlWorkSheet.Cells[13 + i, 14] = sumThanhTien;
-
-            DateTime now = DateTime.Now;
-            xlWorkSheet.Cells[15 + i, 13] = "Ngày " + now.Day + " tháng " + now.Month + " năm " + now.Year;
-
-            xlWorkBook.CheckCompatibility = false;
-            xlWorkBook.SaveAs(path + "\\CongNo.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-            xlWorkBook.Close(true, misValue, misValue);
-            xlApp.Quit();
-
-            Marshal.ReleaseComObject(xlWorkSheet);
-            Marshal.ReleaseComObject(xlWorkBook);
-            Marshal.ReleaseComObject(xlApp);
-
-            reader.Close();
+            finally
+            {
+                reader.Close();
+            }
         }
 
         public static void exportSummaryDept(String path)
