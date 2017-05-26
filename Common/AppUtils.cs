@@ -209,7 +209,8 @@ namespace OrderApp.Common
                 xlWorkSheet.Cells[15 + i, 13] = "Ngày " + now.Day + " tháng " + now.Month + " năm " + now.Year;
 
                 xlWorkBook.CheckCompatibility = false;
-                xlWorkBook.SaveAs(path + "\\CongNo.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                String fileName = "CongNo_"+ now.ToString("yyyyMMddhhmmss") + ".xls";
+                xlWorkBook.SaveAs(path + "\\" + fileName , Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
                 xlWorkBook.Close(true, misValue, misValue);
                 xlApp.Quit();
 
