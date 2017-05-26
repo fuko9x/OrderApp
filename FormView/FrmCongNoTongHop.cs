@@ -48,7 +48,7 @@ namespace OrderApp.FormView
             String dateTo = this.dateTo.Value.ToString("yyyy-MM-dd");
             if (!String.IsNullOrEmpty(idKhachHang))
             {
-                dt.Load(orderDao.getDebtByCustomer(dateFrom, dateTo, idKhachHang));
+                dt.Load(orderDao.getDebtByCustomerWithPay(dateFrom, dateTo, idKhachHang));
                 this.dataGridView.DataSource = dt;
 
                 // On all tables' rows
@@ -57,7 +57,7 @@ namespace OrderApp.FormView
                     Decimal total = 0;
                     foreach (DataRow dtRow in dt.Rows)
                     {
-                        if (dtRow["TONG_TIEN"] != null)
+                        if (StringUtils.isNotBlank((String)dtRow["ID"]) && dtRow["TONG_TIEN"] != null)
                         {
                             total += Decimal.Parse(dtRow["TONG_TIEN"].ToString());
                         }
