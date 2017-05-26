@@ -34,5 +34,14 @@ namespace OrderApp.Common
             }
             return true;
         }
+
+        public static Object replaceNull(Object o)
+        {
+            if (null == o)
+            {
+                return "";
+            }
+            return o;
+        }
     }
 }

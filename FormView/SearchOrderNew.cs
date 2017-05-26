@@ -28,14 +28,16 @@ namespace OrderApp.FormView
         private Boolean initData = false;
         private int initSelected = 0;
         private String idKhachHang = "";
-
+        private DataTable dt;
 
         public SearchOrderNew(int initSelectedType = 0)
         {
+            dt = new DataTable();
             initData = false;
             InitializeComponent();
             formatControl();
             this.initSelected = initSelectedType;
+
         }
 
         public void setIDKhachHang(String idKhachHang)
@@ -150,7 +152,6 @@ namespace OrderApp.FormView
                     return;
                 }
                 // Search
-                DataTable dt = new DataTable();
                 OrderDao dao = new OrderDao();
                 switch (cbbTinhTrangDonHang.SelectedIndex)
                 {
@@ -321,5 +322,24 @@ namespace OrderApp.FormView
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var folderDialog = new FolderBrowserDialog())
+            {
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        AppUtils.ExportToExcel(dt, folderDialog.SelectedPath);
+                        MessageBox.Show("Đã export danh sách sản phẩm");
+                    } catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR: " + ex.Message);
+                    }
+                    
+                    
+                }
+            }
+        }
     }
 }

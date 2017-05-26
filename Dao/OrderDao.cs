@@ -642,5 +642,57 @@ namespace OrderApp.Dao
             SqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
+
+        public SqlDataReader getDebtByCustomerWithPay(String dateFrom, String dateTo, String idKhachHang = "")
+        {
+            String strQuery = "SELECT a.ID AS ID"
+                    + ", a.NGAY_GIAO AS NGAY_GIAO"
+                    + ", sp.TEN_SAN_PHAM AS TEN_SAN_PHAM"
+                    + ", ISNULL(sp.CD_CR, '') AS CD_CR"
+                    + ", ISNULL(sp.KICH_THUOC, '') AS KICH_THUOC"
+                    + ", ISNULL(sp.SO_TRANG, 0) AS SO_TRANG"
+                    + ", ISNULL(sp.LOAI_BIA, '') AS LOAI_BIA"
+                    + ", ISNULL(sp.LOAI_GIAY, '') AS LOAI_GIAY"
+                    + ", ISNULL(sp.SO_LUONG, 0) AS SO_LUONG"
+                    + ", ISNULL(sp.DON_GIA, 0) AS DON_GIA"
+                    + ", ISNULL(sp.CHIET_KHAU, 1) AS CHIET_KHAU"
+                    + ", ISNULL(sp.THANH_TIEN, 0) AS THANH_TIEN"
+                    + ", ISNULL(a.VAT, 0) AS VAT"
+                    + ", sp.THANH_TIEN + sp.THANH_TIEN * ISNULL(a.VAT, 0)/100 AS TONG_TIEN"
+                    + " FROM DON_DAT_HANG a"
+                    + " LEFT JOIN DON_DAT_HANG_SP sp ON a.ID = sp.ID_DON_DAT_HANG"
+                    + " WHERE a.NGAY_DAT >= '" + dateFrom + "' AND a.NGAY_DAT <= '" + dateTo + "'";
+            if (StringUtils.isNotBlank(idKhachHang))
+            {
+                strQuery += " AND a.ID_KHACH_HANG = '" + idKhachHang + "'";
+            }
+            strQuery += " UNION"
+                    + " SELECT '' AS ID"
+                    + ", NGAY_TRA AS NGAY_GIAO"
+                    + ", 'THANH TOÁN' AS TEN_SAN_PHAM"
+                    + ", '' AS CD_CR"
+                    + ", '' AS KICH_THUOC"
+                    + ", NULL AS SO_TRANG"
+                    + ", '' AS LOAI_BIA"
+                    + ", '' AS LOAI_GIAY"
+                    + ", NULL AS SO_LUONG"
+                    + ", NULL AS DON_GIA"
+                    + ", NULL AS CHIET_KHAU"
+                    + ", NULL AS THANH_TIEN"
+                    + ", NULL AS VAT"
+                    + ", SO_TIEN AS TONG_TIEN"
+                    + " FROM LICH_SU_TRA_TRUOC"
+                    + " WHERE NGAY_TRA >= '" + dateFrom + "' AND NGAY_TRA <= '" + dateTo + "'";
+            if (StringUtils.isNotBlank(idKhachHang))
+            {
+                strQuery += " AND ID_KHACH_HANG = '" + idKhachHang + "'";
+            }
+            strQuery += " ORDER BY NGAY_GIAO";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Connection.getConnection();
+            SqlDataReader reader = cmd.ExecuteReader();
+            return reader;
+        }
     }
 }
