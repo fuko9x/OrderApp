@@ -167,8 +167,16 @@ namespace OrderApp.Common
                 decimal sumChietKhau = 0;
                 decimal sumThanhTien = 0;
                 int sumSoLuong = 0;
+                Boolean isPayRecord = false;
                 while (reader.Read())
                 {
+                    if (reader.GetString(reader.GetOrdinal("TEN_SAN_PHAM")) == "THANH TOÁN")
+                    {
+                        isPayRecord = true;
+                    } else
+                    {
+                        isPayRecord = false;
+                    }
                     var r = xlWorkSheet.get_Range(string.Format("{0}:{0}", 12, Type.Missing));
                     var range = xlWorkSheet.get_Range(string.Format("{0}:{0}", 11, Type.Missing));
                     range.Select();
@@ -180,24 +188,42 @@ namespace OrderApp.Common
                     xlWorkSheet.Cells[11, 3] = reader.GetDateTime(reader.GetOrdinal("NGAY_GIAO")).Year;
                     xlWorkSheet.Cells[11, 4] = reader.GetString(reader.GetOrdinal("ID"));
                     xlWorkSheet.Cells[11, 5] = reader.GetString(reader.GetOrdinal("TEN_SAN_PHAM"));
-                    xlWorkSheet.Cells[11, 6] = reader.GetString(reader.GetOrdinal("CD_CR"));
-                    xlWorkSheet.Cells[11, 7] = reader.GetString(reader.GetOrdinal("KICH_THUOC"));
-                    xlWorkSheet.Cells[11, 8] = !reader.IsDBNull(reader.GetOrdinal("SO_TRANG")) ? reader.GetInt32(reader.GetOrdinal("SO_TRANG")): 0;
-                    xlWorkSheet.Cells[11, 9] = reader.GetString(reader.GetOrdinal("LOAI_BIA"));
-                    xlWorkSheet.Cells[11, 10] = reader.GetString(reader.GetOrdinal("LOAI_GIAY"));
-                    int soLuong = !reader.IsDBNull(reader.GetOrdinal("SO_LUONG")) ? reader.GetInt32(reader.GetOrdinal("SO_LUONG")) : 0;
-                    decimal donGia = !reader.IsDBNull(reader.GetOrdinal("DON_GIA")) ? reader.GetDecimal(reader.GetOrdinal("DON_GIA")) : 0;
-                    decimal chietKhau = donGia * (
-                        (!reader.IsDBNull(reader.GetOrdinal("CHIET_KHAU")) ? reader.GetDecimal(reader.GetOrdinal("CHIET_KHAU")) : 0)
-                        )/ 100;
-                    decimal thanhTien = !reader.IsDBNull(reader.GetOrdinal("THANH_TIEN")) ? reader.GetDecimal(reader.GetOrdinal("THANH_TIEN")) : 0;
-                    xlWorkSheet.Cells[11, 11] = soLuong;
-                    xlWorkSheet.Cells[11, 12] = donGia;
-                    xlWorkSheet.Cells[11, 13] = chietKhau;
+                    decimal thanhTien = !reader.IsDBNull(reader.GetOrdinal("TONG_TIEN")) ? reader.GetDecimal(reader.GetOrdinal("TONG_TIEN")) : 0;
+                    if (!isPayRecord)
+                    {
+                        xlWorkSheet.Cells[11, 6] = reader.GetString(reader.GetOrdinal("CD_CR"));
+                        xlWorkSheet.Cells[11, 7] = reader.GetString(reader.GetOrdinal("KICH_THUOC"));
+                        xlWorkSheet.Cells[11, 8] = !reader.IsDBNull(reader.GetOrdinal("SO_TRANG")) ? reader.GetInt32(reader.GetOrdinal("SO_TRANG")) : 0;
+                        xlWorkSheet.Cells[11, 9] = reader.GetString(reader.GetOrdinal("LOAI_BIA"));
+                        xlWorkSheet.Cells[11, 10] = reader.GetString(reader.GetOrdinal("LOAI_GIAY"));
+                        int soLuong = !reader.IsDBNull(reader.GetOrdinal("SO_LUONG")) ? reader.GetInt32(reader.GetOrdinal("SO_LUONG")) : 0;
+                        decimal donGia = !reader.IsDBNull(reader.GetOrdinal("DON_GIA")) ? reader.GetDecimal(reader.GetOrdinal("DON_GIA")) : 0;
+                        decimal chietKhau = donGia * (
+                            (!reader.IsDBNull(reader.GetOrdinal("CHIET_KHAU")) ? reader.GetDecimal(reader.GetOrdinal("CHIET_KHAU")) : 0)
+                            ) / 100;
+                        
+                        xlWorkSheet.Cells[11, 11] = soLuong;
+                        xlWorkSheet.Cells[11, 12] = donGia;
+                        xlWorkSheet.Cells[11, 13] = chietKhau;
+                        
+                        sumSoLuong += soLuong;
+                        sumChietKhau += chietKhau;
+                        sumThanhTien += thanhTien;
+                        for (int col = 1; col <= 14; col++)
+                        {
+                            xlWorkSheet.Cells[11, col].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+                        }
+                    } else
+                    {
+                        sumThanhTien -= thanhTien;
+                        for (int col = 1; col <= 14; col++)
+                        {
+                            xlWorkSheet.Cells[11, col].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
+                        }
+                        
+                    }
                     xlWorkSheet.Cells[11, 14] = thanhTien;
-                    sumSoLuong += soLuong;
-                    sumChietKhau += chietKhau;
-                    sumThanhTien += thanhTien;
+
                     i++;
                 }
 

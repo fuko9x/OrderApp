@@ -212,9 +212,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.Location = new System.Drawing.Point(356, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 17);
+            this.label3.Size = new System.Drawing.Size(113, 17);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Số Nợ:";
+            this.label3.Text = "Số Nợ Trong Kỳ:";
             // 
             // lblSoTienDaTra
             // 
@@ -242,9 +242,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(21, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 17);
+            this.label2.Size = new System.Drawing.Size(96, 17);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Tổng Tiền Thanh Toán:";
+            this.label2.Text = "Trả Trong Kỳ:";
             // 
             // label1
             // 
@@ -252,9 +252,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(21, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 17);
+            this.label1.Size = new System.Drawing.Size(135, 17);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Tổng Tiền Hàng:";
+            this.label1.Text = "Phát Sinh Trong Kỳ:";
             // 
             // dataGridView
             // 
