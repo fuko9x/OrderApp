@@ -322,7 +322,7 @@ namespace OrderApp.FormView
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void exportTotal_Click(object sender, EventArgs e)
         {
             using (var folderDialog = new FolderBrowserDialog())
             {
@@ -332,12 +332,13 @@ namespace OrderApp.FormView
                     {
                         AppUtils.ExportToExcel(dt, folderDialog.SelectedPath);
                         MessageBox.Show("Đã export danh sách sản phẩm");
-                    } catch (Exception ex)
+                    }
+                    catch (Exception ex)
                     {
                         MessageBox.Show("ERROR: " + ex.Message);
                     }
-                    
-                    
+
+
                 }
             }
         }
